@@ -96,6 +96,13 @@ page.10 {
 			wrap = |
 			required = 1
 		}
+
+		contentPageviewNavigation < styles.content.get
+		contentPageviewNavigation.select.where = colPos = 9
+		contentPageviewNavigation.stdWrap {
+			wrap = |
+			required = 1
+		}
 	}
 
 	#file = {$resDir}/Resources/Private/Templates/DefaultTemplate.html

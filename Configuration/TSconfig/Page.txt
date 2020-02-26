@@ -67,11 +67,16 @@ mod.web_layout.BackendLayouts {
                                 colPos = 8
                             }
                             2 {
+                               name = PageviewNavigation
+                               colspan = 1
+                               colPos = 9
+                            }
+                            3 {
                                 name = Navigation
                                 colspan = 1
                                 colPos = 6
                             }
-                            3 {
+                            4 {
                                 name = Basket
                                 colspan = 1
                                 colPos = 7
