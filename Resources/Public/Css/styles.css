@@ -109,13 +109,13 @@ fonts
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('../Fonts/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
   src: local('Roboto'), local('Roboto-Regular'),
-       url('../fonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+       url('../Fonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../Fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../Fonts/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../Fonts/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../Fonts/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
 }
 
 /* roboto-700 - latin */
@@ -123,13 +123,13 @@ fonts
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/roboto-v20-latin-700.eot'); /* IE9 Compat Modes */
+  src: url('../Fonts/roboto-v20-latin-700.eot'); /* IE9 Compat Modes */
   src: local('Roboto Bold'), local('Roboto-Bold'),
-       url('../fonts/roboto-v20-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v20-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v20-latin-700.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v20-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v20-latin-700.svg#Roboto') format('svg'); /* Legacy iOS */
+       url('../Fonts/roboto-v20-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../Fonts/roboto-v20-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../Fonts/roboto-v20-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../Fonts/roboto-v20-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../Fonts/roboto-v20-latin-700.svg#Roboto') format('svg'); /* Legacy iOS */
 }
 
 
