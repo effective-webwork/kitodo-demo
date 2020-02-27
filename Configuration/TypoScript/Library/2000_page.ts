@@ -128,4 +128,9 @@ page.10.file.stdWrap.cObject {
 
 	pagets__3 < .onecol
 
+	start = TEXT
+	start.value = {$resDir}/Resources/Private/Templates/StartTemplate.html
+
+	pagets__4 < .start
+
 }
