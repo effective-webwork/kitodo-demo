@@ -133,4 +133,9 @@ page.10.file.stdWrap.cObject {
 
 	pagets__4 < .start
 
+	content = TEXT
+	content.value = {$resDir}/Resources/Private/Templates/OneColumnContent.html
+
+	pagets__5 < .content
+
 }
