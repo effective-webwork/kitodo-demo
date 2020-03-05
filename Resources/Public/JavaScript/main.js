@@ -60,10 +60,11 @@ if ($('.tx-dlf-navigation-listview a').length > 0) {
     $('.meta-actions #backlink').attr( "href", $('.tx-dlf-navigation-listview a').attr("href"));
 }
 
-$(".tx-dlf-metadata dd.tx-dlf-metadata-title").attr("data-full", $(".tx-dlf-metadata dd.tx-dlf-metadata-title")[0].text());
+$(".tx-dlf-metadata dd.tx-dlf-metadata-title").attr("data-full", $(".tx-dlf-metadata dd.tx-dlf-metadata-title").first().text());
 
 $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text(
-    $(".tx-dlf-metadata dd.tx-dlf-metadata-title")[0]
+    $(".tx-dlf-metadata dd.tx-dlf-metadata-title")
+        .first()
         .text()
         .substring(0, 70) + " ..."
 );
