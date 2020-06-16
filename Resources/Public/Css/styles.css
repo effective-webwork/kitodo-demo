@@ -48,7 +48,7 @@ a {
     }
 
 a:hover, a:active {
-    color: #E63214;
+ /*   color: #E63214; */
     text-decoration: underline;
     outline-width: 0;
     }
@@ -56,7 +56,7 @@ a:hover, a:active {
 a:focus,
 input[type=submit]:focus,
 .button-red:focus {
-    background-color: #FDEE21 !important;
+    background-color: #9a9a9a !important;
     background-image: none !important;
     color: #000 !important;
     border-radius: 2px;
@@ -185,12 +185,13 @@ input[type=submit]:hover,
 select {
     border: 1px solid #959595;
     border-radius: 2px;
-    padding: 17px 20px;
+    padding: 10px 20px;
     line-height: 0;
     font-size: 16px;
     color: #242424;
     display: inline-block;
     vertical-align: top;
+    margin-right: 15px;
     }    
 
 
@@ -335,6 +336,9 @@ content-page
     margin: 30px;
     padding: 30px;
     box-shadow: 0px 0px 0px 1px #eee;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
     }
 
  .content-page h1 {
@@ -342,33 +346,42 @@ content-page
     font-size: 30px;
     line-height: 32px;
     padding: 0;
-    margin: 0 0 30px 0;
+    margin: 0 0 15px 0;
     }
 
  .content-page h2 {
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
-    margin: 0 0 30px 0;
+    margin: 0 0 15px 0;
     }
 
 .content-page h3 {
     font-weight: 700;
     font-size: 22px;
     line-height: 24px;
-    margin: 0 0 30px 0;
+    margin: 0 0 15px 0;
     }
 
 .content-page p {
     padding: 0;
-    margin: 0 0 30px 0;
+    margin: 0 0 15px 0;
     }
 
 .content-page ul,
 .content-page ol {
     padding: 0;
-    margin: 0 0 30px 15px;
+    margin: 0 0 15px 15px;
     }
+
+.ce-gallery figcaption {
+ display:table-caption;
+ caption-side:bottom;
+ font-size: 12px;
+/* font-style: italic;*/
+ color: #404040;
+ line-height: 16px;
+}
 
     
 /*----------------------------------------------------------------------
@@ -393,13 +406,13 @@ collection-list + teaser
     width: calc(25% - 70px);
     margin: 0 30px 40px 0;
     padding: 20px;
-    text-align: center;
+    text-align: left;
     background: #fff;
     box-shadow: 0px 0px 0px 1px #eee;
     border-radius: 2px;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     }
  
  .tx-dlf-collection-list li:hover {
@@ -408,8 +421,8 @@ collection-list + teaser
     }
  
  .tx-dlf-collection-list li a {
-    padding: 10px 15px;
-    text-decoration: none;
+/*    padding: 10px 15px; */
+/*    text-decoration: none; */
     }
     
  .tx-dlf-collection-list li a:hover {
@@ -440,7 +453,7 @@ collection-list + teaser
     }
 
 .tx-dlf-collection-counts {
-    margin-bottom: 20px;
+    margin-top: 20px;
     }
     
 .tx-dlf-collection-intro {
@@ -481,7 +494,7 @@ tx-dlf-search-query
     }
 
 .tx-dlf-search .tx-dlf-search-options {
-    float: left;
+    float: none;
     margin: 10px 15px 0 0;
     }
     
@@ -599,6 +612,8 @@ listview
 .tx-dlf-listview-label {
     padding: 0 0 30px 0;
     border-bottom: 1px solid #ababab;
+    font-weight: 700;
+    font-size: 20px;
     }
 
 .tx-dlf-listview-pagebrowser a {
@@ -682,7 +697,7 @@ listview
     
 ol.tx-dlf-listview-list {
     list-style-type: decimal;
-    list-style-position: inside;
+ /*   list-style-position: inside; */
     }    
 
 .tx-dlf-listview-list li {
@@ -764,7 +779,7 @@ ol.tx-dlf-listview-list {
 
 .tx-dlf-listview-list dl {
     padding: 0 30px;
-    margin-top: -20px;
+   /* margin-top: -20px;*/
     width: 60%;
     }
 
@@ -801,9 +816,11 @@ dd.tx-dlf-metadata-author,
     }
 
 .tx-dlf-listview-list .tx-dlf-listview-thumbnail img {
-    width: 60px;
-    height: auto;
-    margin: -15px 0 30px 30px;
+    width: 150px;
+    max-height: 130px;
+/*    margin: -15px 0 30px 30px; */
+    float: right;
+    display: block;!important;
     }
 
 .tx-dlf-listview-list li ol {
@@ -923,7 +940,7 @@ detail-view
     }
 
 .detail-aside-nav {
-    padding: 30px;
+    padding: 30px 30px 15px 30px;
     }
 
 .tx-dlf-navigation li {
@@ -1001,7 +1018,7 @@ detail-view
     } 
 
 .detail-view-itemoptions {
-    margin: 30px;
+    margin: 15px 30px 30px 30px;
     position: relative;
     z-index: 3;
     }
@@ -1041,7 +1058,8 @@ detail-view
 }
 
 #tx-dlf-map {
-    min-height: 800px;
+    min-height:1000px;
+    line-height:0px; 
 }
 
 .detail-view-tools .dropdown-menu label {
@@ -1162,12 +1180,12 @@ detail-view
 .detail-view-itemdetails label dt {
     display: inline;
     padding-right: 5px;
-    font-weight: 400;
+    font-weight: bold;
     }    
 
 .detail-view-itemdetails dd,
 .detail-view-itemdetails label dd {
-    font-weight: 700;
+    font-weight: 200;
     display: inline;
     }  
 
@@ -1180,10 +1198,10 @@ detail-view
 .tx-dlf-pagegrid {
     z-index: 4;
     text-align: center;
-    background: #242424;
+    background: #e4e4e4;
     margin: 0 auto;
-    padding: 30px 15px;
-    line-height: 0;
+    padding: 5px 5px;
+  /*  line-height: 0; */
     }
 
 .tx-dlf-pagegrid-list {
@@ -1199,7 +1217,7 @@ detail-view
 .tx-dlf-pagegrid .tx-dlf-pagegrid-thumbnail {
     position: relative;
     display: block;
-    width: 25px;
+    width: 30px;
     margin: 0 3px;
     height: auto;
     min-height: 25px;
@@ -1207,11 +1225,11 @@ detail-view
 
 .tx-dlf-pagegrid .tx-dlf-pagegrid-thumbnail a {
     display: block;
-    width: 25px;
+    width:30px;
     height: auto;
     line-height: 0;
     font-size: 16px;
-    border: 2px solid #adadad;
+    border: 1px solid #e4e4e4;
     position: absolute;
     top: 0;
     left: 0;
@@ -1229,6 +1247,37 @@ detail-view
     height: auto;
     }
     
+/*----------------------------------------------------------------------
+detailview + audioplayer (AdK)
+----------------------------------------------------------------------*/
+
+.jp-audio {
+    border: 1px solid #666666;
+    width: 620px;
+    margin: auto;
+    }
+
+.jp-volume-controls {
+    left: 508px;
+    }
+
+.jp-details {
+    display: none
+    }
+.jp-controls {
+   padding: 20px 0px 0px 0px !important;
+    }
+
+.jp-controls-holder {
+    width: 400px;
+    top: 0px;
+    }
+
+.jp-duration-divider {
+    display: none;
+    }
+
+
 /*----------------------------------------------------------------------
 calendar + listview
 ----------------------------------------------------------------------*/
