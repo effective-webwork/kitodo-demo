@@ -208,6 +208,14 @@ $('div.tx-dlf-navigation-magnifier').hide();
 
 // license
 
+// label
+$('.license-label-key').hide();
+var licenseLabel = $('.license-label-value').text();
+
+$('.license').text(licenseLabel);
+$('.license-label-value').hide();
+
+// icon
 var link = $('.license').attr('href');
 var res = link.split("/");
 
