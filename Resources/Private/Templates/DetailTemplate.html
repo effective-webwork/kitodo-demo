@@ -1,55 +1,73 @@
 <f:layout name="DefaultLayout" />
+
+<f:section name="Header">
+	<f:render partial="Header" arguments="{_all}"/>
+</f:section>
+
 <f:section name="Main">
-<main class="clear">
-	<section id="detail-view">
+<main class="clear" id="detail-view">
+	<section>
 
-		<article class="detail-view-header">
+		<aside>
+			<section>
+				<div id="c10" class="detail-aside-nav">
 
-			<div id="c9" class="detail-view-title">
+					<f:format.raw>{contentNavigation}</f:format.raw>
 
-				<f:format.raw>{contentMetadataTitle}</f:format.raw>
+				</div>
 
-			</div>
+			</section>
 
-			<div id="c10" class="detail-view-nav">
+			<article class="detail-view-itemoptions">
 
-				<f:format.raw>{contentNavigation}</f:format.raw>
+				<div id="c16" class="detail-view-tools">
 
-			</div>
+					<div class="dropdown-menu" data-children-count="4">
+						<input type="checkbox" id="checkbox-menu2">
+						<label for="checkbox-menu2">Werkzeuge</label>
+						<ul>
+							<li>
+								<f:format.raw>{contentTools}</f:format.raw>
+							</li>
+						</ul>
+					</div>
 
-		</article>
+				</div>
 
-		<article class="detail-view-itemoptions">
+				<f:format.raw>{contentTOC}</f:format.raw>
 
-			<f:format.raw>{contentTOC}</f:format.raw>
+				<div class="detail-view-itemdetails">
 
-			<div class="detail-view-itemdetails">
-
-				<div class="dropdown-menu">
-					<input type="checkbox" id="checkbox-menu3">
-					<label for="checkbox-menu3">
-						<dl>
-							<dt></dt><dd>Metadaten</dd>
-						</dl>
-					</label>
-					<ul>
+					<ul style="list-style: none;">
 						<li class="tx-dlf-toc-act tx-dlf-toc-ifsub">
 							<f:format.raw>{contentMetadata}</f:format.raw>
 						</li>
 					</ul>
+
 				</div>
 
+			</article>
+		</aside>
+
+		<section id="main-content">
+			<div class="detail-view-main">
+				<article class="detail-view-header">
+
+					<div id="c9" class="detail-view-title">
+
+						<f:format.raw>{contentMetadataTitle}</f:format.raw>
+
+					</div>
+
+					<div class="detail-view-nav">
+						<f:format.raw>{contentPageviewNavigation}</f:format.raw>
+					</div>
+
+				</article>
 			</div>
 
-			<div id="c16" class="detail-view-tools">
-
-				<f:format.raw>{contentTools}</f:format.raw>
-
-			</div>
-
-		</article>
-
-		<f:format.raw>{contentMain}</f:format.raw>
+			<f:format.raw>{contentMain}</f:format.raw>
+		</section>
 	</section>
 </main>
 </f:section>

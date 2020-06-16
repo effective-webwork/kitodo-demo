@@ -60,10 +60,11 @@ if ($('.tx-dlf-navigation-listview a').length > 0) {
     $('.meta-actions #backlink').attr( "href", $('.tx-dlf-navigation-listview a').attr("href"));
 }
 
-$(".tx-dlf-metadata dd.tx-dlf-metadata-title").attr("data-full", $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text());
+$(".tx-dlf-metadata dd.tx-dlf-metadata-title").attr("data-full", $(".tx-dlf-metadata dd.tx-dlf-metadata-title").first().text());
 
 $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text(
     $(".tx-dlf-metadata dd.tx-dlf-metadata-title")
+        .first()
         .text()
         .substring(0, 70) + " ..."
 );
@@ -129,11 +130,11 @@ $('.tx-dlf-navigation-first a, .tx-dlf-navigation-first span')
     .text("")
     .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-skipleft.svg" alt="First Page">');
 
-$('.tx-dlf-navigation-prev a, .tx-dlf-navigation-prev span')
+$('.tx-dlf-navigation-back a, .tx-dlf-navigation-back span')
     .text("")
     .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-doubleleft.svg" alt="Back 5 Pages">');
 
-$('.tx-dlf-navigation-back a, .tx-dlf-navigation-back span')
+$('.tx-dlf-navigation-prev a, .tx-dlf-navigation-prev span')
     .text("")
     .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-singleleft.svg" alt="Previous Page">');
 
@@ -157,6 +158,10 @@ $('.tx-dlf-navigation-listview a, .tx-dlf-navigation-listview span')
     .text("")
     .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-skipright.svg" alt="Last Page">');
 
+$('.tx-dlf-navigation-listview a, .tx-dlf-navigation-listview span')
+    .text("")
+    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-tool.svg" alt="Toolbox">');
+
 
 if ($('.tx-dlf-navigation-edit').length) {
     $('ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-edit">' + $('.tx-dlf-navigation-edit').html() + '</li>');
@@ -176,7 +181,10 @@ if ($('.tx-dlf-navigation-magnifier').length) {
     $('ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-magnifier" style="padding-left: 4px;"><span></span></li>');
 }
 
-
+// TOOLBOX
+$('aside ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-tools" style="margin-left:10px;"><div id="c16" class="detail-view-tools" style="display:inline-block;">' + $('.detail-view-tools').html() + '</div></li>');
+$('aside li.tx-dlf-navigation-tools label').text("").prepend('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-tool.svg" alt="Toolbox">');
+$('aside .detail-view-itemoptions .detail-view-tools').hide();
 
 
 $('.tx-dlf-navigation-edit a, .tx-dlf-navigation-edit span')
