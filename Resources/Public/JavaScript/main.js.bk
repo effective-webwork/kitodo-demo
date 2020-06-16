@@ -27,10 +27,11 @@ $(".tx-dlf-listview-list ol").hide();
 
 $(".tx-dlf-search-numHits").hide();
 
+
 // show-volumes-expand
 // show-volumes-minimize
 
- $(".show-volumes").each(function () {
+$(".show-volumes").each(function () {
     if ($(this).parent().find("ol").length > 0) {
         $(this).show();
     }
@@ -69,9 +70,6 @@ $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text(
 );
 
 // collapse metadata
-$(".tx-dlf-metadata ul").show();
-
-
 $(".tx-dlf-metadata .show-metadata").on("click", function (evt) {
     evt.preventDefault();
 
