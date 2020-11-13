@@ -497,10 +497,11 @@ main aside {
 }
 
 .content-page {
-    box-shadow:0 0 0 1px #eee;
-    max-width:1000px;
-    margin:30px auto;
-    padding:30px;
+    max-width: 100%;
+    margin: 30px 30px 60px 30px;
+    padding: 30px;
+    border-radius: 0 36px 0 0;
+    background: #fff;
 }
 
 .content-page h1 {
@@ -828,9 +829,10 @@ dt.tx-dlf-metadata-title,dt.tx-dlf-metadata-place,dt.tx-dlf-metadata-type,dt.tx-
 
 .tx-dlf-listview-list .tx-dlf-listview-thumbnail img {
     width:150px;
-    max-height:130px;
+    max-height:90px;
     float:right;
     display:block;
+    padding-top: 40px;
 }
 
 .tx-dlf-listview-list li ol {
