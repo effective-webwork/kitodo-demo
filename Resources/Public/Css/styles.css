@@ -623,6 +623,10 @@ main aside {
     margin:0 0 10px;
 }
 
+tx-dlf-search-suggest {
+    width: auto;
+}
+
 .tx-dlf-search-options input#tx-dlf-search-fulltext-yes {
     margin-left:10px;
 }
