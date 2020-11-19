@@ -325,7 +325,8 @@ sup {
     font-size:0;
 }
 
-input[type=text] {
+input[type=text],
+input[type=password] {
     border-radius:2px;
     line-height:16px;
     font-size:16px;
@@ -339,9 +340,19 @@ input[type=text] {
     padding:20px;
 }
 
-input[type=text]:hover {
+input[type=text]:hover,
+input[type=password]:hover {
     border:1px solid #999;
     color:#000;
+}
+
+.tx-felogin-pi1 form div {
+    float:left;
+    margin-right:1rem;
+}
+
+#main-content div:only-child {
+    padding: 1rem;
 }
 
 input[type=submit],.button-red {
