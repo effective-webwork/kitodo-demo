@@ -69,7 +69,7 @@ $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text(
 );
 
 // collapse metadata
-$(".tx-dlf-metadata ul").show();
+$(".tx-dlf-metadata input[type=checkbox]").prop('checked', true);
 
 
 $(".tx-dlf-metadata .show-metadata").on("click", function (evt) {
