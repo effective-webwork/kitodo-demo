@@ -844,7 +844,7 @@ dt.tx-dlf-metadata-title,dt.tx-dlf-metadata-place,dt.tx-dlf-metadata-type,dt.tx-
 
 .tx-dlf-listview-list .tx-dlf-listview-thumbnail img {
     max-width:150px;
-    max-height:90px;
+    max-height:70px;
     float:right;
     display:block;
     padding-top: 40px;
@@ -1022,6 +1022,10 @@ dt.tx-dlf-metadata-title,dt.tx-dlf-metadata-place,dt.tx-dlf-metadata-type,dt.tx-
 
 .tx-dlf-toolbox div {
     margin:5px;
+}
+
+span.textline {
+    line-height: 2rem;
 }
 
 #tx-dlf-map {
