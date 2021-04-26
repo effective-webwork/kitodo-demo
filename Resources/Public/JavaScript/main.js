@@ -207,6 +207,11 @@ $('div.tx-dlf-navigation-edit').hide();
 $('div.tx-dlf-navigation-editRemove').hide();
 $('div.tx-dlf-navigation-magnifier').hide();
 
+// link transformation
+$('.transformlink').each(function () {
+    $(this).html('<a href="' + $(this).text() + '">Link</a>');
+});
+
 // license
 
 // label
