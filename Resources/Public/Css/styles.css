@@ -1075,10 +1075,20 @@ span.textline {
     color:#fff;
 }
 
+.detail-view-tools .dropdown-menu input[type=checkbox]:checked ~ ul div.tx-dlf-toolbox > ul {
+    background-color: #fff;
+    right: 5%;
+    min-width: 200px;
+}
+
+#tx-dlf-search-in-document-results ul {
+    display: block;
+    background-color: #FFF;
+}
+
 .detail-view-tools .dropdown-menu input[type=checkbox]:checked ~ ul,
-.detail-view-tools .dropdown-menu input[type=checkbox]:checked ~ ul ul {
+.detail-view-tools .dropdown-menu input[type=checkbox]:checked ~ ul ul:nth-child(1) {
     display:block;
-    background:#fff;
     position:absolute;
     z-index:5;
     margin-right:30px;
