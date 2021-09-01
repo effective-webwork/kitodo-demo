@@ -186,7 +186,7 @@ if ($('.tx-dlf-navigation-magnifier').length) {
 
 // TOOLBOX
 $('aside ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-tools" style="margin-left:10px;"><div id="c16" class="detail-view-tools" style="display:inline-block;">' + $('.detail-view-tools').html() + '</div></li>');
-$('aside li.tx-dlf-navigation-tools label').text("").prepend('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-tool.svg" alt="Toolbox">');
+$('aside li.tx-dlf-navigation-tools label[for="checkbox-menu2"]').text("").prepend('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-tool.svg" alt="Toolbox">');
 $('aside .detail-view-itemoptions .detail-view-tools').hide();
 
 
