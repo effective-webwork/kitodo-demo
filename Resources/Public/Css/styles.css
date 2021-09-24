@@ -1611,7 +1611,11 @@ calendar + listview
     transition: all 0.1s ease-in-out;
 }
 
-/* ist neu */ .calendar-view:hover {
+.tx-dlf-calendar-years .year-view li {
+    width: calc(33.33%);
+}
+
+.calendar-view:hover {
 	background: #242424;
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
 }
