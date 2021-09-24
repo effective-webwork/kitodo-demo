@@ -1234,11 +1234,16 @@ span.textline {
     background:#fff;
     box-shadow:0 0 0 1px #eee;
     border-radius:2px;
-    -webkit-transition:all .5s ease-in-out;
-    -moz-transition:all .5s ease-in-out;
-    transition:all .5s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
     margin:0 30px 40px 0;
     padding:20px;
+}
+
+.calendar-view:hover {
+	background: #242424;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
 }
 
 .tx-dlf-newspaper-years .year-view li {
@@ -1478,7 +1483,7 @@ strong,.tx-dlf-statistics p:first-child,dd.tx-dlf-metadata-place,dd.tx-dlf-metad
     padding-bottom:10px;
 }
 
-.tx-dlf-collection-list li:hover,.tx-dlf-listview-list li:hover,.calendar-view:hover,.tx-dlf-newspaper-years .year-view li:hover,.tx-dlf-newspaper-calendar .list-view:hover,.tx-dlf-basket-list:hover {
+.tx-dlf-collection-list li:hover,.tx-dlf-listview-list li:hover,.tx-dlf-newspaper-years .year-view li:hover,.tx-dlf-newspaper-calendar .list-view:hover,.tx-dlf-basket-list:hover {
     background:#eee;
     box-shadow:0 0 0 1px #eee;
 }
@@ -1588,38 +1593,27 @@ calendar + listview
     margin: 0 15px;
     display: table;
     width: calc(100% - 30px);
-    /* color: #fff; */
 }
 
-.calendar-items {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
-    list-style-type: none;
-}
 
-.calendar-view:hover {
-    background: #524848 !important;
-    box-shadow: 0 0 0 1px #eee;
-}
 
 .calendar-view,
 .tx-dlf-calendar-years .year-view li {
     position: relative;
-    padding: 30px;
+    padding: 20px;
+    margin: 30px 30px 0 0;
     text-align: center;
-    background: rgb(110 110 110);
-    background: -moz-linear-gradient(-45deg, rgba(78,42,45,1) 0%, rgba(36,36,36,1) 100%);
-    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(78,42,45,1)), color-stop(100%, rgba(36,36,36,1)));
-    background: -webkit-linear-gradient(-45deg, rgb(110 110 110) 0%, rgba(36,36,36,1) 100%);
-    background: -o-linear-gradient(-45deg, rgba(78,42,45,1) 0%, rgba(36,36,36,1) 100%);
-    background: -ms-linear-gradient(-45deg, rgba(78,42,45,1) 0%, rgba(36,36,36,1) 100%);
-    background: linear-gradient(135deg, rgb(110 110 110) 0%, rgba(36,36,36,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e2a2d', endColorstr='#242424', GradientType=1 );
-    -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.75);
+    background: #444;
     color: #fff;
-    width: 66.66%;
+    width: calc(33.33% - 80px);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+/* ist neu */ .calendar-view:hover {
+	background: #242424;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
 }
 
 table.month {
@@ -1712,9 +1706,18 @@ table.month h4:hover {
 }
 
 .tx-dlf-calendar .list-view li {
-    border-top: 1px solid #505050;
+    border-top: 1px solid #fff;
+    background: #444;
     padding: 15px 15px;
     list-style-type: none;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+.tx-dlf-calendar .list-view li:hover {
+    background: #242424;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
 }
 
 .allyears {
@@ -1836,13 +1839,8 @@ a.selection-active {
         width:65%;
     }
 
-    .calendar-items,
-    .tx-dlf-calendar-years .year-view ul {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
     .tx-dlf-collection-list li, .tx-dlf-newspaper-years .year-view li, .calendar-view {
-        width: calc(66.66%);
+        width: calc(50% - 90px);
         margin: 0 30px 40px 0;
     }
 
@@ -1861,12 +1859,6 @@ a.selection-active {
 /*----------------------------------------------------------------------
 max 1530px
 ----------------------------------------------------------------------*/
-@media only screen and (max-width: 1530px) {
-    .calendar-items,
-    .tx-dlf-calendar-years .year-view ul {
-        grid-template-columns: 1fr 1fr;
-    }
-}
 
 @media only screen and (max-width: 1024px) {
     header.header-portal-home {
@@ -1884,9 +1876,14 @@ max 1530px
         margin-bottom:15px;
     }
 
+	.calendar-items,
+	.tx-dlf-newspaper-years .year-view ul {
+	    margin: 0 0 0 0;
+	}
+
     .tx-dlf-collection-list li,.tx-dlf-newspaper-years .year-view li,.calendar-view {
-        width:calc(50% - 70px);
-        margin:0 30px 40px 0;
+        width: calc(100%);
+        margin: 0 0 40px 0;
     }
 
     .portal-claim {
@@ -2026,11 +2023,6 @@ max 1530px
         margin-right:0;
     }
 
-    .calendar-items,
-    .tx-dlf-calendar-years .year-view ul {
-        grid-template-columns: 1fr;
-    }
-
     .tx-dlf-calendar-years .year-view li a,
     .tx-dlf-calendar .list-view a {
         font-size: 20px;
@@ -2041,12 +2033,6 @@ max 1530px
 /*----------------------------------------------------------------------
 max 1000px
 ----------------------------------------------------------------------*/
-@media only screen and (max-width: 1000px) {
-    .calendar-items,
-    .tx-dlf-calendar-years .year-view ul {
-        grid-template-columns: 1fr 1fr;
-    }
-}
 
 @media only screen and (max-width: 700px) {
 
@@ -2137,10 +2123,6 @@ max 1000px
     .tx-dlf-collection-list li,.tx-dlf-newspaper-years .year-view li,.calendar-view {
         width:100%;
         margin:0 0 40px;
-    }
-
-    .tx-dlf-newspaper-years .year-view ul,.calendar-items {
-        margin:0;
     }
 
     .tx-dlf-collection-thumbnail {
@@ -2300,12 +2282,6 @@ max 1000px
 
     .tx-dlf-calendar, .tx-dlf-calendar-years {
         padding: 30px 15px;
-    }
-
-    .calendar-items,
-    .tx-dlf-calendar-years .year-view ul {
-        grid-template-columns: 1fr;
-        grid-gap: 15px;
     }
 
     .tx-dlf-calendar .meta-header,
