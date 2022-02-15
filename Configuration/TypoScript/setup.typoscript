@@ -5,10 +5,12 @@ plugin.tx_presentationpackage.view {
 }
 
 page.includeCSS {
-    main = EXT:presentation_package/Resources/Public/Css/main.css
-    styles = EXT:presentation_package/Resources/Public/Css/styles.css
+#    main = EXT:presentation_package/Resources/Public/Css/main.css
+#    styles = EXT:presentation_package/Resources/Public/Css/styles.css
+    presentation = EXT:presentation_package/Resources/Public/Css/kitodoPresentation.css
 }
 
 page.includeJS {
     main = EXT:presentation_package/Resources/Public/JavaScript/main.js
+    kitodoPresentation = EXT:presentation_package/Resources/Public/JavaScript/kitodoPresentation.js
 }

@@ -131,7 +131,7 @@ $('.tx-dlf-navigation-first a, .tx-dlf-navigation-first span')
 
 $('.tx-dlf-navigation-prev a, .tx-dlf-navigation-prev span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-doubleleft.svg" alt="Back 5 Pages">');
+    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-doubleleft.svg" alt="Back 5 Page">');
 
 $('.tx-dlf-navigation-back a, .tx-dlf-navigation-back span')
     .text("")
@@ -143,7 +143,7 @@ $('.tx-dlf-navigation-next a, .tx-dlf-navigation-next span')
 
 $('.tx-dlf-navigation-fwd a, .tx-dlf-navigation-fwd span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-doubleright.svg" alt="Forward 5 Pages">');
+    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-doubleright.svg" alt="Forward 5 Page">');
 
 $('.tx-dlf-navigation-last a, .tx-dlf-navigation-last span')
     .text("")
