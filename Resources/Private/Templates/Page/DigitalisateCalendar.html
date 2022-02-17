@@ -1,0 +1,68 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+
+    <f:layout name="Default" />
+
+    <f:section name="Configuration">
+        <flux:form id="digitalisateCalendar" label="Digitalisate Kalender">
+            <!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:form tag -->
+        </flux:form>
+
+        <flux:grid>
+            <!-- Edit this grid to change the "backend layout" structure -->
+            <flux:grid.row>
+                <flux:grid.column colPos="0" colspan="2" name="Search" label="Suche" />
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="2" colspan="1" name="Description" label="Beschreibung" />
+                <flux:grid.column colPos="3" colspan="1" name="Metadata" label="Metadaten" />
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="1" colspan="2" name="Main" label="Main" />
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="4" colspan="2" name="Teaser" label="Teaser Elemente" />
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="5" colspan="2" name="Info" label="Zusatzinfo" />
+            </flux:grid.row>
+        </flux:grid>
+    </f:section>
+
+    <f:section name="Header">
+    </f:section>
+
+    <f:section name="Main">
+        <header>
+            <section class="portal-meta">
+                <article class="breadcrumb">
+                    <a href="">Digitalisierte Bestände</a> / {v:page.info(field:'title')}
+                </article>
+            </section>
+
+            <section class="tx-dlf-search clear">
+                <v:content.render column="0" />
+            </section>
+
+            <section class="collection-intro">
+                <article class="calendar-description">
+                    <v:content.render column="2" />
+                </article>
+                <article class="calendar-metadata detail-view-itemoptions">
+                    <v:content.render column="3" />
+                </article>
+            </section>
+        </header>
+
+        <main>
+            <v:content.render column="1" />
+            <f:render partial="DigitalisateTeaserSlot"/>
+        </main>
+    </f:section>
+
+    <f:section name="Footer">
+        <f:render partial="Footer"/>
+    </f:section>
+</div>

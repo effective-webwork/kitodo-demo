@@ -1,0 +1,66 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
+
+    <f:layout name="Default" />
+
+    <f:section name="Configuration">
+        <flux:form id="DigitalisateList" label="Digitalisate Trefferliste">
+            <!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:form tag -->
+        </flux:form>
+
+        <flux:grid>
+            <!-- Edit this grid to change the "backend layout" structure -->
+            <flux:grid.row>
+                <flux:grid.column colPos="0" colspan="2" name="Content" label="Suche" />
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="1" colspan="1" name="Content" label="Main" />
+                <flux:grid.column colPos="3" colspan="1" name="Content" label="Facetten" />
+            </flux:grid.row>
+        </flux:grid>
+    </f:section>
+
+    <f:section name="Main">
+        <pp:menuHeaderSync />
+        <f:render partial="DigitalisateHeader" arguments="{_all}"/>
+
+        <header>
+            <section class="portal-meta">
+                <article class="breadcrumb">
+                    <a href="">Digitalisierte Bestände</a> / Trefferliste
+                </article>
+            </section>
+
+            <section class="tx-dlf-search-wrapper clear">
+                <v:content.render column="0" />
+            </section>
+        </header>
+
+        <main class="clear" id="search-list-view">
+            <aside>
+                <v:content.render column="3" />
+            </aside>
+            <section id="main-content">
+                <div id="c6">
+                    <v:content.render column="1" />
+                    <div id="pagingForm" style="background-color:#fff;">
+                        <div class="pagingFormDiv">
+                            <f:form>
+                                <f:form.textfield id="pagerFormText" size="10" placeholder="Springe zu" name="pagerFormText"/>
+                                <f:form.hidden id="pagerFormHidden" name="tx_dlf[pointer]"/>
+                                <f:form.submit value="Abschicken"/>
+                            </f:form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <f:render partial="DigitalisateFooter"  arguments="{_all}" />
+
+    </f:section>
+
+</div>
