@@ -1,7 +1,8 @@
 <div xmlns="http://www.w3.org/1999/xhtml" lang="en"
      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
-     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
 
     <f:layout name="Default" />
 
@@ -35,7 +36,10 @@
         </flux:grid>
     </f:section>
 
-    <f:section name="Header">
+    <f:section name="Main">
+        <pp:menuHeaderSync />
+        <f:render partial="DigitalisateHeader" arguments="{_all}"/>
+
         <header class="header-portal-home" style="background:url({f:uri.resource(path: 'Images/ph-background.jpg')}) no-repeat top center #242424;background-size: cover;">
             <section class="portal-meta">
 
@@ -69,9 +73,7 @@
             </section>
 
         </header>
-    </f:section>
 
-    <f:section name="Main">
         <main>
             <div class="tx-dlf-collection">
                 <v:page.menu entryLevel="0" expandAll="0" levels="0" showHiddenInMenu="1">
@@ -123,10 +125,8 @@
 
         </main>
 
-    </f:section>
+        <f:render partial="DigitalisateFooter"/>
 
-    <f:section name="Footer">
-        <f:render partial="Footer"/>
     </f:section>
 
 </div>

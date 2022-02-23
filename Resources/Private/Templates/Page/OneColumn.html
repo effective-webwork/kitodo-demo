@@ -1,7 +1,8 @@
 <div xmlns="http://www.w3.org/1999/xhtml" lang="en"
      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
-     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
 
     <f:layout name="Default" />
 
@@ -22,20 +23,17 @@
         </flux:grid>
     </f:section>
 
-    <f:section name="Header">
-        <f:render partial="Header" />
-    </f:section>
-
     <f:section name="Main">
+        <pp:menuHeaderSync />
+        <f:render partial="DigitalisateHeader" arguments="{_all}"/>
+
         <main>
             <section>
                 <v:content.render column="1" />
             </section>
         </main>
-    </f:section>
 
-    <f:section name="Footer">
-        <f:render partial="Footer"/>
+        <f:render partial="DigitalisateFooter"/>
     </f:section>
 
 </div>

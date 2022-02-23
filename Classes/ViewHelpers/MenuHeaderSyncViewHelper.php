@@ -8,6 +8,8 @@ class MenuHeaderSyncViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 
         $content = file_get_contents('https://www.sub.uni-hamburg.de/startseite.html?type=6666');
 
+        $content = str_replace('<script src="https://www.sub.uni-hamburg.de/typo3conf/ext/subhh_website/Resources/Public/js/sub-website.min.js?1590473433" type="text/javascript"></script>', '', $content);
+
         $content = explode('<div id="content_cols" class="clear" style="background: url(fileadmin/redaktion/Startseite/architectura.jpg) no-repeat center center fixed #8D0D1B; background-size: cover;">
         </div>', $content);
 
