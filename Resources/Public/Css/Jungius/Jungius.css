@@ -1325,18 +1325,18 @@ div.active-facets a:hover {
     display: inline-block;
 }
 
-li.Monographie span {background: url(../Images/Jungius/book.png) no-repeat;}
-li.Faszikel span {background: url(../Images/Jungius/multipart.png) no-repeat;}
-li.Band span {background: url(../Images/Jungius/book.png) no-repeat;}
+li.Monographie span {background: url(../../Images/Jungius/book.png) no-repeat;}
+li.Faszikel span {background: url(../../Images/Jungius/multipart.png) no-repeat;}
+li.Band span {background: url(../../Images/Jungius/book.png) no-repeat;}
 li.Graphik span,
 li.image span,
-li.portrait span {background: url(../Images/Jungius/graphic.png) no-repeat;}
-li.journal span {background: url(../Images/Jungius/journal.png) no-repeat;}
-li.Brief span {background: url(../Images/Jungius/letter2.png) no-repeat;}
-li.foto span {background: url(../Images/Jungius/foto.png) no-repeat;}
-li.handwriting span {background: url(../Images/Jungius/handwriting.png) no-repeat;}
-li.Karte span {background: url(../Images/Jungius/map.png) no-repeat;}
-li.type-unknown span {background: url(../Images/Jungius/unknown.png) no-repeat;}
+li.portrait span {background: url(../../Images/Jungius/graphic.png) no-repeat;}
+li.journal span {background: url(../../Images/Jungius/journal.png) no-repeat;}
+li.Brief span {background: url(../../Images/Jungius/letter2.png) no-repeat;}
+li.foto span {background: url(../../Images/Jungius/foto.png) no-repeat;}
+li.handwriting span {background: url(../../Images/Jungius/handwriting.png) no-repeat;}
+li.Karte span {background: url(../../Images/Jungius/map.png) no-repeat;}
+li.type-unknown span {background: url(../../Images/Jungius/unknown.png) no-repeat;}
 
 .filter-box input[type="text"] {
     padding: 10px 15px;
@@ -1437,5 +1437,5 @@ span[class^='jungius-filter-'] li a:hover {
 }
 
 main {
-    background: url(../Images/Jungius/bg-jungius.jpeg) no-repeat center center fixed #8D0D1B; background-size: cover;
+    background: url(../../Images/Jungius/bg-jungius.jpeg) no-repeat center center fixed #8D0D1B; background-size: cover;
 }
