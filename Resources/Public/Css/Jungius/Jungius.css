@@ -1439,3 +1439,24 @@ span[class^='jungius-filter-'] li a:hover {
 main {
     background: url(../../Images/Jungius/bg-jungius.jpeg) no-repeat center center fixed #8D0D1B; background-size: cover;
 }
+
+main section {
+    background-color: #242424eb;
+}
+
+.tx-dlf-listview, .tx-dlf-ListView {
+    background-color: initial;
+}
+
+main section > div {
+    padding: 20px;
+}
+
+aside > div {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+aside:first-child {
+    padding-top: 20px;
+}
