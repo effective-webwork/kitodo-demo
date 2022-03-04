@@ -39,7 +39,7 @@ textarea {
 }
 
 a {
-    color: #242424;
+    color: #FEFEFE;
     text-decoration: underline;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -1937,6 +1937,45 @@ footer {
     background: rgb(141, 13, 28);
     color: #fff;
     box-shadow: 0px 3px 0px 0px rgb(86, 7, 16);
+}
+
+/*----------------------------------------------------------------------
+grid content element
+----------------------------------------------------------------------*/
+.grid-wrapper-2-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+.col-1-2 {
+    grid-column: 1;
+    grid-row: 1;
+}
+.col-2-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+main section {
+    padding-top: 17px;
+    background-color: #242424;
+}
+
+.frame-type-presentationpackage_gridtwocolumn {
+    padding: 17px 30px 0px 30px;
+}
+
+div.ce-left {
+    text-align: left;
+}
+
+div.ce-right {
+    text-align: right
+}
+
+div.ce-center {
+    text-align: center;
 }
 
 
