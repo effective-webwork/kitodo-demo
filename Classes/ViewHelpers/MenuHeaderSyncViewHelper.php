@@ -10,6 +10,8 @@ class MenuHeaderSyncViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 
         $content = str_replace('<script src="https://www.sub.uni-hamburg.de/typo3conf/ext/subhh_website/Resources/Public/js/sub-website.min.js?1590473433" type="text/javascript"></script>', '', $content);
 
+        $content = str_replace('<link rel="stylesheet" type="text/css" href="https://www.sub.uni-hamburg.de/typo3conf/ext/subhh_website/Resources/Public/css/styles.css?1641366061" media="screen">', '', $content);
+
         // replace links
         $content = str_replace('https://www.sub.uni-hamburg.de/impressum.html', 'https://digitalisate.sub.uni-hamburg.de/impressum.html', $content);
         $content = str_replace('https://www.sub.uni-hamburg.de/datenschutzerklaerung.html', 'https://digitalisate.sub.uni-hamburg.de/datenschutzerklaerung.html', $content);
