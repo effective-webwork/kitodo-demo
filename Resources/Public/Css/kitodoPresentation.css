@@ -1549,11 +1549,15 @@ span.fullPdfDownloadSpan img {
 }
 
 .dlf-search-switch {
-    display: inline-flex;
+    display: flex;
     overflow: hidden;
     justify-content: center;
     margin-top: 15px;
     margin-bottom: 20px;
+}
+
+.tx-dlf-search-wrapper .dlf-search-switch {
+    display: inline-flex;
     margin-left: 50px;
 }
 
@@ -1956,10 +1960,6 @@ grid content element
 .col-2-2 {
     grid-column: 2;
     grid-row: 1;
-}
-
-main section {
-    background-color: #242424;
 }
 
 .frame-type-presentationpackage_gridtwocolumn {
