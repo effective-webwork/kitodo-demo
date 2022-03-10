@@ -56,7 +56,7 @@ $(document).ready(function() {
 });
 
 function replaceRssFeedImage() {
-    $('.tx-dlf-rss-feed a img').attr('src', 'https://digitalisate.sub.uni-hamburg.de/typo3conf/ext/subhh_website/Resources/Public/img/rss-feed.png');
+    $('.tx-dlf-rss-feed a img').attr('src', 'https://digitalisate.sub.uni-hamburg.de/typo3conf/ext/presentation_package/Resources/Public/Images/rss-feed.png');
 }
 
 function renameMetadataTab() {
@@ -93,7 +93,7 @@ function fixLabelInputMetadata() {
 
 function addFullPdfDownload() {
     $('.tx-dlf-pdfdownloadtool')
-        .append('<span class="fullPdfDownloadSpan"><a id="fullPdfDownload" href="#"><img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-pdf-white.svg" alt="PDF Download"></a></span>');
+        .append('<span class="fullPdfDownloadSpan"><a id="fullPdfDownload" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-pdf-white.svg" alt="PDF Download"></a></span>');
 
     $('#fullPdfDownload').on('click', function (event) {
         event.preventDefault();
@@ -111,7 +111,7 @@ function addFullPdfDownload() {
 function addThumbnailPlaceholder() {
     $('.tx-dlf-listview-thumbnail').each(function () {
         if ($(this).children('img').length == 0) {
-            $(this).append('<img class="no-hover" src="/typo3conf/ext/subhh_website/Resources/Public/img/document-collection.png"/>');
+            $(this).append('<img class="no-hover" src="/typo3conf/ext/presentation_package/Resources/Public/Images/document-collection.png"/>');
         }
     });
 }
@@ -202,11 +202,11 @@ function setToolboxControl() {
     // PDF download is build in addFullPdfDownload function
     $('.tx-dlf-tools-fulltext span.no-fulltext')
         .text('')
-        .append('<img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-text-white.svg" alt="Kein Volltext vorhanden">');
+        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg" alt="Kein Volltext vorhanden">');
 
     $('.tx-dlf-tools-fulltext a')
         .text('')
-        .append('<img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-text-white.svg" alt="Volltext anzeigen">');
+        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg" alt="Volltext anzeigen">');
 
 
 
@@ -860,37 +860,37 @@ function setNavigationControls() {
     // set icons
     $('.tx-dlf-navigation .tx-dlf-navigation-prev a, .tx-dlf-navigation .tx-dlf-navigation-prev span')
         .text("")
-        .append('<img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-arrow-left.svg" alt="Previous Page">');
+        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-left.svg" alt="Previous Page">');
 
     $('.tx-dlf-navigation .tx-dlf-navigation-next span, .tx-dlf-navigation .tx-dlf-navigation-next a')
         .text("")
-        .append('<img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-arrow-right.svg" alt="Next Page">');
+        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-right.svg" alt="Next Page">');
 
     $('.tx-dlf-navigation .tx-dlf-navigation-zoom-in span, .tx-dlf-navigation .tx-dlf-navigation-zoom-in a')
         .text("")
-        .append('<img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-zoomin.svg" alt="Zoom in">');
+        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomin.svg" alt="Zoom in">');
 
     $('.tx-dlf-navigation .tx-dlf-navigation-zoom-out span, .tx-dlf-navigation .tx-dlf-navigation-zoom-out a')
         .text("")
-        .append('<img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-zoomout.svg" alt="Zoom out">');
+        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomout.svg" alt="Zoom out">');
 
     $('.tx-dlf-navigation .tx-dlf-navigation-rotate-left span, .tx-dlf-navigation .tx-dlf-navigation-rotate-left a')
         .text("")
-        .append('<img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-rotateleft.svg" alt="Rotate left">');
+        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateleft.svg" alt="Rotate left">');
 
     $('.tx-dlf-navigation .tx-dlf-navigation-rotate-right span, .tx-dlf-navigation .tx-dlf-navigation-rotate-right a')
         .text("")
-        .append('<img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-rotateright.svg" alt="Rotate right">');
+        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateright.svg" alt="Rotate right">');
 
     $('.tx-dlf-navigation .tx-dlf-navigation-double span, .tx-dlf-navigation .tx-dlf-navigation-double a')
         .text("")
-        .append('<img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-doublepage.svg" alt="Show double pages">');
+        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-doublepage.svg" alt="Show double pages">');
 
     $('ul.tx-dlf-navigation')
-        .append('<li><a id="collapse" class="collexpand" href="#"><img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-arrow-bigger.svg" alt="Größer"></a></li>');
+        .append('<li><a id="collapse" class="collexpand" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-bigger.svg" alt="Größer"></a></li>');
 
     $('ul.tx-dlf-navigation')
-        .append('<li><a id="expand" class="collexpand" href="#"><img src="/typo3conf/ext/subhh_website/Resources/Public/img/icon-arrow-smaller.svg" alt="Kleiner"></a></li>');
+        .append('<li><a id="expand" class="collexpand" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-smaller.svg" alt="Kleiner"></a></li>');
 
     $(".tx-dlf-navigation-zoom-in").click(function(event) {
         event.preventDefault();

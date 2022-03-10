@@ -1549,11 +1549,12 @@ span.fullPdfDownloadSpan img {
 }
 
 .dlf-search-switch {
-    display: flex;
+    display: inline-flex;
     overflow: hidden;
     justify-content: center;
     margin-top: 15px;
     margin-bottom: 20px;
+    margin-left: 50px;
 }
 
 .dlf-search-switch input {
@@ -1958,7 +1959,6 @@ grid content element
 }
 
 main section {
-    padding-top: 17px;
     background-color: #242424;
 }
 
