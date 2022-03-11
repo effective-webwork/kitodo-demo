@@ -1,0 +1,49 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+    <f:layout name="Content"/>
+
+    <f:section name="Configuration">
+        <flux:form id="AccordionElement"
+                   label="Accordion Element"
+                   description="Adds an accordion element content area.">
+        </flux:form>
+
+        <flux:grid>
+            <flux:grid.row>
+                <flux:grid.column
+                        style="width:100%;"
+                        name="accordionElementContent"
+                        label="Accordion Element"
+                        colPos="0"
+                        colspan="1"/>
+            </flux:grid.row>
+        </flux:grid>
+    </f:section>
+
+    <f:section name="Main">
+
+        <f:if condition="{record.header_layout} < 99">
+            <f:if condition="{record.header_layout}"><h{record.header_layout} class="accordion_header header_button_width_100per"></f:if>
+            <f:if condition="{record.header_layout}==0"><h2 class="accordion_header header_button_width_100per"></f:if>
+        </f:if>
+
+        <a href="" class="button_width_100per clear button_grey" data-accordion-element="">
+
+            <span>{record.header}</span>
+            <em class="subhh-icon_plus"></em>
+        </a>
+        <f:if condition="{record.header_layout} < 99">
+            <f:if condition="{record.header_layout}==0"></h2></f:if>
+            <f:if condition="{record.header_layout}"></h{record.header_layout}></f:if>
+        </f:if>
+        <ul style="display: none;">
+            <li>
+                <flux:content.render area="accordionElementContent"/>
+            </li>
+        </ul>
+    </f:section>
+
+</div>

@@ -13,6 +13,7 @@ page.includeCSS {
 
 page.includeJSFooter {
     subhh_main = https://www.sub.uni-hamburg.de/typo3conf/ext/subhh_website/Resources/Public/js/sub-website.min.js
+    accordion = EXT:presentation_package/Resources/Public/JavaScript/Accordion.js
     jsCookie = EXT:presentation_package/Resources/Public/JavaScript/Jungius/jsCookie.js
     main = EXT:presentation_package/Resources/Public/JavaScript/main.js
     kitodoPresentation = EXT:presentation_package/Resources/Public/JavaScript/kitodoPresentation.js
