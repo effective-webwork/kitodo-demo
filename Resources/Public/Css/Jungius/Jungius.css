@@ -1461,3 +1461,35 @@ aside > div {
 aside:first-child {
     padding-top: 20px;
 }
+
+#main-content a {
+    color: #FFF;
+    text-decoration: underline;
+    padding: 5px;
+    margin: -5px;
+}
+
+#main-content a:hover {
+    text-decoration: none;
+    color: #560710;
+    background: #FFF;
+    border-radius: 3px;
+}
+
+#main-content a.image-link:hover {
+    background: none;
+}
+
+#main-content a.image-link {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+#main-content h3 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    padding-bottom: 30px;
+}
+
