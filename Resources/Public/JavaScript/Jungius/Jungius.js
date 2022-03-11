@@ -3,8 +3,8 @@ $(document).ready(function() {
 
     var detailPageName      = 'nc/detailseite.html',
         detailPageName2     = 'detailseite.html',
-        detailPageId        = 1939,
-        detailFullscreenId  = 1943;
+        detailPageId        = 41,
+        detailFullscreenId  = 51;
 
     //set title filter placeholder
     $('.tx-dlf-search-query-0').attr('placeholder', 'Nach welchem Titel suchen Sie?');
