@@ -1,3 +1,7 @@
+const pageAjax = 47,
+    pageAjaxAll = 48,
+    pageFilter = 49;
+
 $.ajaxSetup({ cache: false });
 
 function getFilter() {
@@ -8,7 +12,7 @@ function getFilter() {
     $('input#search_signature_mobile').prop( "disabled", true );
 
     // Filter page
-    url = 'index.php?id=1982';
+    url = 'index.php?id=' + pageFilter;
 
     $.ajax({
         url: url,
@@ -59,7 +63,7 @@ function getRequest(pageid, reset){
 
     url = 'index.php?id=1927&tx_dlf%5Bpointer%5D='+pageid+''; // 1925
     if (reset || pageid == 1){
-        url = 'index.php?id=1921'+lastParams+'&tx_dlf%5Bpointer%5D='+pageid+'';
+        url = 'index.php?id=' + pageAjax + lastParams + '&tx_dlf%5Bpointer%5D=' + pageid + '';
 
         var searchParam = '&tx_dlf%5Bcollection%5D=1';
         if (!title) {
@@ -75,7 +79,7 @@ function getRequest(pageid, reset){
 
             if (reset || pageid == 1){
                 // second request for all entries
-                url = 'index.php?id=1927'+lastParams+'&tx_dlf%5Bpointer%5D='+pageid+'';
+                url = 'index.php?id=' + pageAjaxAll + lastParams + '&tx_dlf%5Bpointer%5D=' + pageid + '';
                 var searchParam = '&tx_dlf%5Bcollection%5D=1';
                 if (!title) {
                     searchParam += '&tx_dlf%5Bquery%5D=%2A';
