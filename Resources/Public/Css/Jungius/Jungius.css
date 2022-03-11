@@ -1493,3 +1493,10 @@ aside:first-child {
     padding-bottom: 30px;
 }
 
+.content_info_right {
+    color: #FFFFFF;
+}
+
+.content_info_left {
+    color: #FFFFFF;
+}
