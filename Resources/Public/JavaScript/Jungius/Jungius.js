@@ -115,7 +115,9 @@ function setFacetClick() {
     $('[class^=jungius-filter-] li a, .active-facets a').on('click', function(event) {
         if ($(this)[0].id != "titleSearchFacet") {
             // save new facet value
-            Cookie.set('fq', encodeURIComponent($(this)[0].search));
+            var searchQuery = $(this)[0].search;
+            searchQuery = searchQuery.replace(/id=([0-9]+)/g, '');
+            Cookie.set('fq', encodeURIComponent(searchQuery));
         }
     });
 

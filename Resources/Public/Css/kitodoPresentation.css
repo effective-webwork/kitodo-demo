@@ -1984,6 +1984,7 @@ Accordion
 
 main div.frame {
     padding-left: 25px;
+    padding-right: 25px;
 }
 
 ul.accordion ul {
