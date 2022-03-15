@@ -4,7 +4,7 @@
     $(document).ready(function() {
 
         $('[data-accordion]').each(function() {
-            var $firstLevelLinks = $(this).find('> div > a,> div > h2 > a,> div > h3 > a,> div > h4 > a,> div > h5 > a');
+            var $firstLevelLinks = $(this).find('> div > li > a,> div > li > h2 > a,> div > li > h3 > a,> div > li > h4 > a,> div > li > h5 > a');
 
             $firstLevelLinks.click(function(event) {
                 event.preventDefault();
