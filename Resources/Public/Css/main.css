@@ -312,11 +312,3 @@ dt.tx-dlf-metadata-title {
 .tx-dlf-listview-preview em {
     background-color: yellow;
 }
-
-main div.frame {
-    padding-left: 25px;
-}
-
-ul.accordion ul {
-    padding-top: 20px;
-}
