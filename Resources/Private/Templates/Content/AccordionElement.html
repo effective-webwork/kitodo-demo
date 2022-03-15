@@ -25,25 +25,27 @@
 
     <f:section name="Main">
 
-        <f:if condition="{record.header_layout} < 99">
-            <f:if condition="{record.header_layout}"><h{record.header_layout} class="accordion_header header_button_width_100per"></f:if>
-            <f:if condition="{record.header_layout}==0"><h2 class="accordion_header header_button_width_100per"></f:if>
-        </f:if>
+        <li>
+            <f:if condition="{record.header_layout} < 99">
+                <f:if condition="{record.header_layout}"><h{record.header_layout} class="accordion_header header_button_width_100per"></f:if>
+                <f:if condition="{record.header_layout}==0"><h2 class="accordion_header header_button_width_100per"></f:if>
+            </f:if>
 
-        <a href="" class="button_width_100per clear button_grey" data-accordion-element="">
+            <a href="" class="button_width_100per clear button_grey" data-accordion-element="">
 
-            <span>{record.header}</span>
-            <em class="subhh-icon_plus"></em>
-        </a>
-        <f:if condition="{record.header_layout} < 99">
-            <f:if condition="{record.header_layout}==0"></h2></f:if>
-            <f:if condition="{record.header_layout}"></h{record.header_layout}></f:if>
-        </f:if>
-        <ul style="display: none;">
-            <li>
-                <flux:content.render area="accordionElementContent"/>
-            </li>
-        </ul>
+                <span>{record.header}</span>
+                <em class="subhh-icon_plus"></em>
+            </a>
+            <f:if condition="{record.header_layout} < 99">
+                <f:if condition="{record.header_layout}==0"></h2></f:if>
+                <f:if condition="{record.header_layout}"></h{record.header_layout}></f:if>
+            </f:if>
+            <ul style="display: none;">
+                <li>
+                    <flux:content.render area="accordionElementContent"/>
+                </li>
+            </ul>
+        </li>
     </f:section>
 
 </div>
