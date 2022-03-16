@@ -61,7 +61,7 @@ function getRequest(pageid, reset){
         lastParams += '&tx_dlf%5Bquery%5D='+title;
     }
 
-    url = 'index.php?id=1927&tx_dlf%5Bpointer%5D='+pageid+''; // 1925
+    url = 'index.php?id=' + pageAjaxAll + '&tx_dlf%5Bpointer%5D='+pageid+''; // 1925
     if (reset || pageid == 1){
         url = 'index.php?id=' + pageAjax + lastParams + '&tx_dlf%5Bpointer%5D=' + pageid + '';
 
