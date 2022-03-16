@@ -174,39 +174,39 @@ function autoCompleteSignature() {
             .appendTo( ul );
     };
 
-    $( "#search_signature_mobile" ).autocomplete({
-        minLength: 3,
-        source: signatureArray,
-        open: function (event, ui) {
-            $( "#live_search_signature" ).show();
-        },
-        close: function (event, ui) {
-            $( "#live_search_signature" ).hide();
-        },
-        focus: function( event, ui ) {
-            $( "#search_signature" ).val( ui.item.label );
-            return false;
-        },
-        select: function( event, ui ) {
-            $( "#search_signature" ).val( ui.item.label );
-            $( "#live_search_signature" ).html( ui.item.label );
-            // send filter request
-            // setFilter(ui.item.value);
-            var newUrl = location.href + ui.item.search;
-            newUrl = newUrl.replace(/id=([0-9]+)/g, '');
-            Cookie.set('fq', encodeURIComponent(newUrl));
-            getRequest(1);
-            setTimeout(function(){
-                location.reload(true);
-            }, 2000);
-
-            return false;
-        }
-    }).autocomplete( "instance" )._renderItem = function( ul, item ) {
-        return $( "<li>" )
-            .append( "<a>" + item.label + "</a>" )
-            .appendTo( ul );
-    };
+    // $( "#search_signature_mobile" ).autocomplete({
+    //     minLength: 3,
+    //     source: signatureArray,
+    //     open: function (event, ui) {
+    //         $( "#live_search_signature" ).show();
+    //     },
+    //     close: function (event, ui) {
+    //         $( "#live_search_signature" ).hide();
+    //     },
+    //     focus: function( event, ui ) {
+    //         $( "#search_signature" ).val( ui.item.label );
+    //         return false;
+    //     },
+    //     select: function( event, ui ) {
+    //         $( "#search_signature" ).val( ui.item.label );
+    //         $( "#live_search_signature" ).html( ui.item.label );
+    //         // send filter request
+    //         // setFilter(ui.item.value);
+    //         var newUrl = location.href + ui.item.search;
+    //         newUrl = newUrl.replace(/id=([0-9]+)/g, '');
+    //         Cookie.set('fq', encodeURIComponent(newUrl));
+    //         getRequest(1);
+    //         setTimeout(function(){
+    //             location.reload(true);
+    //         }, 2000);
+    //
+    //         return false;
+    //     }
+    // }).autocomplete( "instance" )._renderItem = function( ul, item ) {
+    //     return $( "<li>" )
+    //         .append( "<a>" + item.label + "</a>" )
+    //         .appendTo( ul );
+    // };
 }
 
 function ieFacetClick() {
