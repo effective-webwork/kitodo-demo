@@ -94,7 +94,7 @@ function getRequest(pageid, reset){
                         // get all filter
                         getFilter();
 
-                        var hitsRegEx = /\s(\d+)\D*(\d+)/
+                        var hitsRegEx = /(\d+)\D*(\d+)/
 
                         var matchHits = $(result).find(".tx-dlf-search-numHits").text().match(hitsRegEx);
                         if ($(".active-facets a").length > 0) {
@@ -106,7 +106,7 @@ function getRequest(pageid, reset){
 
             lockAjax = false;
 
-            var hitsRegEx = /\s(\d+)\D*(\d+)/
+            var hitsRegEx = /(\d+)\D*(\d+)/
             var matchHits = $(result).find(".tx-dlf-search-numHits").text().match(hitsRegEx);
 
             if(Math.ceil(parseInt(matchHits[2])/10) > pageid || pageid == 1) {
