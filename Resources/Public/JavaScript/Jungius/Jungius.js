@@ -1339,7 +1339,7 @@ function createPersonIndex() {
                     // setFilter(event.currentTarget.href);
 
                     var newUrl = location.href + $(this)[0].search;
-                    newUrl = newUrl.replace(/id=([0-9]+)/g, '');
+                    newUrl = newUrl.replace('id=49', '');
                     Cookie.set('fq', encodeURIComponent(newUrl));
                     window.location = newUrl;
 
