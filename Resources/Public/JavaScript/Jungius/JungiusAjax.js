@@ -25,7 +25,7 @@ function getFilter() {
 
             $('.jungius-filter-person-content').html('');
             var personen = $(result).find(".tx-dlf-search-facets ul li ul")[1];
-            $('#nav_right .jungius-filter-person-content').append('<ul id="person" class="tx-dlf-hidden">'+$(personen).html()+'</ul>');
+            $('aside .jungius-filter-person-content').append('<ul id="person" class="tx-dlf-hidden">'+$(personen).html()+'</ul>');
             createPersonIndex();
 
             $('input#search_signature').prop( "disabled", false );

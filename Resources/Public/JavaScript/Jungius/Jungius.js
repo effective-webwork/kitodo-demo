@@ -159,7 +159,7 @@ function autoCompleteSignature() {
             // send filter request
             // setFilter(ui.item.value);
             var newUrl = location.href + ui.item.search;
-            newUrl = newUrl.replace(/id=([0-9]+)/g, '');
+            //newUrl = newUrl.replace(/id=([0-9]+)/g, '');
             Cookie.set('fq', encodeURIComponent(newUrl));
             getRequest(1);
             setTimeout(function(){
