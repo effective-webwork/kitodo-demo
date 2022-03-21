@@ -1440,6 +1440,7 @@ span[class^='jungius-filter-'] li a:hover {
 main {
     background: url(../../Images/Jungius/bg-jungius.jpeg) no-repeat center center fixed #8D0D1B; background-size: cover;
     height: 800px;
+    color: #FFFFFF;
 }
 
 main section {
