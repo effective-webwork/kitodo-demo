@@ -1991,8 +1991,8 @@ ul.accordion ul {
     padding-top: 20px;
 }
 
-ul.accordion {
-    padding-bottom: 20px;
+ul.accordion li {
+    padding-top: 20px !important;
 }
 
 /*----------------------------------------------------------------------
