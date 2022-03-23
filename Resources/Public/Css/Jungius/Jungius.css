@@ -1443,6 +1443,10 @@ main {
     color: #FFFFFF;
 }
 
+main a {
+    color: #FFFFFF;
+}
+
 main section {
     background-color: #242424eb;
 }
