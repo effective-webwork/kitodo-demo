@@ -320,6 +320,10 @@ main {
     z-index: 2;
 }
 
+main a {
+    color: #FFFFFF;
+}
+
 main aside {
     float: right;
     width: 33%;
