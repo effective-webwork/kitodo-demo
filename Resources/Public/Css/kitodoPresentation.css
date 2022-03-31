@@ -363,7 +363,8 @@ collection-list + teaser
     padding: 60px 0;
 }
 
-.tx-dlf-collection div.frame p {
+.tx-dlf-collection div.frame p,
+.tx-dlf-content div.frame p {
     padding-left: 30px;
     padding-right: 30px;
     color: #fff;
