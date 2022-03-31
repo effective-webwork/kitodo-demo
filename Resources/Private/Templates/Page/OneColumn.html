@@ -18,6 +18,9 @@
                 <flux:grid.column colPos="15" colspan="1" name="Basket" label="Warenkorb" />
             </flux:grid.row>
             <flux:grid.row>
+                <flux:grid.column colPos="2" colspan="2" name="Content" label="Description" />
+            </flux:grid.row>
+            <flux:grid.row>
                 <flux:grid.column colPos="1" colspan="2" name="Main" label="Hauptbereich" />
             </flux:grid.row>
         </flux:grid>
@@ -27,10 +30,29 @@
         <pp:menuHeaderSync />
         <f:render partial="DigitalisateHeader" arguments="{_all}"/>
 
-        <main>
-            <section>
-                <v:content.render column="1" />
+        <header>
+            <section class="portal-meta">
+                <article class="breadcrumb">
+                    <a href="">Digitalisierte Bestände</a> / {v:page.info(field:'title')}
+                </article>
             </section>
+
+            <section class="tx-dlf-search clear">
+                <v:content.render column="0" />
+            </section>
+
+            <section class="collection-intro">
+                <article>
+                    <v:content.render column="2" />
+                </article>
+            </section>
+        </header>
+
+        <main>
+            <div class="tx-dlf-content">
+                <v:content.render column="1" />
+            </div>
+            <f:render partial="DigitalisateTeaserSlot"/>
         </main>
 
         <f:render partial="DigitalisateFooter"/>
