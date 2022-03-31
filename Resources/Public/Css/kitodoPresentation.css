@@ -1463,6 +1463,10 @@ span.no-fulltext {
     height: auto;
 }
 
+aside .tx-dlf-pagegrid-pagebrowser {
+    display: none;
+}
+
 .volume-info {
     background-color: #ababab;
     padding: 8px 15px;
