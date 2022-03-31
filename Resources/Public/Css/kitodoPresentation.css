@@ -332,7 +332,7 @@ main a {
     color: #FFFFFF;
 }
 
-main#search-list-view a,
+main#search-list-view a:not(.show-volumes-expand),
 main .tx-dlf-metadata a,
 main .tx-dlf-tableofcontents a,
 main .legal-info a {
