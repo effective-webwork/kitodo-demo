@@ -56,7 +56,7 @@ $(document).ready(function() {
 });
 
 function replaceRssFeedImage() {
-    $('.tx-dlf-rss-feed a img').attr('src', 'https://digitalisate.sub.uni-hamburg.de/typo3conf/ext/presentation_package/Resources/Public/Images/rss-feed.png');
+    $('.tx-dlf-rss-feed a img').attr('src', '/typo3conf/ext/presentation_package/Resources/Public/Images/rss-feed.png');
 }
 
 function renameMetadataTab() {
