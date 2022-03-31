@@ -310,6 +310,14 @@ header.header-portal-home {
     padding-bottom: 10px;
 }
 
+div.frame-type-header h1 {
+    text-align: left;
+    padding-left: 25px;
+    font-size: 32px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 /*----------------------------------------------------------------------
 main
 ----------------------------------------------------------------------*/
