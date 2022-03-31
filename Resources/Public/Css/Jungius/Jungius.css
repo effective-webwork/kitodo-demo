@@ -1447,6 +1447,18 @@ main a {
     color: #FFFFFF;
 }
 
+main#search-list-view a,
+main .tx-dlf-metadata a,
+main .tx-dlf-tableofcontents a {
+    color: #242424;
+}
+
+main#search-list-view a:hover,
+main .tx-dlf-metadata a:hover,
+main .tx-dlf-tableofcontents a:hover {
+    color: #FFFFFF;
+}
+
 main section {
     background-color: #242424eb;
 }
