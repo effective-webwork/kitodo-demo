@@ -318,6 +318,28 @@ div.frame-type-header h1 {
     padding-bottom: 20px;
 }
 
+h2.ce-headline-left {
+    text-align: left;
+    padding: 15px 30px;
+}
+
+header header h1,
+header header h2,
+header header h3,
+main header h1,
+main header h2,
+main header h3,
+main header h4 {
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+main ul:not(.tx-dlf-collection-list) {
+    color: #FFFFFF;
+    padding: 15px 60px;
+}
+
 /*----------------------------------------------------------------------
 main
 ----------------------------------------------------------------------*/
