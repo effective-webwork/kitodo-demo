@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    //_paq = window._paq || [];//Matomo bei Bedarf initialisieren
+    _paq = window._paq || [];//Matomo bei Bedarf initialisieren
     enrichBreadcrumbForVolumes();
 
     if (showVolumeList()) {
