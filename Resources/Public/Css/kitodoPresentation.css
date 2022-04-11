@@ -335,7 +335,7 @@ main header h4 {
     padding-bottom: 20px;
 }
 
-main ul:not(.tx-dlf-collection-list) {
+main div.frame-type-text ul {
     color: #FFFFFF;
     padding: 15px 60px;
 }
