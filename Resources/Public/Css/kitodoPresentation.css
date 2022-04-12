@@ -1125,6 +1125,7 @@ detail-view
     padding: 30px;
     display: table;
     width: calc(100% - 60px);
+    margin-bottom: 15px;
 }
 
 .detail-view-title {
