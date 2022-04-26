@@ -17,4 +17,5 @@ page.includeJSFooter {
     jsCookie = EXT:presentation_package/Resources/Public/JavaScript/Jungius/jsCookie.js
     #main = EXT:presentation_package/Resources/Public/JavaScript/main.js
     kitodoPresentation = EXT:presentation_package/Resources/Public/JavaScript/kitodoPresentation.js
+    matomo = EXT:presentation_package/Resources/Public/JavaScript/matomo.js
 }
