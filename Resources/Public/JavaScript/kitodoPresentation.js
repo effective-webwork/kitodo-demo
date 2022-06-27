@@ -92,8 +92,8 @@ function fixLabelInputMetadata() {
 }
 
 function addFullPdfDownload() {
-    $('.tx-dlf-pdfdownloadtool')
-        .append('<span class="fullPdfDownloadSpan"><a id="fullPdfDownload" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-pdf-white.svg" alt="PDF Download"></a></span>');
+    // $('.tx-dlf-pdfdownloadtool')
+    //     .append('<span class="fullPdfDownloadSpan"><a id="fullPdfDownload" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-pdf-white.svg" alt="PDF Download"></a></span>');
 
     $('#fullPdfDownload').on('click', function (event) {
         event.preventDefault();
@@ -202,13 +202,13 @@ function addTocPlus() {
 function setToolboxControl() {
 
     // PDF download is build in addFullPdfDownload function
-    $('.tx-dlf-tools-fulltext span.no-fulltext')
-        .text('')
-        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg" alt="Kein Volltext vorhanden">');
-
-    $('.tx-dlf-tools-fulltext a')
-        .text('')
-        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg" alt="Volltext anzeigen">');
+    // $('.tx-dlf-tools-fulltext span.no-fulltext')
+    //     .text('')
+    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg" alt="Kein Volltext vorhanden">');
+    //
+    // $('.tx-dlf-tools-fulltext a')
+    //     .text('')
+    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg" alt="Volltext anzeigen">');
 
 
 
@@ -860,57 +860,57 @@ function setTitleOnDetailPage() {
 function setNavigationControls() {
 
     // set icons
-    $('.tx-dlf-navigation .tx-dlf-navigation-prev a, .tx-dlf-navigation .tx-dlf-navigation-prev span')
-        .text("")
-        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-left.svg" alt="Previous Page">');
+    // $('.tx-dlf-navigation .tx-dlf-navigation-prev a, .tx-dlf-navigation .tx-dlf-navigation-prev span')
+    //     .text("")
+    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-left.svg" alt="Previous Page">');
 
-    $('.tx-dlf-navigation .tx-dlf-navigation-next span, .tx-dlf-navigation .tx-dlf-navigation-next a')
-        .text("")
-        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-right.svg" alt="Next Page">');
+    // $('.tx-dlf-navigation .tx-dlf-navigation-next span, .tx-dlf-navigation .tx-dlf-navigation-next a')
+    //     .text("")
+    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-right.svg" alt="Next Page">');
+    //
+    // $('.tx-dlf-navigation .tx-dlf-navigation-zoom-in span, .tx-dlf-navigation .tx-dlf-navigation-zoom-in a')
+    //     .text("")
+    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomin.svg" alt="Zoom in">');
+    //
+    // $('.tx-dlf-navigation .tx-dlf-navigation-zoom-out span, .tx-dlf-navigation .tx-dlf-navigation-zoom-out a')
+    //     .text("")
+    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomout.svg" alt="Zoom out">');
+    //
+    // $('.tx-dlf-navigation .tx-dlf-navigation-rotate-left span, .tx-dlf-navigation .tx-dlf-navigation-rotate-left a')
+    //     .text("")
+    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateleft.svg" alt="Rotate left">');
+    //
+    // $('.tx-dlf-navigation .tx-dlf-navigation-rotate-right span, .tx-dlf-navigation .tx-dlf-navigation-rotate-right a')
+    //     .text("")
+    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateright.svg" alt="Rotate right">');
+    //
+    // $('.tx-dlf-navigation .tx-dlf-navigation-double span, .tx-dlf-navigation .tx-dlf-navigation-double a')
+    //     .text("")
+    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-doublepage.svg" alt="Show double pages">');
 
-    $('.tx-dlf-navigation .tx-dlf-navigation-zoom-in span, .tx-dlf-navigation .tx-dlf-navigation-zoom-in a')
-        .text("")
-        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomin.svg" alt="Zoom in">');
-
-    $('.tx-dlf-navigation .tx-dlf-navigation-zoom-out span, .tx-dlf-navigation .tx-dlf-navigation-zoom-out a')
-        .text("")
-        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomout.svg" alt="Zoom out">');
-
-    $('.tx-dlf-navigation .tx-dlf-navigation-rotate-left span, .tx-dlf-navigation .tx-dlf-navigation-rotate-left a')
-        .text("")
-        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateleft.svg" alt="Rotate left">');
-
-    $('.tx-dlf-navigation .tx-dlf-navigation-rotate-right span, .tx-dlf-navigation .tx-dlf-navigation-rotate-right a')
-        .text("")
-        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateright.svg" alt="Rotate right">');
-
-    $('.tx-dlf-navigation .tx-dlf-navigation-double span, .tx-dlf-navigation .tx-dlf-navigation-double a')
-        .text("")
-        .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-doublepage.svg" alt="Show double pages">');
-
-    $('ul.tx-dlf-navigation')
+    $('#main-content ul.tx-dlf-navigation')
         .append('<li><a id="collapse" class="collexpand" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-bigger.svg" alt="Größer"></a></li>');
 
-    $('ul.tx-dlf-navigation')
+    $('#main-content ul.tx-dlf-navigation')
         .append('<li><a id="expand" class="collexpand" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-smaller.svg" alt="Kleiner"></a></li>');
 
-    $(".tx-dlf-navigation-zoom-in").click(function(event) {
-        event.preventDefault();
-        tx_dlf_viewer.map.zoomIn();
-    });
-    $(".tx-dlf-navigation-zoom-out").click(function(event) {
-        event.preventDefault();
-        tx_dlf_viewer.map.zoomOut();
-    });
-
-    $(".tx-dlf-navigation-rotate-right a").click(function (event) {
-        event.preventDefault();
-        tx_dlf_viewer.map.rotate(90);
-    });
-    $(".tx-dlf-navigation-rotate-left a").click(function (event) {
-        event.preventDefault();
-        tx_dlf_viewer.map.rotate(-90);
-    });
+    // $(".tx-dlf-navigation-zoom-in").click(function(event) {
+    //     event.preventDefault();
+    //     tx_dlf_viewer.map.zoomIn();
+    // });
+    // $(".tx-dlf-navigation-zoom-out").click(function(event) {
+    //     event.preventDefault();
+    //     tx_dlf_viewer.map.zoomOut();
+    // });
+    //
+    // $(".tx-dlf-navigation-rotate-right a").click(function (event) {
+    //     event.preventDefault();
+    //     tx_dlf_viewer.map.rotate(90);
+    // });
+    // $(".tx-dlf-navigation-rotate-left a").click(function (event) {
+    //     event.preventDefault();
+    //     tx_dlf_viewer.map.rotate(-90);
+    // });
 
 }
 

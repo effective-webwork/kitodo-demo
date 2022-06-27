@@ -19,3 +19,101 @@ page.includeJSFooter {
     kitodoPresentation = EXT:presentation_package/Resources/Public/JavaScript/kitodoPresentation.js
     matomo = EXT:presentation_package/Resources/Public/JavaScript/matomo.js
 }
+
+plugin.tx_dlf_search {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_listview {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_metadata {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_tableofcontents {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_navigation {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_pageview {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_toolbox {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}

@@ -1113,6 +1113,15 @@ dd.tx-dlf-metadata-author,
 detail-view
 ----------------------------------------------------------------------*/
 
+.ol-viewport {
+    position:initial !important;
+}
+
+ul.tx-dlf-toolbox span a img {
+    width: 24px;
+    height: auto;
+}
+
 #detail-view {
     background-color: #e4e4e4;
 }
@@ -2292,13 +2301,13 @@ max 1024px
 
 @media only screen and (max-width: 980px) {
     main aside {
-        float: right;
-        width: 45%;
+        float: none;
+        width: 100%;
     }
 
     #main-content {
-        float: left;
-        width: 55%;
+        float: none;
+        width: 100%;
     }
 }
 
