@@ -809,22 +809,25 @@ article.calendar-metadata a {
     width: 180px;
 }
 
-.listview-baseline-addon {
+.f3-widget-paginator {
     display: table;
-    width: calc(100% - 60px);
+    /*width: calc(100% - 60px);*/
     margin: 0 30px;
+    margin-left: auto;
 }
 
-.listview-baseline-addon p {
+.f3-widget-paginator li {
     display: table-cell;
     vertical-align: middle;
+    padding: 5px;
+    padding-top: 0px;
 }
 
-.listview-baseline-addon p:last-child {
-    text-align: right;
+.f3-widget-paginator li:last-child {
+    /*text-align: right;*/
 }
 
-.listview-baseline-addon a {
+.f3-widget-paginator a {
     background: #e4e4e4;
     border-radius: 3px;
     display: inline-block;
@@ -835,38 +838,55 @@ article.calendar-metadata a {
     text-decoration: none;
 }
 
-.listview-baseline-addon a:hover {
+.f3-widget-paginator a:hover {
     background: #8D0D1C;
     color: #fff;
 }
 
-.lba-active {
+.lba-active
+ {
     background: #6a6a6a !important;
     color: #fff;
 }
 
-.listview-baseline-addon a:first-child {
+li.current {
+    background: #6a6a6a;
+    color: #fff;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 10px;
+    margin: 0;
+    min-width: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.f3-widget-paginator li:first-child a {
     background: url(../Images/icon-arrow-left-dark.svg) no-repeat center center #e4e4e4;
     background-size: 24px 24px;
     color: transparent;
+    text-indent: -9999px;
 }
 
-.listview-baseline-addon a:first-child:hover {
+.f3-widget-paginator li:first-child a:hover {
     background: url(../Images/icon-arrow-left.svg) no-repeat center center #8D0D1C;
     background-size: 24px 24px;
     color: transparent;
+    text-indent: -9999px;
 }
 
-.listview-baseline-addon a:last-child {
+.f3-widget-paginator li:last-child a {
     background: url(../Images/icon-arrow-right-dark.svg) no-repeat center center #e4e4e4;
     background-size: 24px 24px;
     color: transparent;
+    text-indent: -9999px;
 }
 
-.listview-baseline-addon a:last-child:hover {
+.f3-widget-paginator li:last-child a:hover {
     background: url(../Images/icon-arrow-right.svg) no-repeat center center #8D0D1C;
     background-size: 24px 24px;
     color: transparent;
+    text-indent: -9999px;
 }
 
 ol.tx-dlf-listview-list {
@@ -2443,23 +2463,23 @@ max 700px
         width: 100%;
     }
 
-    .listview-baseline-addon {
+    .f3-widget-paginator {
         display: block;
         width: 100%;
         margin: 15px 0;
     }
 
-    .listview-baseline-addon p {
+    .f3-widget-paginator p {
         padding: 0 15px;
         display: block;
         text-align: center;
     }
 
-    .listview-baseline-addon a {
+    .f3-widget-paginator a {
         margin-top: 5px;
     }
 
-    .listview-baseline-addon p:last-child {
+    .f3-widget-paginator p:last-child {
         text-align: center;
     }
 
@@ -2630,6 +2650,7 @@ span.tx-dlf-toc-pagination {
     margin: 0px;
 }
 
-ol.subentry {
+ol.subentry,
+ol.tx-dlf-volume {
     display: none;
 }

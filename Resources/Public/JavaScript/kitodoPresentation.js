@@ -798,13 +798,13 @@ function showVolumeList() {
 
 // Listview
 function listViewFunction() {
-    var button = $('ol.subentry').parent('li').find('.show-volumes');
+    var button = $('ol.tx-dlf-volume').parent('li').find('.show-volumes');
     button.show();
     button.on("click", function (evt) {
         evt.preventDefault();
         $(this).children('a').toggleClass('show-volumes-minimize');
         $(this).children('a').toggleClass('show-volumes-expand');
-        $(this).siblings('ol.subentry').toggle();
+        $(this).siblings('ol.tx-dlf-volume').toggle();
     });
 
     var pagingForm = $('#pagingForm');

@@ -67,7 +67,12 @@
                 <f:render partial="Basket/AddToBasket" arguments="{result: document}" />
 
                 <f:if condition="{document.children} || {document.searchResults}">
-                    <button class="tx-dlf-morevolumes" title="{f:translate(key='listview.moredetails.toggle')}"><f:translate key='listview.moredetails.toggle' /></button>
+                    <div class="show-volumes" style="">
+                        <a href="" class="show-volumes-minimize">Details</a>
+                    </div>
+                    <f:comment>
+                        <button class="tx-dlf-morevolumes show-volumes" title="{f:translate(key='listview.moredetails.toggle')}"><f:translate key='listview.moredetails.toggle' /></button>
+                    </f:comment>
                 </f:if>
                 <f:if condition="{document.children}">
                     <ol class="tx-dlf-volume">
@@ -186,5 +191,6 @@
         </ol>
 
     </f:widget.paginate>
+
 
 </html>
