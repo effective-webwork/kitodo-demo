@@ -42,11 +42,11 @@
                             <f:then>
                                 <f:for each="{listedMetadata}" as="metadata">
                                     <f:if condition="{document.metadata.{metadata.indexName}.0} && {metadata.indexName} != 'type' && {metadata.indexName} != 'title'">
-                                        <dt class="tx-dlf-metadata-{metadata.indexName}">
+                                        <dt class="tx-dlf-metadata-{metadata.indexName} tx-dlf-metadata">
                                             {metadata.label}
                                         </dt>
                                         <f:for each="{document.metadata.{metadata.indexName}}" as="metadataentry">
-                                            <dd class="tx-dlf-metadata-{metadata.indexName}">
+                                            <dd class="tx-dlf-metadata-{metadata.indexName} tx-dlf-metadata">
                                                     {metadataentry}
                                             </dd>
                                         </f:for>
