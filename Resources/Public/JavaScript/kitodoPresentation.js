@@ -842,7 +842,7 @@ function setBackToListviewInBreadcrumb() {
 
 function setTitleOnDetailPage() {
     var title = '';
-    title = $('dd.tx-dlf-title').text();
+    title = $('dd.tx-dlf-metadata-title').text();
 
     // use class add2title to add metadata to title
     // default separator is "-" for a custom separator the data attribute "data-separator" can be used
