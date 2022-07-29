@@ -201,6 +201,10 @@ function addTocPlus() {
 
 function setToolboxControl() {
 
+    $('#tx-dlf-tools-fulltext').on('change', function() {
+        console.log("TRIGGERED");
+    });
+
     // PDF download is build in addFullPdfDownload function
     // $('.tx-dlf-tools-fulltext span.no-fulltext')
     //     .text('')
