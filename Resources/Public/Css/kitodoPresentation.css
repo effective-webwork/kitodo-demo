@@ -1621,12 +1621,6 @@ span.fullPdfDownloadSpan img {
     height: auto;
 }
 
-.tx-dlf-toolbox {
-    display: block;
-    position: inherit;
-    margin-top: 10px;
-}
-
 .tx-dlf-toolbox ul li {
     list-style: none;
 }
@@ -2150,6 +2144,12 @@ max 1350px
     aside section {
         top: 50px;
         right: -3px !important;
+    }
+
+    .tx-dlf-toolbox {
+        display: block;
+        position: inherit;
+        margin-top: 10px;
     }
 }
 
