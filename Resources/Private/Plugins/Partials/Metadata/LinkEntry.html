@@ -14,6 +14,8 @@
       data-namespace-typo3-fluid="true">
 
 <f:variable name="urlParameterId" value="{buildUrlVariable.{configObject.indexName}.buildUrl.id}" />
-<f:link.page pageUid="{buildUrlVariable.{configObject.indexName}.buildUrl.targetPid}" additionalParams="{tx_dlf: '{id: \'{urlParameterId}\'}'}">
-    {value}
-</f:link.page>
+<kitodo:stdWrap wrap="{metadataWrap.value}" data="{metaSectionCObj}">
+    <f:link.page pageUid="{buildUrlVariable.{configObject.indexName}.buildUrl.targetPid}" additionalParams="{tx_dlf: '{id: \'{urlParameterId}\'}'}">
+        {value}
+    </f:link.page>
+</kitodo:stdWrap>
