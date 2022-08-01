@@ -155,7 +155,7 @@ function sideCollapse(updateMap = true) {
     $('#header').hide();
     $('#opening_hours').hide();
     $('#detail-view section#main-content').css('width', '100%');
-    $('div.tx-dlf-toolbox').addClass('fs_on');
+    $('ul.tx-dlf-toolbox').addClass('fs_on');
 
     if (updateMap) {
         tx_dlf_viewer.map.updateSize();
@@ -174,7 +174,7 @@ function sideExpand(updateMap = true) {
     $('#header').show();
     $('#opening_hours').show();
     $('#detail-view section#main-content').css('width', '67%');
-    $('div.tx-dlf-toolbox').removeClass('fs_on');
+    $('ul.tx-dlf-toolbox').removeClass('fs_on');
 
     if (updateMap) {
         tx_dlf_viewer.map.updateSize();
