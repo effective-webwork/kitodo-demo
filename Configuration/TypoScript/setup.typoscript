@@ -117,3 +117,17 @@ plugin.tx_dlf_toolbox {
         }
     }
 }
+
+plugin.tx_dlf_collection {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
