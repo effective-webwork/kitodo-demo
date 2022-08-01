@@ -1603,6 +1603,14 @@ div#tx-dlf-fulltextselection .highlight {
     padding-right: 5px;
 }
 
+a#tx-dlf-tools-fulltext:after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-image: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg');
+}
+
 span.fullPdfDownloadSpan,
 span.tx-dlf-tools-fulltext {
     padding: 0 !important;
