@@ -788,6 +788,9 @@ function showVolumeList() {
         // reduce height of pageview map
         $('.tx-dlf-map').css('min-height', '0px');
 
+        // Hide toolbox
+        $('.tx-dlf-toolbox').hide();
+
         return false;
     } else {
         // click handler toc
