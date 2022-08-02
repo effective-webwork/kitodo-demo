@@ -827,7 +827,7 @@ function listViewFunction() {
 function enrichBreadcrumbForVolumes() {
     if ($('dt#PartOf').next('dd').data('partof') > 0) {
 
-        var partOfLink = 'detail.html?tx_dlf[id]=' + $('dt#PartOf').next('dd').data('partof');
+        var partOfLink = 'detail?tx_dlf[id]=' + $('dt#PartOf').next('dd').data('partof');
         $('dt#PartOf').next('dd').children('a.partOf').attr('href', partOfLink);
 
         var parentVolumeLink = $('.partOf').attr('href');
