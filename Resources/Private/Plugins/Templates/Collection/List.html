@@ -46,10 +46,11 @@
                 </div>
                 <p class="tx-dlf-collection-counts">
                     ({item.info.titles -> f:count()}
-                    <f:translate key="{f:if(condition:'{item.info.titles -> f:count()} > 1', then: 'titles', else: 'title')}" />
-                    /
+                    <f:translate key="{f:if(condition:'{item.info.titles -> f:count()} > 1', then: 'titles', else: 'title')}" />)
+                    <f:comment>/
                     {item.info.volumes -> f:count()}
-                    <f:translate key="{f:if(condition:'{item.info.volumes -> f:count()} > 1', then: 'volumes', else: 'volume')}" />)
+                    <f:translate key="{f:if(condition:'{item.info.volumes -> f:count()} > 1', then: 'volumes', else: 'volume')}" />
+                    </f:comment>
                 </p>
             </li>
         </f:for>
