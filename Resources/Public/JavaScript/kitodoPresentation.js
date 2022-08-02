@@ -785,6 +785,9 @@ function showVolumeList() {
         $('a.chapter_download, a#pdfdownloadbutton').hide();
         $('div.tx-dlf-toc span.headline_info').html('Bandliste');
 
+        // reduce height of pageview map
+        $('.tx-dlf-map').css('min-height', '0px');
+
         return false;
     } else {
         // click handler toc
