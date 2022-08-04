@@ -123,7 +123,9 @@
                     <ul>
                         <li class="tx-dlf-search-no {f:if(condition: '{facet._SUB_MENU}', then: 'tx-dlf-search-ifsub')}">
                             <input type="checkbox" id="checkbox-menu{facetIterator.index}">
-                            <label class="facet-sub-title" for="checkbox-menu{facetIterator.index}">{facet.field}:</label>
+                            <label class="facet-sub-title" for="checkbox-menu{facetIterator.index}">
+                                <f:translate key="LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.{facet.field}" />:
+                            </label>
                             <f:if condition="{facet._SUB_MENU}">
                                 <f:then>
                                     <ul>
