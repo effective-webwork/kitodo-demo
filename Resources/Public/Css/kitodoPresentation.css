@@ -1891,13 +1891,13 @@ article.calendar-metadata ul li dl {
     padding: 10px;
 }
 
-.dropdown-menu ul li .tx-dlf-icon-cur a {
+.dropdown-menu ul li.tx-dlf-search-cur a {
     background: url(../Images/icon-delete-dark.svg) 10px center no-repeat;
     background-size: 16px 16px;
     padding: 8px 15px 8px 35px;
 }
 
-.dropdown-menu ul li .tx-dlf-icon-cur a:hover {
+.dropdown-menu ul li.tx-dlf-search-cur a:hover {
     background: url(../Images/icon-delete.svg) 10px center no-repeat #242424;
     background-size: 16px 16px;
     padding: 8px 15px 8px 35px;
