@@ -19,7 +19,7 @@
         <ol class="tx-dlf-abstracts tx-dlf-listview-list">
             <f:for each="{paginatedDocuments}" as="document" iteration="docIterator">
             <f:variable name="docTitle" value="{f:if(condition:'{document.title}', then:'{document.title}', else:'{document.metsOrderlabel}')}" />
-                <li value="{settings.list.paginate.itemsPerPage * pageOffset + docIterator.index}">
+                <li value="{pageOffset + docIterator.cycle}">
 
                     <div class="tx-dlf-listview-thumbnail">
                         <f:if condition="{document.thumbnail}">
