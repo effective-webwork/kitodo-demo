@@ -2098,6 +2098,12 @@ ul.accordion li {
     padding-top: 20px !important;
 }
 
+
+.ol-unselectable.ol-layers {
+    overflow: hidden;
+    width: 65% !important;
+}
+
 /*----------------------------------------------------------------------
 max 1600px
 ----------------------------------------------------------------------*/
@@ -2329,6 +2335,11 @@ max 1024px
         position: absolute;
         right: 20px;
         top: 15px;
+    }
+
+    .ol-unselectable.ol-layers {
+        overflow: hidden;
+        width: 100% !important;
     }
 
 }
