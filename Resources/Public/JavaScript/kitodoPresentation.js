@@ -831,15 +831,8 @@ function enrichBreadcrumbForVolumes() {
         $('dt#PartOf').next('dd').children('a.partOf').attr('href', partOfLink);
 
         var parentVolumeLink = $('.partOf').attr('href');
-        var breadcrumbHtml = '';
-        $('.breadcrumb').children().each(function () {
-            breadcrumbHtml += this.outerHTML + '<span> / </span>';
-        });
-        $('.breadcrumb').html('');
-        $('.breadcrumb').append(breadcrumbHtml);
-        $('.breadcrumb').append('<a href="' + partOfLink + '" class="fade">Bandliste</a>');
-        $('.breadcrumb').append('<span> / </span>');
-        $('.breadcrumb').append('<span>Detail</span>');
+        $('.breadcrumb ul').append('<li><a href="' + partOfLink + '" class="fade">Bandliste</a></li>');
+        $('.breadcrumb ul').append('<li>Detail</li>');
     } else {
         $('dt#PartOf').hide().next('dd').hide();
     }
