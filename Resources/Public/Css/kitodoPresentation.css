@@ -251,6 +251,23 @@ header.header-portal-home {
     text-decoration: none;
 }
 
+article.breadcrumb ul {
+    list-style: none;
+}
+
+article.breadcrumb ul li {
+    display: inline-block;
+}
+
+article.breadcrumb ul li.current {
+    background: none;
+    padding: 0px;
+}
+
+article.breadcrumb ul li:not(:last-child):after {
+    content: "/";
+}
+
 .meta-navigation {
     text-align: right;
     width: 30%;
