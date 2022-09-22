@@ -26,13 +26,20 @@
                     </p>
                 </f:then>
             </f:if>
-            <f:render partial="ListView/SearchHits" arguments="{_all}" />
 
             <div class="tx-dlf-listview-collection-thumbnail">
                 <f:if condition="{currentCollection.thumbnail}">
                     <f:image image="{currentCollection.thumbnail}" />
                 </f:if>
+                <div>
+                    <f:if condition="{currentCollection.label}">
+                        {currentCollection.label}
+                        <p class="tx-dlf-listview-label"></p>
+                    </f:if>
+                </div>
             </div>
+
+            <f:render partial="ListView/SearchHits" arguments="{_all}" />
 
             <f:variable name="action" value="main" />
             <f:variable name="controller" value="ListView" />
