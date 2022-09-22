@@ -77,39 +77,35 @@
         <main>
             <div class="tx-dlf-collection">
                 <v:page.menu entryLevel="0" expandAll="0" levels="0" showHiddenInMenu="1">
-                    <f:for each="{menu}" as="mainItem">
-                        <v:page.menu pageUid="{mainItem.uid}" expandAll="0" levels="1" useShortcutUid="1">
-                            <ul class="tx-dlf-collection-list">
-                                <f:for each="{menu}" as="item">
-                                    <li>
-                                        <div class="tx-dlf-collection-thumbnail">
-                                            <v:page.resources.fal table="pages" field="media" uid="{item.uid}" as="images" slide="-1" >
-                                                <f:for each="{images}" as="image">
-                                                    <v:page.link
-                                                            pageUid="{item.uid}"
-                                                            title="{item.linktext}"
-                                                            class="{itemClass}"
-                                                            target="{itemTarget}">
-                                                        <f:image src="{image.url}" alt="{item.linktext}" title="{image.title}" />
-                                                    </v:page.link>
-                                                </f:for>
-                                            </v:page.resources.fal>
-                                        </div>
-
-                                        <h2>
+                    <ul class="tx-dlf-collection-list">
+                        <f:for each="{menu}" as="item">
+                            <li>
+                                <div class="tx-dlf-collection-thumbnail">
+                                    <v:page.resources.fal table="pages" field="media" uid="{item.uid}" as="images" slide="-1" >
+                                        <f:for each="{images}" as="image">
                                             <v:page.link
                                                     pageUid="{item.uid}"
                                                     title="{item.linktext}"
                                                     class="{itemClass}"
                                                     target="{itemTarget}">
-                                                {item.linktext}
+                                                <f:image src="{image.url}" alt="{item.linktext}" title="{image.title}" />
                                             </v:page.link>
-                                        </h2>
-                                    </li>
-                                </f:for>
-                            </ul>
-                        </v:page.menu>
-                    </f:for>
+                                        </f:for>
+                                    </v:page.resources.fal>
+                                </div>
+
+                                <h2>
+                                    <v:page.link
+                                            pageUid="{item.uid}"
+                                            title="{item.linktext}"
+                                            class="{itemClass}"
+                                            target="{itemTarget}">
+                                        {item.linktext}
+                                    </v:page.link>
+                                </h2>
+                            </li>
+                        </f:for>
+                    </ul>
                 </v:page.menu>
             </div>
 
