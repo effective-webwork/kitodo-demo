@@ -997,7 +997,7 @@ dt.tx-dlf-metadata-title {
 
 dd.tx-dlf-metadata-title {
     font-weight: 700;
-    font-size: 20px;
+    /*font-size: 20px;*/
     padding-bottom: 5px;
 }
 
