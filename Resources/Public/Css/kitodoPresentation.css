@@ -1292,6 +1292,10 @@ ul.tx-dlf-toolbox span a img {
     margin-right: 10px;
 }
 
+.tx-dlf-navigation-double+ {
+    display: none;
+}
+
 .detail-view-itemoptions {
     margin: 30px;
     position: relative;
