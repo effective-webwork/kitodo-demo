@@ -1293,7 +1293,7 @@ ul.tx-dlf-toolbox span a img {
 }
 
 .tx-dlf-navigation-double-plus {
-    display: none;
+    display: none !important;
 }
 
 .detail-view-itemoptions {
