@@ -9,3 +9,10 @@ if (!defined('TYPO3_MODE')) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(
     "@import 'EXT:presentation_package/Configuration/TypoScript/setup.typoscript'"
 );
+
+// Override language files
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:dlf/Resources/Private/Language/locallang_metadata.xlf'][] = 'EXT:presentation_package/Resources/Private/Language/Overrides/locallang_metadata.xlf';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:dlf/Resources/Private/Language/locallang_metadata.xlf'][] = 'EXT:presentation_package/Resources/Private/Language/Overrides/de.locallang_metadata.xlf';
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:dlf/Resources/Private/Language/locallang_structure.xlf'][] = 'EXT:presentation_package/Resources/Private/Language/Overrides/locallang_structure.xlf';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:dlf/Resources/Private/Language/locallang_structure.xlf'][] = 'EXT:presentation_package/Resources/Private/Language/Overrides/de.locallang_structure.xlf';
