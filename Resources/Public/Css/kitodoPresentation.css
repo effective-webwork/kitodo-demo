@@ -268,8 +268,12 @@ article.breadcrumb ul li:not(:last-child):after {
     content: "/";
 }
 
-article.breadcrumb {
+article.breadcrumb ul li {
     display:none;
+}
+
+article.breadcrumb ul li:first-child {
+    display:initial;
 }
 
 .meta-navigation {
