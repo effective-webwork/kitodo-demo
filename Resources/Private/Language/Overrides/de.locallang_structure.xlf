@@ -149,12 +149,12 @@
 				<source><![CDATA[Fragment]]></source>
 				<target><![CDATA[Fragment]]></target>
 			</trans-unit>
-			<trans-unit id="structure.fragment" approved="yes">
+			<trans-unit id="structure.Graphics" approved="yes">
 				<source><![CDATA[Graphics]]></source>
 				<target><![CDATA[Graphik]]></target>
 			</trans-unit>
-			<trans-unit id="structure.fragment" approved="yes">
-				<source><![CDATA[GraphicMaterial]]></source>
+			<trans-unit id="structure.GraphicMaterial" approved="yes">
+				<source><![CDATA[Graphics]]></source>
 				<target><![CDATA[Graphik]]></target>
 			</trans-unit>			
 			<trans-unit id="structure.ground_plan" approved="yes">

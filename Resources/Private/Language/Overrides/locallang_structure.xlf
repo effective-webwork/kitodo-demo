@@ -113,6 +113,12 @@
 			<trans-unit id="structure.fragment">
 				<source><![CDATA[Fragment]]></source>
 			</trans-unit>
+			<trans-unit id="structure.Graphics">
+				<source><![CDATA[Graphics]]></source>
+			</trans-unit>
+			<trans-unit id="structure.GraphicMaterial">
+				<source><![CDATA[Graphics]]></source>
+			</trans-unit>
 			<trans-unit id="structure.ground_plan">
 				<source><![CDATA[Ground Plan]]></source>
 			</trans-unit>
