@@ -2133,12 +2133,14 @@ main div.frame-type-html,
 main div.frame-type-header {
     padding-left: 50px;
     padding-right: 50px;
+    color: #FFF;
 }
 
 main div.frame-type-presentationpackage_accordion,
 main div.frame-type-presentationpackage_accordionelement {
     padding-left: 25px;
     padding-right: 25px;
+    color: #FFF;
 }
 
 main div.frame-type-presentationpackage_accordion,
