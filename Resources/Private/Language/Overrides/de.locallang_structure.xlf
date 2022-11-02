@@ -45,6 +45,10 @@
 				<source><![CDATA[Bookplate]]></source>
 				<target><![CDATA[Exlibris]]></target>
 			</trans-unit>
+			<trans-unit id="structure.BundleDocument" approved="yes">
+				<source><![CDATA[Bundle Document]]></source>
+				<target><![CDATA[Nachlassdokument]]></target>
+			</trans-unit>
 			<trans-unit id="structure.cartulary" approved="yes">
 				<source><![CDATA[Cartulary]]></source>
 				<target><![CDATA[Kartular]]></target>
@@ -156,7 +160,11 @@
 			<trans-unit id="structure.GraphicMaterial" approved="yes">
 				<source><![CDATA[Graphics]]></source>
 				<target><![CDATA[Graphik]]></target>
-			</trans-unit>			
+			</trans-unit>
+			<trans-unit id="structure.GraphicVolume" approved="yes">
+				<source><![CDATA[Graphic Volume]]></source>
+				<target><![CDATA[Graphik (Reihe) – Einzelblatt]]></target>
+			</trans-unit>
 			<trans-unit id="structure.ground_plan" approved="yes">
 				<source><![CDATA[Ground Plan]]></source>
 				<target><![CDATA[Grundriss]]></target>
@@ -221,9 +229,21 @@
 				<source><![CDATA[Manuscript]]></source>
 				<target><![CDATA[Handschrift]]></target>
 			</trans-unit>
+			<trans-unit id="structure.ManuscriptVolume" approved="yes">
+				<source><![CDATA[Manuscript Volume]]></source>
+				<target><![CDATA[Handschrift]]></target>
+			</trans-unit>
 			<trans-unit id="structure.map" approved="yes">
 				<source><![CDATA[Map]]></source>
 				<target><![CDATA[Karte]]></target>
+			</trans-unit>
+			<trans-unit id="structure.MapTop" approved="yes">
+				<source><![CDATA[Map]]></source>
+				<target><![CDATA[Karte]]></target>
+			</trans-unit>
+			<trans-unit id="structure.VolumeMap" approved="yes">
+				<source><![CDATA[Map]]></source>
+				<target><![CDATA[Karte in Mehrteiligkeit]]></target>
 			</trans-unit>
 			<trans-unit id="structure.master_thesis" approved="yes">
 				<source><![CDATA[Master Thesis]]></source>
@@ -240,6 +260,18 @@
 			<trans-unit id="structure.multivolume_work" approved="yes">
 				<source><![CDATA[Multivolume Work]]></source>
 				<target><![CDATA[Mehrbändiges Werk]]></target>
+			</trans-unit>
+			<trans-unit id="structure.MultiPartMS" approved="yes">
+				<source><![CDATA[Multi part Manuscript]]></source>
+				<target><![CDATA[Mehrteilige Handschrift]]></target>
+			</trans-unit>
+			<trans-unit id="structure.MultiPartMap" approved="yes">
+				<source><![CDATA[Multi part Map]]></source>
+				<target><![CDATA[Mehrteiliges Kartenwerk]]></target>
+			</trans-unit>
+			<trans-unit id="structure.MultiPartGraphics" approved="yes">
+				<source><![CDATA[Multi part Graphics]]></source>
+				<target><![CDATA[Mehrteilige Graphik]]></target>
 			</trans-unit>
 			<trans-unit id="structure.musical_notation" approved="yes">
 				<source><![CDATA[Musical Notation]]></source>
@@ -276,6 +308,10 @@
 			<trans-unit id="structure.periodical" approved="yes">
 				<source><![CDATA[Periodical]]></source>
 				<target><![CDATA[Zeitschrift]]></target>
+			</trans-unit>
+			<trans-unit id="structure.PeriodicalVolume" approved="yes">
+				<source><![CDATA[Periodical volume]]></source>
+				<target><![CDATA[Zeitschriftenband]]></target>
 			</trans-unit>
 			<trans-unit id="structure.photograph" approved="yes">
 				<source><![CDATA[Photograph]]></source>
@@ -380,10 +416,6 @@
 			<trans-unit id="structure.year" approved="yes">
 				<source><![CDATA[Year]]></source>
 				<target><![CDATA[Jahr]]></target>
-			</trans-unit>
-			<trans-unit id="structure.BundleDocument" approved="yes">
-				<source><![CDATA[Bundledocument]]></source>
-				<target><![CDATA[Nachlassdokument]]></target>
 			</trans-unit>
 		</body>
 	</file>

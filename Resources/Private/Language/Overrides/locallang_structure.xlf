@@ -35,6 +35,9 @@
 			<trans-unit id="structure.bookplate">
 				<source><![CDATA[Bookplate]]></source>
 			</trans-unit>
+			<trans-unit id="structure.BundleDocument">
+				<source><![CDATA[Bundle Document]]></source>
+			</trans-unit>
 			<trans-unit id="structure.cartulary">
 				<source><![CDATA[Cartulary]]></source>
 			</trans-unit>
@@ -119,6 +122,9 @@
 			<trans-unit id="structure.GraphicMaterial">
 				<source><![CDATA[Graphics]]></source>
 			</trans-unit>
+			<trans-unit id="structure.GraphicVolume">
+				<source><![CDATA[Graphic Volume]]></source>
+			</trans-unit>
 			<trans-unit id="structure.ground_plan">
 				<source><![CDATA[Ground Plan]]></source>
 			</trans-unit>
@@ -167,7 +173,16 @@
 			<trans-unit id="structure.manuscript">
 				<source><![CDATA[Manuscript]]></source>
 			</trans-unit>
+			<trans-unit id="structure.ManuscriptVolume">
+				<source><![CDATA[Manuscript Volume]]></source>
+			</trans-unit>
 			<trans-unit id="structure.map">
+				<source><![CDATA[Map]]></source>
+			</trans-unit>
+			<trans-unit id="structure.MapTop">
+				<source><![CDATA[Map]]></source>
+			</trans-unit>
+			<trans-unit id="structure.VolumeMap">
 				<source><![CDATA[Map]]></source>
 			</trans-unit>
 			<trans-unit id="structure.master_thesis">
@@ -181,6 +196,15 @@
 			</trans-unit>
 			<trans-unit id="structure.multivolume_work">
 				<source><![CDATA[Multivolume Work]]></source>
+			</trans-unit>
+			<trans-unit id="structure.MultiPartGraphics">
+				<source><![CDATA[Multi part Graphics]]></source>
+			</trans-unit>
+			<trans-unit id="structure.MultiPartMap">
+				<source><![CDATA[Multi part Map]]></source>
+			</trans-unit>
+			<trans-unit id="structure.MultiPartMS">
+				<source><![CDATA[Multi part Manuscript]]></source>
 			</trans-unit>
 			<trans-unit id="structure.musical_notation">
 				<source><![CDATA[Musical Notation]]></source>
@@ -208,6 +232,9 @@
 			</trans-unit>
 			<trans-unit id="structure.periodical">
 				<source><![CDATA[Periodical]]></source>
+			</trans-unit>
+			<trans-unit id="structure.PeriodicalVolume">
+				<source><![CDATA[Periodical Volume]]></source>
 			</trans-unit>
 			<trans-unit id="structure.photograph">
 				<source><![CDATA[Photograph]]></source>
@@ -286,9 +313,6 @@
 			</trans-unit>
 			<trans-unit id="structure.year">
 				<source><![CDATA[Year]]></source>
-			</trans-unit>
-			<trans-unit id="structure.BundleDocument" approved="yes">
-				<source><![CDATA[Bundle Document]]></source>
 			</trans-unit>
 		</body>
 	</file>
