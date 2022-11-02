@@ -1,0 +1,86 @@
+img.tutorial_left {
+    float:left;
+    margin-right: 15px;
+}
+
+img.tutorial_right {
+    float:right;
+    margin-left: 15px;
+}
+
+#popup {
+    display: none;
+    z-index: 2;
+    position: fixed;
+    width:725px;
+    top: 10%;
+    left: 40%;
+    margin-left: -250px;
+    background: none repeat scroll 0 0 #282e32;
+    border: 10px solid #fff;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+
+div.schliessen {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    left: 10px;
+    bottom: 10px;
+    background: url("https://digitalisate.sub.uni-hamburg.de/fileadmin/templates/jungius_template/img/close.png") no-repeat scroll 0 0 transparent;
+    float: right;
+    cursor: pointer;
+}
+
+#popup_inhalt {
+    margin: 8px 14px;
+}
+
+strong.h2 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    padding-bottom: 5px;
+}
+
+ul.row_item.main_item {
+    border-bottom: 2px solid #D65664;
+    margin: 0 !important;
+}
+
+main {
+    background: url(../../Images/Jungius/bg-jungius.jpeg) no-repeat center center fixed #8D0D1B; background-size: cover;
+    height: 800px;
+}
+
+main section {
+    background-color: #242424eb;
+}
+
+main section > div {
+    padding: 20px;
+}
+
+aside > div {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+aside:first-child {
+    padding-top: 20px;
+}
+
+.frame-type-presentationpackage_accordion {
+    color: #FFF;
+    padding-left: 25px;
+}
+
+.frame-type-presentationpackage_accordionelement ul {
+    padding-left: 30px;
+}
+
+.search-help {
+    display: none;
+}
