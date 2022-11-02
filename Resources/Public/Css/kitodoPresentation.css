@@ -418,8 +418,8 @@ collection-list + teaser
     padding: 60px 0;
 }
 
-.tx-dlf-collection div.frame p,
-.tx-dlf-content div.frame p {
+.tx-dlf-collection div.frame p {
+/*.tx-dlf-content div.frame p {*/
     padding-left: 30px;
     padding-right: 30px;
     color: #fff;
@@ -2129,19 +2129,23 @@ Accordion
 ----------------------------------------------------------------------*/
 
 main div.frame-type-text,
+main div.frame-type-html,
 main div.frame-type-header {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+main div.frame-type-presentationpackage_accordion,
+main div.frame-type-presentationpackage_accordionelement {
     padding-left: 25px;
     padding-right: 25px;
 }
 
-ul.accordion ul {
-    padding-top: 20px;
+main div.frame-type-presentationpackage_accordion,
+main div.frame-type-presentationpackage_accordionelement div.frame {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-
-ul.accordion li {
-    padding-top: 20px !important;
-}
-
 
 .ol-unselectable.ol-layers {
     overflow: hidden;
