@@ -1749,6 +1749,7 @@ calendar + listview
     margin: 0 15px;
     display: table;
     width: calc(100% - 30px);
+    margin-bottom: 30px;
 }
 
 .calendar-items {
@@ -1943,6 +1944,20 @@ article.calendar-metadata ul li dl {
 
 .issues div ul {
     list-style: none;
+}
+
+.dayLinkList a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.dayLinkList a:hover {
+    color: #c83141;
+    text-decoration: none;
+}
+
+.issues .dayLinkList a {
+    display: block;
 }
 
 /*----------------------------------------------------------------------

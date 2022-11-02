@@ -1045,29 +1045,29 @@ function calendarSelectBox() {
             }
         });
 
-        $("div.issues div ul").each(function () {
+        $("div.issues div.dayLinkList").each(function () {
             var interactiveElement = $(this).closest('div.issues');
-            if ($(this).children('li').length > 1) {
+            if ($(this).children('a').length > 1) {
                 interactiveElement.on('click', function (event) {
                     $("div.issues div.openSelectBox").hide();
 
                     $(this).children("div").addClass('openSelectBox');
                     $(this).children("div").show();
                 });
-            } else {
+            } else if ($(this).children('a').length == 1) {
                 // dont show select box
                 // set direct link instead
                 interactiveElement.on('click', function (event) {
-                    window.location.href = $(this).find('div ul li a').attr('href');
+                    window.location.href = $(this).find('a').attr('href');
                 });
             }
         });
 
     } else {
 
-        $("div.issues div ul").each(function () {
+        $("div.issues div.dayLinkList").each(function () {
             var interactiveElement = $(this).closest('div.issues');
-            if ($(this).children('li').length > 1) {
+            if ($(this).children('a').length > 1) {
                 // show select box
                 interactiveElement.on('mouseenter', function (event) {
                     $("div.issues div.openSelectBox").hide();
@@ -1083,11 +1083,11 @@ function calendarSelectBox() {
                         }
                     }, 1000);
                 });
-            } else {
+            } else if ($(this).children('a').length == 1) {
                 // dont show select box
                 // set direct link instead
                 interactiveElement.on('click', function (event) {
-                    window.location.href = $(this).find('div ul li a').attr('href');
+                    window.location.href = $(this).find('a').attr('href');
                 });
             }
         });
