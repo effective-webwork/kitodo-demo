@@ -430,7 +430,7 @@ listview
 }
 
 .listview-headline-sort {
-    display: table;
+    /*display: table;*/
     width: 100%;
 }
 
@@ -2267,4 +2267,11 @@ span.fullPdfDownloadSpan img {
 .tx-dlf-metadata dt.tx-dlf-metadata-type {
     float: initial;
     display: block;
+}
+
+.tx-dlf-listview-collection-thumbnail {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #d5014c;
+    margin-bottom: 20px;
 }
