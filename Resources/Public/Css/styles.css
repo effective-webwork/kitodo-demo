@@ -1798,14 +1798,14 @@ ul.tx-dlf-toolbox span a img {
 .tx-dlf-toolbox li a:hover,
 .tx-dlf-navigation li a:hover,
 .tx-dlf-Navigation li a:hover {
-    background: #8D0D1C !important;
+    background: #cc0a4b !important;
     transition: background 0.5s ease-in-out;
     -webkit-transition: background 0.5s ease-in-out;
     -moz-transition: background 0.5s ease-in-out;
 }
 
 .tx-dlf-toolbox li a.active {
-    background: #8D0D1C !important;
+    background: #cc0a4b !important;
 }
 
 .lba-active {
@@ -1860,7 +1860,7 @@ ul.tx-dlf-toolbox span a img {
 }
 
 .detail-view-itemoptions .dropdown-menu label:hover {
-    background: url(../Images/icon-arrow-down.svg) no-repeat 95% center #8D0D1C;
+    background: url(../Images/icon-arrow-down.svg) no-repeat 95% center #cc0a4b;
     background-size: 16px auto;
     color: #fff;
 }
@@ -1884,7 +1884,7 @@ ul.tx-dlf-toolbox span a img {
 }
 
 .detail-view-tools .dropdown-menu label:hover {
-    background: url(../Images/icon-arrow-down.svg) no-repeat 24px 24px #8D0D1C;
+    background: url(../Images/icon-arrow-down.svg) no-repeat 24px 24px #cc0a4b;
     background-size: 10px auto;
     transition: background 0.5s ease-in-out;
     -webkit-transition: background 0.5s ease-in-out;
@@ -1988,7 +1988,7 @@ span.no-fulltext {
 }
 
 .detail-view-itemoptions .tx-dlf-basket-button a:hover {
-    background: url(../Images/icon-star.svg) no-repeat 10px center #8D0D1C;
+    background: url(../Images/icon-star.svg) no-repeat 10px center #cc0a4b;
     background-size: 16px 16px;
     color: #fff;
 }
@@ -2072,7 +2072,7 @@ span.no-fulltext {
     top: -75px;
     left: -55px;
     width: 80px;
-    border: 2px solid #8D0D1C;
+    border: 2px solid #cc0a4b;
     z-index: 99;
 }
 
@@ -2109,7 +2109,7 @@ aside .tx-dlf-pagegrid-pagebrowser {
 }
 
 .volume-list li a:hover {
-    background: #8D0D1C;
+    background: #cc0a4b;
 }
 
 .termsOfUse {
