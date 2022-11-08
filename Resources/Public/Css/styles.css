@@ -1907,13 +1907,13 @@ ul.tx-dlf-toolbox span a img {
 }
 
 .detail-view-itemoptions .dropdown-menu input[type=checkbox]:checked ~ label {
-    background: url(../Images/icon-arrow-up.svg) no-repeat 95% center #8D0D1C;
+    background: url(../Images/icon-arrow-up.svg) no-repeat 95% center #cc0a4b;
     background-size: 16px auto;
     color: #fff;
 }
 
 .detail-view-tools .dropdown-menu input[type=checkbox]:checked ~ label {
-    background: url(../Images/icon-arrow-up.svg) no-repeat 24px 24px #8D0D1C;
+    background: url(../Images/icon-arrow-up.svg) no-repeat 24px 24px #cc0a4b;
     background-size: 10px auto;
     color: #fff;
 }
@@ -2300,4 +2300,8 @@ dd.tx-dlf-title a {
 .tx-dlf-listview-collection-thumbnail img {
     max-width: 400px;
     height: auto;
+}
+
+.tx-dlf-toc-pagination {
+    display: none;
 }
