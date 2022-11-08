@@ -12,12 +12,12 @@ body {
     margin: 0;
     border: 0 none;
     padding: 0;
-    color: #1e3946;
+    color: #011e4a;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
-    background: url(../Images/background-top-blue.svg) no-repeat #f3f3f3 center top;
+    /* background: url(../Images/background-top-blue.svg) no-repeat #f3f3f3 center top; */
     background-size: 100% auto;
 }
 
@@ -41,7 +41,7 @@ textarea {
 }
 
 a {
-    color: #0071BC;
+    color: #011e4a;
     text-decoration: none;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -49,7 +49,7 @@ a {
 }
 
 a:hover, a:focus, a:active {
-    color: #005182;
+    color: #d4014c;
     text-decoration: underline;
     outline-width: 0;
 }
@@ -165,7 +165,7 @@ input[type=submit] {
     font-weight: 800;
     font-size: 16px;
     border-radius: 3px;
-    background: #0071bc;
+    background: #d5014c;
     color: #fff;
     cursor: pointer;
 }
@@ -190,10 +190,11 @@ header
 ----------------------------------------------------------------------*/
 
 header {
-    margin: 15px 0;
+    padding: 15px 0;
     text-align: center;
     z-index: 6;
     position: relative;
+    background-color: #011e4a;
 }
 
 .portal-header {
@@ -2244,15 +2245,15 @@ span.fullPdfDownloadSpan img {
 }
 
 .dlf-search-switch input:hover + label {
-    background: rgb(141, 13, 28) !important;
+    background: rgb(145 0 52) !important;
     transition: background 0.5s ease-in-out;
     -webkit-transition: background 0.5s ease-in-out;
     -moz-transition: background 0.5s ease-in-out;
 }
 
 .dlf-search-switch input:checked + label {
-    background-color: #B12736;
-    border: 1px solid #B12736;
+    background-color: #d4014c;
+    border: 1px solid #c00044;
 }
 
 .dlf-search-switch label:first-of-type {
@@ -2261,4 +2262,9 @@ span.fullPdfDownloadSpan img {
 
 .dlf-search-switch label:last-of-type {
     border-radius: 0 5px 5px 0;
+}
+
+.tx-dlf-metadata dt.tx-dlf-metadata-type {
+    float: initial;
+    display: block;
 }
