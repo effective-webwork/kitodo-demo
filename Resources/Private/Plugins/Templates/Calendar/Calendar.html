@@ -15,7 +15,7 @@
 <div class="tx-dlf-calendar">
     <div class="meta-header">
         <div class="year-anchor">
-            <div class="year-anchor">
+            <div class="year-link">
                 <f:link.page additionalParams="{'tx_dlf[id]': parentDocumentId}">
                     <f:translate key="calendar.allYears" /> {allYearDocTitle}
                 </f:link.page>
@@ -38,13 +38,13 @@
     <div class="calendar-items">
 
         <f:for each="{calendarData}" as="month">
-            <f:if condition="{month.CALYEAR}">
+            <f:comment><f:if condition="{month.CALYEAR}">
                 <f:then>
                     <div class="year">
                         {month.CALYEAR}
                     </div>
                 </f:then>
-            </f:if>
+            </f:if></f:comment>
             <div class="calendar-view">
                 <table class="month">
                     <caption>{month.MONTHNAME}</caption>

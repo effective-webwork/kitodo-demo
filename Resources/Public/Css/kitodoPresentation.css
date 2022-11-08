@@ -1835,12 +1835,12 @@ table.month h4:hover {
 .calendar-list-selection {
     display: table-cell;
     text-align: right;
-    padding: 30px 0 0 0;
+    padding: 30px 10px 10px 0;
     vertical-align: middle;
 }
 
 .calendar-list-selection a {
-    background: #e4e4e4;
+    background: #a8a8a8;
     border-radius: 3px;
     display: inline-block;
     padding: 10px;
@@ -1958,6 +1958,11 @@ article.calendar-metadata ul li dl {
 
 .issues .dayLinkList a {
     display: block;
+}
+
+.tx-dlf-calendar .meta-header .year {
+    font-weight: 700;
+    font-size: 34px;
 }
 
 /*----------------------------------------------------------------------
