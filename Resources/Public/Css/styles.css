@@ -2275,3 +2275,11 @@ span.fullPdfDownloadSpan img {
     border-bottom: 2px solid #d5014c;
     margin-bottom: 20px;
 }
+
+dd.tx-dlf-title a {
+    font-weight: 700;
+}
+
+.tx-dlf-collection .tx-dlf-collection-description p.long {
+    display: none;
+}
