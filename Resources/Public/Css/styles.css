@@ -2266,9 +2266,16 @@ span.fullPdfDownloadSpan img {
     border-radius: 0 5px 5px 0;
 }
 
-.tx-dlf-metadata dt.tx-dlf-metadata-type {
-    float: initial !important;
-    display: block !important;
+.tx-dlf-metadata dt.tx-dlf-metadata-type,
+.tx-dlf-metadata dd.tx-dlf-metadata-type {
+    float: initial;
+    display: block;
+}
+
+.multivalued dt,
+.multivalued dd {
+    float: initial;
+    display: inline-block;
 }
 
 .tx-dlf-listview-collection-thumbnail {
