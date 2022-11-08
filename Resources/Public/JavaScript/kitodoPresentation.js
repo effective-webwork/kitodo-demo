@@ -1124,7 +1124,7 @@ function calendarSwitchViews() {
 
 function listviewNewspaperRouting() {
     $('dd.tx-dlf-type').each(function () {
-        if ($(this).text() == 'Zeitung') {
+        if ($(this).text() == 'Jahr') {
             var url = $($(this).siblings('dd.tx-dlf-title')[0]).children().prop('href').replace('detail-zeitungen', 'kalender-zeitungen');
             $(this).siblings('dd.tx-dlf-title').children().prop('href', url);
         }
