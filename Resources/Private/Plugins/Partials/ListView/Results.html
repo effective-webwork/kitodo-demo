@@ -34,7 +34,7 @@
                             <f:comment>
                                 Special routing for calendar view PID 42 == DLF3
                             </f:comment>
-                            <f:if condition="{document.structure} == 'year' && {settings.storagePid == '42'}">
+                            <f:if condition="{document.structure} == 'year' && {settings.storagePid} == '42'">
                                 <f:then>
                                     <f:variable name="targetPage" value="97" />
                                 </f:then>
