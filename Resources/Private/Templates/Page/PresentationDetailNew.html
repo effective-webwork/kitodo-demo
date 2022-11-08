@@ -1,0 +1,90 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
+
+    <f:layout name="Default" />
+
+    <f:section name="Configuration">
+        <flux:form id="digitalisateDetail" label="Digitalisate Detail">
+            <!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:form tag -->
+        </flux:form>
+
+        <flux:grid>
+            <!-- Edit this grid to change the "backend layout" structure -->
+            <flux:grid.row>
+                <flux:grid.column colPos="0" name="Titel" label="Titel" />
+                <flux:grid.column colPos="8" name="Navigation" label="Pageview Navigation" />
+                <flux:grid.column colPos="15" name="Basket" label="Basket" />
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="3" name="Docnavigation" label="Dokument Navigation" />
+                <flux:grid.column colPos="4" name="TOC" label="TOC" />
+                <flux:grid.column colPos="5" name="Metadaten" label="Metadaten" />
+                <flux:grid.column colPos="6" name="Preview" label="Pageview Preview" />
+                <flux:grid.column colPos="7" name="Toolbox" label="Toolbox" />
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="1" colspan="5" name="Main" label="Main" />
+            </flux:grid.row>
+        </flux:grid>
+    </f:section>
+
+    <f:section name="Main">
+        <f:render partial="Header" arguments="{_all}"/>
+
+        <header>
+            <section class="portal-meta">
+                <article class="breadcrumb">
+                    <f:comment>
+                        <v:page.breadCrumb />
+                    </f:comment>
+                </article>
+            </section>
+        </header>
+
+        <main class="clear" id="detail-view">
+            <aside>
+                <section>
+                    <div class="detail-aside-nav">
+                        <v:content.render column="3" />
+                        <v:content.render column="7" />
+                    </div>
+                </section>
+                <div id="c19">
+                    <v:content.render column="6" />
+                </div>
+                <article class="detail-view-itemoptions">
+                    <!-- Metadaten -->
+                    <v:content.render column="5" />
+                    <!-- Inhaltsverzeichnis -->
+                    <v:content.render column="4" />
+                </article>
+            </aside>
+
+            <section id="main-content">
+                <div class="detail-view-main">
+                    <article class="detail-view-header">
+                        <div id="c9" class="detail-view-title">
+                            <div class="tx-dlf-metadata">
+                                <dl>
+                                    <dt class="tx-dlf-metadata-title">Title</dt>
+                                    <dd class="tx-dlf-metadata-title detail-view-title-main"></dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                        <div class="detail-view-nav">
+                            <v:content.render column="8" />
+                        </div>
+                    </article>
+                    <v:content.render column="1" />
+                </div>
+            </section>
+        </main>
+
+        <f:render partial="Footer"/>
+    </f:section>
+
+</div>
