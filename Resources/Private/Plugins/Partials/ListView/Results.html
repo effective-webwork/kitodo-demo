@@ -30,6 +30,15 @@
 
                         <dt class="tx-dlf-title"><f:translate key='LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.title' /></dt>
                         <dd class="tx-dlf-title">
+                            <f:variable name="targetPage" value="{settings.targetPidPageView}" />
+                            <f:comment>
+                                Special routing for calendar view PID 42 == DLF3
+                            </f:comment>
+                            <f:if condition="{document.metadata.type} == 'year' && {settings.storagePid == '42'}">
+                                <f:then>
+                                    <f:variable name="targetPage" value="97" />
+                                </f:then>
+                            </f:if>
                             <f:link.page
                                     pageUid="{settings.targetPidPageView}"
                                     additionalParams="{tx_dlf:{page:'{document.page}', double:'0', id:'{document.uid}', pagegrid:'0'}}"

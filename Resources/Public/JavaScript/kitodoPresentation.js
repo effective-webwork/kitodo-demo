@@ -1123,12 +1123,12 @@ function calendarSwitchViews() {
 }
 
 function listviewNewspaperRouting() {
-    $('dd.tx-dlf-type').each(function () {
-        if ($(this).text().trim() == 'Jahr') {
-            var url = $($(this).siblings('dd.tx-dlf-title')[0]).children().prop('href').replace('recherche-zeitungen/detail-zeitungen', 'kalender-zeitungen');
-            $(this).siblings('dd.tx-dlf-title').children().prop('href', url);
-        }
-    });
+    // $('dd.tx-dlf-type').each(function () {
+    //     if ($(this).text().trim() == 'Jahr') {
+    //         var url = $($(this).siblings('dd.tx-dlf-title')[0]).children().prop('href').replace('recherche-zeitungen/detail-zeitungen', 'kalender-zeitungen');
+    //         $(this).siblings('dd.tx-dlf-title').children().prop('href', url);
+    //     }
+    // });
 }
 
 function fulltextPositionAdjustment() {
