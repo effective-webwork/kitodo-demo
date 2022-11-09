@@ -13,8 +13,8 @@ body {
     border: 0 none;
     padding: 0;
     color: #011e4a;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 400;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 300;
     font-size: 16px;
     line-height: 22px;
     /* background: url(../Images/background-top-blue.svg) no-repeat #f3f3f3 center top; */
@@ -25,6 +25,10 @@ p, form, img, legend, ul, ol, li, h1, h2, h3, h4, h5, h6, dl, dt, dd, figure, bl
     margin: 0;
     border: 0 none;
     padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
 }
 
 input, textarea, button, select {
@@ -55,7 +59,7 @@ a:hover, a:focus, a:active {
 }
 
 strong {
-    font-weight: 800;
+    font-weight: 700;
 }
 
 mark {
@@ -96,46 +100,32 @@ sup {
 fonts
 ----------------------------------------------------------------------*/
 
-/* raleway-regular - latin */
+/* prompt-300 - latin */
 @font-face {
-    font-family: 'Raleway';
+    font-family: 'Prompt';
     font-style: normal;
-    font-weight: 400;
-    src: url('../Fonts/raleway-v12-latin-regular.eot'); /* IE9 Compat Modes */
-    src: local('Raleway'), local('Raleway-Regular'),
-    url('../Fonts/raleway-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('../Fonts/raleway-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-    url('../Fonts/raleway-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
-    url('../Fonts/raleway-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('../Fonts/raleway-v12-latin-regular.svg#Raleway') format('svg'); /* Legacy iOS */
+    font-weight: 300;
+    src: url('../fonts/prompt-v10-latin/prompt-v10-latin-300.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/prompt-v10-latin/prompt-v10-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/prompt-v10-latin/prompt-v10-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/prompt-v10-latin/prompt-v10-latin-300.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/prompt-v10-latin/prompt-v10-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/prompt-v10-latin/prompt-v10-latin-300.svg#Prompt') format('svg'); /* Legacy iOS */
 }
 
-/* raleway-600 - latin */
+/* prompt-700 - latin */
 @font-face {
-    font-family: 'Raleway';
+    font-family: 'Prompt';
     font-style: normal;
-    font-weight: 600;
-    src: url('../Fonts/raleway-v12-latin-600.eot'); /* IE9 Compat Modes */
-    src: local('Raleway SemiBold'), local('Raleway-SemiBold'),
-    url('../Fonts/raleway-v12-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('../Fonts/raleway-v12-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
-    url('../Fonts/raleway-v12-latin-600.woff') format('woff'), /* Modern Browsers */
-    url('../Fonts/raleway-v12-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('../Fonts/raleway-v12-latin-600.svg#Raleway') format('svg'); /* Legacy iOS */
-}
-
-/* raleway-800 - latin */
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 800;
-    src: url('../Fonts/raleway-v12-latin-800.eot'); /* IE9 Compat Modes */
-    src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'),
-    url('../Fonts/raleway-v12-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('../Fonts/raleway-v12-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
-    url('../Fonts/raleway-v12-latin-800.woff') format('woff'), /* Modern Browsers */
-    url('../Fonts/raleway-v12-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('../Fonts/raleway-v12-latin-800.svg#Raleway') format('svg'); /* Legacy iOS */
+    font-weight: 700;
+    src: url('../fonts/prompt-v10-latin/prompt-v10-latin-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/prompt-v10-latin/prompt-v10-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/prompt-v10-latin/prompt-v10-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/prompt-v10-latin/prompt-v10-latin-700.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/prompt-v10-latin/prompt-v10-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/prompt-v10-latin/prompt-v10-latin-700.svg#Prompt') format('svg'); /* Legacy iOS */
 }
 
 
@@ -162,7 +152,7 @@ input[type=submit] {
     border: 0;
     margin: 0;
     padding: 8px 10px;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
     background: #d5014c;
@@ -254,7 +244,7 @@ header {
     border-radius: 15px;
     font-size: 12px;
     line-height: 12px;
-    font-weight: 800;
+    font-weight: 700;
     color: #fff;
 }
 
@@ -306,7 +296,7 @@ collection-list
 }
 
 .tx-dlf-collection-list h2 {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 20px;
 }
 
@@ -369,7 +359,7 @@ listview
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    font-weight: 800;
+    font-weight: 700;
     margin-top: 15px;
     background: #fff;
 }
@@ -381,7 +371,7 @@ listview
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    font-weight: 800;
+    font-weight: 700;
     margin-top: 15px;
     background: #fff;
 }
@@ -419,7 +409,7 @@ listview
 }
 
 .tx-dlf-statistics p:first-child {
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .tx-dlf-listview {
@@ -503,7 +493,7 @@ ol.tx-dlf-listview-list {
     border-radius: 3px;
     text-decoration: none;
     padding: 8px 10px 8px 30px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .tx-dlf-listview-list li .add-to-cart a:hover {
@@ -522,7 +512,7 @@ ol.tx-dlf-listview-list {
     border-radius: 3px;
     text-decoration: none;
     padding: 4px 10px 4px 30px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 /*.tx-dlf-listview-list li .show-volumes a.show-volumes-expand {*/
@@ -552,7 +542,7 @@ dt.tx-dlf-metadata-title {
 }
 
 dd.tx-dlf-metadata-title {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 20px;
     padding-bottom: 5px;
 }
@@ -572,7 +562,7 @@ dd.tx-dlf-metadata-type,
 dd.tx-dlf-metadata-year,
 dd.tx-dlf-metadata-author,
 .tx-dlf-listview-list li ol li dd {
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .tx-dlf-listview-list .tx-dlf-listview-thumbnail {
@@ -633,7 +623,7 @@ dd.tx-dlf-metadata-author,
     border-radius: 3px;
     text-decoration: none;
     padding: 8px 10px 8px 30px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .tx-dlf-listview-list li ol li .add-to-cart a:hover {
@@ -868,7 +858,7 @@ detail-view
     border-radius: 3px;
     text-decoration: none;
     padding: 5px 10px 5px 30px !important;
-    font-weight: 800;
+    font-weight: 700;
     border: 0;
     cursor: pointer;
 }
@@ -892,12 +882,12 @@ detail-view
 .detail-view-itemdetails label dt {
     display: inline;
     padding-right: 5px;
-    font-weight: 400;
+    font-weight: 300;
     }
 
 .detail-view-itemdetails dd,
 .detail-view-itemdetails label dd {
-    font-weight: 800;
+    font-weight: 700;
     display: inline;
 }
 
@@ -1026,7 +1016,7 @@ table.month h4 {
     border: 1px solid #F2FBFF;
     border-radius: 3px;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 700;
     color: #0071BC;
     cursor: pointer;
     -webkit-transition: all 0.3s ease-in-out;
@@ -1064,7 +1054,7 @@ table.month h4:hover {
     border: 0;
     margin: 0;
     padding: 8px 10px;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
     background: #0071bc;
@@ -1098,7 +1088,7 @@ table.month h4:hover {
 }
 
 .tx-dlf-newspaper-calendar .list-view a {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 20px;
     padding-bottom: 5px;
     display: block;
@@ -1126,7 +1116,7 @@ table.month h4:hover {
 }
 
 .tx-dlf-newspaper-years .year-view li a {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 20px;
     padding-bottom: 5px;
     display: block;
@@ -2006,7 +1996,7 @@ span.no-fulltext {
 .detail-view-itemdetails label dt {
     display: inline;
     padding-right: 5px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .detail-view-itemdetails dd,
