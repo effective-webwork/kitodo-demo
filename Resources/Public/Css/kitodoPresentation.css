@@ -2148,6 +2148,10 @@ main div.frame-type-presentationpackage_accordionelement {
     color: #FFF;
 }
 
+main .legal-info div {
+    color:#000000;
+}
+
 main div.frame-type-presentationpackage_accordion,
 main div.frame-type-presentationpackage_accordionelement div.frame {
     margin-top: 20px;
