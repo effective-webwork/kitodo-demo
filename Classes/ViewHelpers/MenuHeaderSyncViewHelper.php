@@ -15,6 +15,7 @@ class MenuHeaderSyncViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\Abstrac
 
         $content = preg_replace('/<script src="https:\/\/www\.sub\.uni-hamburg\.de\/typo3conf\/ext\/subhh_website\/Resources\/Public\/js\/sub-website\.min\.js\?[0-9]+?" type="text\/javascript"><\/script>/','',$content);
         $content = preg_replace('/<link rel="stylesheet" type="text\/css" href="https:\/\/www\.sub\.uni-hamburg\.de\/typo3conf\/ext\/subhh_website\/Resources\/Public\/css\/styles\.css\?[0-9]+?" media="screen">/','',$content);
+        $content = preg_replace('/<script src="https:\/\/www\.sub\.uni-hamburg\.de\/typo3conf\/ext\/subhh_website\/Resources\/Public\/js\/news\.js\?[0-9]+?" type="text\/javascript"><\/script>/','',$content);
 
         // replace links
         $content = str_replace('https://www.sub.uni-hamburg.de/impressum.html', 'https://digitalisate.sub.uni-hamburg.de/impressum.html', $content);
