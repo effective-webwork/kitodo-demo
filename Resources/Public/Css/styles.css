@@ -1,6 +1,5 @@
 /*----------------------------------------------------------------------
-build in:  02 2019
-copyright: KMD Medien GmbH – www.kmd.de
+build in:  11 2022
 ----------------------------------------------------------------------*/
 
 
@@ -17,7 +16,6 @@ body {
     font-weight: 300;
     font-size: 16px;
     line-height: 22px;
-    /* background: url(../Images/background-top-blue.svg) no-repeat #f3f3f3 center top; */
     background-size: 100% auto;
 }
 
@@ -66,7 +64,6 @@ mark {
     background-color: #005182;
     color: #fff;
     padding: 1px 2px;
-    border-radius: 3px;
 }
 
 sub, sup {
@@ -135,7 +132,6 @@ forms
 
 input[type=text] {
     border: 1px solid #0071bc;
-    border-radius: 3px;
     padding: 10px;
     line-height: 0;
     font-size: 16px;
@@ -154,7 +150,6 @@ input[type=submit] {
     padding: 8px 10px;
     font-weight: 700;
     font-size: 16px;
-    border-radius: 3px;
     background: #d5014c;
     color: #fff;
     cursor: pointer;
@@ -166,7 +161,6 @@ input[type=submit]:hover {
 
 select {
     border: 1px solid #0071bc;
-    border-radius: 3px;
     padding: 8px 10px;
     line-height: 0;
     font-size: 16px;
@@ -180,17 +174,20 @@ header
 ----------------------------------------------------------------------*/
 
 header {
-    padding: 15px 0;
-    text-align: center;
     z-index: 6;
     position: relative;
-    background-color: #011e4a;
     margin-bottom: 10px;
 }
 
+.header-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .portal-header {
-    display: table;
+    padding: 15px 0;
     width: 100%;
+    background: #F0F2F4;
 }
 
 .portal-header article {
@@ -202,12 +199,8 @@ header {
 }
 
 #kitodo-logo img {
-    width: 110px;
-    height: auto;
-}
-
-#kitodo-icon {
-    display: none;
+    width: auto;
+    height: 40px;
 }
 
 .meta-actions {
@@ -248,6 +241,41 @@ header {
     color: #fff;
 }
 
+.portal-main-search {
+    padding: 15px 0;
+    background: #011e4a;
+}
+
+.portal-main-search .header-wrapper {
+    background: url(sh-signet.svg) no-repeat;
+    background-position: right center;
+    background-size: 50%;
+}
+
+.portal-welcome-headline h1 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 36px;
+    padding: 45px 0 30px 0;
+    width: 50%;
+}
+
+.portal-welcome-headline h2 {
+    color: #fff;
+    font-size: 20px;
+    line-height: 26px;
+    padding: 0px 0 15px 0;
+    width: 50%;
+}
+
+
+.portal-welcome-intro {
+    color: #fff;
+    padding: 60px 0 45px 0;
+    width: 50%;
+}
+
 
 /*----------------------------------------------------------------------
 main
@@ -255,9 +283,14 @@ main
 
 main {
     display: block;
-    position: relative;
-    z-index: 2;
-    margin-bottom: 55px;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+main#detail-view {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
 }
 
 main aside {
@@ -271,6 +304,10 @@ main aside {
     margin-bottom: 60px;
 }
 
+main#detail-view #main-content {
+    margin-bottom: 0px;
+}
+
 
 /*----------------------------------------------------------------------
 collection-list
@@ -278,24 +315,24 @@ collection-list
 
 .tx-dlf-collection-list  {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
     list-style-type: none;
-    padding: 0 15px;
+    padding: 0;
 }
 
 .tx-dlf-collection-list li {
-    background-color: #fff;
-    padding: 30px;
-    /*border-radius: 3px;*/
-    text-align: center;
-    webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
-    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+    background-color: #F9FAFB;
+    padding: 0 30px 30px 30px;
+    webkit-box-shadow: 0 20px 20px -10px rgba(74,74,74,0.3);
+    -moz-box-shadow: 0 20px 20px -10px rgba(74,74,74,0.3);
+    box-shadow: 0 20px 20px -10px rgba(74,74,74,0.3);
     border-top: 4px solid #d5014c;
+    margin: 30px 0 30px 0;
 }
 
 .tx-dlf-collection-list h2 {
+    margin: 30px 0 0 0;
     font-weight: 700;
     font-size: 20px;
 }
@@ -303,9 +340,11 @@ collection-list
 .tx-dlf-collection-thumbnail img {
     width: 100%;
     height: auto;
-    margin-bottom: 30px;
 }
 
+.tx-dlf-collection-description p {
+    color: #363636;
+}
 
 /*----------------------------------------------------------------------
 tx-dlf-search-query
@@ -314,7 +353,6 @@ tx-dlf-search-query
 .tx-dlf-search {
     background-color: #f3f3f3;
     padding: 30px;
-    border-radius: 3px;
     webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
@@ -328,10 +366,11 @@ tx-dlf-search-query
 
 #tx-dlf-search-suggest {
     display: inline-block;
+    width: auto;
 }
 
 #tx-dlf-search-query {
-    width: 45%;
+    width: 35%;
 }
 
 .tx-dlf-search-options {
@@ -366,14 +405,14 @@ listview
 
 .dropdown-menu label {
     display: block;
-    padding: 8px 30px 8px 30px;
+    padding: 8px 0px 0px 0px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     font-weight: 700;
     margin-top: 15px;
-    background: #fff;
+    background: transparent;
 }
 
 .dropdown-menu input[type=checkbox] {
@@ -382,7 +421,7 @@ listview
 
 .dropdown-menu ul li {
     border-bottom: 1px solid #d8d8d8;
-    background: #fff;
+    background: transparent;
     hyphens: auto;
     list-style-type: none;
 }
@@ -392,7 +431,7 @@ listview
 }
 
 .dropdown-menu ul li a {
-    padding: 5px 30px;
+    padding: 5px 5px;
     display: block;
 }
 
@@ -400,7 +439,6 @@ listview
     background-color: rgba(0,0,0,0.5);
     color: #fff;
     padding: 10px 30px;
-    border-radius: 3px;
     margin: 0px 15px;
 }
 
@@ -414,11 +452,7 @@ listview
 
 .tx-dlf-listview {
     background-color: #fff;
-    border-radius: 3px;
-    webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
-    box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
-    margin: 0 15px;
+    margin: 0 30px 0 0;
 }
 
 .listview-headline-sort {
@@ -490,7 +524,6 @@ ol.tx-dlf-listview-list {
     display: inline-block;
     background: url(../Images/icon-labelstar.svg) no-repeat left center #0071bc;
     color: #fff;
-    border-radius: 3px;
     text-decoration: none;
     padding: 8px 10px 8px 30px;
     font-weight: 700;
@@ -509,26 +542,25 @@ ol.tx-dlf-listview-list {
 .tx-dlf-listview-list li .show-volumes a {
     display: inline-block;
     color: #fff;
-    border-radius: 3px;
     text-decoration: none;
     padding: 4px 10px 4px 30px;
     font-weight: 300;
 }
 
 /*.tx-dlf-listview-list li .show-volumes a.show-volumes-expand {*/
-    /*background: url(../Images/icon-arrow-up.svg) no-repeat left center #999;*/
+/*background: url(../Images/icon-arrow-up.svg) no-repeat left center #999;*/
 /*}*/
 
 /*.tx-dlf-listview-list li .show-volumes a.show-volumes-expand:hover {*/
-    /*background: url(../Images/icon-arrow-up.svg) no-repeat left center #005182;*/
+/*background: url(../Images/icon-arrow-up.svg) no-repeat left center #005182;*/
 /*}*/
 
 /*.tx-dlf-listview-list li .show-volumes a.show-volumes-minimize {*/
-    /*background: url(../Images/icon-arrow-down.svg) no-repeat left center #0071bc;*/
+/*background: url(../Images/icon-arrow-down.svg) no-repeat left center #0071bc;*/
 /*}*/
 
 /*.tx-dlf-listview-list li .show-volumes a.show-volumes-minimize:hover {*/
-    /*background: url(../Images/icon-arrow-down.svg) no-repeat left center #005182;*/
+/*background: url(../Images/icon-arrow-down.svg) no-repeat left center #005182;*/
 /*}*/
 
 .tx-dlf-listview-list dl {
@@ -620,7 +652,6 @@ dd.tx-dlf-metadata-author,
     display: inline-block;
     background: url(../Images/icon-labelstar.svg) no-repeat left center #66acd8;
     color: #fff;
-    border-radius: 3px;
     text-decoration: none;
     padding: 8px 10px 8px 30px;
     font-weight: 700;
@@ -638,19 +669,18 @@ dd.tx-dlf-metadata-author,
 }
 
 .tx-dlf-search-facets {
-    background-color: #fff;
-    border-radius: 3px;
-    webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
-    box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
-    margin: 0 15px 15px 0;
-    padding-bottom: 15px;
+    background-color: #F9FAFB;
+    padding: 0 15px 15px 15px;
+    webkit-box-shadow: 0 20px 20px -10px rgba(74,74,74,0.3);
+    -moz-box-shadow: 0 20px 20px -10px rgba(74,74,74,0.3);
+    box-shadow: 0 20px 20px -10px rgba(74,74,74,0.3);
+    border-top: 4px solid #d5014c;
     margin-bottom: 60px !important; /* this is not good */
     /* reason for !importent is important in styles.css .tx-dlf-search-facets margin: 0 !important; */
 }
 
 .tx-dlf-search-facets h2 {
-    padding: 30px 30px 0 30px;
+    padding: 30px 0 0 0;
     font-size: 20px;
 }
 
@@ -660,7 +690,6 @@ detail-view
 
 #detail-view {
     background-color: #fff;
-    border-radius: 3px;
     webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
@@ -692,7 +721,6 @@ detail-view
 }
 
 .tx-dlf-navigation li span {
-    border-radius: 3px;
     padding: 5px;
     line-height: 0;
     font-size: 16px;
@@ -703,7 +731,6 @@ detail-view
 
 .tx-dlf-navigation li a,
 .tx-dlf-pageview div a {
-    border-radius: 3px;
     padding: 5px;
     line-height: 0;
     font-size: 16px;
@@ -749,7 +776,7 @@ detail-view
     /*position: absolute;*/
     /*top: 0;*/
     /*left: 25%;*/
-    }
+}
 
 .detail-view-itemoptions .detail-view-itemcontents {
     position: absolute;
@@ -777,7 +804,6 @@ detail-view
     background-size: 24px auto;
     margin-top: 5px;
     color: #fff;
-    border-radius: 3px;
     cursor: pointer;
     padding: 8px 30px 8px 15px;
 }
@@ -785,22 +811,20 @@ detail-view
 .detail-view-itemoptions .dropdown-menu label:hover {
     background: url(../Images/icon-arrow-down.svg) no-repeat right center #005182;
     color: #fff;
-    }
+}
 
 .detail-view-itemdetails .dropdown-menu label {
     background: url(../Images/icon-arrow-down-dark.svg) no-repeat right center #d8d8d8;
     background-size: 24px auto;
     margin-top: 5px;
     color: #1e3946;
-    border-radius: 3px;
     cursor: pointer;
     padding: 8px 30px 8px 15px;
-    }
+}
 
 .detail-view-itemoptions .dropdown-menu ul {
     display: none;
     border: 1px solid #d8d8d8;
-    border-radius: 3px;
 }
 
 .detail-view-itemoptions .dropdown-menu ul ul {
@@ -817,7 +841,7 @@ detail-view
     background: url(../Images/icon-arrow-up.svg) no-repeat right center #0071bc;
     background-size: 24px auto;
     color: #fff;
-    }
+}
 
 .detail-view-itemoptions .dropdown-menu input[type=checkbox]:checked ~ ul,
 .detail-view-itemoptions .dropdown-menu input[type=checkbox]:checked ~ ul ul {
@@ -827,7 +851,7 @@ detail-view
 .detail-view-itemoptions .dropdown-menu ul li a,
 .detail-view-itemoptions .dropdown-menu ul li .tx-dlf-toolsImagemanipulation,
 .detail-view-itemoptions .dropdown-menu ul li .tx-dlf-toolsFulltext {
-    padding: 5px 15px;
+    padding: 5px 5px;
 }
 
 .tx-dlf-toolsPdf span {
@@ -855,7 +879,6 @@ detail-view
     display: inline-block;
     background: url(../Images/icon-labelstar.svg) no-repeat left center #0071bc;
     color: #fff;
-    border-radius: 3px;
     text-decoration: none;
     padding: 5px 10px 5px 30px !important;
     font-weight: 700;
@@ -876,14 +899,14 @@ detail-view
 .detail-view-itemdetails dl {
     margin: 0;
     padding: 0;
-    }
+}
 
 .detail-view-itemdetails dt,
 .detail-view-itemdetails label dt {
     display: inline;
     padding-right: 5px;
     font-weight: 300;
-    }
+}
 
 .detail-view-itemdetails dd,
 .detail-view-itemdetails label dd {
@@ -894,12 +917,12 @@ detail-view
 .detail-view-itemdetails .dropdown-menu ul dt,
 .detail-view-itemdetails .dropdown-menu ul dd {
     padding: 5px 15px;
-    }
+}
 
 .detail-view-itemdetails .dropdown-menu ul dt a,
 .detail-view-itemdetails .dropdown-menu ul dd a {
     padding: 0 !important;
-    }
+}
 
 .tx-dlf-pagegrid {
     z-index: 4;
@@ -908,7 +931,6 @@ detail-view
     background: #f3f3f3;
     margin: 0 auto;
     padding: 15px;
-    border-radius: 3px;
     line-height: 0;
 }
 
@@ -960,7 +982,6 @@ calendar + listview
 .tx-dlf-newspaper-calendar .meta-header,
 .tx-dlf-newspaper-years .meta-header {
     background-color: #fff;
-    border-radius: 3px;
     webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
@@ -980,7 +1001,6 @@ calendar + listview
 .calendar-view {
     background-color: #fff;
     padding: 30px;
-    border-radius: 3px;
     text-align: center;
     webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
@@ -1014,7 +1034,6 @@ table.month td {
 table.month h4 {
     background: #F2FBFF;
     border: 1px solid #F2FBFF;
-    border-radius: 3px;
     font-size: 16px;
     font-weight: 700;
     color: #0071BC;
@@ -1056,7 +1075,6 @@ table.month h4:hover {
     padding: 8px 10px;
     font-weight: 700;
     font-size: 16px;
-    border-radius: 3px;
     background: #0071bc;
     color: #fff;
     cursor: pointer;
@@ -1071,7 +1089,6 @@ table.month h4:hover {
     margin: 15px 15px 0 15px;
     background-color: #fff;
     padding: 15px 30px;
-    border-radius: 3px;
     webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
@@ -1108,7 +1125,6 @@ table.month h4:hover {
     background-color: #fff;
     padding: 30px;
     color: #999;
-    border-radius: 3px;
     text-align: center;
     webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
@@ -1128,7 +1144,6 @@ basket
 
 .tx-dlf-basket {
     background-color: #fff;
-    border-radius: 3px;
     webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
@@ -1188,25 +1203,26 @@ footer
 ----------------------------------------------------------------------*/
 
 footer {
-    position: fixed;
-    bottom: 0px;
     width: 100%;
-    z-index: 1;
+    background: #003064;
+    margin: 60px 0 0 0;
+    clear: both;
 }
 
 #footer-content {
     width: 100%;
-    background: url(../Images/background-bottom.svg) no-repeat transparent center top;
-    background-size: 100% auto;
+    max-width: 1200px;
+    margin: 0 auto;
     font-size: 0.8rem;
     display: table;
 }
 
 #footer-content ul {
-    padding: 200px 0px 15px 15px;
+    padding: 20px 0;
     display: table-cell;
     vertical-align: bottom;
     list-style-type: none;
+    width: 50%;
 }
 
 #footer-content li {
@@ -1214,29 +1230,25 @@ footer {
 }
 
 #footer-content li a {
-    background: #999;
-    color: #fff;
-    border-radius: 3px;
-    padding: 3px;
+    background: #fff;
+    color: #003064;
+    padding: 5px;
     text-decoration: none;
 }
 
 #footer-content li a:hover {
-    background: #005182;
+    background: #D4004B;
+    color: #fff;
 }
 
 #footer-content p {
-    padding: 200px 15px 15px 0px;
-    color: #0071BC;
+    padding: 20px 0;
+    color: #ffffff;
     display: table-cell;
     text-align: right;
     vertical-align: bottom;
+    width: 50%;
 }
-
-#footer-content p span {
-    color: #999;
-    }
-
 
 
 /*----------------------------------------------------------------------
@@ -1249,10 +1261,6 @@ max 1600px
     .calendar-items,
     .tx-dlf-newspaper-years .year-view ul {
         grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    #footer-content p {
-        padding: 120px 15px 15px 0px;
     }
 
     .tx-dlf-collection-list h2 {
@@ -1268,6 +1276,30 @@ max 1600px
 
 
 /*----------------------------------------------------------------------
+max 1300px
+----------------------------------------------------------------------*/
+
+@media only screen and (max-width: 1300px) {
+
+    .header-wrapper {
+        max-width: calc(100% - 60px);
+        margin: 0 30px;
+    }
+
+    main {
+        margin: 30px 30px;
+        max-width: calc(100% - 60px);
+    }
+
+    #footer-content {
+        max-width: calc(100% - 60px);
+        margin: 0 30px;
+    }
+
+}
+
+
+/*----------------------------------------------------------------------
 max 1024px
 ----------------------------------------------------------------------*/
 
@@ -1275,6 +1307,23 @@ max 1024px
 
     body {
         background-size: auto 400px;
+    }
+
+    .header-wrapper {
+        max-width: calc(100% - 30px);
+        margin: 0 15px;
+    }
+
+    .portal-welcome-headline h1,
+    .portal-welcome-headline h2,
+    .portal-welcome-intro {
+        width: 75%;
+    }
+
+    #tx-dlf-search-query,
+    #tx-dlf-search-logical-page {
+        width: 75%;
+        margin-bottom: 15px;
     }
 
     .tx-dlf-collection-list,
@@ -1288,7 +1337,12 @@ max 1024px
     }
 
     main {
-        margin-bottom: 120px;
+        margin: 30px 15px;
+        max-width: calc(100% - 30px);
+    }
+
+    .tx-dlf-listview {
+        margin: 0 0 0 0;
     }
 
     main aside {
@@ -1302,12 +1356,14 @@ max 1024px
     }
 
     #footer-content {
-        background-size: auto 400px;
+        max-width: calc(100% - 30px);
+        margin: 0 15px;
         display: block;
     }
 
     #footer-content ul {
-        padding: 90px 15px 0px 15px;
+        padding: 15px;
+        width: calc(100% - 30px);
         display: block;
         text-align: center;
     }
@@ -1320,7 +1376,6 @@ max 1024px
     #footer-content li a {
         background: #999;
         color: #fff;
-        border-radius: 3px;
         padding: 3px;
         text-decoration: none;
     }
@@ -1328,6 +1383,7 @@ max 1024px
     #footer-content p {
         padding: 0px 15px 15px 15px;
         display: block;
+        width: calc(100% - 30px);
         text-align: center;
     }
 
@@ -1336,7 +1392,6 @@ max 1024px
         background-size: 24px auto;
         margin-top: 5px;
         color: #fff;
-        border-radius: 3px;
         cursor: pointer;
         padding: 8px 30px 8px 15px;
     }
@@ -1368,16 +1423,13 @@ max 1024px
     }
 
     .tx-dlf-search-facets h2 {
-        padding: 0;
         font-size: 16px;
-        text-align: center;
     }
 
     .detail-view-header {
         padding: 15px;
         display: block;
         width: calc(100% - 30px);
-
     }
 
     .detail-view-title {
@@ -1433,19 +1485,6 @@ max 700px
 
 @media only screen and (max-width: 700px) {
 
-    #kitodo-logo {
-        display: none;
-    }
-
-    #kitodo-icon {
-        display: inline-block;
-    }
-
-    #kitodo-icon img {
-        width: 40px;
-        height: auto;
-    }
-
     .meta-actions {
         padding-left: 15px;
         width: 35%;
@@ -1454,6 +1493,18 @@ max 700px
     .meta-navigation {
         padding-right: 15px;
         width: 35%;
+    }
+
+    .portal-welcome-headline h1,
+    .portal-welcome-headline h2,
+    .portal-welcome-intro {
+        width: 100%;
+    }
+
+    #tx-dlf-search-query,
+    #tx-dlf-search-logical-page {
+        width: 100%;
+        margin-bottom: 15px;
     }
 
     .tx-dlf-collection-list,
@@ -1477,12 +1528,6 @@ max 700px
 
     .tx-dlf-statistics {
         padding: 15px;
-    }
-
-    #tx-dlf-search-query,
-    #tx-dlf-search-logical-page {
-        width: 100%;
-        margin-bottom: 15px;
     }
 
     .dropdown-menu input[type=checkbox]:checked ~ ul {
@@ -1600,7 +1645,7 @@ max 700px
         padding: 0;
         margin: 0 15px;
         left: 0;
-        }
+    }
 
     .detail-view-itemdetails {
         display: block;
@@ -1747,7 +1792,6 @@ ul.tx-dlf-toolbox span a img {
 .tx-dlf-toolbox li span,
 .tx-dlf-navigation li span,
 .tx-dlf-Navigation li span {
-    border-radius: 3px;
     padding: 8px;
     line-height: 0;
     font-size: 16px;
@@ -1767,7 +1811,6 @@ ul.tx-dlf-toolbox span a img {
 .tx-dlf-toolbox li a,
 .tx-dlf-navigation li a,
 .tx-dlf-Navigation li a {
-    border-radius: 3px;
     padding: 8px;
     line-height: 0;
     font-size: 16px;
@@ -1844,7 +1887,6 @@ ul.tx-dlf-toolbox span a img {
     background-size: 16px auto;
     margin-top: 5px;
     color: #fff;
-    border-radius: 3px;
     cursor: pointer;
     padding: 8px 30px 8px 15px;
 }
@@ -1865,7 +1907,6 @@ ul.tx-dlf-toolbox span a img {
     background: #6a6a6a;
     margin-top: 0;
     color: #fff;
-    border-radius: 3px;
     cursor: pointer;
     padding: 8px;
     display: inline-block;
@@ -1931,7 +1972,7 @@ ul.tx-dlf-toolbox span a img {
 .detail-view-itemoptions .dropdown-menu ul li .tx-dlf-imagedownloadtool,
 .detail-view-itemoptions .dropdown-menu ul li .tx-dlf-fulltexttool,
 .detail-view-itemoptions .dropdown-menu ul li .tx-dlf-pdfdownloadtool {
-    padding: 5px 15px;
+    padding: 5px 5px;
 }
 
 .tx-dlf-toolsPdf span {
@@ -1971,7 +2012,6 @@ span.no-fulltext {
     background: url(../Images/icon-star-dark.svg) no-repeat 10px center #fff;
     background-size: 16px 16px;
     color: #242424;
-    border-radius: 3px;
     text-decoration: none;
     padding: 8px 10px 8px 30px !important;
     font-weight: 700;
@@ -2079,7 +2119,6 @@ aside .tx-dlf-pagegrid-pagebrowser {
     background-color: #ababab;
     padding: 8px 15px;
     color: #fff;
-    border-radius: 3px;
     margin: 30px;
 }
 
@@ -2091,7 +2130,6 @@ aside .tx-dlf-pagegrid-pagebrowser {
 .volume-list li a {
     background: #6a6a6a;
     display: inline-block;
-    border-radius: 3px;
     padding: 8px 15px;
     color: #fff;
     margin: 0 5px 5px 0;
@@ -2203,9 +2241,7 @@ span.fullPdfDownloadSpan img {
 .dlf-search-switch {
     display: flex;
     overflow: hidden;
-    justify-content: center;
     margin-top: 15px;
-    margin-bottom: 20px;
 }
 
 .tx-dlf-search-wrapper .dlf-search-switch {
@@ -2228,8 +2264,9 @@ span.fullPdfDownloadSpan img {
     text-align: center;
     border: 1px solid #959595;
     transition: all 0.1s ease-in-out;
-    font-size: 16px;
-    padding: 5px 15px;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 5px 8px;
 }
 
 .dlf-search-switch label:hover {
@@ -2246,14 +2283,6 @@ span.fullPdfDownloadSpan img {
 .dlf-search-switch input:checked + label {
     background-color: #d4014c;
     border: 1px solid #c00044;
-}
-
-.dlf-search-switch label:first-of-type {
-    border-radius: 5px 0 0 5px;
-}
-
-.dlf-search-switch label:last-of-type {
-    border-radius: 0 5px 5px 0;
 }
 
 .tx-dlf-metadata dt.tx-dlf-metadata-type,
