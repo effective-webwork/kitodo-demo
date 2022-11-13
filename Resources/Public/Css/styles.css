@@ -247,7 +247,7 @@ header {
 }
 
 .portal-main-search .header-wrapper {
-    background: url(sh-signet.svg) no-repeat;
+    background: url(../Images/sh-signet.svg) no-repeat;
     background-position: right center;
     background-size: 50%;
 }
