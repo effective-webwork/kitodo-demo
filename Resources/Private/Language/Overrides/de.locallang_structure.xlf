@@ -229,7 +229,7 @@
 				<source><![CDATA[Magister Thesis]]></source>
 				<target><![CDATA[Magisterarbeit]]></target>
 			</trans-unit>
-			<trans-unit id="structure.manuscript" approved="yes">
+			<trans-unit id="structure.Manuscript" approved="yes">
 				<source><![CDATA[Manuscript]]></source>
 				<target><![CDATA[Handschrift]]></target>
 			</trans-unit>

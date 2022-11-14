@@ -173,7 +173,7 @@
 			<trans-unit id="structure.magister_thesis">
 				<source><![CDATA[Magister Thesis]]></source>
 			</trans-unit>
-			<trans-unit id="structure.manuscript">
+			<trans-unit id="structure.Manuscript">
 				<source><![CDATA[Manuscript]]></source>
 			</trans-unit>
 			<trans-unit id="structure.ManuscriptVolume">
