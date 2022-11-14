@@ -146,7 +146,7 @@
                                                     </li>
                                                 </f:else>
                                             </f:if>
-                                            <f:if condition="{iterator.isLast}">
+                                            <f:if condition="{iterator.isLast} && {iterator.total} > 5">
                                                 <li>
                                                     <a class="facetShowMore" href="#">
                                                         Mehr ...
