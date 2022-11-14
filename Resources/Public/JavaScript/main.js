@@ -195,3 +195,31 @@ $('.tx-dlf-navigation-magnifier a, .tx-dlf-navigation-magnifier span')
 $('div.tx-dlf-navigation-edit').hide();
 $('div.tx-dlf-navigation-editRemove').hide();
 $('div.tx-dlf-navigation-magnifier').hide();
+
+$(document).ready(function() {
+    initialFacetValueRestriction();
+});
+
+function initialFacetValueRestriction() {
+    $('.tx-dlf-search-facets ul').each(function () {
+        if ($(this).children("li").length != 0 && $(this).children("li").length > 5) {
+            $($(this).children("li")[4]).nextAll().hide();
+            $(this).append('<li><a class="facetShowMore" href="#">Mehr ...</a></li>');
+            $(this).append('<li><a class="facetShowLess" href="#">Weniger ...</a></li>');
+            $(this).find('li a.facetShowLess').parent().hide();
+        }
+    });
+    $('.facetShowMore').on("click", function (event) {
+        event.preventDefault();
+        $(this).parent().parent().children("li").show();
+        $(this).parent().hide();
+        $(this).parent().parent().find('.facetShowLess').parent().show();
+    });
+
+    $('.facetShowLess').on("click", function (event) {
+        event.preventDefault();
+        $($(this).parent().parent().children("li")[4]).nextAll().hide();
+        $(this).parent().hide();
+        $(this).parent().parent().find('.facetShowMore').parent().show();
+    });
+}
