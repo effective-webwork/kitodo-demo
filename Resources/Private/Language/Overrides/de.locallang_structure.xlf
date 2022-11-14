@@ -417,6 +417,10 @@
 				<source><![CDATA[Year]]></source>
 				<target><![CDATA[Jahr]]></target>
 			</trans-unit>
+            <trans-unit id="structure.PoetryAlbum">
+                <source><![CDATA[PoetryAlbum]]></source>
+                <target><![CDATA[Poesiealbum]]></target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

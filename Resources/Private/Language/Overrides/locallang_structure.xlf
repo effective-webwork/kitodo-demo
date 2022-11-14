@@ -314,6 +314,9 @@
 			<trans-unit id="structure.year">
 				<source><![CDATA[Year]]></source>
 			</trans-unit>
+            <trans-unit id="structure.PoetryAlbum">
+                <source><![CDATA[PoetryAlbum]]></source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>
