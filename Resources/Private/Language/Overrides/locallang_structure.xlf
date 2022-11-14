@@ -107,7 +107,7 @@
 			<trans-unit id="structure.file">
 				<source><![CDATA[File]]></source>
 			</trans-unit>
-			<trans-unit id="structure.figure">
+			<trans-unit id="structure.Figure">
 				<source><![CDATA[Figure]]></source>
 			</trans-unit>
 			<trans-unit id="structure.folder">
@@ -305,7 +305,7 @@
 			<trans-unit id="structure.text">
 				<source><![CDATA[Text]]></source>
 			</trans-unit>
-			<trans-unit id="structure.title_page">
+			<trans-unit id="structure.Title_page">
 				<source><![CDATA[Titlepage]]></source>
 			</trans-unit>
 			<trans-unit id="structure.verse">
@@ -319,6 +319,9 @@
 			</trans-unit>
             <trans-unit id="structure.PoetryAlbum">
                 <source><![CDATA[PoetryAlbum]]></source>
+            </trans-unit>
+            <trans-unit id="structure.PoetryAlbumBox">
+                <source><![CDATA[PoetryAlbumBox]]></source>
             </trans-unit>
 		</body>
 	</file>

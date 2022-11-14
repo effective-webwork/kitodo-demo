@@ -137,7 +137,7 @@
 				<source><![CDATA[Fascicle]]></source>
 				<target><![CDATA[Faszikel]]></target>
 			</trans-unit>
-			<trans-unit id="structure.figure" approved="yes">
+			<trans-unit id="structure.Figure" approved="yes">
 				<source><![CDATA[Figure]]></source>
 				<target><![CDATA[Abbildung]]></target>
 			</trans-unit>
@@ -405,7 +405,7 @@
 				<source><![CDATA[Text]]></source>
 				<target><![CDATA[Text]]></target>
 			</trans-unit>
-			<trans-unit id="structure.title_page" approved="yes">
+			<trans-unit id="structure.Title_page" approved="yes">
 				<source><![CDATA[Titlepage]]></source>
 				<target><![CDATA[Titelseite]]></target>
 			</trans-unit>
@@ -424,6 +424,10 @@
             <trans-unit id="structure.PoetryAlbum">
                 <source><![CDATA[PoetryAlbum]]></source>
                 <target><![CDATA[Poesiealbum]]></target>
+            </trans-unit>
+            <trans-unit id="structure.PoetryAlbumBox">
+                <source><![CDATA[PoetryAlbumBox]]></source>
+                <target><![CDATA[Poesiealbumbox]]></target>
             </trans-unit>
 		</body>
 	</file>
