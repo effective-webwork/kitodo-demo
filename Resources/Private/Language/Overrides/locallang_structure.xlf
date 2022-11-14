@@ -167,6 +167,9 @@
 			<trans-unit id="structure.letter">
 				<source><![CDATA[Letter]]></source>
 			</trans-unit>
+            <trans-unit id="structure.Letter" approved="yes">
+                <source><![CDATA[Letter]]></source>
+            </trans-unit>
 			<trans-unit id="structure.magister_thesis">
 				<source><![CDATA[Magister Thesis]]></source>
 			</trans-unit>

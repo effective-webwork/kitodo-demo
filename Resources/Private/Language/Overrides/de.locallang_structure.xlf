@@ -221,6 +221,10 @@
 				<source><![CDATA[Letter]]></source>
 				<target><![CDATA[Brief]]></target>
 			</trans-unit>
+            <trans-unit id="structure.Letter" approved="yes">
+                <source><![CDATA[Letter]]></source>
+                <target><![CDATA[Brief]]></target>
+            </trans-unit>
 			<trans-unit id="structure.magister_thesis" approved="yes">
 				<source><![CDATA[Magister Thesis]]></source>
 				<target><![CDATA[Magisterarbeit]]></target>
