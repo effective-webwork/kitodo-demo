@@ -196,9 +196,8 @@ $('div.tx-dlf-navigation-edit').hide();
 $('div.tx-dlf-navigation-editRemove').hide();
 $('div.tx-dlf-navigation-magnifier').hide();
 
-$(document).ready(function() {
-    initialFacetValueRestriction();
-});
+
+initialFacetValueRestriction();
 
 function initialFacetValueRestriction() {
     $('.tx-dlf-search-facets ul').each(function () {
