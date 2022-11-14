@@ -1,0 +1,77 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
+
+    <f:layout name="Default" />
+
+    <f:section name="Configuration">
+        <flux:form id="Startpage" label="Startpage">
+            <!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:form tag -->
+        </flux:form>
+
+        <flux:grid>
+            <!-- Edit this grid to change the "backend layout" structure -->
+            <flux:grid.row>
+                <flux:grid.column colPos="0" colspan="1" name="Header" label="Header" />
+                <flux:grid.column colPos="15" colspan="1" name="Basket" label="Warenkorb" />
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="1" colspan="2" name="Main" label="Hauptbereich" />
+            </flux:grid.row>
+        </flux:grid>
+    </f:section>
+
+    <f:section name="Main">
+        <header>
+            <section class="portal-header">
+                <div class="header-wrapper">
+                    <article id="portal-logo">
+                        <a href="" id="kitodo-logo">
+                            <img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/logo-shlb.png" alt="">
+                        </a>
+                    </article>
+                </div>
+
+                <article class="meta-navigation">
+
+                    <v:content.render column="15" />
+
+                    <!--<a href="" title="favorites">-->
+                    <!--<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images//icon-star.svg" alt="favorites">-->
+                    <!--<span class="meta-batchcount">44</span>-->
+                    <!--</a>-->
+                </article>
+
+            </section>
+
+            <section class="portal-main-search">
+                <div class="header-wrapper">
+
+                    <div class="portal-welcome-headline">
+                        <h1>Lorem ipsum Schleswig-Holsteinische Landesbibliothek dolor sit amet</h1>
+                        <h2>Wonach suchen Sie?</h2>
+                    </div>
+
+                    <v:content.render column="0" />
+
+                    <div class="portal-welcome-intro">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </header>
+
+        <main class="one_column">
+            <section>
+                <v:content.render column="1" />
+            </section>
+        </main>
+
+        <f:render partial="Footer"/>
+    </f:section>
+
+</div>
