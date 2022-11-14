@@ -45,11 +45,18 @@
                                         <dt class="tx-dlf-metadata-{metadata.indexName} tx-dlf-metadata">
                                             {metadata.label}
                                         </dt>
-                                        <f:for each="{document.metadata.{metadata.indexName}}" as="metadataentry">
-                                            <dd class="tx-dlf-metadata-{metadata.indexName} tx-dlf-metadata">
-                                                    {metadataentry}
-                                            </dd>
-                                        </f:for>
+                                        <dd class="tx-dlf-metadata-{metadata.indexName} tx-dlf-metadata">
+                                            <f:for each="{document.metadata.{metadata.indexName}}" as="metadataentry" iteration="iterator">
+                                                <f:if condition="{iterator.isLast}">
+                                                    <f:then>
+                                                        {metadataentry}
+                                                    </f:then>
+                                                    <f:else>
+                                                        {metadataentry},
+                                                    </f:else>
+                                                </f:if>
+                                            </f:for>
+                                        </dd>
                                     </f:if>
                                 </f:for>
                             </f:then>
