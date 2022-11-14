@@ -584,6 +584,7 @@ dt.tx-dlf-metadata-place,
 dt.tx-dlf-metadata-type,
 dt.tx-dlf-metadata-year,
 dt.tx-dlf-metadata-author,
+dd.tx-dlf-metadata,
 .tx-dlf-listview-list li ol li dt {
     float: left;
     padding-right: 15px;
@@ -593,6 +594,7 @@ dd.tx-dlf-metadata-place,
 dd.tx-dlf-metadata-type,
 dd.tx-dlf-metadata-year,
 dd.tx-dlf-metadata-author,
+dd.tx-dlf-metadata,
 .tx-dlf-listview-list li ol li dd {
     font-weight: 700;
 }
