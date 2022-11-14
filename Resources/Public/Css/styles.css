@@ -2292,10 +2292,23 @@ span.fullPdfDownloadSpan img {
     display: block;
 }
 
-.multivalued dt,
-.multivalued dd {
-    float: initial;
-    display: inline-block;
+/*.multivalued dt,*/
+/*.multivalued dd {*/
+/*    float: initial;*/
+/*    display: inline-block;*/
+/*}*/
+
+.multivalued {
+    display: block
+}
+
+span.multivalued dd,
+span.multivalued dt{
+    display: inline !important;
+}
+
+span.multivalued dd:not(:last-child):after {
+    content: ", ";
 }
 
 .tx-dlf-listview-collection-thumbnail {

@@ -198,6 +198,7 @@ $('div.tx-dlf-navigation-magnifier').hide();
 
 $(document).ready(function() {
     initialFacetValueRestriction();
+    setTitleOnDetailPage();
 });
 
 function initialFacetValueRestriction() {
@@ -222,4 +223,21 @@ function initialFacetValueRestriction() {
         $(this).parent().hide();
         $(this).parent().parent().find('.facetShowMore').parent().show();
     });
+}
+
+function setTitleOnDetailPage() {
+    var title = '';
+    title = $('dd.tx-dlf-metadata-title').text();
+
+    // use class add2title to add metadata to title
+    // default separator is "-" for a custom separator the data attribute "data-separator" can be used
+    $('.tx-dlf-metadata dd.add2title').each(function () {
+        if ($(this).data('separator')) {
+            title = title + ' ' + $(this).data('separator') + ' ' + $(this).text();
+        } else {
+            title = title + ' - ' + $(this).text();
+        }
+    });
+
+    $('.detail-view-header dd.tx-dlf-metadata-title').text(title);
 }
