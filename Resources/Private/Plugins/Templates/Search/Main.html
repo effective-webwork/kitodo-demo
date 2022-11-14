@@ -132,14 +132,14 @@
                                         <f:for each="{facet._SUB_MENU}" as="values" iteration="iterator">
                                             <f:if condition="{values.resetFacet}">
                                                 <f:then>
-                                                    <li class="tx-dlf-search-cur {f:if(condition: '{iterator.cycle} > 5', then: 'hide-facet')}">
+                                                    <li class="tx-dlf-search-cur">
                                                         <f:link.action title="{f:translate(key:'search.resetFacet', arguments:{0: '{values.title}'})}" additionalParams="{'tx_dlf_search[searchParameter][fq]':'{values.queryColumn}', 'tx_dlf_search[searchParameter][query]':'{lastSearch.query}',  'tx_dlf_search[searchParameter][fulltext]':'{lastSearch.fulltext}', 'tx_dlf_search[searchParameter][order]':'{lastSearch.order}', 'tx_dlf_search[searchParameter][orderBy]':'{lastSearch.orderBy}', 'tx_dlf_search[searchParameter][extQuery]':'{lastSearch.extQuery}', 'tx_dlf_search[searchParameter][extField]':'{lastSearch.extField}', 'tx_dlf_search[searchParameter][extOperator]':'{lastSearch.extField}'}">
                                                             {values.title} ({values.count})
                                                         </f:link.action>
                                                     </li>
                                                 </f:then>
                                                 <f:else>
-                                                    <li class="tx-dlf-search-no">
+                                                    <li class="tx-dlf-search-no {f:if(condition: '{iterator.cycle} > 5', then: 'hide-facet')}">
                                                         <f:link.action additionalParams="{'tx_dlf_search[searchParameter][fq]':'{values.queryColumn}', 'tx_dlf_search[searchParameter][query]':'{lastSearch.query}',  'tx_dlf_search[searchParameter][fulltext]':'{lastSearch.fulltext}', 'tx_dlf_search[searchParameter][order]':'{lastSearch.order}', 'tx_dlf_search[searchParameter][orderBy]':'{lastSearch.orderBy}', 'tx_dlf_search[searchParameter][extQuery]':'{lastSearch.extQuery}', 'tx_dlf_search[searchParameter][extField]':'{lastSearch.extField}', 'tx_dlf_search[searchParameter][extOperator]':'{lastSearch.extField}'}">
                                                             {values.title} ({values.count})
                                                         </f:link.action>
@@ -152,8 +152,8 @@
                                                         Mehr ...
                                                     </a>
                                                 </li>
-                                                <li>
-                                                    <a class="facetShowLess" href="#" style="display: none;">
+                                                <li style="display: none;">
+                                                    <a class="facetShowLess" href="#">
                                                         Weniger ...
                                                     </a>
                                                 </li>
