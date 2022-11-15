@@ -27,17 +27,17 @@
         <div class="tx-dlf-metadata">
             <f:for each="{documentMetadataSections}" as="documentMetadataSection" iteration="sectionIterator">
                 <div class="detail-view-itemdetails">
-                    <div class="dropdown-menu"><input type="checkbox" id="checkbox-menu3">
-                        <label for="checkbox-menu3">Metadaten</label>
+                    <div class="dropdown-menu"><input type="checkbox" id="checkbox-meta{sectionIterator.cycle}">
+                        <label for="checkbox-meta{sectionIterator.cycle}">Metadaten</label>
                         <ul>
                             <li>
-                                <dl class="tx-dlf-metadata-titledata">
+                                <section class="shlb-metadata-item">
                                     <f:for each="{configMetadata}" as="configObject">
                                         <f:if condition="{documentMetadataSection.{configObject.indexName}}">
                                             <f:render partial="Metadata/Entries" arguments="{_all}" />
                                         </f:if>
                                     </f:for>
-                                </dl>
+                                </section>
                             </li>
                         </ul>
                     </div>
