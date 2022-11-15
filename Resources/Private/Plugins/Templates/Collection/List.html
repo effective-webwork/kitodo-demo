@@ -52,6 +52,13 @@
                     <f:translate key="{f:if(condition:'{item.info.volumes -> f:count()} > 1', then: 'volumes', else: 'volume')}" />
                     </f:comment>
                 </p>
+                <div class="collection-link">
+                    <f:link.action action="show"
+                                   arguments="{collection : item.collection}"
+                                   pageUid="{pageUid}">
+                        weiter
+                    </f:link.action>
+                </div>
             </li>
         </f:for>
     </ul>
