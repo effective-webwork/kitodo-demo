@@ -1049,6 +1049,11 @@ detail-view
     height: auto;
 }
 
+.ol-unselectable.ol-layers {
+    overflow: hidden;
+    width: 75% !important;
+}
+
 /*----------------------------------------------------------------------
 calendar + listview
 ----------------------------------------------------------------------*/
