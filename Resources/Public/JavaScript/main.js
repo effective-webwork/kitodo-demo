@@ -220,7 +220,7 @@ function shortenDescription() {
 function showMoreClickHandler() {
     $('.description-show-more').on('click', function (evt) {
         evt.preventDefault();
-        $(this).find('.tx-dlf-collection-description').toggleClass('shorten-text-4');
+        $(this).parent().siblings('.tx-dlf-collection-description').toggleClass('shorten-text-4');
         if ($(this).text() == 'mehr...') {
             $(this).text('weniger...');
         } else {
