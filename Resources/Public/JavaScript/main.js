@@ -229,7 +229,7 @@ function showMoreClickHandler() {
 function shortenText(element) {
     if ($(element).text().length > 100) {
         $(element).parent().addClass('shorten-text-4');
-        $('<p><a href="#" class="description-show-more">mehr...</a></p>').insertAfter(element);
+        $('<p><a href="#" class="description-show-more">mehr...</a></p>').insertAfter($(element).parent());
     }
 
 }
