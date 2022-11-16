@@ -332,6 +332,7 @@ collection-list
     box-shadow: 0 20px 20px -10px rgba(74,74,74,0.3);
     border-top: 4px solid #d5014c;
     margin: 30px 0 30px 0;
+    position: relative;
 }
 
 .tx-dlf-collection-list h2 {
@@ -347,6 +348,23 @@ collection-list
 
 .tx-dlf-collection-description p {
     color: #363636;
+}
+
+.tx-dlf-collection-list .collection-link a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 30px -30px 0;
+    background: #003064;
+    color: transparent;
+    font-size: 0;
+}
+
+.tx-dlf-collection-list .collection-link a:hover {
+    background: #d5014c;
 }
 
 /*----------------------------------------------------------------------
