@@ -204,12 +204,15 @@ $(document).ready(function() {
 
 function shortenDescription() {
     // all short descriptions
-    $('p.short').each(function () {
-        shortenText($(this));
-    });
-
-    $('p.long').each(function () {
-        shortenText($(this));
+    // $('p.short').each(function () {
+    //     shortenText($(this));
+    // });
+    //
+    // $('p.long').each(function () {
+    //     shortenText($(this));
+    // });
+    $('.tx-dlf-collection-description').each(function() {
+       shortenText($(this));
     });
     showMoreClickHandler();
 }
@@ -217,7 +220,7 @@ function shortenDescription() {
 function showMoreClickHandler() {
     $('.description-show-more').on('click', function (evt) {
         evt.preventDefault();
-        $(this).find('tx-dlf-collection-description').toggleClass('shorten-text-4');
+        $(this).find('.tx-dlf-collection-description').toggleClass('shorten-text-4');
         if ($(this).text() == 'mehr...') {
             $(this).text('weniger...');
         } else {
@@ -228,8 +231,8 @@ function showMoreClickHandler() {
 
 function shortenText(element) {
     if ($(element).text().length > 100) {
-        $(element).parent().addClass('shorten-text-4');
-        $('<p><a href="#" class="description-show-more">mehr...</a></p>').insertAfter($(element).parent());
+        $(element).addClass('shorten-text-4');
+        $('<p><a href="#" class="description-show-more">mehr...</a></p>').insertAfter($(element));
     }
 
 }
