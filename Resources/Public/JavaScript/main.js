@@ -199,7 +199,40 @@ $('div.tx-dlf-navigation-magnifier').hide();
 $(document).ready(function() {
     initialFacetValueRestriction();
     setTitleOnDetailPage();
+    shortenDescription();
 });
+
+function shortenDescription() {
+    // all short descriptions
+    $('p.short').each(function () {
+        shortenText($(this));
+    });
+
+    $('p.long').each(function () {
+        shortenText($(this));
+    });
+    showMoreClickHandler();
+}
+
+function showMoreClickHandler() {
+    $('.description-show-more').on('click', function (evt) {
+        evt.preventDefault();
+        $(this).find('tx-dlf-collection-description').toggleClass('shorten-text-4');
+        if ($(this).text() == 'mehr...') {
+            $(this).text('weniger...');
+        } else {
+            $(this).text('mehr...');
+        }
+    })
+}
+
+function shortenText(element) {
+    if ($(element).text().length > 100) {
+        $(element).parent().addClass('shorten-text-4');
+        $('<p><a href="#" class="description-show-more">mehr...</a></p>').insertAfter(element);
+    }
+
+}
 
 function initialFacetValueRestriction() {
     // $('.tx-dlf-search-facets ul').each(function () {

@@ -731,6 +731,15 @@ dd.tx-dlf-metadata,
     content: "x";
 }
 
+.shorten-text-4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
 /*----------------------------------------------------------------------
 detail-view
 ----------------------------------------------------------------------*/
