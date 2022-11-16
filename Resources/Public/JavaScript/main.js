@@ -226,7 +226,7 @@ function showMoreClickHandler() {
         } else {
             $(this).text('mehr...');
         }
-    })
+    });
 }
 
 function shortenText(element) {
