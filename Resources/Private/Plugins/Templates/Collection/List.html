@@ -18,7 +18,11 @@
             <li class="tx-dlf-collection-item">
                 <div class="tx-dlf-collection-thumbnail">
                     <f:if condition="{item.collection.thumbnail}">
-                        <f:image image="{item.collection.thumbnail}" alt="{f:translate(key: 'thumbnail')} {item.collection.label}" title="{item.collection.label}" maxWidth="250" />
+                        <f:link.action action="show"
+                                       arguments="{collection : item.collection}"
+                                       pageUid="{pageUid}">
+                            <f:image image="{item.collection.thumbnail}" alt="{f:translate(key: 'thumbnail')} {item.collection.label}" title="{item.collection.label}" maxWidth="250" />
+                        </f:link.action>
                      </f:if>
                 </div>
                 <h2>
