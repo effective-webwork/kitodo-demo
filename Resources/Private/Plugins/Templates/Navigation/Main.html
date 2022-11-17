@@ -198,7 +198,7 @@
 
 <f:section name="render.listview">
         <li class="tx-dlf-navigation-listview tx-dlf-navigation-backtolist" style="display: none;">
-            <f:link.page pageUid="{settings.targetPid}" >
+            <f:link.page pageUid="{settings.targetPid}" additionalParams="{lastSearchParams}">
                 <f:translate key="linkToList"/>
             </f:link.page>
         </li>
