@@ -45,14 +45,17 @@
                     <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-help.svg">
                 </f:link.page>
             </span></f:comment>
-
-            <div class="dlf-search-switch">
-                <!-- Fulltext switch -->
-                <f:form.radio property="fulltext" value="0" id="tx-dlf-search-fulltext-no-{viewData.uniqueId}" class="tx-dlf-search-fulltext" checked="{lastSearch.fulltext} == 0" />
-                <label for="tx-dlf-search-fulltext-no-{viewData.uniqueId}"><f:translate key="search.inMetadata"/></label>
-                <f:form.radio property="fulltext" value="1" id="tx-dlf-search-fulltext-yes-{viewData.uniqueId}" class="tx-dlf-search-fulltext-yes" checked="{lastSearch.fulltext} == 1" />
-                <label for="tx-dlf-search-fulltext-yes-{viewData.uniqueId}"><f:translate key="search.inFulltext"/></label>
-            </div>
+            <f:if condition="{settings.fulltext}">
+                <f:then>
+                    <div class="dlf-search-switch">
+                        <!-- Fulltext switch -->
+                        <f:form.radio property="fulltext" value="0" id="tx-dlf-search-fulltext-no-{viewData.uniqueId}" class="tx-dlf-search-fulltext" checked="{lastSearch.fulltext} == 0" />
+                        <label for="tx-dlf-search-fulltext-no-{viewData.uniqueId}"><f:translate key="search.inMetadata"/></label>
+                        <f:form.radio property="fulltext" value="1" id="tx-dlf-search-fulltext-yes-{viewData.uniqueId}" class="tx-dlf-search-fulltext-yes" checked="{lastSearch.fulltext} == 1" />
+                        <label for="tx-dlf-search-fulltext-yes-{viewData.uniqueId}"><f:translate key="search.inFulltext"/></label>
+                    </div>
+                </f:then>
+            </f:if>
         </f:then>
     </f:if>
 
