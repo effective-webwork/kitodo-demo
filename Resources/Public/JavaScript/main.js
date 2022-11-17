@@ -60,13 +60,13 @@ if ($('.tx-dlf-navigation-listview a').length > 0) {
     $('.meta-actions #backlink').attr( "href", $('.tx-dlf-navigation-listview a').attr("href"));
 }
 
-$(".tx-dlf-metadata dd.tx-dlf-metadata-title").attr("data-full", $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text());
-
-$(".tx-dlf-metadata dd.tx-dlf-metadata-title").text(
-    $(".tx-dlf-metadata dd.tx-dlf-metadata-title")
-        .text()
-        .substring(0, 70) + " ..."
-);
+// $(".tx-dlf-metadata article.metadata-title span").attr("data-full", $(".tx-dlf-metadata article.metadata-title span").text());
+//
+// $(".tx-dlf-metadata article.metadata-title span").text(
+//     $(".tx-dlf-metadata article.metadata-title span")
+//         .text()
+//         .substring(0, 70) + " ..."
+// );
 
 // collapse metadata
 $(".tx-dlf-metadata .show-metadata").on("click", function (evt) {
@@ -263,7 +263,7 @@ function initialFacetValueRestriction() {
 
 function setTitleOnDetailPage() {
     var title = '';
-    title = $('dd.tx-dlf-metadata-title').text();
+    title = $('.tx-dlf-metadata article.metadata-title span').text();
 
     // use class add2title to add metadata to title
     // default separator is "-" for a custom separator the data attribute "data-separator" can be used
