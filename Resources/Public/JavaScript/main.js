@@ -223,10 +223,10 @@ function showMoreClickHandler() {
         $(this).parent().siblings('.tx-dlf-collection-description').toggleClass('shorten-text-4');
         if ($(this).text() == 'mehr...') {
             $(this).text('weniger...');
-            $(this).toggleClass('description-open');
+            $(this).toggleClass('show-less');
         } else {
             $(this).text('mehr...');
-            $(this).toggleClass('description-open');
+            $(this).toggleClass('show-less');
         }
     });
 }
