@@ -197,6 +197,7 @@ $('div.tx-dlf-navigation-editRemove').hide();
 $('div.tx-dlf-navigation-magnifier').hide();
 
 $(document).ready(function() {
+    setBackToListviewInBreadcrumb();
     initialFacetValueRestriction();
     setTitleOnDetailPage();
     shortenDescription();
@@ -278,4 +279,8 @@ function setTitleOnDetailPage() {
     });
 
     $('.detail-view-header dd.tx-dlf-metadata-title').text(title);
+}
+
+function setBackToListviewInBreadcrumb() {
+    $('#backtolistview').attr("href", $('li.tx-dlf-navigation-backtolist a').attr("href"));
 }
