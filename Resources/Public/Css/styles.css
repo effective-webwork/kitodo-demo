@@ -279,6 +279,24 @@ header {
     width: 50%;
 }
 
+article.breadcrumb a,
+article.breadcrumb span {
+    color: #FFF;
+}
+
+article.breadcrumb a:hover {
+    color:#d6004c;
+
+}
+
+article.breadcrumb {
+    margin-top:10px
+}
+
+article.breadcrumb span:not(:last-child):after {
+    content: "/"
+}
+
 
 /*----------------------------------------------------------------------
 main

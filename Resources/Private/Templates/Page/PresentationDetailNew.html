@@ -32,13 +32,54 @@
     </f:section>
 
     <f:section name="Main">
-        <f:render partial="Header" arguments="{_all}"/>
+        <header>
+            <section class="portal-header">
+                <div class="header-wrapper">
+                    <article id="portal-logo">
+                        <a href="https://www.schleswig-holstein.de/DE/landesregierung/ministerien-behoerden/LBSH/lbsh_node.html" id="kitodo-logo">
+                            <img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/logo-shlb.png" alt="">
+                        </a>
+                    </article>
+                </div>
+
+                <article class="meta-navigation">
+
+                    <v:content.render column="15" />
+
+                    <!--<a href="" title="favorites">-->
+                    <!--<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images//icon-star.svg" alt="favorites">-->
+                    <!--<span class="meta-batchcount">44</span>-->
+                    <!--</a>-->
+                </article>
+
+            </section>
+
+            <section class="portal-main-search">
+                <div class="header-wrapper">
+
+                    <v:content.render column="0" />
+
+                </div>
+                <article class="breadcrumb">
+                    <span>
+                        <a href="/">Startseite</a>
+                    </span>
+                    <span id="backtolist">
+                        <a href="/">Trefferliste</a>
+                    </span>
+                    <span>
+                        Detail
+                    </span>
+                </article>
+            </section>
+
+        </header>
 
         <header>
             <section class="portal-meta">
                 <article class="breadcrumb">
                     <f:comment>
-                        <v:page.breadCrumb />
+                        <v:page.breadCrumb class="breadcrumb" tagName="article" tarNameChildren="span"/>
                     </f:comment>
                 </article>
             </section>
