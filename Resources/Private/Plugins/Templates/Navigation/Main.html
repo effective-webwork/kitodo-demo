@@ -150,12 +150,12 @@
         <f:if condition="{viewData.requestData.page + viewData.requestData.double} < {numPages}">
             <f:then>
                 <f:link.action addQueryString="1" additionalParams="{'tx_dlf[page]':'{viewData.requestData.page + 1 + viewData.requestData.double}'}">
-                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-right-w" alt="{f:translate(key: 'nextPage')}">
+                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-right-w.svg" alt="{f:translate(key: 'nextPage')}">
                 </f:link.action>
             </f:then>
             <f:else>
                 <span title="{f:translate(key: 'nextPage')}">
-                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-right-w" alt="{f:translate(key: 'nextPage')}">
+                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-right-w.svg" alt="{f:translate(key: 'nextPage')}">
                 </span>
             </f:else>
         </f:if>
