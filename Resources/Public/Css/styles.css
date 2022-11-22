@@ -376,13 +376,17 @@ collection-list
     width: 60px;
     height: 60px;
     margin: 0 30px -30px 0;
-    background: #003064;
+    background: url(../Images/icon-shlb-arrow-more-w.svg) no-repeat #003064;
+    background-size: 14px 14px;
+    background-position: center center;
     color: transparent;
     font-size: 0;
 }
 
 .tx-dlf-collection-list .collection-link a:hover {
-    background: #d5014c;
+    background: url(../Images/icon-shlb-arrow-more-w.svg) no-repeat #d5014c;
+    background-size: 14px 14px;
+    background-position: center center;
 }
 
 /*----------------------------------------------------------------------
@@ -471,22 +475,35 @@ listview
 }
 
 .dropdown-menu .facetShowMore,
-.dropdown-menu .facetShowLess {
+.dropdown-menu .facetShowLess,
+.description-show-more {
     color: #0071bc;
 }
 
-.dropdown-menu .facetShowMore::before {
+.dropdown-menu .facetShowMore::before,
+.description-show-more::before {
     display: block;
+    width: 16px;
+    height: 16px;
     float: left;
-    margin: 0 10px 0 0;
-    content: "▼";
+    margin: 0 5px 0 0;
+    content: "";
+    background: url(../Images/icon-shlb-arrow-down-b.svg) no-repeat;
+    background-size: 14px 14px;
+    background-position: center center;
 }
 
-.dropdown-menu .facetShowLess::after {
+.dropdown-menu .facetShowLess::before,
+.description-show-more.show-less::before {
     display: block;
+    width: 16px;
+    height: 16px;
     float: left;
     margin: 0 10px 0 0;
-    content: "▲";
+    content: "";
+    background: url(../Images/icon-shlb-arrow-up-b.svg) no-repeat;
+    background-size: 14px 14px;
+    background-position: center center;
 }
 
 .tx-dlf-statistics {
@@ -532,15 +549,17 @@ listview
 }
 
 .listview-headline-sort {
-    /*display: table;*/
     width: 100%;
 }
 
 .listview-headline-sort h2 {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 15px 30px;
-    width: 60%;
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.listview-headline-sort .tx-dlf-collection-description p {
+    margin: 0 0 15px 0;
 }
 
 .listview-headline-sort form {
@@ -579,7 +598,10 @@ ol.tx-dlf-listview-list {
 
 .tx-dlf-listview-list li {
     border-top: 1px solid #d8d8d8;
-    padding: 15px;
+    padding: 15px 0;
+}
+
+.shlb-listview-item {
     display: flex;
 }
 
@@ -632,47 +654,40 @@ ol.tx-dlf-listview-list {
 /*background: url(../Images/icon-arrow-down.svg) no-repeat left center #005182;*/
 /*}*/
 
-.tx-dlf-listview-list dl {
-    padding: 0 30px;
-    width: 60%;
-}
-
-dt.tx-dlf-metadata-title {
-    font-size: 16px;
-}
-
-dd.tx-dlf-metadata-title {
-    font-weight: 700;
-    font-size: 20px;
-    padding-bottom: 5px;
-}
-
-dt.tx-dlf-metadata-title,
-dt.tx-dlf-metadata-place,
-dt.tx-dlf-type,
-dt.tx-dlf-metadata-year,
-dt.tx-dlf-metadata-author,
-.tx-dlf-listview-list li ol li dt {
-    float: left;
-    padding-right: 5px;
-}
-
-dd.tx-dlf-metadata-place,
-dd.tx-dlf-metadata-type,
-dd.tx-dlf-metadata-year,
-dd.tx-dlf-metadata-author,
-dd.tx-dlf-metadata,
-.tx-dlf-listview-list li ol li dd {
-    font-weight: 700;
-}
-
-.tx-dlf-listview-list .tx-dlf-listview-thumbnail {
+.tx-dlf-listview-list .shlb-listview-img {
     display: block;
+    margin: 0 30px 0 0;
 }
 
-.tx-dlf-listview-list .tx-dlf-listview-thumbnail img {
+.tx-dlf-listview-list .shlb-listview-img img {
     width: 80px;
     height: auto;
+}
+
+.tx-dlf-listview-list .shlb-listview-text {
+    display: block;
+    width: calc(100% - 110px);
+}
+
+.tx-dlf-listview-list .shlb-listview-text h2 {
+    font-size: 20px;
+    padding: 0 0 15px 0;
+}
+
+.shlb-listview-text-item {
+    border-top: 1px dashed #d8d8d8;
+    display: flex;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.shlb-listview-text-item label {
+    font-weight: 700;
+    width: 150px;
+}
+
+.shlb-listview-text-item span {
+    width: calc(100% - 150px);
 }
 
 .tx-dlf-listview-list li ol {
@@ -891,27 +906,21 @@ detail-view
     padding-right: 3px;
 }
 
-.detail-view-itemoptions .dropdown-menu label {
-    background: url(../Images/icon-arrow-down.svg) no-repeat right center #0071bc;
-    background-size: 24px auto;
-    margin-top: 5px;
-    color: #fff;
-    cursor: pointer;
-    padding: 8px 30px 8px 15px;
-}
-
-.detail-view-itemoptions .dropdown-menu label:hover {
-    background: url(../Images/icon-arrow-down.svg) no-repeat right center #005182;
-    color: #fff;
-}
-
+.detail-view-itemoptions .dropdown-menu label,
 .detail-view-itemdetails .dropdown-menu label {
-    background: url(../Images/icon-arrow-down-dark.svg) no-repeat right center #d8d8d8;
-    background-size: 24px auto;
+    background: url(../Images/icon-shlb-arrow-down-w.svg) no-repeat right center #003064;
+    background-size: 16px 16px;
     margin-top: 5px;
-    color: #1e3946;
+    color: #fff;
     cursor: pointer;
     padding: 8px 30px 8px 15px;
+}
+
+.detail-view-itemoptions .dropdown-menu label:hover,
+.detail-view-itemdetails .dropdown-menu label:hover {
+    background: url(../Images/icon-shlb-arrow-down-w.svg) no-repeat right center #d5014c;
+    background-size: 16px 16px;
+    color: #fff;
 }
 
 .detail-view-itemoptions .dropdown-menu ul {
@@ -930,8 +939,8 @@ detail-view
 }
 
 .detail-view-itemoptions .dropdown-menu input[type=checkbox]:checked ~ label {
-    background: url(../Images/icon-arrow-up.svg) no-repeat right center #0071bc;
-    background-size: 24px auto;
+    background: url(../Images/icon-shlb-arrow-up-w.svg) no-repeat right center #d5014c;
+    background-size: 16px 16px;
     color: #fff;
 }
 
@@ -1486,6 +1495,10 @@ max 1024px
         padding: 10px;
     }
 
+    .dropdown-menu li.tx-dlf-search-no label {
+        padding: 10px;
+    }
+
     .dropdown-menu label:hover {
         background-color: #d5014c;
     }
@@ -1510,11 +1523,14 @@ max 1024px
 
     .tx-dlf-search-facets {
         margin: 15px;
-        padding: 15px;
+        padding: 0px;
+        background-color: transparent;
+        border-top: 0px none;
     }
 
     .tx-dlf-search-facets h2 {
         font-size: 16px;
+        padding: 0;
     }
 
     .detail-view-header {
@@ -1631,13 +1647,6 @@ max 700px
         width: 100%;
     }
 
-    .listview-headline-sort h2 {
-        display: block;
-        padding: 15px;
-        text-align: center;
-        width: calc(100% - 30px);
-    }
-
     .listview-headline-sort form {
         display: block;
         text-align: center;
@@ -1665,14 +1674,30 @@ max 700px
         text-align: center;
     }
 
-    .tx-dlf-listview-list .tx-dlf-listview-thumbnail img {
+    .tx-dlf-listview-list .shlb-listview-img img {
         width: 60px;
         height: auto;
     }
 
-    .tx-dlf-listview-list dl {
-        width: 80%;
+    .tx-dlf-listview-list .shlb-listview-text {
+        width: calc(100% - 90px);
     }
+
+    .shlb-listview-text-item {
+        display: block;
+        width: 100%;
+    }
+
+    .shlb-listview-text-item label {
+        display: block;
+        width: 100%;
+    }
+
+    .shlb-listview-text-item span {
+        display: block;
+        width: 100%;
+    }
+
 
     .tx-dlf-listview-list li .add-to-cart {
         position: relative;
@@ -1913,7 +1938,7 @@ ul.tx-dlf-toolbox span a img {
     line-height: 0;
     font-size: 16px;
     display: inline-block;
-    background: #6a6a6a;
+    background: #003064;
     color: #fff !important;
     font-weight: 700;
     text-decoration: none !important;
@@ -1929,7 +1954,7 @@ ul.tx-dlf-toolbox span a img {
 .tx-dlf-toolbox li a:hover,
 .tx-dlf-navigation li a:hover,
 .tx-dlf-Navigation li a:hover {
-    background: #cc0a4b !important;
+    background: #d5014c !important;
     transition: background 0.5s ease-in-out;
     -webkit-transition: background 0.5s ease-in-out;
     -moz-transition: background 0.5s ease-in-out;
@@ -1980,21 +2005,6 @@ ul.tx-dlf-toolbox span a img {
     vertical-align: top;
 }
 
-.detail-view-itemoptions .dropdown-menu label {
-    background: url(../Images/icon-arrow-down.svg) no-repeat 95% center #6a6a6a;
-    background-size: 24px auto;
-    margin-top: 5px;
-    color: #fff;
-    cursor: pointer;
-    padding: 8px 30px 8px 15px;
-}
-
-.detail-view-itemoptions .dropdown-menu label:hover {
-    background: url(../Images/icon-arrow-down.svg) no-repeat 95% center #cc0a4b;
-    background-size: 24px auto;
-    color: #fff;
-}
-
 .detail-view-tools,
 .tx-dlf-toolbox,
 .tx-dlf-toolbox .dropdown-menu {
@@ -2036,14 +2046,14 @@ ul.tx-dlf-toolbox span a img {
 }
 
 .detail-view-itemoptions .dropdown-menu input[type=checkbox]:checked ~ label {
-    background: url(../Images/icon-arrow-up.svg) no-repeat 95% center #cc0a4b;
-    background-size: 24px auto;
+    background: url(../Images/icon-shlb-arrow-up-w.svg) no-repeat right center #d5014c;
+    background-size: 16px 16px;
     color: #fff;
 }
 
 .detail-view-tools .dropdown-menu input[type=checkbox]:checked ~ label {
-    background: url(../Images/icon-arrow-up.svg) no-repeat 24px 24px #cc0a4b;
-    background-size: 24px auto;
+    background: url(../Images/icon-shlb-arrow-up-w.svg) no-repeat right center #d5014c;
+    background-size: 16px 16px;
     color: #fff;
 }
 
