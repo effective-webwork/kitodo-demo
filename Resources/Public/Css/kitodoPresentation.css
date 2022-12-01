@@ -2163,6 +2163,10 @@ main div.frame-type-presentationpackage_accordionelement div.frame {
     width: 65% !important;
 }
 
+#wrapper {
+    max-width: initial !important;
+}
+
 /*----------------------------------------------------------------------
 max 1600px
 ----------------------------------------------------------------------*/
