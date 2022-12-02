@@ -429,6 +429,42 @@
                 <source><![CDATA[PoetryAlbumBox]]></source>
                 <target><![CDATA[Poesiealbumbox]]></target>
             </trans-unit>
+            <trans-unit id="structure.poetry_album_box">
+                <source><![CDATA[PoetryAlbumBox]]></source>
+                <target><![CDATA[Poesiealbumbox]]></target>
+            </trans-unit>
+            <trans-unit id="structure.poetry_album">
+                <source><![CDATA[PoetryAlbum]]></source>
+                <target><![CDATA[Poesiealbumbox]]></target>
+            </trans-unit>
+            <trans-unit id="structure.acknowledgement">
+                <source><![CDATA[Acknowledgement]]></source>
+                <target><![CDATA[Danksagung]]></target>
+            </trans-unit>
+            <trans-unit id="structure.color_information">
+                <source><![CDATA[ColorInformation]]></source>
+                <target><![CDATA[Farbinformationen]]></target>
+            </trans-unit>
+            <trans-unit id="structure.content">
+                <source><![CDATA[Content]]></source>
+                <target><![CDATA[Inhalt]]></target>
+            </trans-unit>
+            <trans-unit id="structure.envelope">
+                <source><![CDATA[Envelope]]></source>
+                <target><![CDATA[Briefumschlag]]></target>
+            </trans-unit>
+            <trans-unit id="structure.letter_content">
+                <source><![CDATA[LetterContent]]></source>
+                <target><![CDATA[Brief]]></target>
+            </trans-unit>
+            <trans-unit id="structure.object">
+                <source><![CDATA[Object]]></source>
+                <target><![CDATA[Objekt]]></target>
+            </trans-unit>
+            <trans-unit id="structure.figure">
+                <source><![CDATA[Figure]]></source>
+                <target><![CDATA[Abbildung]]></target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -323,6 +323,33 @@
             <trans-unit id="structure.PoetryAlbumBox">
                 <source><![CDATA[PoetryAlbumBox]]></source>
             </trans-unit>
+            <trans-unit id="structure.poetry_album_box">
+                <source><![CDATA[PoetryAlbumBox]]></source>
+            </trans-unit>
+            <trans-unit id="structure.poetry_album">
+                <source><![CDATA[PoetryAlbum]]></source>
+            </trans-unit>
+            <trans-unit id="structure.acknowledgement">
+                <source><![CDATA[Acknowledgement]]></source>
+            </trans-unit>
+            <trans-unit id="structure.color_information">
+                <source><![CDATA[ColorInformation]]></source>
+            </trans-unit>
+            <trans-unit id="structure.content">
+                <source><![CDATA[Content]]></source>
+            </trans-unit>
+            <trans-unit id="structure.envelope">
+                <source><![CDATA[Envelope]]></source>
+            </trans-unit>
+            <trans-unit id="structure.letter_content">
+                <source><![CDATA[LetterContent]]></source>
+            </trans-unit>
+            <trans-unit id="structure.object">
+                <source><![CDATA[Object]]></source>
+            </trans-unit>
+            <trans-unit id="structure.figure">
+                <source><![CDATA[Figure]]></source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>
