@@ -2742,3 +2742,9 @@ ol.subentry,
 ol.tx-dlf-volume {
     display: none;
 }
+
+#tx-dlf-search-dateFrom, #tx-dlf-search-dateTo{
+    border: none;
+    border:solid 1px #ccc;
+    border-radius: 3px;
+}

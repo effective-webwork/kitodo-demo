@@ -10,6 +10,9 @@ $(document).ready(function() {
 
     setTitleOnDetailPage();
 
+    // mk 2022-11-07 # apply date format transformation before adding it to the title
+    transformDateFormat();
+
     setBackToListviewInBreadcrumb();
 
     listViewFunction();
@@ -1162,5 +1165,15 @@ function clickEventMetadataToc() {
         setTimeout(function() {
             fulltextPositionAdjustment();
         }, 200);
+    });
+}
+
+// mk 2022-11-07 # transform ISO formatted date to locale date string
+function transformDateFormat() {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    $('dd.tx-dlf-metadata-date').each(function() {
+        var rawDate = $(this).text().trim();
+        var dateString = new Date(rawDate).toLocaleDateString(undefined, options);
+        $(this).text(dateString);
     });
 }

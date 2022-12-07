@@ -89,6 +89,15 @@
 			<trans-unit id="metadata.shelfmark">
 				<source><![CDATA[Shelfmark]]></source>
 			</trans-unit>
+            <trans-unit id="metadata.date" approved="yes">
+                <source><![CDATA[Date]]></source>
+            </trans-unit>
+            <trans-unit id="metadata.newspaper" approved="yes">
+                <source><![CDATA[Newspaper]]></source>
+            </trans-unit>
+            <trans-unit id="metadata.title_issue" approved="yes">
+                <source><![CDATA[Title of Issue]]></source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>
