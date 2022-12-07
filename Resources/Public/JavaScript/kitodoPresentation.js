@@ -830,7 +830,8 @@ function listViewFunction() {
 function enrichBreadcrumbForVolumes() {
     if ($('dt#PartOf').next('dd').data('partof') > 0) {
 
-        var partOfLink = 'detail?tx_dlf[id]=' + $('dt#PartOf').next('dd').data('partof');
+        var partOfLink = $('.tx-dlf-toc ul:first() li:first() a:first()').attr('href');
+        $('a.PartOf').attr('href', partOfLink);
         $('dt#PartOf').next('dd').children('a.partOf').attr('href', partOfLink);
 
         var parentVolumeLink = $('.partOf').attr('href');
@@ -1165,6 +1166,16 @@ function clickEventMetadataToc() {
         setTimeout(function() {
             fulltextPositionAdjustment();
         }, 200);
+    });
+}
+
+// mk 2022-11-07 # transform ISO formatted date to locale date string
+function transformDateFormat() {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    $('dd.tx-dlf-metadata-date').each(function() {
+        var rawDate = $(this).text().trim();
+        var dateString = new Date(rawDate).toLocaleDateString(undefined, options);
+        $(this).text(dateString);
     });
 }
 
