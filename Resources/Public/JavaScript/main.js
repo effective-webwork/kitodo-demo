@@ -293,7 +293,7 @@ function addLicenseIcon() {
 
         // remove empty strings
         res = res.filter(String);
-        console.log(res);
+
         var category = res[res.length - 4].substring(0,1);
         var shortName = res[res.length - 3];
         var version = res[res.length - 2];
@@ -304,6 +304,6 @@ function addLicenseIcon() {
 
         var icon = 'https://i.creativecommons.org/' + category + '/' + shortName + '/' + version + '/88x31.png';
 
-        $('.license_label_value').prepend('<img src="' + icon + '"/>');
+        $('.license_label_value').prepend('<a href="' + link + '"><img src="' + icon + '"/></a>');
     }
 }
