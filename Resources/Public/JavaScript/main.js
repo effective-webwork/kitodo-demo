@@ -201,6 +201,7 @@ $(document).ready(function() {
     initialFacetValueRestriction();
     setTitleOnDetailPage();
     shortenDescription();
+    addLicenseIcon();
 });
 
 function shortenDescription() {
@@ -283,4 +284,26 @@ function setTitleOnDetailPage() {
 
 function setBackToListviewInBreadcrumb() {
     $('#backtolistview a').attr("href", $('li.tx-dlf-navigation-backtolist a').attr("href"));
+}
+
+function addLicenseIcon() {
+    if ($('.license-url ul li').length > 0) {
+        var link = $('.license-url ul li').text();
+        var res = link.split("/");
+
+        // remove empty strings
+        res = res.filter(String);
+        console.log(res);
+        var category = res[res.length - 4].substring(0,1);
+        var shortName = res[res.length - 3];
+        var version = res[res.length - 2];
+
+        // http://i.creativecommons.org/p/zero/1.0/88x31.png
+        // https://creativecommons.org/licenses/by-nc-sa/4.0/
+        // http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
+
+        var icon = 'https://i.creativecommons.org/' + category + '/' + shortName + '/' + version + '/88x31.png';
+
+        $('.license_label_value').prepend('<img src="' + icon + '"/>');
+    }
 }
