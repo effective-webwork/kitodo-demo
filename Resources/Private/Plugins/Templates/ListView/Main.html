@@ -27,17 +27,19 @@
                 </f:then>
             </f:if>
 
-            <div class="tx-dlf-listview-collection-thumbnail">
-                <f:if condition="{currentCollection.thumbnail}">
-                    <f:image image="{currentCollection.thumbnail}" />
-                </f:if>
-                <div>
-                    <f:if condition="{currentCollection.label}">
-                        {currentCollection.label}
-                        <p class="tx-dlf-listview-label"></p>
+            <f:for each="{currentCollection}" as="currentCollectionItem">
+                <div class="tx-dlf-listview-collection-thumbnail">
+                    <f:if condition="{currentCollectionItem.thumbnail}">
+                        <f:image image="{currentCollectionItem.thumbnail}" />
                     </f:if>
+                    <div>
+                        <f:if condition="{currentCollectionItem.label}">
+                            {currentCollectionItem.label}
+                            <p class="tx-dlf-listview-label"></p>
+                        </f:if>
+                    </div>
                 </div>
-            </div>
+            </f:for>
 
             <f:render partial="ListView/SearchHits" arguments="{_all}" />
 
