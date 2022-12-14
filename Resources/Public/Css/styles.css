@@ -782,11 +782,14 @@ ol.tx-dlf-listview-list {
     content: "x";
 }
 
-.shorten-text-4 {
+.shorten-text-4 p {
+    display: none;
+}
+.shorten-text-4 p:first-of-type {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 6; /* number of lines to show */
+    -webkit-line-clamp: 6;
     line-clamp: 6;
     -webkit-box-orient: vertical;
 }
