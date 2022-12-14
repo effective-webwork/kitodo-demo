@@ -1186,6 +1186,10 @@ detail-view
     width: 75% !important;
 }
 
+dd.tx-dlf-metadata-title.detail-view-title-main {
+    font-weight: 600;
+}
+
 /*----------------------------------------------------------------------
 calendar + listview
 ----------------------------------------------------------------------*/
