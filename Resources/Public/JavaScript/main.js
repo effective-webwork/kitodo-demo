@@ -267,7 +267,7 @@ function initialFacetValueRestriction() {
 
 function setTitleOnDetailPage() {
     var title = '';
-    title = $('.tx-dlf-metadata article.metadata-title span').text();
+    title = $('.tx-dlf-metadata article.metadata-title ul.metadata-values').text();
 
     // use class add2title to add metadata to title
     // default separator is "-" for a custom separator the data attribute "data-separator" can be used
