@@ -59,7 +59,7 @@
     </f:if>
 
     <f:if condition="{settings.searchIn} == 'collection' || {settings.searchIn} == 'all'">
-        <f:form.hidden property="collections" value="{settings.collections}" />
+        <f:form.hidden property="collection" value="{settings.collections}" />
     </f:if>
 
     <f:if condition="{settings.searchIn} == 'document' || {settings.searchIn} == 'all'">
@@ -70,7 +70,7 @@
     <!-- Add current collection if using on collection single view -->
     <f:if condition="{lastSearch.collection}">
         <f:then>
-            <input type="hidden" name="collection" value="{lastSearch.collection}" />
+            <f:form.hidden property="collection" value="{lastSearch.collection}" />
         </f:then>
     </f:if>
 
