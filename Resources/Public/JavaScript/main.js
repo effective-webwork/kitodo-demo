@@ -345,3 +345,12 @@ if (res[1] == "creativecommons.org") {
 
     $('.license').prepend('<img src="' + icon + '"/>');
 }
+
+$('.tx-dlf-listview-list > li > dl .doc-type').each(function() {
+    if ($(this).text().toLowerCase() == 'newspaper' || $(this).text().toLowerCase() == 'year') {
+        var link = $(this).parent().find("dd.tx-dlf-metadata-title a").attr('href');
+        link = link.replace('detailseite', 'kalender');
+        link = link.replace('/page', '');
+        $(this).parent().find("dd.tx-dlf-metadata-title a").attr('href', link);
+    }
+});
