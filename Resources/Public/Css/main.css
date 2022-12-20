@@ -80,7 +80,7 @@ li.tx-dlf-navigation-pageselect label {
 }
 
 .tx-dlf-listview img {
-    display: none;
+    /*display: none;*/
 }
 
 .show-volumes {
@@ -311,4 +311,8 @@ dt.tx-dlf-metadata-title {
 
 .tx-dlf-listview-preview em {
     background-color: yellow;
+}
+
+.hide-facet {
+    display: none;
 }

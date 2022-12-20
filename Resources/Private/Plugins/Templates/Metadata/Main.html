@@ -1,0 +1,48 @@
+<f:comment>
+<!--
+ * (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+ *
+ * This file is part of the Kitodo and TYPO3 projects.
+ *
+ * @license GNU General Public License version 3 or later.
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+-->
+</f:comment>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+    <dl>
+        {metadata -> f:format.html()}
+    </dl>
+
+    NOTE: We assume unescaped values
+</f:comment>
+<f:if condition="{useIiif}">
+    <f:then>
+        <f:render partial="Metadata/IiifEntries" arguments="{_all}"/>
+    </f:then>
+    <f:else>
+        <div class="tx-dlf-metadata">
+            <f:for each="{documentMetadataSections}" as="documentMetadataSection" iteration="sectionIterator">
+                <div class="detail-view-itemdetails">
+                    <div class="dropdown-menu"><input type="checkbox" id="checkbox-meta{sectionIterator.cycle}">
+                        <label for="checkbox-meta{sectionIterator.cycle}">Metadaten</label>
+                        <ul>
+                            <li>
+                                <section class="shlb-metadata-item">
+                                    <f:for each="{configMetadata}" as="configObject">
+                                        <f:if condition="{documentMetadataSection.{configObject.indexName}}">
+                                            <f:render partial="Metadata/Entries" arguments="{_all}" />
+                                        </f:if>
+                                    </f:for>
+                                </section>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </f:else>
+</f:if>

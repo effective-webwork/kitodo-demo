@@ -13,3 +13,129 @@ page.includeJS {
     jquery = EXT:presentation_package/Resources/Public/JavaScript/vendor/jquery-1.11.2.min.js
     main = EXT:presentation_package/Resources/Public/JavaScript/main.js
 }
+
+plugin.tx_dlf_search {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_listview {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_metadata {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_tableofcontents {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_navigation {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_pageview {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_toolbox {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_collection {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}
+
+plugin.tx_dlf_calendar {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}

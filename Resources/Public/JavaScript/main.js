@@ -60,13 +60,13 @@ if ($('.tx-dlf-navigation-listview a').length > 0) {
     $('.meta-actions #backlink').attr( "href", $('.tx-dlf-navigation-listview a').attr("href"));
 }
 
-$(".tx-dlf-metadata dd.tx-dlf-metadata-title").attr("data-full", $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text());
-
-$(".tx-dlf-metadata dd.tx-dlf-metadata-title").text(
-    $(".tx-dlf-metadata dd.tx-dlf-metadata-title")
-        .text()
-        .substring(0, 70) + " ..."
-);
+// $(".tx-dlf-metadata article.metadata-title span").attr("data-full", $(".tx-dlf-metadata article.metadata-title span").text());
+//
+// $(".tx-dlf-metadata article.metadata-title span").text(
+//     $(".tx-dlf-metadata article.metadata-title span")
+//         .text()
+//         .substring(0, 70) + " ..."
+// );
 
 // collapse metadata
 $(".tx-dlf-metadata .show-metadata").on("click", function (evt) {
@@ -195,3 +195,115 @@ $('.tx-dlf-navigation-magnifier a, .tx-dlf-navigation-magnifier span')
 $('div.tx-dlf-navigation-edit').hide();
 $('div.tx-dlf-navigation-editRemove').hide();
 $('div.tx-dlf-navigation-magnifier').hide();
+
+$(document).ready(function() {
+    setBackToListviewInBreadcrumb();
+    initialFacetValueRestriction();
+    setTitleOnDetailPage();
+    shortenDescription();
+    addLicenseIcon();
+});
+
+function shortenDescription() {
+    // all short descriptions
+    // $('p.short').each(function () {
+    //     shortenText($(this));
+    // });
+    //
+    // $('p.long').each(function () {
+    //     shortenText($(this));
+    // });
+    $('.tx-dlf-collection-description').each(function() {
+       shortenText($(this));
+    });
+    showMoreClickHandler();
+}
+
+function showMoreClickHandler() {
+    $('.description-show-more').on('click', function (evt) {
+        evt.preventDefault();
+        $(this).parent().siblings('.tx-dlf-collection-description').toggleClass('shorten-text-4');
+        if ($(this).text() == 'mehr...') {
+            $(this).text('weniger...');
+            $(this).toggleClass('show-less');
+        } else {
+            $(this).text('mehr...');
+            $(this).toggleClass('show-less');
+        }
+    });
+}
+
+function shortenText(element) {
+    if ($(element).text().length > 100) {
+        $(element).addClass('shorten-text-4');
+        $('<p><a href="#" class="description-show-more">mehr...</a></p>').insertAfter($(element));
+    }
+
+}
+
+function initialFacetValueRestriction() {
+    // $('.tx-dlf-search-facets ul').each(function () {
+    //     if ($(this).children("li").length != 0 && $(this).children("li").length > 5) {
+    //         $($(this).children("li")[4]).nextAll().hide();
+    //         $(this).append('<li><a class="facetShowMore" href="#">Mehr ...</a></li>');
+    //         $(this).append('<li><a class="facetShowLess" href="#">Weniger ...</a></li>');
+    //         $(this).find('li a.facetShowLess').parent().hide();
+    //     }
+    // });
+    $('.facetShowMore').on("click", function (event) {
+        event.preventDefault();
+        $(this).parent().parent().children("li").show();
+        $(this).parent().hide();
+        $(this).parent().parent().find('.facetShowLess').parent().show();
+    });
+
+    $('.facetShowLess').on("click", function (event) {
+        event.preventDefault();
+        $($(this).parent().parent().children("li")[4]).nextAll().hide();
+        $(this).parent().hide();
+        $(this).parent().parent().find('.facetShowMore').parent().show();
+    });
+}
+
+function setTitleOnDetailPage() {
+    var title = '';
+    title = $('.tx-dlf-metadata article.metadata-title span').text();
+
+    // use class add2title to add metadata to title
+    // default separator is "-" for a custom separator the data attribute "data-separator" can be used
+    $('.tx-dlf-metadata dd.add2title').each(function () {
+        if ($(this).data('separator')) {
+            title = title + ' ' + $(this).data('separator') + ' ' + $(this).text();
+        } else {
+            title = title + ' - ' + $(this).text();
+        }
+    });
+
+    $('.detail-view-header dd.tx-dlf-metadata-title').text(title);
+}
+
+function setBackToListviewInBreadcrumb() {
+    $('#backtolistview a').attr("href", $('li.tx-dlf-navigation-backtolist a').attr("href"));
+}
+
+function addLicenseIcon() {
+    if ($('.license-url ul li').length > 0) {
+        var link = $('.license-url ul li').text();
+        var res = link.split("/");
+
+        // remove empty strings
+        res = res.filter(String);
+
+        var category = res[res.length - 4].substring(0,1);
+        var shortName = res[res.length - 3];
+        var version = res[res.length - 2];
+
+        // http://i.creativecommons.org/p/zero/1.0/88x31.png
+        // https://creativecommons.org/licenses/by-nc-sa/4.0/
+        // http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
+
+        var icon = 'https://i.creativecommons.org/' + category + '/' + shortName + '/' + version + '/88x31.png';
+
+        $('.license_label_value').prepend('<a href="' + link + '"><img src="' + icon + '"/></a>');
+    }
+}
