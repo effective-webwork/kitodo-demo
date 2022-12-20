@@ -505,7 +505,6 @@ listview
 }
 
 .dropdown-menu ul li a {
-    padding: 5px 5px;
     display: block;
 }
 
@@ -926,8 +925,8 @@ detail-view
     padding-right: 3px;
 }
 
-.detail-view-itemoptions .dropdown-menu label,
-.detail-view-itemdetails .dropdown-menu label {
+.detail-view-itemoptions .dropdown-menu > label,
+.detail-view-itemdetails .dropdown-menu > label {
     background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-down-w.svg') no-repeat right center #00554A;
     background-size: 16px 16px;
     margin-top: 5px;
@@ -936,8 +935,8 @@ detail-view
     padding: 8px 30px 8px 15px;
 }
 
-.detail-view-itemoptions .dropdown-menu label:hover,
-.detail-view-itemdetails .dropdown-menu label:hover {
+.detail-view-itemoptions .dropdown-menu > label:hover,
+.detail-view-itemdetails .dropdown-menu > label:hover {
     background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-down-w.svg') no-repeat right center #008877;
     background-size: 16px 16px;
     color: #FFFFFF;
@@ -975,6 +974,18 @@ detail-view
     padding: 5px 5px;
 }
 
+.shlb-metadata-text-item label {
+    padding: 0;
+    font-weight: 700;
+    margin: 10px 0 0 0;
+    background: transparent;
+    }
+
+.shlb-metadata-text-item {
+    padding: 5px 15px;
+    border-top: 1px solid #ababab;
+}
+
 .tx-dlf-toolsPdf span {
     border-top: 1px solid #d8d8d8;
     display: block;
@@ -982,11 +993,6 @@ detail-view
 
 .tx-dlf-toolsPdf span:first-child {
     border-top: 0;
-}
-
-.detail-view-itemoptions .tx-dlf-toc-title {
-    width: 50%;
-    display: block;
 }
 
 .detail-view-itemoptions .tx-dlf-basket-button {
@@ -1581,39 +1587,12 @@ max 1024px
         text-align: center;
     }
 
-    .dropdown-menu label {
-        background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat right center #00554A;
-        background-size: 24px auto;
-        margin-top: 5px;
-        color: #FFFFFF;
-        cursor: pointer;
-        padding: 10px;
-    }
-
-    .dropdown-menu li.tx-dlf-search-no label {
-        padding: 10px;
-    }
-
     .dropdown-menu label:hover {
         background-color: #008877;
     }
 
     .dropdown-menu ul ul {
         display: none;
-    }
-
-    .dropdown-menu input[type=checkbox]:checked ~ label {
-        background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat right center #008877;
-        background-size: 24px auto;
-        padding: 10px;
-    }
-
-    .dropdown-menu input[type=checkbox]:checked ~ ul {
-        display: block;
-    }
-
-    .dropdown-menu ul li a {
-        padding: 5px 15px;
     }
 
     .tx-dlf-search-facets {
@@ -1637,7 +1616,6 @@ max 1024px
     .detail-view-title {
         width: 100%;
         display: block;
-        text-align: center;
         padding-bottom: 15px;
     }
 
@@ -1661,14 +1639,6 @@ max 1024px
     .detail-view-itemoptions .detail-view-itemcontents,
     .detail-view-itemoptions .detail-view-tools {
         width: calc(30% - 3px);
-    }
-
-    .detail-view-itemdetails {
-        width: 40%;
-    }
-
-    .detail-view-itemoptions .tx-dlf-toc-title {
-        width: 100%;
     }
 
     .detail-view-itemoptions .tx-dlf-basket-button {
@@ -1870,8 +1840,7 @@ max 700px
     }
 
     .detail-view-itemoptions .detail-view-itemcontents,
-    .detail-view-itemoptions .detail-view-tools,
-    .detail-view-itemoptions .detail-view-itemdetails {
+    .detail-view-itemoptions .detail-view-tools {
         display: block;
         position: inherit;
         width: calc(100% - 30px);
@@ -2002,6 +1971,11 @@ ul.tx-dlf-toolbox span a img {
     padding: 30px;
 }
 
+.detail-aside-nav select {
+    display: block;
+    width: 100%;
+}
+
 .tx-dlf-toolbox {
     /*position: absolute;*/
     right: 20px;
@@ -2016,10 +1990,10 @@ ul.tx-dlf-toolbox span a img {
 
 .tx-dlf-toolbox li,
 .tx-dlf-navigation li,
-.tx-dlf-Navigation li{
-    display: inline;
+.tx-dlf-Navigation li {
+    display: inline-block;
     list-style-type: none;
-    margin-left: 5px;
+    margin: 5px 0 0 5px;
 }
 
 .tx-dlf-toolbox li span,
@@ -2102,7 +2076,10 @@ ul.tx-dlf-toolbox span a img {
 }
 
 .detail-view-itemoptions {
-    margin: 30px;
+    border-top: 3px solid #999;
+    display: table;
+    width: calc(100% - 60px);
+    margin: 0 30px 30px 30px;
     position: relative;
     z-index: 3;
 }
@@ -2186,7 +2163,6 @@ ul.tx-dlf-toolbox span a img {
     margin-right: 30px;
 }
 
-.detail-view-itemoptions .dropdown-menu ul li a,
 .detail-view-itemoptions .dropdown-menu ul li .tx-dlf-imagedownloadtool,
 .detail-view-itemoptions .dropdown-menu ul li .tx-dlf-fulltexttool,
 .detail-view-itemoptions .dropdown-menu ul li .tx-dlf-pdfdownloadtool {
@@ -2215,8 +2191,8 @@ span.no-fulltext {
 }
 
 .detail-view-itemoptions .tx-dlf-toc-title {
-    width: 90%;
     display: block;
+    padding: 5px 15px;
 }
 
 .detail-view-itemoptions .tx-dlf-basket-button {
