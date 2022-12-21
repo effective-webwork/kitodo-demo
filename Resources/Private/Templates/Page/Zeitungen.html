@@ -59,7 +59,7 @@
                     Hamburger Zeitungen Digital
                 </article>
                 <article class="portal-claim">
-                    Drucke, Handschriften, Karten, Fotos und mehr –<br/> durchsuchen Sie die Kollektionen der Stabi
+                    Geschichte in Hamburg und der Welt von 1701 - 1945
                 </article>
 
             </section>
@@ -75,6 +75,7 @@
         </header>
 
         <main>
+            <f:comment>
             <div class="tx-dlf-collection">
                 <v:page.menu pageUid="{settings.categoryStartUid}" expandAll="0" levels="0" showHiddenInMenu="1">
                     <ul class="tx-dlf-collection-list">
@@ -107,6 +108,11 @@
                         </f:for>
                     </ul>
                 </v:page.menu>
+            </div>
+            </f:comment>
+
+            <div class="tx-dlf-collection">
+                <v:content.render column="1" />
             </div>
 
             <f:render partial="ZeitungenTeaserSlot"/>
