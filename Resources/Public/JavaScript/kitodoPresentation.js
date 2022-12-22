@@ -154,7 +154,7 @@ function sideCollapse(updateMap = true) {
     $('#detail-view aside > article > div > div.tx-dlf-metadata > div > .dropdown-menu').hide();
     $('#detail-view aside > article > div > div.tx-dlf-tableofcontents > div > .dropdown-menu').hide();
     $('#detail-view aside section').css('position', 'absolute').css('right', '300px');
-    $('.ol-unselectable.ol-layers').css('position', 'absolute').css('width', '100% !important').css('height', '100%').css('z-index', '0');
+    $('.ol-unselectable.ol-layers').css('position', 'absolute').css('width', '100%').css('height', '100%').css('z-index', '0');
     $('#header').hide();
     $('#opening_hours').hide();
     $('#detail-view section#main-content').css('width', '100%');
@@ -174,7 +174,7 @@ function sideExpand(updateMap = true) {
     $('#detail-view aside > article > div > div.tx-dlf-metadata > div > .dropdown-menu').show();
     $('#detail-view aside > article > div > div.tx-dlf-tableofcontents > div > .dropdown-menu').show();
     $('#detail-view aside section').css('position', 'initial').css('right', 0).css('top', '0px');
-    $('.ol-unselectable.ol-layers').css('position', 'absolute').css('width', '100%').css('height', '100%').css('z-index', '0');
+    $('.ol-unselectable.ol-layers').css('position', 'absolute').css('width', '100% !important').css('height', '100%').css('z-index', '0');
     $('#header').show();
     $('#opening_hours').show();
     $('#detail-view section#main-content').css('width', '67%');
