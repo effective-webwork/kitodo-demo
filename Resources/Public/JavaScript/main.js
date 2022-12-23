@@ -326,24 +326,26 @@ $('.license-label-value').hide();
 
 // icon
 var link = $('.license').attr('href');
-var res = link.split("/");
+if (link) {
+    var res = link.split("/");
 
-// remove empty strings
-res = res.filter(String);
+    // remove empty strings
+    res = res.filter(String);
 
-if (res[1] == "creativecommons.org") {
-    // get the last two non empty values
-    var category = res[res.length - 3].substring(0,1);
-    var shortName = res[res.length - 2];
-    var version = res[res.length - 1];
+    if (res[1] == "creativecommons.org") {
+        // get the last two non empty values
+        var category = res[res.length - 3].substring(0,1);
+        var shortName = res[res.length - 2];
+        var version = res[res.length - 1];
 
-    // http://i.creativecommons.org/p/zero/1.0/88x31.png
-    // https://creativecommons.org/licenses/by-nc-sa/4.0/
-    // http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
+        // http://i.creativecommons.org/p/zero/1.0/88x31.png
+        // https://creativecommons.org/licenses/by-nc-sa/4.0/
+        // http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
 
-    var icon = 'https://i.creativecommons.org/' + category + '/' + shortName + '/' + version + '/88x31.png';
+        var icon = 'https://i.creativecommons.org/' + category + '/' + shortName + '/' + version + '/88x31.png';
 
-    $('.license').prepend('<img src="' + icon + '"/>');
+        $('.license').prepend('<img src="' + icon + '"/>');
+    }
 }
 
 $('.tx-dlf-listview-list > li > dl .doc-type').each(function() {
