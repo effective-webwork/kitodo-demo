@@ -18,6 +18,9 @@
                 <flux:grid.column colPos="15" colspan="1" name="Basket" label="Warenkorb" />
             </flux:grid.row>
             <flux:grid.row>
+                <flux:grid.column colPos="3" colspan="2" name="Main" label="Prestige" />
+            </flux:grid.row>
+            <flux:grid.row>
                 <flux:grid.column colPos="1" colspan="2" name="Main" label="Hauptbereich" />
             </flux:grid.row>
         </flux:grid>
@@ -25,6 +28,17 @@
 
     <f:section name="Main">
         <f:render partial="Header" arguments="{_all}"/>
+
+        <div class="home-prestige">
+            <div class="home-prestige-content">
+                <div class="home-intro">
+                    <h1>Digitale Sammlungen Darmstadt</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                </div>
+
+                <v:content.render column="3" />
+            </div>
+        </div>
 
         <main class="one_column">
 

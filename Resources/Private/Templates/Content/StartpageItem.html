@@ -1,0 +1,59 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+    <f:layout name="StartpageItemWrapper"/>
+
+    <f:section name="Configuration">
+        <flux:form id="startpageitem"
+                   label="Kachel"
+                   description="Kachel für die Startseite (Benötigt Wrapper-Element)">
+
+            <!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+            <flux:field.file name="image" allowed="jpg" uploadFolder="uploads/tx_presentation" minItems="1" maxItems="1" size="1" />
+            <flux:field.input name="headline" required="TRUE"/>
+            <flux:field.text name="teasertext" rows="5" cols="30" required="TRUE" />
+            <flux:field.input name="link">
+                <flux:wizard.link activeTab="page"/>
+            </flux:field.input>
+        </flux:form>
+        <flux:grid>
+            <flux:grid.row>
+                <flux:grid.column
+                        style="width:100%;"
+                        name="startpageitem"
+                        label="Kachel"
+                        colPos="0"
+                        colspan="1"/>
+            </flux:grid.row>
+        </flux:grid>
+    </f:section>
+
+    <f:section name="Preview">
+        <table width="100%">
+            <tr>
+                <td width="50%"><v:media.image src="uploads/tx_quickstart/{image}" alt="{headline}" width="100" /></td>
+                <td width="50%">
+                    <f:format.crop maxCharacters="50">{teasertext}</f:format.crop>
+                    <f:if condition="{link}">
+                        <strong>Link:</strong> {link}
+                    </f:if>
+                </td>
+            </tr>
+        </table>
+    </f:section>
+
+    <f:section name="Main">
+        <article class="home-newsarticle">
+            <div class="home-newsarticle-inner">
+                <v:media.image src="uploads/tx_quickstart/{image}" alt="{headline}" />
+                <h2>{headline}</h2>
+                <p><f:format.nl2br>{teasertext}</f:format.nl2br></p>
+                <f:if condition="{link}">
+                    <f:link.page pageUid="{link}" title="{headline}" class="home-button">mehr erfahren</f:link.page>
+                </f:if>
+            </div>
+        </article>
+    </f:section>
+</div>
