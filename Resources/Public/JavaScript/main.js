@@ -294,9 +294,9 @@ function addLicenseIcon() {
         // remove empty strings
         res = res.filter(String);
 
-        var category = res[res.length - 4].substring(0,1);
-        var shortName = res[res.length - 3];
-        var version = res[res.length - 2];
+        var category = res[res.length - 3].substring(0,1);
+        var shortName = res[res.length - 2];
+        var version = res[res.length - 1];
 
         // http://i.creativecommons.org/p/zero/1.0/88x31.png
         // https://creativecommons.org/licenses/by-nc-sa/4.0/
