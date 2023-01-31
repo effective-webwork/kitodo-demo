@@ -14,30 +14,23 @@
             <flux:field.file name="image" allowed="jpg" uploadFolder="uploads/tx_presentation" minItems="0" maxItems="1" size="1" internalType="folder" label="Bild"/>
             <flux:field.input name="headline" required="TRUE" label="Überschrift" />
             <flux:field.text name="teasertext" rows="5" cols="30" required="TRUE" label="Beschreibung" />
-            <flux:field.input name="link" label="Link">
-                <flux:wizard.link activeTab="page"/>
+            <flux:field.input name="pagelink" label="Link">
+                <flux:wizard.link/>
             </flux:field.input>
         </flux:form>
-        <flux:grid>
-            <flux:grid.row>
-                <flux:grid.column
-                        style="width:100%;"
-                        name="startpageitem"
-                        label="Kachel"
-                        colPos="0"
-                        colspan="1"/>
-            </flux:grid.row>
-        </flux:grid>
     </f:section>
 
     <f:section name="Preview">
         <table width="100%">
             <tr>
-                <td width="50%"><v:media.image src="uploads/tx_presentation/{image}" alt="{headline}" width="100" /></td>
+                <td width="50%">
+                    <f:if condition="{image}">
+                        <v:media.image src="uploads/tx_presentation/{image}" alt="{headline}" width="100" /></td>
+                    </f:if>
                 <td width="50%">
                     <f:format.crop maxCharacters="50">{teasertext}</f:format.crop>
-                    <f:if condition="{link}">
-                        <strong>Link:</strong> {link}
+                    <f:if condition="{pagelink}">
+                        <strong>Link:</strong> {pagelink}
                     </f:if>
                 </td>
             </tr>
@@ -47,11 +40,13 @@
     <f:section name="Main">
         <article class="home-newsarticle">
             <div class="home-newsarticle-inner">
-                <v:media.image src="uploads/tx_presentation/{image}" alt="{headline}" />
+                <f:if condition="{image}">
+                    <v:media.image src="uploads/tx_presentation/{image}" alt="{headline}" />
+                </f:if>
                 <h2>{headline}</h2>
                 <p><f:format.nl2br>{teasertext}</f:format.nl2br></p>
-                <f:if condition="{link}">
-                    <f:link.page pageUid="{link}" title="{headline}" class="home-button">mehr erfahren</f:link.page>
+                <f:if condition="{pagelink}">
+                    <f:link.page pageUid="{pagelink}" title="{headline}" class="home-button">mehr erfahren</f:link.page>
                 </f:if>
             </div>
         </article>
