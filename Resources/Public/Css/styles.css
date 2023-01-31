@@ -294,7 +294,7 @@ header {
 }
 
 .portal-main-search .header-wrapper.header-background {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/sh-signet.svg') no-repeat;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/sh-signet.svg') no-repeat;
     background-position-x: 0%;
     background-position-y: 0%;
     background-size: auto;
@@ -516,7 +516,7 @@ listview
     float: left;
     margin: 0 5px 0 0;
     content: "";
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-down-b.svg') no-repeat;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-down-b.svg') no-repeat;
     background-size: 14px 14px;
     background-position: center center;
 }
@@ -529,7 +529,7 @@ listview
     float: left;
     margin: 0 10px 0 0;
     content: "";
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-up-b.svg') no-repeat;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-up-b.svg') no-repeat;
     background-size: 14px 14px;
     background-position: center center;
 }
@@ -639,7 +639,7 @@ ol.tx-dlf-listview-list {
 
 .tx-dlf-listview-list li .add-to-cart a {
     display: inline-block;
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #0071bc;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #0071bc;
     color: #FFFFFF;
     text-decoration: none;
     padding: 8px 10px 8px 30px;
@@ -647,7 +647,7 @@ ol.tx-dlf-listview-list {
 }
 
 .tx-dlf-listview-list li .add-to-cart a:hover {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #005182;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #005182;
 }
 
 .tx-dlf-listview-list li .show-volumes {
@@ -665,19 +665,19 @@ ol.tx-dlf-listview-list {
 }
 
 /*.tx-dlf-listview-list li .show-volumes a.show-volumes-expand {*/
-/*background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #999;*/
+/*background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #999;*/
 /*}*/
 
 /*.tx-dlf-listview-list li .show-volumes a.show-volumes-expand:hover {*/
-/*background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #005182;*/
+/*background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #005182;*/
 /*}*/
 
 /*.tx-dlf-listview-list li .show-volumes a.show-volumes-minimize {*/
-/*background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #0071bc;*/
+/*background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #0071bc;*/
 /*}*/
 
 /*.tx-dlf-listview-list li .show-volumes a.show-volumes-minimize:hover {*/
-/*background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #005182;*/
+/*background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #005182;*/
 /*}*/
 
 .tx-dlf-listview-list .shlb-listview-img {
@@ -758,7 +758,7 @@ ol.tx-dlf-listview-list {
 
 .tx-dlf-listview-list li ol li .add-to-cart a {
     display: inline-block;
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #66acd8;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #66acd8;
     color: #FFFFFF;
     text-decoration: none;
     padding: 8px 10px 8px 30px;
@@ -766,7 +766,7 @@ ol.tx-dlf-listview-list {
 }
 
 .tx-dlf-listview-list li ol li .add-to-cart a:hover {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #005182;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #005182;
 }
 
 .tx-dlf-listview-list li ol li .tx-dlf-listview-thumbnail img {
@@ -909,7 +909,7 @@ detail-view
 
 .detail-view-itemoptions .dropdown-menu > label,
 .detail-view-itemdetails .dropdown-menu > label {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-down-w.svg') no-repeat right center #00554A;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-down-w.svg') no-repeat right center #00554A;
     background-size: 16px 16px;
     margin-top: 5px;
     color: #FFFFFF;
@@ -919,7 +919,7 @@ detail-view
 
 .detail-view-itemoptions .dropdown-menu > label:hover,
 .detail-view-itemdetails .dropdown-menu > label:hover {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-down-w.svg') no-repeat right center #008877;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-down-w.svg') no-repeat right center #008877;
     background-size: 16px 16px;
     color: #FFFFFF;
 }
@@ -939,7 +939,7 @@ detail-view
 }
 
 .detail-view-itemoptions .dropdown-menu input[type=checkbox]:checked ~ label {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-up-w.svg') no-repeat right center #008877;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-up-w.svg') no-repeat right center #008877;
     background-size: 16px 16px;
     color: #FFFFFF;
 }
@@ -985,7 +985,7 @@ detail-view
 .detail-view-itemoptions .tx-dlf-basket-button a,
 #submitBasketForm {
     display: inline-block;
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #0071bc;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #0071bc;
     color: #FFFFFF;
     text-decoration: none;
     padding: 5px 10px 5px 30px !important;
@@ -1001,7 +1001,7 @@ detail-view
 
 .detail-view-itemoptions .tx-dlf-basket-button a:hover,
 #submitBasketForm:hover {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #005182;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-labelstar.svg') no-repeat left center #005182;
 }
 
 .detail-view-itemdetails dl {
@@ -2090,7 +2090,7 @@ ul.tx-dlf-toolbox span a img {
 }
 
 .detail-view-tools .dropdown-menu label:hover {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat 24px 24px #cc0a4b;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat 24px 24px #cc0a4b;
     background-size: 24px auto;
     transition: background 0.5s ease-in-out;
     -webkit-transition: background 0.5s ease-in-out;
@@ -2112,13 +2112,13 @@ ul.tx-dlf-toolbox span a img {
 }
 
 .detail-view-itemoptions .dropdown-menu input[type=checkbox]:checked ~ label {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-up-w.svg') no-repeat right center #008877;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-up-w.svg') no-repeat right center #008877;
     background-size: 16px 16px;
     color: #FFFFFF;
 }
 
 .detail-view-tools .dropdown-menu input[type=checkbox]:checked ~ label {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-up-w.svg') no-repeat right center #008877;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-shlb-arrow-up-w.svg') no-repeat right center #008877;
     background-size: 16px 16px;
     color: #FFFFFF;
 }
@@ -2182,7 +2182,7 @@ span.no-fulltext {
 
 .detail-view-itemoptions .tx-dlf-basket-button a {
     display: inline-block;
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-star-dark.svg') no-repeat 10px center #FFFFFF;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-star-dark.svg') no-repeat 10px center #FFFFFF;
     background-size: 16px 16px;
     color: #242424;
     text-decoration: none;
@@ -2191,7 +2191,7 @@ span.no-fulltext {
 }
 
 .detail-view-itemoptions .tx-dlf-basket-button a:hover {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-star.svg') no-repeat 10px center #cc0a4b;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-star.svg') no-repeat 10px center #cc0a4b;
     background-size: 16px 16px;
     color: #FFFFFF;
 }
@@ -2513,19 +2513,19 @@ dd.tx-dlf-title a {
 }
 
 .tx-dlf-listview-list li .show-volumes a.show-volumes-expand {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #999;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #999;
 }
 
 .tx-dlf-listview-list li .show-volumes a.show-volumes-expand:hover {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #005182;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #005182;
 }
 
 .tx-dlf-listview-list li .show-volumes a.show-volumes-expand.down {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #0071bc;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #0071bc;
 }
 
 .tx-dlf-listview-list li .show-volumes a.show-volumes-expand.down:hover {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #005182;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #005182;
 }
 
 /*.tx-dlf-metadata .show-metadata {*/
@@ -2544,19 +2544,19 @@ dd.tx-dlf-title a {
 }
 
 .tx-dlf-metadata .show-metadata a.show-metadata-expand {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #999;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #999;
 }
 
 .tx-dlf-metadata .show-metadata a.show-metadata-expand:hover {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #005182;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-down.svg') no-repeat left center #005182;
 }
 
 .tx-dlf-metadata .show-metadata a.show-metadata-expand.down {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #0071bc;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #0071bc;
 }
 
 .tx-dlf-metadata .show-metadata a.show-metadata-expand.down:hover {
-    background: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #005182;
+    background: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-up.svg') no-repeat left center #005182;
 }
 
 
@@ -2728,7 +2728,7 @@ div#tx-dlf-fulltextselection {
 }
 
 .meta-navigation .tx-dlf-goto-basket a::after {
-    content: url('../../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-star.svg');
+    content: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-star.svg');
 }
 
 .meta-navigation .meta-batchcount {
