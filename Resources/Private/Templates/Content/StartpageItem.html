@@ -11,7 +11,7 @@
                    description="Kachel für die Startseite (Benötigt Wrapper-Element)">
 
             <!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
-            <flux:field.file name="image" allowed="jpg" uploadFolder="uploads/tx_presentation" minItems="0" maxItems="1" size="1" internalType="folder" label="Bild"/>
+            <flux:field.inline.fal name="image" minItems="0" maxItems="1" label="Bild"/>
             <flux:field.input name="headline" required="TRUE" label="Überschrift" />
             <flux:field.text name="teasertext" rows="5" cols="30" required="TRUE" label="Beschreibung" />
             <flux:field.input name="pagelink" label="Link" config="{renderType: 'inputLink'}" />
@@ -23,7 +23,7 @@
             <tr>
                 <td width="50%">
                     <f:if condition="{image}">
-                        <v:media.image src="uploads/tx_presentation/{image}" alt="{headline}" width="100" /></td>
+                        <v:media.image src="{image.url}" alt="{headline}" width="100" /></td>
                     </f:if>
                 <td width="50%">
                     <f:format.crop maxCharacters="50">{teasertext}</f:format.crop>
@@ -39,7 +39,7 @@
         <article class="home-newsarticle">
             <div class="home-newsarticle-inner">
                 <f:if condition="{image}">
-                    <v:media.image src="uploads/tx_presentation/{image}" alt="{headline}" />
+                    <v:media.image src="{image.url}" alt="{headline}" />
                 </f:if>
                 <h2>{headline}</h2>
                 <p><f:format.nl2br>{teasertext}</f:format.nl2br></p>
