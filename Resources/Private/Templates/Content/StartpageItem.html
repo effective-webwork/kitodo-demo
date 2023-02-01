@@ -14,9 +14,7 @@
             <flux:field.file name="image" allowed="jpg" uploadFolder="uploads/tx_presentation" minItems="0" maxItems="1" size="1" internalType="folder" label="Bild"/>
             <flux:field.input name="headline" required="TRUE" label="Überschrift" />
             <flux:field.text name="teasertext" rows="5" cols="30" required="TRUE" label="Beschreibung" />
-            <flux:field.input name="pagelink" label="Link">
-                <flux:wizard.link/>
-            </flux:field.input>
+            <flux:field.input name="pagelink" label="Link" config="{renderType: 'inputLink'}" />
         </flux:form>
     </f:section>
 
