@@ -22,8 +22,6 @@
         <table width="100%">
             <tr>
                 <td width="50%">
-                    {v:content.resources.fal(field: 'image') -> v:iterator.first() -> v:variable.set(name: 'image')}
-                    <f:image treatIdAsReference="1" src="{image.id}" title="{image.title}" alt="{image.alternative}"/>
                 <td width="50%">
                     <f:format.crop maxCharacters="50">{teasertext}</f:format.crop>
                     <f:if condition="{pagelink}">
