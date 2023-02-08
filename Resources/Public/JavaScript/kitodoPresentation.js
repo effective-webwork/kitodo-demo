@@ -154,10 +154,11 @@ function sideCollapse(updateMap = true) {
     $('#detail-view aside > article > div > div.tx-dlf-metadata > div > .dropdown-menu').hide();
     $('#detail-view aside > article > div > div.tx-dlf-tableofcontents > div > .dropdown-menu').hide();
     $('#detail-view aside section').css('position', 'absolute').css('right', '300px');
-    $('.ol-unselectable.ol-layers').css('cssText', 'position: absolute; width: 100% !important; height: 100%; z-index: 0;');
+    //$('.ol-unselectable.ol-layers').css('cssText', 'position: absolute; width: 100% !important; height: 100%; z-index: 0;');
     $('#header').hide();
     $('#opening_hours').hide();
     $('#detail-view section#main-content').css('width', '100%');
+    setTimeout(function(){$('.ol-unselectable.ol-layers').css('cssText', 'position: absolute; width: 100% !important; height: 100%; z-index: 0;')}, 1500);
     $('ul.tx-dlf-toolbox').addClass('fs_on');
 
     if (updateMap) {
