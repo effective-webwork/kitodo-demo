@@ -6,28 +6,17 @@
     <f:layout name="Content"/>
 
     <f:section name="Configuration">
-        <flux:form id="SectionGrid"
-                   label="33/33/33"
-                   description="Grid with 3 columns (33%|33%|33%)"
-                   options="{group: 'Sections', Fluidcontent: '{sorting: 40}', icon: '{f:uri.resource(path: \'Icons/Content/Icon.gif\')}' }">
-
-            <flux:grid>
-                <flux:grid.row>
-                    <flux:grid.column
-                            style="width:33.33%;"
-                            name="columnLeft"
-                            label="Column left "/>
-                    <flux:grid.column
-                            style="width:33.33%;"
-                            name="columnMiddle"
-                            label="Column middle"/>
-                    <flux:grid.column
-                            style="width:33.33%;"
-                            name="columnRight"
-                            label="Column right"/>
-                </flux:grid.row>
-            </flux:grid>
+        <flux:form id="gridThreeColumns" label="33/33/33" description="Grid with 3 columns (33%|33%|33%)">
         </flux:form>
+
+        <flux:grid>
+            <flux:grid.row>
+                <flux:grid.column colPos="0" colspan="1" name="columnLeft" label="Column left "/>
+                <flux:grid.column colPos="1" colspan="1" name="columnMiddle" label="Column middle"/>
+                <flux:grid.column colPos="2" colspan="1" name="columnRight" label="Column right"/>
+            </flux:grid.row>
+        </flux:grid>
+
     </f:section>
 
     <f:section name="Preview">
