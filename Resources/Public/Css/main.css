@@ -316,3 +316,7 @@ dt.tx-dlf-metadata-title {
 .hide-facet {
     display: none;
 }
+
+#tx-dlf-map {
+    height: 100vh;
+}
