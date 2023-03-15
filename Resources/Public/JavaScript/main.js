@@ -54,6 +54,16 @@ $(".show-volumes").on("click", function (evt) {
 
 // Detailview
 
+// OpenLayers
+
+// Stop zooming via mouse wheel
+tx_dlf_viewer.map.getInteractions().forEach( function(interaction) {
+    if (interaction instanceof ol.interaction.MouseWheelZoom) {
+        interaction.setActive(false);
+    }
+}, this);
+
+
 // return to list link
 if ($('.tx-dlf-navigation-listview a').length > 0) {
     $('.meta-actions #backlink').show();
