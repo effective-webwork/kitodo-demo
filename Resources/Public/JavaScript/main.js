@@ -56,13 +56,23 @@ $(".show-volumes").on("click", function (evt) {
 
 // OpenLayers
 
-$(document).ready(function() {
-    // Stop zooming via mouse wheel
-    tx_dlf_viewer.map.getInteractions().forEach(function (interaction) {
-        if (interaction instanceof ol.interaction.MouseWheelZoom) {
-            interaction.setActive(false);
+function deactivateZoomMouseWheel() {
+    setTimeout(function() {
+        if (typeof page_name != 'undefined') {
+            // Stop zooming via mouse wheel
+            tx_dlf_viewer.map.getInteractions().forEach(function (interaction) {
+                if (interaction instanceof ol.interaction.MouseWheelZoom) {
+                    interaction.setActive(false);
+                }
+            }, this);
+        } else {
+            deactivateZoomMouseWheel();
         }
-    }, this);
+    }, 500);
+}
+
+$(document).ready(function() {
+    deactivateZoomMouseWheel();
 });
 
 
