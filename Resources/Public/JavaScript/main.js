@@ -58,7 +58,7 @@ $(".show-volumes").on("click", function (evt) {
 
 function deactivateZoomMouseWheel() {
     setTimeout(function() {
-        if (typeof page_name != 'undefined') {
+        if (typeof tx_dlf_viewer != 'undefined') {
             // Stop zooming via mouse wheel
             tx_dlf_viewer.map.getInteractions().forEach(function (interaction) {
                 if (interaction instanceof ol.interaction.MouseWheelZoom) {
