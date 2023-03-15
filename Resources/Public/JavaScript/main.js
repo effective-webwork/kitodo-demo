@@ -70,13 +70,13 @@ if ($('.tx-dlf-navigation-listview a').length > 0) {
     $('.meta-actions #backlink').attr( "href", $('.tx-dlf-navigation-listview a').attr("href"));
 }
 
-// $(".tx-dlf-metadata article.metadata-title span").attr("data-full", $(".tx-dlf-metadata article.metadata-title span").text());
-//
-// $(".tx-dlf-metadata article.metadata-title span").text(
-//     $(".tx-dlf-metadata article.metadata-title span")
-//         .text()
-//         .substring(0, 70) + " ..."
-// );
+$("dd.tx-dlf-metadata-title.detail-view-title-main").attr("data-full", $("dd.tx-dlf-metadata-title.detail-view-title-main").text());
+
+$("dd.tx-dlf-metadata-title.detail-view-title-main").text(
+    $("dd.tx-dlf-metadata-title.detail-view-title-main")
+        .text()
+        .substring(0, 70) + " ..."
+);
 
 // collapse metadata
 $(".tx-dlf-metadata .show-metadata").on("click", function (evt) {
