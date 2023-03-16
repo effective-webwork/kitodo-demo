@@ -26,22 +26,23 @@
                     </p>
                 </f:then>
             </f:if>
-
-            <div class="tx-dlf-listview-collection-thumbnail">
-                <f:if condition="{currentCollection.thumbnail}">
-                    <f:image image="{currentCollection.thumbnail}" maxWidth="400px"/>
-                </f:if>
-                <div class="tx-dlf-collection-description shorten-text-4">
-                    <f:if condition="{currentCollection.label}">
-                        <h2>{currentCollection.label}</h2>
+            <f:for each="currentCollection" as="collection">
+                <div class="tx-dlf-listview-collection-thumbnail">
+                    <f:if condition="{collection.thumbnail}">
+                        <f:image image="{collection.thumbnail}" maxWidth="400px"/>
                     </f:if>
+                    <div class="tx-dlf-collection-description shorten-text-4">
+                        <f:if condition="{collection.label}">
+                            <h2>{collection.label}</h2>
+                        </f:if>
 
-                    <f:if condition="{currentCollection.description}">
-                        <f:format.raw>{currentCollection.description}</f:format.raw>
-                    </f:if>
-                    <p class="tx-dlf-listview-label"></p>
+                        <f:if condition="{collection.description}">
+                            <f:format.raw>{collection.description}</f:format.raw>
+                        </f:if>
+                        <p class="tx-dlf-listview-label"></p>
+                    </div>
                 </div>
-            </div>
+            </f:for>
 
             <f:render partial="ListView/SearchHits" arguments="{_all}" />
 
