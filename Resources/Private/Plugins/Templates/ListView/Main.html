@@ -26,7 +26,7 @@
                     </p>
                 </f:then>
             </f:if>
-            <f:for each="currentCollection" as="collection">
+            <f:for each="{currentCollection}" as="collection">
                 <div class="tx-dlf-listview-collection-thumbnail">
                     <f:if condition="{collection.thumbnail}">
                         <f:image image="{collection.thumbnail}" maxWidth="400px"/>
