@@ -39,9 +39,15 @@
         <div id="banner-navigation">
             <div class="portal-logo-banner" style="padding: 5px 20px 5px 20px; background-color: rgba(255, 255, 255, 1.0); display: block; overflow: auto;">
                 <div style="float: left;">
-                    <a href="http://www.sub.uni-hamburg.de/"><img src="Detail-Dateien/logo_subhh_x2.png" style="margin: 0px 20px 0px 0px;" height="50px"></a>
-                    <a href="https://www.sub.uni-hamburg.de/bibliotheken/universitaetsbibliothek.html"><img src="Detail-Dateien/logo_fachbib_x2.png" style="margin: 0px 20px 0px 0px;" height="50px"></a>
-                    <a href="http://www.uni-hamburg.de/"><img src="Detail-Dateien/logo_uhh_claim_x2.png" style="margin: 0px 20px 0px 0px;" height="50px"></a>
+                    <a href="http://www.sub.uni-hamburg.de/">
+                        <img src="https://www.sub.uni-hamburg.de/typo3conf/ext/subhh_website/Resources/Public/img/logo_subhh_x2.png" style="margin: 0px 20px 0px 0px;" height="50px">
+                    </a>
+                    <a href="https://www.sub.uni-hamburg.de/bibliotheken/universitaetsbibliothek.html">
+                        <img src="https://www.sub.uni-hamburg.de/typo3conf/ext/subhh_website/Resources/Public/img/logo_fachbib_x2.png" style="margin: 0px 20px 0px 0px;" height="50px">
+                    </a>
+                    <a href="http://www.uni-hamburg.de/">
+                        <img src="https://www.sub.uni-hamburg.de/typo3conf/ext/subhh_website/Resources/Public/img/logo_uhh_claim_x2.png" style="margin: 0px 20px 0px 0px;" height="50px">
+                    </a>
                 </div>
 
                 <div style="float: right">
@@ -53,9 +59,6 @@
 			left: 0;">Hamburger Kulturgut Digital</a>
                     <a>Datenschutz</a>
                     <a>Impressum</a>
-                    <a href="#" title="Ansicht nach rechts drehen" onclick="tx_dlf_viewer.map.rotateRight();"> Kontakt
-                        <img src="icons-bootstrap/envelope.svg" alt="Vorherige Seite" width="40px" height="40px" >
-                    </a>
                 </div>
             </div>
             <div style="padding: 5px 0px 5px 20px; background: linear-gradient(135deg, rgba(78,42,45,1) 0%, rgba(36,36,36,1) 100%);">
@@ -89,7 +92,9 @@
             </div>
         </div>
 
-        <div id="toc-overlay-btn" onclick="openNav()"><p style="padding: 5px">Inhaltsverzeichnis :: Suche</p></div>
+        <div id="toc-overlay-btn" onclick="openNav()">
+            <p style="padding: 5px">Inhaltsverzeichnis :: Suche</p>
+        </div>
 
         <script>
             function openNav() {
@@ -114,45 +119,44 @@
 
                 <h1>Downloadangebote</h1>
                 <ul class="tx-dlf-toolbox" style="position:unset; margin-bottom: 30px;">
-
                     <li>
-                        <a href="https://resolver.sub.uni-hamburg.de/kitodo/PPN1678760722" id="citationLink" class="reachable" title="Zitierlink für dieses Dokument">
-                            <img src="icons-bootstrap/quote.svg">        </a>
+                        <a href="#" id="citationLink" class="reachable" title="Zitierlink für dieses Dokument">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/quote.svg">        </a>
                     </li>
                     <li>
-                        <a href="https://resolver.sub.uni-hamburg.de/kitodo/PPN1678760722/page/1" id="pageCitationLink" class="reachable" title="Zitierlink für diese Seite">
-                            <img src="icons-bootstrap/blockquote-left.svg">            </a>
+                        <a href="#" id="pageCitationLink" class="reachable" title="Zitierlink für diese Seite">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/blockquote-left.svg">            </a>
                     </li>
                     <li>
 							<span id="iiifDownload" class="unreachable" title="Keine Metadaten als IIIF-Manifest vorhanden">
-								<img src="icons-bootstrap/braces.svg">            </span>
+								<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/braces.svg">            </span>
                     </li>
                     <li>
-                        <a href="https://mets.sub.uni-hamburg.de/kitodo/PPN1678760722" id="metsDownload" class="reachable" title="Metadaten als METS/MODS downloaden" download="">
-                            <img src="icons-bootstrap/code-slash.svg">        </a>
+                        <a href="#" id="metsDownload" class="reachable" title="Metadaten als METS/MODS downloaden" download="">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/code-slash.svg">        </a>
                     </li>
                     <!--li>
-<a id="fullPdfDownload" href="#" title="Gesamtes Dokument als PDF downloaden"><img src="icons-bootstrap/download.svg" alt="Gesamtes Dokument als PDF downloaden"></a>
+<a id="fullPdfDownload" href="#" title="Gesamtes Dokument als PDF downloaden"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/download.svg" alt="Gesamtes Dokument als PDF downloaden"></a>
 </li-->
                     <li>
-                        <a href="https://img.sub.uni-hamburg.de/kitodo/PPN1678760722/PDF/PPN1678760722.pdf" id="fullPdfDownload" class="reachable" title="Gesamtes Dokument als PDF downloaden">
-                            <img src="icons-bootstrap/download.svg" alt="Gesamtes Dokument als PDF downloaden">        </a>
+                        <a href="#" id="fullPdfDownload" class="reachable" title="Gesamtes Dokument als PDF downloaden">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/download.svg" alt="Gesamtes Dokument als PDF downloaden">        </a>
                     </li>
                     <li>
-                        <a href="https://img.sub.uni-hamburg.de/kitodo/PPN1678760722/PDF/00000001.pdf" id="singlePdfDownload" class="reachable" title="Diese Seite als PDF downloaden" download="">
-                            <img src="icons-bootstrap/filetype-pdf.svg">            </a>
+                        <a href="#" id="singlePdfDownload" class="reachable" title="Diese Seite als PDF downloaden" download="">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/filetype-pdf.svg">            </a>
                     </li>
                     <li>
-                        <a href="https://pic.sub.uni-hamburg.de/PPN1678760722/2000/0/00000001.jpg" id="singleJpegDownload" class="reachable" title="Diese Seite als JPEG downloaden" download="">
-                            <img src="icons-bootstrap/filetype-jpg.svg">            </a>
+                        <a href="#" id="singleJpegDownload" class="reachable" title="Diese Seite als JPEG downloaden" download="">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/filetype-jpg.svg">            </a>
                     </li>
                     <li>
-                        <a href="https://img.sub.uni-hamburg.de/kitodo/PPN1678760722/00000001.xml" id="singleAltoDownload" class="reachable" title="Volltext dieser Seite als ALTO-XML downloaden" download="">
-                            <img src="icons-bootstrap/filetype-xml.svg">                </a>
+                        <a href="#" id="singleAltoDownload" class="reachable" title="Volltext dieser Seite als ALTO-XML downloaden" download="">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/filetype-xml.svg">                </a>
                     </li>
                     <li>
-                        <a href="https://img.sub.uni-hamburg.de/kitodo/PPN1678760722/00000001.txt" id="singleTxtDownload" class="reachable" title="Volltext dieser Seite als TXT downloaden" download="">
-                            <img src="icons-bootstrap//filetype-txt.svg">                </a>
+                        <a href="#" id="singleTxtDownload" class="reachable" title="Volltext dieser Seite als TXT downloaden" download="">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/filetype-txt.svg">                </a>
                     </li>
                 </ul>
                 <h1 style="margin-top: 20px">Metadaten</h1>
