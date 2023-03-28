@@ -1013,6 +1013,10 @@ dd.tx-dlf-metadata-title {
     display: block !important;
 }
 
+.tx-dlf-metadata-hidden {
+    display: none !important;
+}
+
 dt.tx-dlf-metadata,
 dt.tx-dlf-sizesourceprint,
 dt.tx-dlf-publisher,
