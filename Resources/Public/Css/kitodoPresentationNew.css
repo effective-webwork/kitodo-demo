@@ -3,16 +3,9 @@ build in:  08 2019
 copyright: KMD Medien GmbH – www.kmd.de
 ----------------------------------------------------------------------*/
 
-#powered_by {
-    position: fixed;
-    right: 0;
-    bottom: 10px;
-    z-index: 30;
-    margin-right: 20px;
-    background-color: rgba(150, 150, 150, 0.5);
-    padding: 5px;
-    border-radius: 3px;
-}
+/*----------------------------------------------------------------------
+addon 03 2023
+----------------------------------------------------------------------*/
 
 #dfgviewer_by {
     position: fixed;
@@ -52,10 +45,61 @@ copyright: KMD Medien GmbH – www.kmd.de
 }
 
 #banner-navigation {
-    position: fixed;
-    top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     width: 100%;
-    z-index: 100;
+}
+
+#banner-navigation a {
+    text-decoration: none;
+}
+
+.portal-logo-area {
+    padding: 0 20px;
+}
+
+.portal-logo-area a {
+    font-size: 20px;
+}
+
+.portal-credits-area {
+    margin-left: auto;
+}
+
+.portal-credits-area img {
+    height: 60px;
+    width: auto;
+    padding: 10px;
+}
+
+.portal-legal-area {
+    margin: 10px 20px;
+    text-align: right;
+}
+
+.portal-legal-area ul {
+    list-style: none;
+}
+
+.portal-legal-area li {
+    display: inline-block;
+}
+
+.portal-legal-area li a {
+    background: #cccccc;
+    color: #ffffff;
+    padding: 2px 10px;
+    border-radius: 10px;
+    display: block;
+}
+
+.portal-legal-area li a:hover {
+    background: #8D0D1C;
+}
+
+#powered-by {
+    font-size: 10px;
 }
 
 .frame {
@@ -76,12 +120,24 @@ copyright: KMD Medien GmbH – www.kmd.de
     padding: 5px;
     background-color: rgb(99, 8, 19);
     background-color: rgba(99, 8, 19, 0.9);
-    width: 40%;
-    left: 30%;
+    width: 80%;
+    left: 10%;
+    margin: 0 auto;
     text-align: center;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     transition: 0.5s;
+    display: flex;
+}
+
+#bottom-toolbar .frame {
+    width: 50%;
+    text-align: left;
+}
+
+#bottom-toolbar .frame-nav {
+    width: 50%;
+    text-align: right;
 }
 
 /* left navigation */
@@ -104,6 +160,7 @@ copyright: KMD Medien GmbH – www.kmd.de
     transition: 0.5s;
     left: 0;
 }
+
 .overlay {
     height: calc(100% - 200px);
     width: 0;
@@ -173,6 +230,7 @@ copyright: KMD Medien GmbH – www.kmd.de
     transition: 0.5s;
     right: 0;
 }
+
 .overlay2 {
     height: calc(100% - 200px);
     width: 0;
@@ -323,6 +381,12 @@ copyright: KMD Medien GmbH – www.kmd.de
     font-size: 40px;
     border: 2px solid white;
 }
+
+
+
+
+
+
 
 /*----------------------------------------------------------------------
 global structure & normalize
