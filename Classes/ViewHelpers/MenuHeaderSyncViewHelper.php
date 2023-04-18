@@ -21,7 +21,7 @@ class MenuHeaderSyncViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\Abstrac
         $content = str_replace('https://www.sub.uni-hamburg.de/impressum.html', 'https://digitalisate.sub.uni-hamburg.de/impressum.html', $content);
         $content = str_replace('https://www.sub.uni-hamburg.de/datenschutzerklaerung.html', 'https://digitalisate.sub.uni-hamburg.de/datenschutzerklaerung.html', $content);
 
-        $content = explode('<div id="content_cols" class="clear" style="background: url(fileadmin/redaktion/Startseite/architectura.jpg) no-repeat center center fixed #8D0D1B; background-size: cover;">
+        $content = explode('<div id="content_cols" class="clear" style="background: url(fileadmin/redaktion/Startseite_2016/architectura.jpg) no-repeat center center fixed #8D0D1B; background-size: cover;">
         </div>', $content);
 
         $this->templateVariableContainer->add('topContent', $content[0]);
