@@ -9,19 +9,27 @@ addon 03 2023
 
 #dfgviewer_by {
     position: fixed;
-    left: 0;
-    bottom: 10px;
-    z-index: 30;
-    margin-left: 20px;
-    background-color: rgba(150, 150, 150, 0.5);
+    left: 15px;
+    bottom: 15px;
+    z-index: 66;
+}
+
+#dfgviewer_by a {
+    background-color: #cccccc;
     padding: 5px;
-    border-radius: 3px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#dfgviewer_by a:hover {
+    background: #8D0D1C;
+    color: #ffffff;
 }
 
 #next-page {
     position: fixed;
     right: 10px;
-    z-index: 15;
+    z-index: 16;
     bottom: 33%;
     background-color: rgb(99, 8, 19);
     background-color: rgba(99, 8, 19, 0.9);
@@ -64,7 +72,7 @@ addon 03 2023
 }
 
 .portal-credits-area {
-    margin-left: auto;
+    margin: 0px auto;
 }
 
 .portal-credits-area img {
@@ -80,6 +88,7 @@ addon 03 2023
 
 .portal-legal-area ul {
     list-style: none;
+    margin: 0 0 5px 0;
 }
 
 .portal-legal-area li {
@@ -89,8 +98,8 @@ addon 03 2023
 .portal-legal-area li a {
     background: #cccccc;
     color: #ffffff;
-    padding: 2px 10px;
-    border-radius: 10px;
+    padding: 2px 8px;
+    border-radius: 5px;
     display: block;
 }
 
@@ -99,12 +108,12 @@ addon 03 2023
 }
 
 #powered-by {
-    font-size: 10px;
+    font-size: 11px;
+    line-height: 14px;
 }
 
 .frame {
     width: 100%;
-    height: 100%;
 }
 
 #detail-view {
@@ -116,12 +125,12 @@ addon 03 2023
 #bottom-toolbar {
     position: fixed;
     bottom: 0;
-    z-index: 30;
+    z-index: 100;
     padding: 5px;
-    background-color: rgb(99, 8, 19);
-    background-color: rgba(99, 8, 19, 0.9);
-    width: 80%;
-    left: 10%;
+    background-color: #242424;
+    color: #ffffff;
+    width: 70%;
+    left: 15%;
     margin: 0 auto;
     text-align: center;
     border-top-right-radius: 10px;
@@ -135,7 +144,7 @@ addon 03 2023
     text-align: left;
 }
 
-#bottom-toolbar .frame-nav {
+#bottom-toolbar .frame:nth-child(2) {
     width: 50%;
     text-align: right;
 }
@@ -148,67 +157,62 @@ addon 03 2023
     color: white;
     height: 300px;
     width: 40px;
-    border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;;
     position: fixed;
-    z-index: 20;
-    top: 110px;
+    z-index: 50;
     writing-mode: sideways-lr;
     text-align: center;
     font-weight: bold;
     font-size: 20px;
     transition: 0.5s;
-    left: 0;
+    cursor: pointer;
 }
 
 .overlay {
     height: calc(100% - 200px);
     width: 0;
     position: fixed;
-    z-index: 20;
-    top: 110px;
+    z-index: 51;
     left: 0;
-    background-color: rgb(99, 8, 19);
-    background-color: rgb(99, 8, 19, 0.9);
+    background-color: rgb(228, 228, 228);
+    background-color: rgb(228, 228, 228, 0.8);
     overflow-x: hidden;
     transition: 0.5s;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
 .overlay-content {
-    color: white;
-    width: 100%;
-    margin-top: 30px;
+    padding: 30px;
 }
 
-.overlay-content h1{
-    padding-left: 5px;
-    color: white;
+.overlay h2,
+.overlay2 h2 {
+    padding: 45px 0 0 0;
     width: 100%;
-    margin-bottom: 20px;
 }
 
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 20px;
-    color: white;
+.overlay .closebtn,
+.overlay3 .closebtn3 {
+    position: absolute;
+    top: 15px;
+    right: -2px;
+    font-size: 30px;
+    padding: 4px 8px;
+    color: #B12736;
     display: block;
     transition: 0.3s;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    border-radius: 5px 0 0 5px;
 }
 
-.overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
+.overlay .closebtn:hover, .overlay .closebtn:focus,
+.overlay3 .closebtn3:hover, .overlay3 .closebtn3:focus {
+    color: #242424;
+    text-decoration: none;
+    border: 2px solid #242424;
+    right: -5px;
 }
 
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 40px;
-    border: 2px solid white;
-}
 
 /* right navigation */
 
@@ -218,66 +222,55 @@ addon 03 2023
     color: white;
     height: 300px;
     width: 40px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;;
+    border-bottom-left-radius: 10px;
     position: fixed;
-    z-index: 20;
-    top: 110px;
+    z-index: 52;
     writing-mode: sideways-lr;
     text-align: center;
     font-weight: bold;
     font-size: 20px;
     transition: 0.5s;
-    right: 0;
+    cursor: pointer;
 }
 
 .overlay2 {
     height: calc(100% - 200px);
     width: 0;
     position: fixed;
-    z-index: 20;
-    top: 110px;
+    z-index: 53;
     right: 0;
-    background-color: rgb(99, 8, 19);
-    background-color: rgb(99, 8, 19, 0.9);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    background-color: rgb(228, 228, 228);
+    background-color: rgb(228, 228, 228, 0.8);
     overflow-x: hidden;
     transition: 0.5s;
 }
 
 .overlay2-content {
-    color: white;
-    width: 100%;
-    margin-top: 30px;
-    padding-left: 20px;
+    padding: 30px;
 }
 
-.overlay2-content h1{
-    padding-left: 100px;
-    color: white;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.overlay2 a {
-    padding: 8px;
-    text-decoration: none;
-    color: white;
+.overlay2 .closebtn2,
+.overlay4 .closebtn4 {
+    position: absolute;
+    position: absolute;
+    top: 15px;
+    left: -2px;
+    font-size: 30px;
+    padding: 4px 8px;
+    color: #B12736;
     display: block;
     transition: 0.3s;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    border-radius: 3px;
 }
 
-.overlay2 a:hover, .overlay2 a:focus {
-    color: #f1f1f1;
-}
-
-.overlay2 .closebtn2 {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 40px;
-    border: 2px solid white;
+.overlay2 .closebtn2:hover, .overlay2 .closebtn2:focus,
+.overlay4 .closebtn4:hover, .overlay4 .closebtn4:focus {
+    color: #242424;
+    text-decoration: none;
+    border: 2px solid #242424;
+    left: -5px;
 }
 
 /* bottom navigation */
@@ -286,22 +279,17 @@ addon 03 2023
     height: 0;
     width: 25%;
     position: fixed;
-    z-index: 20;
+    z-index: 54;
     left: 0;
-    background-color: rgb(99, 8, 19);
-    background-color: rgb(99, 8, 19, 0.9);
-    border-top-right-radius: 10px;
+    background-color: rgb(200, 200, 200);
+    background-color: rgb(200, 200, 200, 0.8);
     overflow-x: hidden;
     transition: 0.5s;
     bottom: 0;
 }
 
 .overlay3-content {
-    color: white;
-    width: 100%;
-    margin-top: 30px;
-    padding-left: 20px;
-
+    padding: 30px;
 }
 
 .overlay3-content h1{
@@ -311,48 +299,23 @@ addon 03 2023
     margin-bottom: 20px;
 }
 
-.overlay3 a {
-    padding: 8px;
-    text-decoration: none;
-    color: white;
-    display: block;
-    transition: 0.3s;
-}
-
-.overlay3 a:hover, .overlay3 a:focus {
-    color: #f1f1f1;
-}
-
-.overlay3 .closebtn3 {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 40px;
-    border: 2px solid white;
-}
-
 /* imagetools navigation */
 
 .overlay4 {
     height: 0;
     width: 25%;
     position: fixed;
-    z-index: 25;
+    z-index: 55;
     right: 0;
-    background-color: rgb(99, 8, 19);
-    background-color: rgb(99, 8, 19, 0.9);
-    border-top-right-radius: 10px;
+    background-color: rgb(200, 200, 200);
+    background-color: rgb(200, 200, 200, 0.8);
     overflow-x: hidden;
     transition: 0.5s;
     bottom: 0;
 }
 
 .overlay4-content {
-    color: white;
-    width: 100%;
-    margin-top: 30px;
-    padding-left: 20px;
-
+    padding: 30px;
 }
 
 .overlay4-content h1{
@@ -362,30 +325,9 @@ addon 03 2023
     margin-bottom: 20px;
 }
 
-.overlay4 a {
-    padding: 8px;
-    text-decoration: none;
-    color: white;
-    display: block;
-    transition: 0.3s;
+.overlay4-content ul {
+    margin: 30px;
 }
-
-.overlay4 a:hover, .overlay3 a:focus {
-    color: #f1f1f1;
-}
-
-.overlay4 .closebtn4 {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 40px;
-    border: 2px solid white;
-}
-
-
-
-
-
 
 
 /*----------------------------------------------------------------------
@@ -401,7 +343,7 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    background: #fff;
+    background: #ffffff;
 }
 
 p, form, img, legend, ul, ol, li, h1, h2, h3, h4, h5, h6, dl, dt, dd, figure, blockquote {
@@ -461,7 +403,7 @@ strong {
 
 mark {
     background-color: #005182;
-    color: #fff;
+    color: #ffffff;
     padding: 1px 2px;
     border-radius: 3px;
 }
@@ -599,7 +541,7 @@ header
 header {
     text-align: center;
     background: #242424;
-    color: #fff;
+    color: #ffffff;
 }
 
 header.header-portal-home {
@@ -620,19 +562,25 @@ header.header-portal-home {
 
 .breadcrumb {
     text-align: left;
+    background: #242424;
+    padding: 5px;
+    color: #ffffff;
 }
 
 .breadcrumb a {
-    color: #fff;
+    color: #ffffff;
     padding: 5px;
-    margin: -5px;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .breadcrumb a:hover {
     color: #242424;
-    background: #fff;
+    background: #ffffff;
     text-decoration: none;
+}
+
+.breadcrumb span {
+    padding: 5px;
 }
 
 article.breadcrumb ul {
@@ -651,10 +599,6 @@ article.breadcrumb ul li.current {
 article.breadcrumb ul li:not(:last-child):after {
     content: "/";
 }
-
-/*article.breadcrumb ul li {*/
-/*    display:none;*/
-/*}*/
 
 article.breadcrumb ul li:first-child {
     display:initial;
@@ -684,7 +628,7 @@ article.breadcrumb ul li:first-child {
     font-size: 12px;
     line-height: 12px;
     font-weight: 700;
-    color: #fff;
+    color: #ffffff;
 }
 
 .portal-logo {
@@ -755,8 +699,6 @@ main
 
 main {
     display: block;
-    /*position: relative;
-    z-index: 2;*/
 }
 
 main a {
@@ -805,7 +747,7 @@ collection-list + teaser
     /*.tx-dlf-content div.frame p {*/
     padding-left: 30px;
     padding-right: 30px;
-    color: #fff;
+    color: #ffffff;
 }
 
 .tx-dlf-collection-list  {
@@ -829,7 +771,7 @@ collection-list + teaser
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e2a2d', endColorstr='#242424', GradientType=1 );
     -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.75);
-    color: #fff;
+    color: #ffffff;
     position: relative;
 }
 
@@ -855,7 +797,7 @@ main .tx-dlf-collection div.span_2_of_3 {
 
 .tx-dlf-collection-list li a,
 .teaser-slot article a {
-    color: #fff;
+    color: #ffffff;
     padding: 5px;
     margin: -5px;
     text-decoration: none;
@@ -864,7 +806,7 @@ main .tx-dlf-collection div.span_2_of_3 {
 .tx-dlf-collection-list li a:hover,
 .teaser-slot article a:hover {
     color: #242424;
-    background: #fff;
+    background: #ffffff;
     border-radius: 3px;
 }
 
@@ -912,7 +854,7 @@ main .tx-dlf-collection div.span_2_of_3 {
     background: -ms-linear-gradient(-45deg, rgba(36,36,36,1) 0%, rgba(80,80,80,1) 100%);
     background: linear-gradient(135deg, rgba(36,36,36,1) 0%, rgba(80,80,80,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', endColorstr='#505050', GradientType=1 );
-    color: #fff;
+    color: #ffffff;
 }
 
 .teaser-slot article .tx-dlf-collection-thumbnail {
@@ -928,7 +870,7 @@ main .tx-dlf-collection div.span_2_of_3 {
     background: -ms-linear-gradient(-45deg, rgba(78,42,45,1) 0%, rgba(36,36,36,1) 100%);
     background: linear-gradient(135deg, rgba(78,42,45,1) 0%, rgba(36,36,36,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e2a2d', endColorstr='#242424', GradientType=1 );
-    color: #fff;
+    color: #ffffff;
     padding: 60px 30px;
 }
 
@@ -963,7 +905,7 @@ main .tx-dlf-collection div.span_2_of_3 {
 
 .legal-info a:hover {
     background: #242424;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -998,6 +940,18 @@ tx-dlf-search-query
     display: block;
 }
 
+.tx-dlf-search-form label {
+    display: block;
+}
+
+.tx-dlf-search-form input[type="text"] {
+    width: calc(100% - 95px);
+}
+
+.tx-dlf-search-form input[type="submit"] {
+    width: 90px;
+}
+
 #tx-dlf-search-suggest {
     position: absolute;
     display: block;
@@ -1009,7 +963,7 @@ tx-dlf-search-query
 
 #tx-dlf-search-suggest ul {
     position: absolute;
-    z-index: 10;
+    z-index: 60;
     background: linear-gradient(135deg, rgb(78, 42, 45) 0%, rgb(36, 36, 36) 100%);
     list-style: none;
     padding: 5px;
@@ -1099,8 +1053,8 @@ listview
 .dropdown-menu {
     display: block;
     vertical-align: top;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(200,200,200,1);
+    box-shadow: 0px 0px 15px 0px rgba(200,200,200,1);
 }
 
 .dropdown-menu ul li.tx-dlf-search-ifsub{
@@ -1117,7 +1071,7 @@ listview
     user-select: none;
     font-weight: 700;
     margin-top: 30px;
-    background: #fff;
+    background: #ffffff;
 }
 
 .dropdown-menu input[type=checkbox] {
@@ -1125,7 +1079,7 @@ listview
 }
 
 .dropdown-menu ul li {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #ffffff;
     background: #e4e4e4;
     hyphens: auto;
     list-style-type: none;
@@ -1144,7 +1098,7 @@ listview
 
 .dropdown-menu ul li a:hover {
     background: #242424;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -1179,7 +1133,7 @@ article.calendar-metadata a {
 
 .tx-dlf-listview,
 .tx-dlf-ListView {
-    background-color: #fff;
+    background-color: #ffffff;
     padding-bottom: 60px;
 }
 
@@ -1193,7 +1147,7 @@ article.calendar-metadata a {
 .tx-dlf-listview a:hover,
 .tx-dlf-ListView a:hover {
     background: #242424;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -1250,18 +1204,18 @@ article.calendar-metadata a {
 
 .f3-widget-paginator a:hover {
     background: #8D0D1C;
-    color: #fff;
+    color: #ffffff;
 }
 
 .lba-active
 {
     background: #6a6a6a !important;
-    color: #fff;
+    color: #ffffff;
 }
 
 li.current {
     background: #6a6a6a;
-    color: #fff;
+    color: #ffffff;
     border-radius: 3px;
     display: inline-block;
     padding: 10px;
@@ -1308,7 +1262,7 @@ ol.tx-dlf-listview-list {
     margin: 30px;
     padding: 15px;
     position: relative;
-    background: #fff;
+    background: #ffffff;
     -webkit-box-shadow: 0px 0px 30px 0px rgba(200,200,200,1);
     box-shadow: 0px 0px 30px 0px rgba(200,200,200,1);
 }
@@ -1321,7 +1275,7 @@ ol.tx-dlf-listview-list {
 
 .tx-dlf-listview-list li .add-to-cart a {
     display: inline-block;
-    background: url(../Images/icon-star-dark.svg) no-repeat 10px center #fff;
+    background: url(../Images/icon-star-dark.svg) no-repeat 10px center #ffffff;
     background-size: 24px 24px;
     color: #242424;
     border-radius: 3px;
@@ -1335,7 +1289,7 @@ ol.tx-dlf-listview-list {
 .tx-dlf-listview-list li .add-to-cart a:hover {
     background: url(../Images/icon-star.svg) no-repeat 10px center #8D0D1C;
     background-size: 24px 24px;
-    color: #fff;
+    color: #ffffff;
 }
 
 .tx-dlf-listview-list li .show-volumes {
@@ -1357,7 +1311,7 @@ ol.tx-dlf-listview-list {
 .tx-dlf-listview-list li .show-volumes a.show-volumes-expand {
     background: url(../Images/icon-arrow-up.svg) no-repeat 10px center #242424;
     background-size: 24px 24px;
-    color: #fff;
+    color: #ffffff;
 }
 
 .tx-dlf-listview-list li .show-volumes a.show-volumes-expand:hover {
@@ -1366,7 +1320,7 @@ ol.tx-dlf-listview-list {
 }
 
 .tx-dlf-listview-list li .show-volumes a.show-volumes-minimize {
-    background: url(../Images/icon-arrow-down-dark.svg) no-repeat 10px center #fff;
+    background: url(../Images/icon-arrow-down-dark.svg) no-repeat 10px center #ffffff;
     background-size: 24px 24px;
     color: #242424;
 }
@@ -1374,7 +1328,7 @@ ol.tx-dlf-listview-list {
 .tx-dlf-listview-list li .show-volumes a.show-volumes-minimize:hover {
     background: url(../Images/icon-arrow-down.svg) no-repeat 10px center #8D0D1C;
     background-size: 24px 24px;
-    color: #fff;
+    color: #ffffff;
 }
 
 .tx-dlf-listview-list dl {
@@ -1516,7 +1470,7 @@ dd.tx-dlf-metadata-author,
 
 .tx-dlf-listview-list li ol li .add-to-cart a {
     display: inline-block;
-    background: url(../Images/icon-star-dark.svg) no-repeat 10px center #fff;
+    background: url(../Images/icon-star-dark.svg) no-repeat 10px center #ffffff;
     background-size: 24px 24px;
     color: #242424;
     border-radius: 3px;
@@ -1530,7 +1484,7 @@ dd.tx-dlf-metadata-author,
 .tx-dlf-listview-list li ol li .add-to-cart a:hover {
     background: url(../Images/icon-star.svg) no-repeat 10px center #8D0D1C;
     background-size: 24px 24px;
-    color: #fff;
+    color: #ffffff;
 }
 
 .tx-dlf-listview-list li ol li .tx-dlf-listview-thumbnail img {
@@ -1565,7 +1519,7 @@ ul.tx-dlf-toolbox span a img {
 }
 
 .detail-view-main {
-    background: #fff;
+    background: #ffffff;
 }
 
 .detail-view-header {
@@ -1597,9 +1551,8 @@ ul.tx-dlf-toolbox span a img {
 }
 
 .tx-dlf-toolbox {
-    position: absolute;
-    right: 20px;
-    top: 30px;
+    display: block;
+    margin: 10px 0 0 0;
 }
 
 .tx-dlf-toolbox.fs_on {
@@ -1613,7 +1566,7 @@ ul.tx-dlf-toolbox span a img {
 .tx-dlf-Navigation li{
     display: inline;
     list-style-type: none;
-    margin-left: 5px;
+    margin: 0 1px;
 }
 
 .tx-dlf-toolbox li span,
@@ -1672,7 +1625,7 @@ ul.tx-dlf-toolbox span a img {
 
 .lba-active {
     background: #6a6a6a !important;
-    color: #fff;
+    color: #ffffff;
 }
 
 .tx-dlf-toolbox li img,
@@ -1704,6 +1657,7 @@ ul.tx-dlf-toolbox span a img {
 
 .detail-view-itemdetails {
     vertical-align: top;
+    color: #242424;
 }
 
 .detail-view-itemoptions .detail-view-itemcontents {
@@ -1714,7 +1668,7 @@ ul.tx-dlf-toolbox span a img {
     background: url(../Images/icon-arrow-down.svg) no-repeat 95% center #6a6a6a;
     background-size: 16px auto;
     margin-top: 5px;
-    color: #fff;
+    color: #ffffff;
     border-radius: 3px;
     cursor: pointer;
     padding: 8px 30px 8px 15px;
@@ -1723,11 +1677,10 @@ ul.tx-dlf-toolbox span a img {
 .detail-view-itemoptions .dropdown-menu label:hover {
     background: url(../Images/icon-arrow-down.svg) no-repeat 95% center #8D0D1C;
     background-size: 16px auto;
-    color: #fff;
+    color: #ffffff;
 }
 
 .detail-view-tools,
-.tx-dlf-toolbox,
 .tx-dlf-toolbox .dropdown-menu {
     display: inline;
 }
@@ -1735,7 +1688,7 @@ ul.tx-dlf-toolbox span a img {
 .detail-view-tools .dropdown-menu label {
     background: #6a6a6a;
     margin-top: 0;
-    color: #fff;
+    color: #ffffff;
     border-radius: 3px;
     cursor: pointer;
     padding: 8px;
@@ -1770,13 +1723,13 @@ ul.tx-dlf-toolbox span a img {
 .detail-view-itemoptions .dropdown-menu input[type=checkbox]:checked ~ label {
     background: url(../Images/icon-arrow-up.svg) no-repeat 95% center #8D0D1C;
     background-size: 16px auto;
-    color: #fff;
+    color: #ffffff;
 }
 
 .detail-view-tools .dropdown-menu input[type=checkbox]:checked ~ label {
     background: url(../Images/icon-arrow-up.svg) no-repeat 24px 24px #8D0D1C;
     background-size: 10px auto;
-    color: #fff;
+    color: #ffffff;
 }
 
 .detail-view-itemoptions .dropdown-menu input[type=checkbox]:checked ~ ul,
@@ -1791,7 +1744,7 @@ ul.tx-dlf-toolbox span a img {
 .detail-view-tools .dropdown-menu input[type=checkbox]:checked ~ div.tx-dlf-toolbox ul,
 .detail-view-tools .dropdown-menu input[type=checkbox]:checked ~ div div.tx-dlf-toolbox ul{
     display: block;
-    background: #fff;
+    background: #ffffff;
     position: absolute;
     z-index: 5;
     padding: 15px;
@@ -1839,7 +1792,7 @@ span.no-fulltext {
 
 .detail-view-itemoptions .tx-dlf-basket-button a {
     display: inline-block;
-    background: url(../Images/icon-star-dark.svg) no-repeat 10px center #fff;
+    background: url(../Images/icon-star-dark.svg) no-repeat 10px center #ffffff;
     background-size: 16px 16px;
     color: #242424;
     border-radius: 3px;
@@ -1851,7 +1804,7 @@ span.no-fulltext {
 .detail-view-itemoptions .tx-dlf-basket-button a:hover {
     background: url(../Images/icon-star.svg) no-repeat 10px center #8D0D1C;
     background-size: 16px 16px;
-    color: #fff;
+    color: #ffffff;
 }
 
 
@@ -1860,6 +1813,10 @@ span.no-fulltext {
 }
 
 .tx-dlf-toc-ifsub dl {
+    padding: 15px;
+}
+
+.detail-view-itemdetails li {
     padding: 15px;
 }
 
@@ -1949,7 +1906,7 @@ aside .tx-dlf-pagegrid-pagebrowser {
 .volume-info {
     background-color: #ababab;
     padding: 8px 15px;
-    color: #fff;
+    color: #ffffff;
     border-radius: 3px;
     margin: 30px;
 }
@@ -1964,7 +1921,7 @@ aside .tx-dlf-pagegrid-pagebrowser {
     display: inline-block;
     border-radius: 3px;
     padding: 8px 15px;
-    color: #fff;
+    color: #ffffff;
     margin: 0 5px 5px 0;
     text-decoration: none;
 }
@@ -1975,7 +1932,7 @@ aside .tx-dlf-pagegrid-pagebrowser {
 
 .termsOfUse {
     position: absolute;
-    z-index: 100;
+    z-index: 80;
     background-color: #242424;
     padding: 1rem;
     right: 0px;
@@ -2053,7 +2010,7 @@ span.fullPdfDownloadSpan img {
 }
 
 .tx-dlf-toolbox ul {
-    z-index: 10 !important;
+    z-index: 70 !important;
     display: inline;
 }
 
@@ -2097,7 +2054,7 @@ span.fullPdfDownloadSpan img {
 
 .dlf-search-switch label {
     background-color: #242424;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     border: 1px solid #959595;
     transition: all 0.1s ease-in-out;
@@ -2168,7 +2125,7 @@ calendar + listview
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e2a2d', endColorstr='#242424', GradientType=1 );
     -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.75);
-    color: #fff;
+    color: #ffffff;
 }
 
 .year-empty p {
@@ -2219,7 +2176,7 @@ table.month h4 {
 }
 
 table.month h4:hover {
-    color: #fff;
+    color: #ffffff;
     border: 1px solid #F2FBFF;
 }
 
@@ -2256,7 +2213,7 @@ table.month h4:hover {
 
 .calendar-list-selection a:hover {
     background: #8D0D1C;
-    color: #fff;
+    color: #ffffff;
 }
 
 .tx-dlf-calendar,
@@ -2267,7 +2224,7 @@ table.month h4:hover {
 
 .tx-dlf-calendar .list-view {
     background-color: #242424;
-    color: #fff;
+    color: #ffffff;
 }
 
 .tx-dlf-calendar .list-view li {
@@ -2292,7 +2249,7 @@ table.month h4:hover {
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
-    color: #fff;
+    color: #ffffff;
     padding: 5px;
     margin: -5px;
     text-decoration: none;
@@ -2306,7 +2263,7 @@ table.month h4:hover {
 .tx-dlf-calendar-years .year-view li a:hover,
 .tx-dlf-calendar .list-view a:hover {
     color: #242424;
-    background: #fff;
+    background: #ffffff;
     border-radius: 3px;
 }
 
@@ -2375,7 +2332,7 @@ basket
 
 .tx-dlf-basket {
     background-color: #242424;
-    color: #fff;
+    color: #ffffff;
     padding: 0 0 60px 0;
     width: 100%;
 }
@@ -2423,7 +2380,7 @@ basket
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
-    color: #fff;
+    color: #ffffff;
     padding: 5px;
     margin: -5px;
     text-decoration: none;
@@ -2432,7 +2389,7 @@ basket
 
 .tx-dlf-basket-list a:hover {
     color: #242424;
-    background: #fff;
+    background: #ffffff;
     border-radius: 3px;
 }
 
@@ -2443,10 +2400,6 @@ basket
 
 li.tx-dlf-toc-cur {
     font-weight: bold;
-}
-
-.tx-dlf-toc li {
-    padding-left:5px;
 }
 
 .pagingFormDiv {
@@ -2486,7 +2439,7 @@ footer {
 }
 
 #footer-content li a {
-    background: #fff;
+    background: #ffffff;
     color: #4e2a2d;
     border-radius: 3px;
     padding: 3px 5px;
@@ -2495,7 +2448,7 @@ footer {
 
 #footer-content li a:hover {
     background: rgb(141, 13, 28);
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0px 3px 0px 0px rgb(86, 7, 16);
 }
 
@@ -2626,8 +2579,8 @@ max 1350px
     .tx-dlf-toolbox {
         display: block;
         position: inherit;
-        /*margin-top: 10px;*/
     }
+
 }
 
 /*----------------------------------------------------------------------
@@ -2638,6 +2591,28 @@ max 1024px
 
     body {
         background-size: auto 400px;
+    }
+
+    .portal-logo-area {
+        margin: 0px auto;
+        text-align: left;
+        width: calc(35% - 40px);
+    }
+
+    .portal-credits-area {
+        margin: 0px auto;
+        text-align: right;
+        width: 65%;
+    }
+
+    .portal-legal-area {
+        width: 100%;
+        text-align: right;
+        margin: 0 5px -38px 0;
+    }
+
+    #powered-by {
+        display: none;
     }
 
     .tx-dlf-collection-list,
@@ -2705,7 +2680,7 @@ max 1024px
         background: url(../Images/icon-arrow-down.svg) no-repeat 97% center #6a6a6a;
         background-size: 16px auto;
         margin-top: 5px;
-        color: #fff;
+        color: #ffffff;
         border-radius: 3px;
         cursor: pointer;
         padding: 8px 30px 8px 15px;
@@ -2810,6 +2785,17 @@ max 1024px
         width: 100% !important;
     }
 
+    #dfgviewer_by {
+        bottom: 65px;
+    }
+
+    #bottom-toolbar {
+        width: calc(100% - 10px);
+        left: 0;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 0px;
+    }
 }
 
 @media only screen and (max-width: 980px) {
@@ -2829,6 +2815,26 @@ max 1024px
         position: initial;
         display: inline-block;
     }
+
+    #bottom-toolbar {
+        display: block;
+    }
+
+    #dfgviewer_by {
+        bottom: 120px;
+    }
+
+    #bottom-toolbar .frame {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 5px 0;
+    }
+
+    #bottom-toolbar .frame:nth-child(2) {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
 }
 
 
@@ -2837,6 +2843,27 @@ max 700px
 ----------------------------------------------------------------------*/
 
 @media only screen and (max-width: 700px) {
+
+    .portal-logo-area {
+        margin: 10px auto 0px auto;
+        text-align: center;
+        width: calc(100% - 40px);
+    }
+
+    .portal-credits-area {
+        text-align: center;
+        width: 100%;
+    }
+
+    .portal-legal-area {
+        width: 100%;
+        text-align: left;
+        margin: 0 0 -38px 5px;
+    }
+
+    .breadcrumb{
+        padding: 35px 5px 5px 5px;
+    }
 
     .meta-navigation {
         padding-right: 15px;
@@ -3151,6 +3178,15 @@ ol.tx-dlf-volume {
     display: none;
 }
 
+#fullsize-pagegrid {
+    position: fixed;
+    width: calc(100% - 160px);
+    height: calc(100% - 200px);
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 80px;
+}
+
 #fullsize-pagegrid .tx-dlf-pagegrid {
     margin: 30px;
     padding: 0;
@@ -3183,7 +3219,7 @@ ol.tx-dlf-volume {
     width: auto;
     max-width: 100%;
     max-height: 90px;
-    border: 3px solid #fff;
+    border: 3px solid #ffffff;
     border-radius: 5px;
 }
 
