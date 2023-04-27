@@ -224,6 +224,7 @@ addon 03 2023
     width: 40px;
     border-bottom-left-radius: 10px;
     position: fixed;
+    right: 0;
     z-index: 52;
     writing-mode: sideways-lr;
     text-align: center;
