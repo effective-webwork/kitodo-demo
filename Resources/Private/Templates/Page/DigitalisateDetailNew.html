@@ -36,7 +36,7 @@
 
         <div id="banner-navigation">
             <div class="portal-logo-area">
-                <a href="">Hamburger Kulturgut Digital</a>
+                <a href=""><strong>Hamburger Kulturgut</strong> Digital</a>
             </div>
 
             <div class="portal-credits-area">
@@ -57,12 +57,12 @@
                     <li><a href="/impressum">Impressum</a></li>
                 </ul>
                 <span id="powered-by">
-                        <p>© 2023 Staats- und Universitätsbibliothek Hamburg</p>
+                        <p>Staats- und Universitätsbibliothek Hamburg<br/>&copy; 2023</p>
                     </span>
             </div>
         </div>
 
-        <div style="padding: 5px 0px 5px 20px; background: linear-gradient(135deg, rgba(78,42,45,1) 0%, rgba(36,36,36,1) 100%);">
+        <div>
             <article class="breadcrumb">
                 <a href="https://digitalisate.sub.uni-hamburg.de/">Digitalisierte Bestände</a> / <a id="backtolistview" href="">Trefferliste</a> / Detailansicht
             </article>
@@ -76,15 +76,10 @@
             </section>
         </main>
 
-        <div id="myNav" class="overlay">
+        <div id="myNav" class="overlay" style="width: 0%;">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="javascript:void(0)" class="closebtn" style="right: 70px; padding-left: 0px; padding-right: 0px;">&#128392;</a>
-            <v:content.render column="9" />
-            <div id="overlay-content-search" style="display: none;position: absolute;top: 140px;height: calc(100% - 140px);">
-            </div>
-
             <div class="overlay-content">
-
+                <v:content.render column="9" />
                 <div class="toctoc">
                     <h1>Inhaltsverzeichnis</h1>
                     <v:content.render column="4" />
@@ -92,14 +87,15 @@
             </div>
         </div>
 
-        <div id="toc-overlay-btn" onclick="openNav()">
-            <p style="padding: 5px">Inhaltsverzeichnis :: Suche</p>
+        <div id="toc-overlay-btn" onclick="openNav()" style="width: 40px; color: rgb(255, 255, 255); left: 0;">
+            <p style="padding: 5px">Inhaltsverzeichnis &amp; Suche</p>
         </div>
 
         <script>
             function openNav() {
                 document.getElementById("myNav").style.width = "25%";
                 document.getElementById("toc-overlay-btn").style.width = "0px";
+                document.getElementById("toc-overlay-btn").style.left = "-90px";
                 document.getElementById("prev-page").style.left = "calc(25% + 10px)";
                 document.getElementById("toc-overlay-btn").style.color = "rgba(255, 255, 255, 0.0)";
             }
@@ -107,18 +103,18 @@
             function closeNav() {
                 document.getElementById("myNav").style.width = "0%";
                 document.getElementById("toc-overlay-btn").style.width = "40px";
+                document.getElementById("toc-overlay-btn").style.left = "0px";
                 document.getElementById("toc-overlay-btn").style.color = "rgba(255, 255, 255, 1.0)";
                 document.getElementById("prev-page").style.left = "calc(10px)";
             }
         </script>
 
-        <div id="myNav2" class="overlay2">
+        <div id="myNav2" class="overlay2" style="width: 0%;">
             <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
-            <a href="javascript:void(0)" class="closebtn2" style="left: 70px; padding-left: 0px; padding-right: 0px;">&#128392;</a>
             <div class="overlay2-content">
 
-                <h1>Downloadangebote</h1>
-                <ul class="tx-dlf-toolbox" style="position:unset; margin-bottom: 30px;">
+                <h2>Downloadangebote</h2>
+                <ul class="tx-dlf-toolbox">
                     <li>
                         <a href="#" id="citationLink" class="reachable" title="Zitierlink für dieses Dokument">
                             <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/quote.svg">        </a>
@@ -159,17 +155,18 @@
                             <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/filetype-txt.svg">                </a>
                     </li>
                 </ul>
-                <h1 style="margin-top: 20px">Metadaten</h1>
+                <h2>Metadaten</h2>
                 <v:content.render column="5" />
             </div>
         </div>
 
-        <div id="meta-overlay-btn" onclick="openNav2()"><p style="padding: 5px">Metadaten :: Download</p></div>
+        <div id="meta-overlay-btn" onclick="openNav2()"><p style="padding: 5px">Metadaten &amp; Download</p></div>
 
         <script>
             function openNav2() {
                 document.getElementById("myNav2").style.width = "25%";
                 document.getElementById("meta-overlay-btn").style.width = "0px";
+                document.getElementById("meta-overlay-btn").style.right = "-90px";
                 document.getElementById("next-page").style.right = "calc(25% + 10px)";
                 document.getElementById("meta-overlay-btn").style.color = "rgba(255, 255, 255, 0.0)";
             }
@@ -177,6 +174,7 @@
             function closeNav2() {
                 document.getElementById("myNav2").style.width = "0%";
                 document.getElementById("meta-overlay-btn").style.width = "40px";
+                document.getElementById("meta-overlay-btn").style.right = "0px";
                 document.getElementById("meta-overlay-btn").style.color = "rgba(255, 255, 255, 1.0)";
                 document.getElementById("next-page").style.right = "calc(10px)";
             }
@@ -184,10 +182,9 @@
 
         <div id="myNav3" class="overlay3">
             <a href="javascript:void(0)" class="closebtn3" onclick="closeNav3()">&times;</a>
-            <a href="javascript:void(0)" class="closebtn3" style="left: 70px; padding-left: 0px; padding-right: 0px;">&#128392;</a>
 
             <div class="overlay3-content">
-                <div id="tx-dlf-fulltextselection" class="fulltext-visible" style="margin-left: 100px"></div>
+                <div id="tx-dlf-fulltextselection" class="fulltext-visible"></div>
             </div>
         </div>
 
@@ -210,7 +207,7 @@
             <a href="javascript:void(0)" class="closebtn4" style="left: 70px; padding-left: 0px; padding-right: 0px;">&#128392;</a>
 
             <div class="overlay4-content">
-                <div class="fulltext-visible" style="margin-left: 100px">
+                <div class="fulltext-visible">
                     <ul>
                         <li>---------- ROT ---------</li>
                         <li>---------- GRÜN ---------</li>
@@ -243,14 +240,7 @@
 		    </p>
         </span>
 
-        <div id="fullsize-pagegrid" style="display: none;
-position: fixed;
-width: calc(100% - 160px);
-height: calc(100% - 200px);
-z-index: 10; top: 100px;
-background: rgba(255, 255, 255, 0.85);
-padding: 80px;
-">
+        <div id="fullsize-pagegrid" style="display: none;">
             <div class="tx-dlf-pagegrid"><ol class="tx-dlf-pagegrid-list"><li class="tx-dlf-pagegrid-no" value="1"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=1&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=c1bef91aa23525c03c6986e8e53c2637" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000001.tif"></a></div><div class="tx-dlf-pagegrid-pagination">1 </div></li><li class="tx-dlf-pagegrid-no" value="2"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=2&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=1a737d20a2aff78cf18c92cf69941e9e" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000002.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 2 </div></li><li class="tx-dlf-pagegrid-no" value="3"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=3&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=a2eebc16ce01c876f12a9a2b403200b1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000003.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 3 </div></li><li class="tx-dlf-pagegrid-no" value="4"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=4&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=304b4a1a474975da4b1299d8242a28a1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000004.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 4 </div></li><li class="tx-dlf-pagegrid-no" value="5"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=5&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=853055bcae2367fc9e6e0a276e86bbe2" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000005.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 5 </div></li><li class="tx-dlf-pagegrid-cur" value="1"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=1&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=c1bef91aa23525c03c6986e8e53c2637" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000001.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 6 </div></li><li class="tx-dlf-pagegrid-no" value="2"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=2&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=1a737d20a2aff78cf18c92cf69941e9e" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000002.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 7 </div></li><li class="tx-dlf-pagegrid-no" value="3"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=3&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=a2eebc16ce01c876f12a9a2b403200b1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000003.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 8 </div></li><li class="tx-dlf-pagegrid-no" value="4"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=4&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=304b4a1a474975da4b1299d8242a28a1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000004.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 9 </div></li><li class="tx-dlf-pagegrid-no" value="1"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=1&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=c1bef91aa23525c03c6986e8e53c2637" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000001.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 10 </div></li><li class="tx-dlf-pagegrid-no" value="2"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=2&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=1a737d20a2aff78cf18c92cf69941e9e" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000002.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 11 </div></li><li class="tx-dlf-pagegrid-no" value="3"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=3&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=a2eebc16ce01c876f12a9a2b403200b1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000003.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 12 </div></li><li class="tx-dlf-pagegrid-no" value="4"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=4&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=304b4a1a474975da4b1299d8242a28a1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000004.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 13 </div></li><li class="tx-dlf-pagegrid-no" value="1"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=1&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=c1bef91aa23525c03c6986e8e53c2637" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000001.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 14 </div></li><li class="tx-dlf-pagegrid-no" value="2"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=2&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=1a737d20a2aff78cf18c92cf69941e9e" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000002.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 15 </div></li><li class="tx-dlf-pagegrid-no" value="3"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=3&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=a2eebc16ce01c876f12a9a2b403200b1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000003.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 16 </div></li><li class="tx-dlf-pagegrid-no" value="4"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=4&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=304b4a1a474975da4b1299d8242a28a1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000004.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 17 </div></li><li class="tx-dlf-pagegrid-no" value="1"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=1&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=c1bef91aa23525c03c6986e8e53c2637" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000001.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 18 </div></li><li class="tx-dlf-pagegrid-no" value="2"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=2&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=1a737d20a2aff78cf18c92cf69941e9e" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000002.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 19 </div></li><li class="tx-dlf-pagegrid-no" value="3"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=3&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=a2eebc16ce01c876f12a9a2b403200b1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000003.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 20 </div></li><li class="tx-dlf-pagegrid-no" value="4"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=4&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=304b4a1a474975da4b1299d8242a28a1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000004.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 21 </div></li><li class="tx-dlf-pagegrid-no" value="1"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=1&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=c1bef91aa23525c03c6986e8e53c2637" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000001.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 22 </div></li><li class="tx-dlf-pagegrid-no" value="2"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=2&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=1a737d20a2aff78cf18c92cf69941e9e" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000002.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 23 </div></li><li class="tx-dlf-pagegrid-no" value="3"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=3&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=a2eebc16ce01c876f12a9a2b403200b1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000003.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 24 </div></li><li class="tx-dlf-pagegrid-no" value="4"><div class="tx-dlf-pagegrid-thumbnail"><a href="https://digitalisate.sub.uni-hamburg.de/detail/?tx_dlf%5Bid%5D=10428&amp;tx_dlf%5Bpage%5D=4&amp;tx_dlf%5Bdouble%5D=0&amp;cHash=304b4a1a474975da4b1299d8242a28a1" title=" - "><img alt=" - " src="https://pic.sub.uni-hamburg.de/PPN818308060/150/0/00000004.tif"></a></div><div class="tx-dlf-pagegrid-pagination"> 25 </div></li></ol></div>
         </div>
 
