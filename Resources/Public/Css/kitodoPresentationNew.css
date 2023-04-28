@@ -550,17 +550,6 @@ header.header-portal-home {
     background-size: cover;
 }
 
-.portal-meta {
-    padding: 15px 30px;
-    display: table;
-    width: calc(100% - 60px);
-}
-
-.portal-meta article {
-    display: table-cell;
-    vertical-align: middle;
-}
-
 .breadcrumb {
     text-align: left;
     background: #242424;
@@ -726,9 +715,14 @@ main aside {
 }
 
 #main-content {
-    width: 100%;
+    float: left;
+    width: 67%;
 }
 
+#detail-view #main-content {
+    float: none;
+    width: 100%;
+}
 
 /*----------------------------------------------------------------------
 collection-list + teaser
@@ -1175,21 +1169,15 @@ article.calendar-metadata a {
 }
 
 .f3-widget-paginator {
-    display: table;
-    /*width: calc(100% - 60px);*/
+    display: block;
     margin: 0 30px;
-    margin-left: auto;
+    font-size: 0;
 }
 
 .f3-widget-paginator li {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 5px;
-    padding-top: 0px;
-}
-
-.f3-widget-paginator li:last-child {
-    /*text-align: right;*/
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    font-size: 16px;
 }
 
 .f3-widget-paginator a {
@@ -1220,7 +1208,6 @@ li.current {
     border-radius: 3px;
     display: inline-block;
     padding: 10px;
-    margin: 0;
     min-width: 20px;
     text-align: center;
     text-decoration: none;
@@ -2497,6 +2484,7 @@ main div.frame-type-header {
     padding-left: 50px;
     padding-right: 50px;
     color: #FFF;
+    box-sizing: border-box;
 }
 
 main div.frame-type-presentationpackage_accordion,
@@ -2536,7 +2524,7 @@ max 1600px
     }
 
     #main-content {
-        width: 100%;
+        width: 65%;
     }
 
     .tx-dlf-collection-list ul{
@@ -2873,11 +2861,6 @@ max 700px
 
     .portal-claim br {
         float: left;
-    }
-
-    .portal-meta {
-        width: calc(100% - 30px);
-        padding: 15px;
     }
 
     .legal-info {
