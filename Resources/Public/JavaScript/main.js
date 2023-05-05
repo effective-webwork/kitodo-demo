@@ -51,21 +51,22 @@ $(".show-volumes").on("click", function (evt) {
 
 });
 
+function showVolumeList() {
+    var documentType = $("article.doc-type li").text();
+    if (documentType == "Mehrbändiges Werk") {
+        $('.detail-view-main').append('<div><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
+        $('.tx-dlf-toc ul ul li').each(function(index) {
+            $('.volume-list').append('<li>'+$(this).html() +'</li>');
+        });
+        $('a.chapter_download, a#pdfdownloadbutton').hide();
+        $('div.tx-dlf-toc span.headline_info').html('Bandliste');
 
-var documentType = $("article.doc-type li").text();
-if (documentType == "Mehrbändiges Werk") {
-    $('.detail-view-main').append('<div><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
-    $('.tx-dlf-toc ul ul li').each(function(index) {
-        $('.volume-list').append('<li>'+$(this).html() +'</li>');
-    });
-    $('a.chapter_download, a#pdfdownloadbutton').hide();
-    $('div.tx-dlf-toc span.headline_info').html('Bandliste');
+        // reduce height of pageview map
+        $('.tx-dlf-map').css('min-height', '0px');
 
-    // reduce height of pageview map
-    $('.tx-dlf-map').css('min-height', '0px');
-
-    // Hide toolbox
-    $('.tx-dlf-toolbox').hide();
+        // Hide toolbox
+        $('.tx-dlf-toolbox').hide();
+    }
 }
 
 
@@ -90,6 +91,7 @@ function deactivateZoomMouseWheel() {
 
 $(document).ready(function() {
     deactivateZoomMouseWheel();
+    showVolumeList();
 });
 
 
