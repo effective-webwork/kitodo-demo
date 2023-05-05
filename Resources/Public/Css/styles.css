@@ -1572,10 +1572,11 @@ max 1024px
 
     #portal-logo {
         width: calc(100% - 160px);
+        padding: 35px 0 0 0;
     }
 
     #portal-logo img {
-        width: 40px;
+        width: 160px;
     }
 
     #portal-logo span {
@@ -1590,6 +1591,14 @@ max 1024px
 
     #tud-logo img {
         width: 160px;
+    }
+
+    .home-intro p {
+        width: 100%;
+    }
+
+    .home-newscontent .frame:hover {
+        margin: 0;
     }
 
     #tx-dlf-search-query,
@@ -1735,10 +1744,11 @@ max 700px
 
     #portal-logo {
         width: calc(100% - 120px);
+        padding: 25px 0 0 0;
     }
 
     #portal-logo img {
-        width: 25px;
+        width: 120px;
     }
 
     #portal-logo span {
@@ -2042,8 +2052,8 @@ ul.tx-dlf-toolbox span a img {
 }
 
 .detail-aside-nav select {
-    display: block;
     width: 100%;
+    padding: 12px 10px;
 }
 
 .tx-dlf-toolbox {
@@ -2064,6 +2074,7 @@ ul.tx-dlf-toolbox span a img {
     display: inline-block;
     list-style-type: none;
     margin: 5px 0 0 5px;
+    vertical-align: middle;
 }
 
 .tx-dlf-toolbox li span,
@@ -2134,6 +2145,7 @@ ul.tx-dlf-toolbox span a img {
 .tx-dlf-navigation-pageselect form {
     display: inline-block;
     vertical-align: top;
+    line-height: 0;
 }
 
 .tx-dlf-navigation-next,
