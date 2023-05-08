@@ -243,6 +243,7 @@ $(document).ready(function() {
     setTitleOnDetailPage();
     shortenDescription();
     addLicenseIcon();
+    metdataLinkReplacement();
 });
 
 function shortenDescription() {
@@ -347,4 +348,17 @@ function addLicenseIcon() {
 
         $('.license_label_value').prepend('<a href="' + link + '"><img src="' + icon + '"/></a>');
     }
+}
+
+function metdataLinkReplacement() {
+    var links = $('[class*="url_link"]');
+    links.each(function() {
+        var linkIterator = ($(this).attr('class').replace('shlb-metadata-text-item url_', ''));
+        if ($('.label_' + linkIterator).length === 1) {
+            var linkUrl = $(this).find('ul li').text();
+            var labelText = $('.label_' + linkIterator + ' ul li').text();
+            $('.label_' + linkIterator + ' ul li').html('<a href="' + linkUrl + '">' + labelText + '</a>');
+            $(this).hide();
+        }
+    });
 }
