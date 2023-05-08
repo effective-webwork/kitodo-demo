@@ -53,7 +53,7 @@ $(".show-volumes").on("click", function (evt) {
 
 function showVolumeList() {
     var documentType = $("article.doc-type li").text();
-    if (documentType == "Mehrbändiges Werk") {
+    if (documentType == "Mehrbändiges Werk" || documentType == "Zeitung" || documentType == "Zeitschrift") {
         $('.detail-view-main').append('<div><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
         $('.tx-dlf-toc ul ul li').each(function(index) {
             $('.volume-list').append('<li>'+$(this).html() +'</li>');
