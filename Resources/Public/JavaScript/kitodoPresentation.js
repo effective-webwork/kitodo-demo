@@ -56,6 +56,8 @@ $(document).ready(function() {
     listviewNewspaperRouting();
 
     let pagegrid = 0;
+
+    pageGridClickEvent();
 });
 
 function openNav() {
@@ -123,6 +125,18 @@ function togglePagegrid() {
         document.getElementById("fullsize-pagegrid").style.display = "none";
         pagegrid = 0;
     }
+}
+
+function pageGridClickEvent() {
+    $('#pagegrid').on('click', function() {
+        togglePagegrid();
+    });
+}
+
+function fulltextClickEvent() {
+    $('#tx-dlf-tools-fulltext').on('click', function () {
+        openNav3();
+    })
 }
 
 function replaceRssFeedImage() {
