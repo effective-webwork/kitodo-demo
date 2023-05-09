@@ -58,6 +58,7 @@ $(document).ready(function() {
     let pagegrid = 0;
 
     pageGridClickEvent();
+    fulltextClickEvent();
 });
 
 function openNav() {
