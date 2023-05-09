@@ -119,11 +119,11 @@ function closeNav4() {
 
 function togglePagegrid() {
     if(pagegrid === 0) {
-        document.getElementById("fullsize-pagegrid").style.display = "block";
+        $('#fullsize-pagegrid').show();
         pagegrid = 1;
     }
     else {
-        document.getElementById("fullsize-pagegrid").style.display = "none";
+        $('#fullsize-pagegrid').hide();
         pagegrid = 0;
     }
 }
