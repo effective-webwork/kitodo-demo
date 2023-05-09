@@ -55,7 +55,75 @@ $(document).ready(function() {
 
     listviewNewspaperRouting();
 
+    let pagegrid = 0;
 });
+
+function openNav() {
+    document.getElementById("myNav").style.width = "25%";
+    document.getElementById("toc-overlay-btn").style.width = "0px";
+    document.getElementById("toc-overlay-btn").style.left = "-90px";
+    document.getElementById("prev-page").style.left = "calc(25% + 10px)";
+    document.getElementById("toc-overlay-btn").style.color = "rgba(255, 255, 255, 0.0)";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+    document.getElementById("toc-overlay-btn").style.width = "40px";
+    document.getElementById("toc-overlay-btn").style.left = "0px";
+    document.getElementById("toc-overlay-btn").style.color = "rgba(255, 255, 255, 1.0)";
+    document.getElementById("prev-page").style.left = "calc(10px)";
+}
+
+function openNav2() {
+    document.getElementById("myNav2").style.width = "25%";
+    document.getElementById("meta-overlay-btn").style.width = "0px";
+    document.getElementById("meta-overlay-btn").style.right = "-90px";
+    document.getElementById("next-page").style.right = "calc(25% + 10px)";
+    document.getElementById("meta-overlay-btn").style.color = "rgba(255, 255, 255, 0.0)";
+}
+
+function closeNav2() {
+    document.getElementById("myNav2").style.width = "0%";
+    document.getElementById("meta-overlay-btn").style.width = "40px";
+    document.getElementById("meta-overlay-btn").style.right = "0px";
+    document.getElementById("meta-overlay-btn").style.color = "rgba(255, 255, 255, 1.0)";
+    document.getElementById("next-page").style.right = "calc(10px)";
+}
+
+function openNav3() {
+    document.getElementById("myNav3").style.height = "35%";
+    document.getElementById("myNav").style.height = "calc(65% - 120px)";
+    document.getElementById("ocr-overlay-btn").style.borderColor = "rgba(255, 255, 255, 0.9)";
+}
+
+function closeNav3() {
+    document.getElementById("myNav3").style.height = "0%";
+    document.getElementById("myNav").style.height = "calc(100% - 200px)";
+    document.getElementById("ocr-overlay-btn").style.borderColor = "rgba(99, 8, 19, 1.0)";
+}
+
+function openNav4() {
+    document.getElementById("myNav4").style.height = "40%";
+    document.getElementById("myNav2").style.height = "calc(60% - 120px)";
+    document.getElementById("ocr-overlay-btn").style.borderColor = "rgba(255, 255, 255, 0.9)";
+}
+
+function closeNav4() {
+    document.getElementById("myNav4").style.height = "0%";
+    document.getElementById("myNav2").style.height = "calc(100% - 200px)";
+    document.getElementById("ocr-overlay-btn").style.borderColor = "rgba(99, 8, 19, 1.0)";
+}
+
+function togglePagegrid() {
+    if(pagegrid === 0) {
+        document.getElementById("fullsize-pagegrid").style.display = "block";
+        pagegrid = 1;
+    }
+    else {
+        document.getElementById("fullsize-pagegrid").style.display = "none";
+        pagegrid = 0;
+    }
+}
 
 function replaceRssFeedImage() {
     $('.tx-dlf-rss-feed a img').attr('src', '/typo3conf/ext/presentation_package/Resources/Public/Images/rss-feed.png');
