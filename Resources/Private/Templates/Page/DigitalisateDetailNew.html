@@ -19,7 +19,8 @@
                 <flux:grid.column colPos="15" name="Basket" label="Basket" />
             </flux:grid.row>
             <flux:grid.row>
-                <flux:grid.column colPos="3" name="Docnavigation" label="Dokument Navigation" />
+                <flux:grid.column colPos="3" name="Docnavigation" label="Navigations left" />
+                <flux:grid.column colPos="15" name="Docnavigation" label="Navigation right" />
                 <flux:grid.column colPos="4" name="TOC" label="TOC" />
                 <flux:grid.column colPos="5" name="Metadaten" label="Metadaten" />
                 <flux:grid.column colPos="6" name="Preview" label="Pageview Preview" />
@@ -154,40 +155,13 @@
         </div>
 
         <div class="detail-view-pageview-nav tx-dlf-navigation" id="bottom-toolbar">
-            <f:comment><ul style="float: left; background-color:rgba(0, 0, 0, 0.4); padding: 5px;">
-                <li id="ocr-overlay-btn" onclick="openNav3()">
-                    <a href="#" title="Volltext anzeigen" class="">
-                        <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/body-text.svg" alt="single page">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Einzelseitenansicht" class="">
-                        <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-singlepage.svg" alt="single page">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Doppelseitenansicht" class="tx-dlf-navigation-doubleOn">
-                        <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-doublepage.svg" alt="Show double pages">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Recto/Verso korrigieren" class="">
-                        <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rectoverso.svg" alt="recto verso pages">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Vorschaubilder" class="" onclick="togglePagegrid()">
-                        <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-pagegrid.svg" alt="pagegrid">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Bild bearbeiten" class="" onclick="openNav4()">
-                        <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-settings.svg" alt="settings">
-                    </a>
-                </li>
-            </ul></f:comment>
 
-            <v:content.render column="3" />
+            <div class="navigation-left">
+                <v:content.render column="3" />
+            </div>
+            <div class="navigation-right">
+                <v:content.render column="15" />
+            </div>
         </div>
 
         <span id="powered_by">
