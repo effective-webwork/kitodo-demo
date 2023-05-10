@@ -139,12 +139,12 @@ addon 03 2023
     display: flex;
 }
 
-#bottom-toolbar .frame {
+#bottom-toolbar .navigation-left {
     width: 50%;
     text-align: left;
 }
 
-#bottom-toolbar .frame:nth-child(2) {
+#bottom-toolbar .navigation-right {
     width: 50%;
     text-align: right;
 }
