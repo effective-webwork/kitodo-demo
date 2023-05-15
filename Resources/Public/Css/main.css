@@ -320,3 +320,8 @@ dt.tx-dlf-metadata-title {
 #tx-dlf-map {
     height: 100vh;
 }
+
+dd.tx-dlf-metadata-title.detail-view-title-main {
+    font-weight: bold;
+    font-size: 18px;
+}
