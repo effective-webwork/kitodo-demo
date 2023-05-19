@@ -1,9 +1,13 @@
 <div class="navbar-start" style="display: none;">
-    <v:page.languageMenu  tagName="ul" tagNameChildren="li" defaultLanguageLabel="English" hideNotTranslated="1" layout="flag,name">
+    <v:page.languageMenu  tagName="ul" tagNameChildren="li" defaultLanguageLabel="Deutsch" hideNotTranslated="1" layout="flag,name">
         <f:for each="{languageMenu}" as="item">
-            <a class="navbar-item {f:if(condition: '{item.current}', then: 'is-active',  else:'')}" href="{item.url}">
-                {item.label}
-            </a>
+            <f:if condition="!{item.current}">
+                <f:then>
+                    <a class="navbar-item" href="{item.url}">
+                        {item.label}
+                    </a>
+                </f:then>
+            </f:if>
         </f:for>
     </v:page.languageMenu>
 </div>
