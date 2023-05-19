@@ -1,18 +1,9 @@
-<f:if condition="{languagenavigation}">
-    <ul id="language_menu" class="language-menu" style="display:none;">
-        <f:for each="{languagenavigation}" as="item">
-            <li class="{f:if(condition: item.active, then: 'active')} {f:if(condition: item.available, else: 'text-muted')}">
-                <f:if condition="{item.available}">
-                    <f:then>
-                        <a href="{item.link}" hreflang="{item.hreflang}" title="{item.title}">
-                            <span>{item.navigationTitle}</span>
-                        </a>
-                    </f:then>
-                    <f:else>
-                        <span>{item.navigationTitle}</span>
-                    </f:else>
-                </f:if>
-            </li>
+<div class="navbar-start" style="display: none;">
+    <v:page.languageMenu  tagName="ul" tagNameChildren="li" defaultLanguageLabel="English" hideNotTranslated="1" layout="flag,name">
+        <f:for each="{languageMenu}" as="item">
+            <a class="navbar-item {f:if(condition: '{item.current}', then: 'is-active',  else:'')}" href="{item.url}">
+                {item.label}
+            </a>
         </f:for>
-    </ul>
-</f:if>
+    </v:page.languageMenu>
+</div>
