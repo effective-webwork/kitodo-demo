@@ -339,15 +339,15 @@ addon 03 2023
 }
 
 #toc-overlay-btn {
-    width: 40px;
-    left: 0px;
-    color: #FFFFFF;
-}
-
-#toc-overlay-btn.active {
     width: 0px;
     left: -90px;
     color: rgba(255, 255, 255, 0.0);
+}
+
+#toc-overlay-btn.active {
+    width: 40px;
+    left: 0px;
+    color: #FFFFFF;
 }
 
 #meta-overlay-btn {
