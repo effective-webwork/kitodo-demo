@@ -166,6 +166,24 @@ function togglePagegrid() {
     }
 }
 
+function searchInDocumentResetIcon() {
+    $('.reset-search-in-document').on('click', function (evt) {
+        evt.preventDefault();
+        $('#tx-dlf-search-in-document-results ul').remove();
+        $('.results-active-indicator').remove();
+        $('#tx-dlf-search-in-document-query').val('').focus();
+        $('.reset-search-in-document').hide();
+    });
+
+    $('#tx-dlf-search-in-document-query').on('keydown', function () {
+        if ($('#tx-dlf-search-in-document-query').val() != '') {
+            $('.reset-search-in-document').show();
+        } else {
+            $('.reset-search-in-document').hide();
+        }
+    })
+}
+
 function pageGridClickEvent() {
     $('#pagegrid').on('click', function() {
         togglePagegrid();
