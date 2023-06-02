@@ -83,7 +83,7 @@ function openNav() {
     // document.getElementById("myNav").style.width = "25%";
     // document.getElementById("toc-overlay-btn").style.width = "0px";
     // document.getElementById("toc-overlay-btn").style.left = "-90px";
-    document.getElementById("prev-page").style.left = "calc(25% + 10px)";
+    // document.getElementById("prev-page").style.left = "calc(25% + 10px)";
     // document.getElementById("toc-overlay-btn").style.color = "rgba(255, 255, 255, 0.0)";
     $('#myNav').addClass('active');
     $('#toc-overlay-btn').removeClass('active');
@@ -95,7 +95,7 @@ function closeNav() {
     // document.getElementById("toc-overlay-btn").style.width = "40px";
     // document.getElementById("toc-overlay-btn").style.left = "0px";
     // document.getElementById("toc-overlay-btn").style.color = "rgba(255, 255, 255, 1.0)";
-    document.getElementById("prev-page").style.left = "calc(10px)";
+    // document.getElementById("prev-page").style.left = "calc(10px)";
     $('#myNav').removeClass('active');
     $('#toc-overlay-btn').addClass('active');
 }
@@ -105,7 +105,7 @@ function openNav2() {
     // document.getElementById("myNav2").style.width = "25%";
     // document.getElementById("meta-overlay-btn").style.width = "0px";
     // document.getElementById("meta-overlay-btn").style.right = "-90px";
-    document.getElementById("next-page").style.right = "calc(25% + 10px)";
+    // document.getElementById("next-page").style.right = "calc(25% + 10px)";
     // document.getElementById("meta-overlay-btn").style.color = "rgba(255, 255, 255, 0.0)";
     $('#myNav2').addClass('active');
     $('#meta-overlay-btn').removeClass('active');
@@ -117,7 +117,7 @@ function closeNav2() {
     // document.getElementById("meta-overlay-btn").style.width = "40px";
     // document.getElementById("meta-overlay-btn").style.right = "0px";
     // document.getElementById("meta-overlay-btn").style.color = "rgba(255, 255, 255, 1.0)";
-    document.getElementById("next-page").style.right = "calc(10px)";
+    // document.getElementById("next-page").style.right = "calc(10px)";
     $('#myNav2').removeClass('active');
     $('#meta-overlay-btn').addClass('active');
 }
