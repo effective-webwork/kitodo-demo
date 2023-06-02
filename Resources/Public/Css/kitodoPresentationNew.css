@@ -330,6 +330,45 @@ addon 03 2023
     margin: 30px;
 }
 
+#myNav, #myNav2 {
+    width: 0%;
+}
+
+#myNav.active, #myNav2.active {
+    width: 25%;
+}
+
+#toc-overlay-btn {
+    width: 40px;
+    left: 0px;
+    color: #FFFFFF;
+}
+
+#toc-overlay-btn.active {
+    width: 0px;
+    left: -90px;
+    color: rgba(255, 255, 255, 0.0);
+}
+
+#meta-overlay-btn {
+    width: 0px;
+    right: -90px;
+    color: rgba(255, 255, 255, 0.0);
+}
+
+#meta-overlay-btn.active {
+    width: 40px;
+    right: 0px;
+    color: #FFFFFF;
+}
+
+#myNav3, #myNav4 {
+    height: 0%;
+}
+
+#myNav3.active, #myNav4.active {
+    height: 35%;
+}
 
 /*----------------------------------------------------------------------
 global structure & normalize
