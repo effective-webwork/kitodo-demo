@@ -39,6 +39,8 @@ $(document).ready(function() {
 
     showDeletionButton();
 
+    searchInDocumentResetIcon();
+
     renameMetadataTab();
 
     initExpandCollapse();
