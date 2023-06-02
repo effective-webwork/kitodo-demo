@@ -90,7 +90,7 @@ function openNav() {
 }
 
 function closeNav() {
-    Cookies.set('overlay1', '0');
+    Cookies.remove('overlay1');
     // document.getElementById("myNav").style.width = "0%";
     // document.getElementById("toc-overlay-btn").style.width = "40px";
     // document.getElementById("toc-overlay-btn").style.left = "0px";
@@ -112,7 +112,7 @@ function openNav2() {
 }
 
 function closeNav2() {
-    Cookies.set('overlay2', '0');
+    Cookies.remove('overlay2');
     // document.getElementById("myNav2").style.width = "0%";
     // document.getElementById("meta-overlay-btn").style.width = "40px";
     // document.getElementById("meta-overlay-btn").style.right = "0px";
@@ -132,7 +132,7 @@ function openNav3() {
 }
 
 function closeNav3() {
-    Cookies.set('overlay3', '0');
+    Cookies.remove('overlay3');
     // document.getElementById("myNav3").style.height = "0%";
     document.getElementById("myNav").style.height = "calc(100% - 200px)";
     // document.getElementById("ocr-overlay-btn").style.borderColor = "rgba(99, 8, 19, 1.0)";
@@ -148,7 +148,7 @@ function openNav4() {
 }
 
 function closeNav4() {
-    Cookies.set('overlay4', '0');
+    Cookies.remove('overlay4');
     // document.getElementById("myNav4").style.height = "0%";
     document.getElementById("myNav2").style.height = "calc(100% - 200px)";
     // document.getElementById("ocr-overlay-btn").style.borderColor = "rgba(99, 8, 19, 1.0)";
