@@ -2469,7 +2469,7 @@ div#tx-dlf-fulltextselection .highlight {
     width: 23%;
     padding: 15px;
     overflow: auto;
-    border: 1px solid;
+    /*border: 1px solid;*/
 }
 
 #tx-dlf-fulltextselection:empty {
