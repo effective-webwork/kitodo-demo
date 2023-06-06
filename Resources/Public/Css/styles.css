@@ -1191,6 +1191,10 @@ detail-view
     text-align: left;
 }
 
+.fullsize-pagegrid .tx-dlf-pagegrid .f3-widget-paginator {
+    display: none;
+}
+
 .fullsize-pagegrid .tx-dlf-pagegrid-thumbnail {
     width: 150px;
     height: 95px;
