@@ -245,6 +245,7 @@ $(document).ready(function() {
     addLicenseIcon();
     metdataLinkReplacement();
     linkButtonToPdfGeneration();
+    pageGridToggle();
 });
 
 function shortenDescription() {
@@ -365,5 +366,12 @@ function metdataLinkReplacement() {
 }
 
 function linkButtonToPdfGeneration() {
-    $('#pagegrid-button').attr('href', $('#pdf-generate-link a').attr('href'));
+    $('#fullPdfDownload').attr('href', $('#pdf-generate-link a').attr('href'));
+}
+
+function pageGridToggle() {
+    $('#pagegrid-button').on('click', function (evt) {
+       evt.preventDefault();
+       $('.fullsize-pagegrid').toggle();
+    });
 }
