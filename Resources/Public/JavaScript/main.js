@@ -244,6 +244,7 @@ $(document).ready(function() {
     shortenDescription();
     addLicenseIcon();
     metdataLinkReplacement();
+    linkButtonToPdfGeneration();
 });
 
 function shortenDescription() {
@@ -361,4 +362,8 @@ function metdataLinkReplacement() {
             $(this).hide();
         }
     });
+}
+
+function linkButtonToPdfGeneration() {
+    $('#pagegrid-button').attr('href', $('#pdf-generate-link a').attr('href'));
 }
