@@ -103,7 +103,12 @@ addon 03 2023
     display: block;
 }
 
-.portal-legal-area li a:hover {
+.portal-legal-area li a.pla-helpme {
+    background: #6a6a6a;
+}
+
+.portal-legal-area li a:hover,
+.portal-legal-area li a.pla-helpme:hover {
     background: #8D0D1C;
 }
 
@@ -149,6 +154,11 @@ addon 03 2023
     text-align: right;
 }
 
+#bottom-toolbar .navigation-left .tx-dlf-toolbox,
+#bottom-toolbar .navigation-right .tx-dlf-toolbox {
+    margin: 0;
+}
+
 /* left navigation */
 
 #toc-overlay-btn {
@@ -160,13 +170,21 @@ addon 03 2023
     border-bottom-right-radius: 10px;;
     position: fixed;
     z-index: 50;
-    writing-mode: sideways-lr;
     text-align: center;
     font-weight: bold;
     font-size: 20px;
     transition: 0.5s;
     cursor: pointer;
 }
+
+#toc-overlay-btn p {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    transform-origin: 0 0;
+    transform: rotate(270deg);
+    width: 300px;
+    }
 
 .overlay {
     height: calc(100% - 200px);
@@ -226,13 +244,21 @@ addon 03 2023
     position: fixed;
     right: 0;
     z-index: 52;
-    writing-mode: sideways-lr;
     text-align: center;
     font-weight: bold;
     font-size: 20px;
     transition: 0.5s;
     cursor: pointer;
 }
+
+#meta-overlay-btn p {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    transform-origin: 0 0;
+    transform: rotate(270deg);
+    width: 300px;
+    }
 
 .overlay2 {
     height: calc(100% - 200px);
@@ -275,7 +301,6 @@ addon 03 2023
 }
 
 /* bottom navigation */
-
 .overlay3 {
     height: 0;
     width: 25%;
@@ -301,7 +326,6 @@ addon 03 2023
 }
 
 /* imagetools navigation */
-
 .overlay4 {
     height: 0;
     width: 25%;
@@ -724,6 +748,10 @@ main header h4 {
 main div.frame-type-text ul {
     color: #FFFFFF;
     padding: 15px 60px;
+}
+
+.logo-uhh-min {
+    display: none;
 }
 
 /*----------------------------------------------------------------------
@@ -1664,6 +1692,11 @@ ul.tx-dlf-toolbox span a img {
     height: auto;
 }
 
+.tx-dlf-toolbox .textsnippet a {
+    line-height: 16px;
+    font-size: 16px;
+}
+
 .tx-dlf-navigation-pageselect div,
 .tx-dlf-navigation-pageselect form {
     display: inline-block;
@@ -2005,6 +2038,31 @@ div#tx-dlf-fulltextselection .highlight {
     padding-right: 5px;
 }
 
+#tx-dlf-search-in-document-results span {
+    padding: 0;
+    color: #242424;
+}
+
+#tx-dlf-search-in-document-form label {
+    display: block;
+}
+
+#tx-dlf-search-in-document-form {
+    position: relative;
+}
+
+#tx-dlf-search-in-document-form .reset-search-in-document {
+    position: absolute;
+    margin: 30px 0 0 0;
+    color: #fff;
+    padding: 5px 8px 5px 8px;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer;
+    top: 0;
+    left: calc(100% - 125px);
+}
+
 a#tx-dlf-tools-fulltext:after {
     content: '';
     width: 24px;
@@ -2126,10 +2184,9 @@ calendar + listview
     border-radius: 3px;
     webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
-    margin: 0 15px;
     display: table;
-    width: calc(100% - 30px);
-    margin-bottom: 30px;
+    width: calc(100% - 15px);
+    margin: 0 0 0 30px;
 }
 
 .calendar-items {
@@ -2641,6 +2698,21 @@ max 1024px
         margin: 0 5px -38px 0;
     }
 
+    .portal-legal-area li a {
+        background: transparent;
+        border: 1px solid #6a6a6a;
+    }
+
+    .portal-legal-area li a.pla-helpme {
+        background: #6a6a6a;
+    }
+
+    .portal-legal-area li a:hover,
+    .portal-legal-area li a.pla-helpme:hover {
+        background: #8D0D1C;
+        border: 1px solid #8D0D1C;
+    }
+
     #powered-by {
         display: none;
     }
@@ -2657,6 +2729,14 @@ max 1024px
         line-height: 36px;
         padding: 30px 15px;
     }
+
+    .logo-uhh-max {
+        display: none;
+    }
+
+    .logo-uhh-min {
+            display: inline-block;
+        }
 
     .portal-claim {
         font-size: 20px;
@@ -2804,12 +2884,6 @@ max 1024px
         margin-bottom: 15px;
     }
 
-    .tx-dlf-toolbox {
-        position: absolute;
-        right: 20px;
-        top: 15px;
-    }
-
     .ol-unselectable.ol-layers {
         overflow: hidden;
         width: 100% !important;
@@ -2826,6 +2900,29 @@ max 1024px
         text-align: center;
         border-radius: 0px;
     }
+
+    #myNav.active, #myNav2.active {
+        width: 85%;
+    }
+
+    .overlay {
+        background-color: rgb(228, 228, 228);
+    }
+
+    .overlay2 {
+        background-color: rgb(228, 228, 228);
+    }
+
+    .overlay3 {
+        width: 85%;
+        background-color: rgb(200, 200, 200);
+    }
+
+    .overlay4 {
+        width: 85%;
+        background-color: rgb(200, 200, 200);
+    }
+
 }
 
 @media only screen and (max-width: 980px) {
@@ -2844,6 +2941,14 @@ max 1024px
     .tx-dlf-toolbox {
         position: initial;
         display: inline-block;
+    }
+
+    #bottom-toolbar .navigation-left {
+        width: 100%;
+    }
+
+    #bottom-toolbar .navigation-right {
+        width: 100%;
     }
 
     #bottom-toolbar {
