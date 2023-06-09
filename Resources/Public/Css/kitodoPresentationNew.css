@@ -2063,6 +2063,10 @@ div#tx-dlf-fulltextselection .highlight {
     left: calc(100% - 125px);
 }
 
+tx-dlf-search-in-document-loading {
+    display: none;
+}
+
 a#tx-dlf-tools-fulltext:after {
     content: '';
     width: 24px;
