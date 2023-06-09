@@ -19,6 +19,116 @@
 
     NOTE: We assume unescaped values
 </f:comment>
+
+<f:if condition="{settings.storagePid} == 42">
+    <f:then>
+        <v:variable.set name="settings.portal" value="Hamburger Zeitungen Digital" />
+        <v:variable.set name="settings.portal_uri" value="https://zeitungen.sub.uni-hamburg.de" />
+        <v:variable.set name="settings.volume" value="{documentMetadataSections.0.date_calendar.0}" />
+        <v:variable.set name="settings.keywords" value="Hamburger Zeitungen Digital, Digitalisierte Bestände, Digitale Sammlungen, Digitale Kollektionen, Zeitungsportal, Staats- und Universitätsbibliothek Hamburg Carl von Ossietzky, SUB Hamburg, Stabi Hamburg" />
+    </f:then>
+</f:if>
+<f:if condition="{settings.storagePid} == 43">
+    <f:then>
+        <v:variable.set name="settings.portal" value="Hamburger Kulturgut Digital" />
+        <v:variable.set name="settings.portal_uri" value="https://digitalisate.sub.uni-hamburg.de" />
+        <v:variable.set name="settings.volume" value="{documentMetadataSections.0.volume.0}" />
+        <v:variable.set name="settings.keywords" value="Hamburger Kulturgut Digital, Digitalisierte Bestände, Digitale Sammlungen, Digitale Kollektionen, Staats- und Universitätsbibliothek Hamburg Carl von Ossietzky, SUB Hamburg, Stabi Hamburg" />
+    </f:then>
+</f:if>
+<f:if condition="{settings.storagePid} == 44">
+    <f:then>
+        <v:variable.set name="settings.portal" value="Aus Nachlass Joachim Jungius" />
+        <v:variable.set name="settings.portal_uri" value="https://jungius.sub.uni-hamburg.de" />
+        <v:variable.set name="settings.volume" value="{documentMetadataSections.0.volume.0}" />
+        <v:variable.set name="settings.keywords" value="Aus Nachlass Joachim Jungius, Digitalisierte Bestände, Digitale Sammlungen, Digitale Kollektionen, Staats- und Universitätsbibliothek Hamburg Carl von Ossietzky, SUB Hamburg, Stabi Hamburg" />
+    </f:then>
+</f:if>
+
+<f:if condition="{documentMetadataSections.0.subtitle.0}">
+    <f:then>
+        <v:variable.set name="settings.title" value="{documentMetadataSections.0.title.0}: {documentMetadataSections.0.subtitle.0}" />
+        <v:variable.set name="settings.titletag" value="{documentMetadataSections.0.title.0}: {documentMetadataSections.0.subtitle.0} | {settings.volume} | {settings.portal}" />
+    </f:then>
+    <f:else>
+        <v:variable.set name="settings.title" value="{documentMetadataSections.0.title.0}" />
+        <v:variable.set name="settings.titletag" value="{documentMetadataSections.0.title.0} | {settings.volume} | {settings.portal}" />
+    </f:else>
+</f:if>
+<v:variable.set name="settings.author" value="{documentMetadataSections.0.person_general}" />
+<v:variable.set name="settings.language" value="{documentMetadataSections.0.language_iso}" />
+<v:variable.set name="settings.publisher" value="{documentMetadataSections.0.publisher.0}" />
+<f:if condition="{documentMetadataSections.0.date_iso.0}">
+    <f:then>
+        <v:variable.set name="settings.publication_date" value="{documentMetadataSections.0.date_iso.0}" />
+    </f:then>
+    <f:else>
+        <v:variable.set name="settings.publication_date" value="{documentMetadataSections.0.year.0}" />
+    </f:else>
+</f:if>
+<v:variable.set name="settings.record_id" value="{documentMetadataSections.0.record_id.0}" />
+<v:variable.set name="settings.keyword" value="{documentMetadataSections.0.collection}" />
+<v:variable.set name="settings.type" value="{documentMetadataSections.0.type.0}" />
+<v:variable.set name="settings.purl" value="{documentMetadataSections.0.purl.0}" />
+<v:variable.set name="settings.urn" value="{documentMetadataSections.0.urn.0}" />
+<v:variable.set name="settings.license" value="{documentMetadataSections.0.license.0}" />
+<v:variable.set name="settings.volume_issue" value="{documentMetadataSections.0.volume_issue.0}" />
+<v:variable.set name="settings.abstract" value="{documentMetadataSections.0.abstract.0}" />
+
+<f:section name="HeaderAssets">
+    <f:comment><!-- Title Tag --></f:comment>
+    <title>
+        {settings.titletag}
+    </title>
+
+    <f:comment><!-- SEO Keywords --></f:comment>
+    <meta name="keywords" content="{settings.keywords}" />
+
+    <f:comment><!-- Highwire Press Tags --></f:comment>
+    <meta name="gs_meta_revision" content="1.1">
+    <meta name="citation_title" content="{settings.title}"/>
+    <f:for each="{settings.author}" as="author" iteration="iter">
+        <meta name="citation_author" content="{settings.author.{iter.index}}"/>
+    </f:for>
+    <f:for each="{settings.language}" as="language" iteration="iter">
+        <meta name="citation_language" content="{settings.language.{iter.index}}"/>
+    </f:for>
+    <meta name="citation_publisher" content="{settings.publisher}"/>
+    <meta name="citation_publication_date" content="{settings.publication_date}"/>
+    <meta name="citation_pdf_url" content="https://pdf.sub.uni-hamburg.de/kitodo/{settings.record_id}" />
+    <f:for each="{settings.keyword}" as="keyword" iteration="iter">
+        <meta name="citation_keywords" content="{settings.keyword.{iter.index}}"/>
+    </f:for>
+    <meta name="citation_volume" content="{settings.volume}"/>
+    <meta name="citation_issue" content="{settings.volume_issue}"/>
+
+    <f:comment><!-- DC Schema Tags --></f:comment>
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <meta name="DC.Title" content="{settings.title}"/>
+    <f:for each="{settings.author}" as="author" iteration="iter">
+        <meta name="DC.Creator" content="{settings.author.{iter.index}}"/>
+    </f:for>
+    <f:for each="{settings.language}" as="language" iteration="iter">
+        <meta name="DC.Language" scheme="ISO639-2" content="{settings.language.{iter.index}}"/>
+    </f:for>
+    <meta name="DC.Publisher" content="{settings.publisher}"/>
+    <meta name="DC.Date.Created" scheme="ISO8601" content="{settings.publication_date}"/>
+    <meta name="DC.Identifier" content="https://pdf.sub.uni-hamburg.de/kitodo/{settings.record_id}" />
+    <f:for each="{settings.keyword}" as="keyword" iteration="iter">
+        <meta name="DC.Subject" xml:lang="de" content="{settings.keyword.{iter.index}}"/>
+    </f:for>
+    <meta name="DC.Citation.Volume" content="{settings.volume}"/>
+    <meta name="DC.Citation.Issue" content="{settings.volume_issue}"/>
+    <f:comment><!-- DC Schema Tags with no corresponding Highwire Press Tag--></f:comment>
+    <meta name="DC.Type" xml:lang="de" content="{settings.type}"/>
+    <meta name="DC.Identifier.URI" content="{settings.purl}"/>
+    <meta name="DC.Identifier.URN" content="{settings.urn}"/>
+    <meta name="DC.Rights" content="{settings.license}"/>
+    <meta name="DC.Source.URI" content="{settings.portal_uri}"/>
+    <meta name="DC.Description" content="{settings.abstract}"/>
+
+</f:section>
+
 <f:if condition="{useIiif}">
     <f:then>
         <f:render partial="Metadata/IiifEntries" arguments="{_all}"/>
