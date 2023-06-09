@@ -174,7 +174,6 @@ function fulltextClickEvent() {
 
     // close click event
     $('#myNav3 a').on('click', function (evt) {
-        closeNav3();
         $('#tx-dlf-tools-fulltext').click();
     });
 }
