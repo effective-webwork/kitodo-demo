@@ -1,0 +1,121 @@
+#tx-dlf-search-query {
+    width: 40%;
+}
+
+.tx-dlf-search-form input[type="submit"] {
+    width: 40%;
+}
+
+.dlf-search-switch {
+    margin: 20px auto;
+    width: 40%;
+}
+
+.dlf-search-switch label {
+    display: inline-block;
+    width: 50%;
+}
+
+.dlf-search-switch label {
+    background: linear-gradient(0deg, rgb(20, 20, 20) 0%, rgb(36, 36, 36) 100%);
+    border: 1px solid #242424;
+}
+
+.dlf-search-switch input:checked + label {
+    border: 1px solid #242424;
+    background: linear-gradient(0deg, rgb(36, 36, 36) 0%, rgb(80, 80, 80) 100%);
+}
+
+.dlf-search-switch input:hover + label {
+    background: linear-gradient(0deg, rgb(36, 36, 36) 0%, rgb(80, 80, 80) 100%) !important;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+}
+
+.dlf-search-switch input:checked + label::after {
+    content: 'âœ“';
+    padding: 0 0 0 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.search-term-deletion {
+    padding: 20px 0;
+    width: 50px;
+    margin-left: -52px;
+    border-right: 0px;
+    border-left: 1px solid #B12736;
+}
+
+.search-date-choose {
+    margin: 20px auto 0 auto;
+    width: 40%;
+}
+
+.date-choose-from {
+    width: 50%;
+    display: inline-block;
+    background: #ffffff;
+    color: #242424;
+    box-shadow: 0px 3px 0px 0px rgb(120, 120, 120);
+    border-radius: 3px 0 0 3px;
+    padding: 6px 0;
+    float: left;
+}
+
+.date-choose-to {
+    width: 50%;
+    display: inline-block;
+    background: #ffffff;
+    color: #242424;
+    box-shadow: 0px 3px 0px 0px rgb(120, 120, 120);
+    border-radius: 0 3px 3px 0;
+    padding: 6px 0;
+}
+
+.date-choose-from label,
+.date-choose-to label {
+    padding: 0 6px 0 0;
+}
+
+
+@media only screen and (max-width: 1350px) {
+
+    #tx-dlf-search-query,
+    .tx-dlf-search-form input[type="submit"],
+    .dlf-search-switch,
+    .search-date-choose {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+
+    #tx-dlf-search-query,
+    .tx-dlf-search-form input[type="submit"],
+    .dlf-search-switch,
+    .search-date-choose {
+        width: calc(100% - 60px);
+        margin: inherit 30px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    #tx-dlf-search-query,
+    .tx-dlf-search-form input[type="submit"],
+    .dlf-search-switch,
+    .search-date-choose {
+        width: calc(100% - 30px);
+        margin: inherit 15px;
+    }
+
+    .dlf-search-switch input:checked + label::after {
+        display: none;
+    }
+
+    .dlf-search-switch label {
+        padding: 5px;
+    }
+}
