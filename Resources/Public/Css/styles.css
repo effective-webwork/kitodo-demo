@@ -215,7 +215,7 @@ header {
 }
 
 #portal-logo {
-    width: calc(100% - 250px);
+    width: calc(100% - 450px);
     line-height: 0;
     padding: 40px 0;
 }
@@ -226,7 +226,29 @@ header {
     vertical-align: middle;
 }
 
-#portal-logo a:hover {
+#ulb-logo {
+    width: 200px;
+    line-height: 0;
+    padding: 25px 0;
+}
+
+#ulb-logo img {
+    width: 40px;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#ulb-logo span {
+  vertical-align: middle;
+  font-size: 20px;
+  line-height: 22px;
+  display: inline-block;
+  padding: 0 0 0 15px;
+}
+
+#portal-logo a:hover,
+#ulb-logo a:hover {
     text-decoration: none;
 }
 
@@ -329,9 +351,7 @@ article.breadcrumb span:not(:last-child):after {
 }
 
 .navbar-start {
-    position: absolute;
-    right: calc(35% - 60px);
-    top: 15px;
+    display: none;
 }
 
 
@@ -1589,7 +1609,7 @@ max 1024px
     }
 
     #portal-logo {
-        width: calc(100% - 160px);
+        width: calc(100% - 320px);
         padding: 35px 0 0 0;
     }
 
@@ -1597,9 +1617,17 @@ max 1024px
         width: 160px;
     }
 
-    #portal-logo span {
-        font-size: 16px;
-        line-height: 18px;
+    #ulb-logo {
+        width: 160px;
+    }
+
+    #ulb-logo img {
+        width: 30px;
+    }
+
+    #ulb-logo span {
+      font-size: 14px;
+      line-height: 16px;
     }
 
     #tud-logo {
@@ -1769,9 +1797,17 @@ max 700px
         width: 120px;
     }
 
-    #portal-logo span {
-        font-size: 14px;
-        line-height: 16px;
+    #ulb-logo {
+        width: 50px;
+        padding: 10px 0;
+    }
+
+    #ulb-logo img {
+        width: 30px;
+    }
+
+    #ulb-logo span {
+      display: none;
     }
 
     #tud-logo {
