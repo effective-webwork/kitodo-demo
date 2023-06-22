@@ -2043,12 +2043,6 @@ max 700px
         position: inherit;
     }
 
-    .tx-dlf-pagegrid .tx-dlf-pagegrid-thumbnail a:hover {
-        top: 0;
-        left: 0;
-        width: 25px;
-    }
-
     .tx-dlf-newspaper-calendar .meta-header,
     .tx-dlf-newspaper-years .meta-header {
         display: block;
