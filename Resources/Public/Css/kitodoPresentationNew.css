@@ -553,13 +553,13 @@ input[type=text] {
     color: #242424;
     padding: 10px 15px;
     box-shadow: 0px 3px 0px 0px rgb(120, 120, 120);
-    border: 1px solid #959595;
+    border: 1px solid #FFFFFF;
     display: inline-block;
     vertical-align: middle;
 }
 
 input[type=text]:hover {
-    border: 1px solid #242424;
+    border: 1px solid #cccccc;
     color: #000;
 }
 
