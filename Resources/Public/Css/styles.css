@@ -391,6 +391,7 @@ main aside {
     float: left;
     width: 75%;
     margin-bottom: 60px;
+    position: relative;
 }
 
 main#detail-view #main-content {
@@ -1210,8 +1211,8 @@ detail-view
 .fullsize-pagegrid {
     position: absolute;
     left: 0px;
-    top: 320px;
-    width: 75%;
+    top: 0px;
+    width: 100%;
     background: #ffffff;
 }
 
@@ -1710,13 +1711,6 @@ max 1024px
 
     #main-content {
         float: none;
-        width: 100%;
-    }
-
-    .fullsize-pagegrid {
-        position: relative;
-        left: 0px;
-        top: 0px;
         width: 100%;
     }
 
