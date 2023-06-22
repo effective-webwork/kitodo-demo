@@ -25,7 +25,7 @@
     <f:comment><!-- Never change the @id of this input field! Otherwise search suggestions won't work! --></f:comment>
     <f:if condition="{settings.extendedSlotCount} > 0">
         <f:then>
-            <f:form.textfield id="tx-dlf-search-query" property="query" value="{lastSearch.query}" />
+            <f:form.textfield id="tx-dlf-search-query" property="query" value="{lastSearch.query}" placeholder="Suche"/>
 
             <f:if condition="{showLogicalPageField}">
                 <f:then>
