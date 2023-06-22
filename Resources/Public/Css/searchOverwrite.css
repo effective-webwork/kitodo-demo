@@ -34,7 +34,7 @@
 }
 
 .dlf-search-switch input:checked + label::after {
-    content: 'âœ“';
+    content: '✓';
     padding: 0 0 0 20px;
     font-weight: bold;
     font-size: 20px;
