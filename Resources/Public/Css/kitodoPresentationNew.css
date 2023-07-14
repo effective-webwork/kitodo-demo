@@ -179,7 +179,7 @@ addon 03 2023
     text-align: center;
     font-weight: bold;
     font-size: 20px;
-    transition: 0.5s;
+    /*transition: 0.5s;*/
     cursor: pointer;
 }
 
@@ -201,7 +201,7 @@ addon 03 2023
     background-color: rgb(228, 228, 228);
     background-color: rgb(228, 228, 228, 0.8);
     overflow-x: hidden;
-    transition: 0.5s;
+    /*transition: 0.5s;*/
 }
 
 .overlay-content {
@@ -253,7 +253,7 @@ addon 03 2023
     text-align: center;
     font-weight: bold;
     font-size: 20px;
-    transition: 0.5s;
+    /*transition: 0.5s;*/
     cursor: pointer;
 }
 
@@ -316,7 +316,7 @@ addon 03 2023
     background-color: rgb(200, 200, 200);
     background-color: rgb(200, 200, 200, 0.8);
     overflow-x: hidden;
-    transition: 0.5s;
+    /*transition: 0.5s;*/
     bottom: 0;
 }
 
@@ -366,6 +366,7 @@ addon 03 2023
 
 #myNav.active, #myNav2.active {
     width: 25%;
+    min-width: 500px;
 }
 
 #toc-overlay-btn {
@@ -394,6 +395,7 @@ addon 03 2023
 
 #myNav3, #myNav4 {
     height: 0%;
+    min-width: 500px;
 }
 
 #myNav3.active, #myNav4.active {
@@ -1568,6 +1570,16 @@ dd.tx-dlf-metadata-author,
     padding-left: 34px;
 }
 
+.tx-dlf-facet-value-count {
+    background-color: gray;
+    color: white;
+    padding: 2px 8px;
+    text-align: center;
+    border-radius: 5px;
+    float:right;
+    margin-top: -2px;
+}
+
 /*----------------------------------------------------------------------
 detail-view
 ----------------------------------------------------------------------*/
@@ -2492,6 +2504,16 @@ article.calendar-metadata ul li dl {
     font-size: 34px;
 }
 
+.year-empty p {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #999;
+    padding: 5px;
+    margin: -5px;
+    text-decoration: none;
+}
+
 /*----------------------------------------------------------------------
 basket
 ----------------------------------------------------------------------*/
@@ -2986,7 +3008,7 @@ max 1024px
     }
 
     #myNav.active, #myNav2.active {
-        width: 85%;
+        width: 100%;
         box-shadow: 0px 0px 15px 0px rgb(0, 0, 0, 0.5);
     }
 
@@ -2999,7 +3021,7 @@ max 1024px
     }
 
     .overlay3 {
-        width: 85%;
+        width: 100%;
         background-color: rgb(200, 200, 200);
         box-shadow: 0px 0px 15px 0px rgb(0, 0, 0, 0.5);
     }
@@ -3409,7 +3431,7 @@ ol.tx-dlf-volume {
     position: fixed;
     width: calc(100% - 160px);
     height: calc(100% - 200px);
-    z-index: 40;
+    z-index: 60;
     background: rgba(255, 255, 255, 0.85);
     padding: 80px;
 }
