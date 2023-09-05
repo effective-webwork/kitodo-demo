@@ -29,8 +29,6 @@ $(document).ready(function() {
 
     addThumbnailPlaceholder();
 
-    addFullPdfDownload();
-
     // workaround
     fixLabelInputMetadata();
 
@@ -60,6 +58,9 @@ $(document).ready(function() {
 
     pageGridClickEvent();
     fulltextClickEvent();
+
+    // mk 2023-09-05 # add download buttons in pageview
+    addDownloadButtons();
 });
 
 function initOverlays() {
@@ -211,20 +212,143 @@ function fixLabelInputMetadata() {
     }
 }
 
-function addFullPdfDownload() {
-    // $('.tx-dlf-pdfdownloadtool')
-    //     .append('<span class="fullPdfDownloadSpan"><a id="fullPdfDownload" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-pdf-white.svg" alt="PDF Download"></a></span>');
+// mk 2023-02-02 # create additional download buttons
+function addDownloadButtons() {
+    // declare path to folder for icons
+    icon_folder = '/typo3conf/ext/presentation_package/Resources/Public/Images/download_icons/';
 
-    $('#fullPdfDownload').on('click', function (event) {
+    // our anchor for button placement
+    anchor = 'ul.tx-dlf-toolbox';
+
+    // grab the record id
+    record_id = $('dd.tx-dlf-metadata-record_id').text();
+    
+    // make sure, that we have pagenumbers for objects with actual pages
+    var structtype = $('dd.tx-dlf-type').text();
+    if( structtype === 'Zeitschrift' ||
+        structtype === 'Mehrbändiges Werk' ||
+        structtype === 'Mehrteilige Graphik' ||
+        structtype === 'Mehrteilige Handschrift' ||
+        structtype === 'Mehrteiliges Kartenwerk' ||
+        structtype === 'Zeitung' ||
+        structtype === 'Jahr'
+    ) {
+        // those have not pages
+        pagenumber = 0;
+    } else {
+        // coming from the resultset may result in missing tx_dlf[page], so make it "1" instead of running into "undefined"
+        var pagenumber = "1";
+
+        let searchParams = new URLSearchParams(window.location.search);
+        if(searchParams.has('tx_dlf[page]'))
+        {
+            pagenumber = searchParams.get('tx_dlf[page]');
+        }
+    }
+
+    // create data structure for download buttons
+    var downloads = {
+        fullPDFDownload:    {id:"fullPDFDownload",  title:"Gesamtes Objekt als PDF herunterladen",                      icon:"filetype-pdf-full.svg",         class:"reachable", event:"Download PDF"},
+        fullLinkDownload:   {id:"fullLinkDownload", title:"Persistente URL zum Objekt teilen",                          icon:"filetype-share-fill-full.svg",    class:"reachable", event:"Aufruf Zitierlink"},
+        iiifDownload:       {id:"iiifDownload",     title:"IIIF-Manifest für Objekt herunterladen",                     icon:"filetype-iiif.svg",               class:"reachable", event:"Download IIIF-Manifest"},
+        metsDownload:       {id:"metsDownload",     title:"METS/MODS für Objekt herunterladen",                         icon:"filetype-mets.svg",               class:"reachable", event:"Download METS/MODS"},
+        pageLinkDownload:   {id:"pageLinkDownload", title:"Persistente URL zur Einzelseite teilen",                     icon:"filetype-share-fill.svg",         class:"reachable", event:"Aufruf Zitierlink (Einzelseite)"},
+        pagePDFDownload:    {id:"pagePDFDownload",  title:"Aktuelle Einzelseite als PDF herunterladen",                 icon:"filetype-pdf.svg",                class:"reachable", event:"Download PDF (Einzelseiten)"},
+        pageJPEGDownload:   {id:"pageJPEGDownload", title:"Aktuelle Seite als JPEG herunterladen",                      icon:"filetype-jpeg.svg",               class:"reachable", event:"Download JPEG (Einzelseite)"},
+        pageALTODownload:   {id:"pageALTODownload", title:"Volltext der aktuellen Seite als ALTO-XML herunterladen",    icon:"filetype-alto.svg",               class:"reachable", event:"Download ALTO-XML (Einzelseite)"},
+        pageTXTDownload:    {id:"pageTXTDownload",  title:"Volltext der aktuellen Seite als TXT herunterladen",         icon:"filetype-txt.svg",                class:"reachable", event:"Download TXT (Einzelseite)"},
+        DFGViewer:          {id:"DFGViewer",        title:"Zur Ansicht in den DFG-Viewer wechseln",                     icon:"dfgviewerLogo.svg",               class:"reachable", event:"Aufruf DFG-Viewer"},
+    }
+    
+    // per document URLs
+    downloads['fullPDFDownload'].link = 'https://img.sub.uni-hamburg.de/kitodo/' + record_id + '/PDF/' + record_id + '.pdf';        // https://img.sub.uni-hamburg.de/kitodo/PPN175933782X/PDF/PPN175933782X.pdf
+    downloads['fullLinkDownload'].link = 'https://resolver.sub.uni-hamburg.de/kitodo/' + record_id;                                 // https://resolver.sub.uni-hamburg.de/kitodo/PPN175933782X
+    downloads['iiifDownload'].link = 'https://iiif.sub.uni-hamburg.de/object/' + record_id + '/manifest';                           // https://iiif.sub.uni-hamburg.de/object/PPN175933782X/manifest
+    downloads['metsDownload'].link = 'https://mets.sub.uni-hamburg.de/kitodo/' + record_id;                                         // https://mets.sub.uni-hamburg.de/kitodo/PPN175933782X
+    
+    // DFG Viewer URL
+    downloads['DFGViewer'].link = 'https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/' + record_id;     // https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/PPN175933782X
+    
+    // per page URLs
+    if(pagenumber > 0) {
+
+        // use pagenumber as is here
+        downloads['pageLinkDownload'].link = 'https://resolver.sub.uni-hamburg.de/kitodo/' + record_id + '/page/' + pagenumber;     // https://resolver.sub.uni-hamburg.de/kitodo/PPN175933782X/page/9
+        
+        // and update DFG-Viewer link if actual page navigation was in place
+        downloads['DFGViewer'].link = 'https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/' + record_id + '&tx_dlf[page]=' + pagenumber;     // https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/PPN175933782X&tx_dlf[page]=9
+        
+        // change pagenumber to one with leading zeros now
+        pagenumber = pagenumber.padStart(8, '0');
+
+        downloads['pagePDFDownload'].link = 'https://img.sub.uni-hamburg.de/kitodo/' + record_id + '/PDF/' + pagenumber + '.pdf';   // https://img.sub.uni-hamburg.de/kitodo/PPN175933782X/PDF/00000009.pdf   
+        downloads['pageJPEGDownload'].link = 'https://pic.sub.uni-hamburg.de/kitodo/' + record_id + '/' + pagenumber + '.tif';      // https://pic.sub.uni-hamburg.de/kitodo/PPN175933782X/00000009.tif
+        downloads['pageALTODownload'].link = 'https://img.sub.uni-hamburg.de/kitodo/' + record_id + '/' + pagenumber + '.xml';      // https://img.sub.uni-hamburg.de/kitodo/PPN175933782X/00000009.xml
+        downloads['pageTXTDownload'].link = 'https://img.sub.uni-hamburg.de/kitodo/' + record_id + '/' + pagenumber + '.txt';       // https://img.sub.uni-hamburg.de/kitodo/PPN175933782X/00000009.txt
+    }
+
+    // decide whether a buttons target is reachable
+    if(pagenumber == 0) {
+        downloads['fullPDFDownload'].class = "unreachable";
+        downloads['pageLinkDownload'].class = "unreachable";
+        downloads['pagePDFDownload'].class = "unreachable";
+        downloads['pageJPEGDownload'].class = "unreachable";
+    }
+
+    if($('dd.tx-dlf-metadata-fulltext_flag').text() != "FULLTEXT") {
+        downloads['pageALTODownload'].class = "unreachable";
+        downloads['pageTXTDownload'].class = "unreachable";
+    }
+
+    // populate buttons
+    for (const key in downloads) {
+        if(downloads[key].class == "reachable") {
+            $(anchor).append('\
+            <li>\
+                <a href="' + downloads[key].link + '" id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '" download>\
+                    <img src="' + icon_folder + downloads[key].icon + '">\
+                </a>\
+            </li>');
+            addMatomoDownloadEventListener(downloads[key].id, downloads[key].link, downloads[key].event);
+        }
+        else {
+            $(anchor).append('\
+            <li>\
+                <span id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '">\
+                    <img src="' + icon_folder + downloads[key].icon + '">\
+                </span>\
+            </li>');
+        }
+    }
+
+    $('span.tx-dlf-tools-fulltext').parent().prependTo('ul.tx-dlf-navigation');
+}
+
+// mk 2023-09-05 # helper function for addDownloadButtons()
+// adds event listener for matomo tracking to download buttons
+function addMatomoDownloadEventListener(anchor_id, event_link, event_type) {
+    $('[id="' + anchor_id +  '"]').on('click', function (event) {
         event.preventDefault();
-        var GCS = 'https://pdf.sub.uni-hamburg.de/kitodo/';
-        var PPN = $('#purl').text();
+        alert("Donwload erkannt! -> Total_Item_Requests : " + event_type);
 
-        //matomo statistic
-        _paq.push(['trackEvent', 'COUNTER5', 'Total_Item_Requests', 'Download PDF', PPN]);
-        _paq.push(['trackPageView']);
+        // matomo statistic
+        // total_item_requests are actual download and views
+        if (
+            event_type != 'Aufruf Zitierlink' &&
+            event_type != 'Download IIIF-Manifest' &&
+            event_type != 'Download METS/MODS' &&
+            event_type != 'Aufruf Zitierlink (Einzelseite)' &&
+            event_type != 'Aufruf DFG-Viewer'
+        ){
+            _paq.push(['trackEvent', 'COUNTER5', 'Total_Item_Requests', event_type]);
+        }
+        // redirects, citation-links and viewing of metadata is not part of total_item_requests
+        else {
+            _paq.push(['trackEvent', 'KITODO - REDIRECTS', event_type]);
+        }
+        _paq.push(['trackEvent', 'KITODO - TOP', record_id, event_type]);
 
-        window.open(GCS + PPN);
+        window.open(event_link);
     });
 }
 
@@ -517,115 +641,6 @@ function setNavigationControls() {
     // });
 
 }
-
-/**
- * Matomo
- * returns the value of the paramter page of links
- *
- * @param selector string
- * @returns string
- */
-function getTargetPage(selector){
-    let queryString = $(selector).attr('href');
-    let urlParams = new URLSearchParams(queryString);
-    let pageValue = urlParams.get('tx_dlf[page]')
-
-    return pageValue;
-}
-
-/**
- * Matomo
- * set content pice atributes for links
- */
-function setContentPiece(){
-    //buttons for prev and nex
-    var pageNext = getTargetPage(".tx-dlf-navigation-next a");
-    $(".tx-dlf-navigation-next a").attr("data-content-piece", pageNext);
-
-    var pagePrev = getTargetPage(".tx-dlf-navigation-prev a");
-    $(".tx-dlf-navigation-prev a").attr("data-content-piece", pagePrev);
-
-    //toc
-    let entries = $(".tx-dlf-toc .dropdown-menu li a");
-
-    entries.each(function(index) {
-        let queryString = $( this ).attr('href');
-        let urlParams = new URLSearchParams(queryString);
-        let pageValue = urlParams.get('tx_dlf[page]');
-
-        $( this ).attr("data-content-piece", pageValue);
-    });
-}
-
-/**
- * Matomo
- *
- * @returns {undefined}
- */
-function setContentTracking(){
-    //_paq.push(['trackEvent', 'COUNTER5', 'Total_Item_Requests', 'Download PDF', PPN]);
-
-    //set area for tracking
-    document.querySelector('#detail-view').setAttribute('data-track-content', '');
-
-    //set object: kitodo in area for tracking
-    var PPN = $('#purl a').text();
-    document.querySelector('#detail-view').setAttribute('data-content-name', 'kitodo-view-'+PPN);
-
-    //set content pieces
-    setContentPiece();
-
-    //drop down
-    $(".tx-dlf-navigation-pageselect form").submit(function() {
-        _paq.push(['trackContentInteraction', 'click', 'kitodo-view', $(".tx-dlf-navigation-pageselect select").val(), 1]);
-    });
-
-}
-
-/**
- * Matomo
- * Set Total_Item_Request, if refferer is not detail view of the same document
- * If you vie 1st time detail view, document ist opn. Paging --> document still open. If you leave and came back, new open.
- * Every opening is a Total_Item_Request
- *
- * @returns null
- */
-function setTotalItemRequests(){
-    var url = document.referrer;
-
-    if (url.indexOf("?")>-1){
-        url = url.substr(0,url.indexOf("?"));
-    }
-
-    //refferer is detail view?
-    if((location.origin + location.pathname) == url){
-
-        //check same parameter
-        let urlParams = new URLSearchParams(document.referrer);
-        let referrerValue = urlParams.get('tx_dlf[id]');
-
-        urlParams = new URLSearchParams(document.URL);
-        let documentValue = urlParams.get('tx_dlf[id]');
-
-        //if document id has the same  value, the document is still "open"
-        if(documentValue != referrerValue){
-            _paq.push(['trackEvent', 'COUNTER5', 'Total_Item_Requests', 'View']);
-        }
-
-    }else{
-        //the document is opened
-        _paq.push(['trackEvent', 'COUNTER5', 'Total_Item_Requests', 'View']);
-    }
-}
-
-
-document.addEventListener("DOMContentLoaded", function(event) {
-    //matomo tracking
-    if( ($('.tx-dlf-pageview').length > 0) ){ //detail
-        setContentTracking();
-    }
-
-});
 
 function calendarSelectBox() {
 
