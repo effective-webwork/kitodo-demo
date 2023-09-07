@@ -56,19 +56,22 @@ $(document).ready(function() {
 });
 
 function initOverlays() {
-    if (Cookies.get('overlay1')) {
-        openNav();
-    }
-    if (Cookies.get('overlay2')) {
-        openNav2();
-    }
-    if (Cookies.get('overlay3')) {
-        openNav3();
-    }
-    if (Cookies.get('overlay4')) {
-        openNav4();
+    if (document.getElementById("myNav") || document.getElementById("myNav2")) {
+        if (Cookies.get('overlay1')) {
+            openNav();
+        }
+        if (Cookies.get('overlay2')) {
+            openNav2();
+        }
+        if (Cookies.get('overlay3') || dlfUtils.getCookie("tx-dlf-pageview-fulltext-select") === 'enabled') {
+            openNav3();
+        }
+        if (Cookies.get('overlay4')) {
+            openNav4();
+        }
     }
 }
+
 
 function openNav() {
     Cookies.set('overlay1', '1');
