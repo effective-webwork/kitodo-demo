@@ -38,19 +38,11 @@ $(document).ready(function() {
 
     renameMetadataTab();
 
-    initExpandCollapse();
-
     calendarSelectBox();
 
     calendarSwitchViews();
 
     replaceRssFeedImage();
-
-    fulltextPositionAdjustment();
-
-    fullscreenNavigationPositioning();
-
-    clickEventMetadataToc();
 
     listviewNewspaperRouting();
 
@@ -329,7 +321,6 @@ function addDownloadButtons() {
 function addMatomoDownloadEventListener(anchor_id, event_link, event_type) {
     $('[id="' + anchor_id +  '"]').on('click', function (event) {
         event.preventDefault();
-        alert("Donwload erkannt! -> Total_Item_Requests : " + event_type);
 
         // matomo statistic
         // total_item_requests are actual download and views
@@ -366,69 +357,6 @@ function facetTouchStyle() {
             $(this).attr('for', 'checkbox-menu'+i).parent().prepend('<input type="checkbox" id="checkbox-menu'+i+'">');
         });
     }
-}
-
-function initExpandCollapse() {
-
-    $('#expand').hide();
-
-    $('.collexpand').click(function(event) {
-        event.preventDefault();
-        $('.collexpand').toggle();
-        if($(this).attr('id') == 'collapse') {
-            sideCollapse();
-        } else {
-            sideExpand();
-        }
-
-    });
-
-    if (Cookies.get('kitodo-fullscreen') == '1') {
-        $('.collexpand').toggle();
-        sideCollapse(false);
-    }
-    fulltextPositionAdjustment();
-}
-
-function sideCollapse(updateMap = true) {
-    $('#detail-view aside').css('width', 0);
-    $('#detail-view .tx-dlf-pagegrid').hide();
-    $('#detail-view aside > article > div > div.tx-dlf-metadata > div > .dropdown-menu').hide();
-    $('#detail-view aside > article > div > div.tx-dlf-tableofcontents > div > .dropdown-menu').hide();
-    $('#detail-view aside section').css('position', 'absolute').css('right', '300px');
-    //$('.ol-unselectable.ol-layers').css('cssText', 'position: absolute; width: 100% !important; height: 100%; z-index: 0;');
-    $('#header').hide();
-    $('#opening_hours').hide();
-    $('#detail-view section#main-content').css('width', '100%');
-    setTimeout(function(){$('.ol-unselectable.ol-layers').css('cssText', 'position: absolute; width: 100% !important; height: 100%; z-index: 0;')}, 1500);
-    $('ul.tx-dlf-toolbox').addClass('fs_on');
-
-    if (updateMap) {
-        tx_dlf_viewer.map.updateSize();
-    }
-
-    Cookies.set('kitodo-fullscreen', '1');
-    fulltextPositionAdjustment();
-}
-
-function sideExpand(updateMap = true) {
-    $('#detail-view aside').css('width', '33%').show();
-    $('#detail-view .tx-dlf-pagegrid').show();
-    $('#detail-view aside > article > div > div.tx-dlf-metadata > div > .dropdown-menu').show();
-    $('#detail-view aside > article > div > div.tx-dlf-tableofcontents > div > .dropdown-menu').show();
-    $('#detail-view aside section').css('position', 'initial').css('right', 0).css('top', '0px');
-    $('.ol-unselectable.ol-layers').css('cssText', 'position: absolute; width: 100%; height: 100%; z-index: 0;');
-    $('#header').show();
-    $('#opening_hours').show();
-    $('#detail-view section#main-content').css('width', '67%');
-    $('ul.tx-dlf-toolbox').removeClass('fs_on');
-
-    if (updateMap) {
-        tx_dlf_viewer.map.updateSize();
-    }
-
-    Cookies.set('kitodo-fullscreen', '0');
-    fulltextPositionAdjustment();
 }
 
 function pagerFormAdjustment() {
@@ -741,40 +669,6 @@ function listviewNewspaperRouting() {
     //         $(this).siblings('dd.tx-dlf-title').children().prop('href', url);
     //     }
     // });
-}
-
-function fulltextPositionAdjustment() {
-
-    var initPos = 300;
-    if (Cookies.get('kitodo-fullscreen') == 1) {
-        initPos = 120;
-    }
-
-    var newTopPosition = initPos + $('div.tx-dlf-metadata .detail-view-itemdetails').height();
-    if ($('div.tx-dlf-tableofcontents').length == 1) {
-        newTopPosition = newTopPosition + $('div.tx-dlf-tableofcontents').height();
-    }
-    $('#tx-dlf-fulltextselection').attr('style', 'top:' + newTopPosition + 'px');
-
-}
-
-function fullscreenNavigationPositioning() {
-    // reposition fullscreen page navigation
-    if (window.outerHeight < 821) {
-        if ($('#main-content dd.tx-dlf-metadata-title')[0]) {
-            var titleHeight = $('#main-content dd.tx-dlf-metadata-title')[0].offsetHeight;
-            // $('aside section').css('top', (titleHeight+15) + 'px');
-
-        }
-    }
-}
-
-function clickEventMetadataToc() {
-    $('.tx-dlf-metadata .dropdown-menu label, .tx-dlf-toc .dropdown-menu label').on('click', function () {
-        setTimeout(function() {
-            fulltextPositionAdjustment();
-        }, 200);
-    });
 }
 
 // mk 2022-11-07 # transform ISO formatted date to locale date string
