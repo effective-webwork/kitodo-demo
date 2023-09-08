@@ -13,6 +13,16 @@
       xmlns:kitodo="http://typo3.org/ns/Kitodo/Dlf/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
+<f:comment><!-- Open Graph image-tag when in page view --></f:comment>
+
+    <v:variable.set name="settings.image" value="{images.0.url}.og" />
+
+    <f:section name="HeaderAssets">
+        <meta name="og:image" content="{settings.image}" />
+    </f:section>
+
+<f:comment><!-- Open Graph image-tag when in page view --></f:comment>
+
 <div id="tx-dlf-map" class="tx-dlf-map">
     <div id="tx-dlf-fulltextselection"></div>
     <div id="tx-dlf-annotationselection"></div>
