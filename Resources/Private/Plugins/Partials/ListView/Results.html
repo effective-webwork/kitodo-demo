@@ -26,6 +26,7 @@
                             <img src="{document.thumbnail}" alt="Vorschaubild von {docTitle}" loading="lazy"/>
                         </f:if>
                     </div>
+                    <div>
                     <dl>
 
                         <dt class="tx-dlf-title"><f:translate key='LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.title' /></dt>
@@ -71,6 +72,7 @@
                             <f:translate key='LLL:EXT:dlf/Resources/Private/Language/locallang_structure.xlf:structure.{document.structure}' />
                         </dd>
                     </dl>
+                </div>
 
 
                 <f:render partial="Basket/AddToBasket" arguments="{result: document}" />

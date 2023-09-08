@@ -1559,6 +1559,10 @@ dd.tx-dlf-metadata-author,
     margin: 0;
 }
 
+.tx-dlf-listview-preview em {
+    background-color: yellow;
+  }
+
 .tx-dlf-search-facets {
     padding: 30px;
 }
