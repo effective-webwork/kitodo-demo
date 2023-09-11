@@ -3152,6 +3152,10 @@ max 700px
         padding: 30px 0;
     }
 
+    .collection-intro a {
+        color: #ffffff;
+    }
+
     .collection-intro article {
         padding: 30px 15px;
     }
