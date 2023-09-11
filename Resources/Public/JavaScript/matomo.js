@@ -8,12 +8,24 @@ function getSiteID(){
       return '236';
       break;
 
+    case 'jungius.sub.uni-hamburg.de':
+      return '238';
+      break;
+    
+    case 'zeitungen.sub.uni-hamburg.de':
+      return '280';
+      break;
+
     case 'digitalisate-dev.sub.uni-hamburg.de':
       return '240';
       break;
 
-    case 'jungius.sub.uni-hamburg.de':
-      return '238';
+    case 'jungius-dev.sub.uni-hamburg.de':
+      return '240';
+      break;
+    
+    case 'zeitungen-dev.sub.uni-hamburg.de':
+      return '240';
       break;
 
     default:
