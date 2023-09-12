@@ -243,6 +243,8 @@ function addDownloadButtons() {
 
     // create data structure for download buttons
     var downloads = {
+        fullLinkDownload:   {id:"fullLinkDownload", title:"Persistente URL zum Objekt teilen",                          icon:"filetype-share-fill-full.svg",    class:"reachable", event:"Zitierlink"},
+        pageLinkDownload:   {id:"pageLinkDownload", title:"Persistente URL zur Einzelseite teilen",                     icon:"filetype-share-fill.svg",         class:"reachable", event:"Zitierlink (Einzelseite)"},
         iiifDownload:       {id:"iiifDownload",     title:"IIIF-Manifest für Objekt herunterladen",                     icon:"filetype-iiif.svg",               class:"reachable", event:"Download IIIF-Manifest"},
         metsDownload:       {id:"metsDownload",     title:"METS/MODS für Objekt herunterladen",                         icon:"filetype-mets.svg",               class:"reachable", event:"Download METS/MODS"},
         fullPDFDownload:    {id:"fullPDFDownload",  title:"Gesamtes Objekt als PDF herunterladen",                      icon:"filetype-pdf-full.svg",           class:"reachable", event:"Download PDF"},
@@ -251,8 +253,6 @@ function addDownloadButtons() {
         pageALTODownload:   {id:"pageALTODownload", title:"Volltext der aktuellen Seite als ALTO-XML herunterladen",    icon:"filetype-alto.svg",               class:"reachable", event:"Download ALTO-XML (Einzelseite)"},
         pageTXTDownload:    {id:"pageTXTDownload",  title:"Volltext der aktuellen Seite als TXT herunterladen",         icon:"filetype-txt.svg",                class:"reachable", event:"Download TXT (Einzelseite)"},
         DFGViewer:          {id:"DFGViewer",        title:"Zur Ansicht in den DFG-Viewer wechseln",                     icon:"dfgviewerLogo.svg",               class:"reachable", event:"Aufruf DFG-Viewer"},
-        fullLinkDownload:   {id:"fullLinkDownload", title:"Persistente URL zum Objekt teilen",                          icon:"filetype-share-fill-full.svg",    class:"reachable", event:"Zitierlink"},
-        pageLinkDownload:   {id:"pageLinkDownload", title:"Persistente URL zur Einzelseite teilen",                     icon:"filetype-share-fill.svg",         class:"reachable", event:"Zitierlink (Einzelseite)"},
     }
     
     // per document URLs
@@ -301,21 +301,12 @@ function addDownloadButtons() {
     // populate buttons
     for (const key in downloads) {
         if(downloads[key].class == "reachable") {
-            if(key == "fullLinkDownload" || key == "pageLinkDownload") {
-                $(anchor).append('\
-                <div style="padding: 5px 0px 5px 0px;">\
-                    <label for="' + key + '">' + downloads[key].event + '</label>\
-                    <input type="text" value="' + downloads[key].link + '" style="width: 100%; padding: 3px" name="' + key + '">\
-                </div>');
-            }
-            else {
-                $(anchor).append('\
-                <li>\
-                    <a href="' + downloads[key].link + '" id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '" download>\
-                        <img src="' + icon_folder + downloads[key].icon + '">\
-                    </a>\
-                </li>');
-            }
+            $(anchor).append('\
+            <li>\
+                <a href="' + downloads[key].link + '" id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '" download>\
+                    <img src="' + icon_folder + downloads[key].icon + '">\
+                </a>\
+            </li>');
             addMatomoDownloadEventListener(downloads[key].id, downloads[key].link, downloads[key].event);
         }
         else {
