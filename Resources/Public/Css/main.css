@@ -1,3 +1,123 @@
+/*
+----------------------------------------------------------------------
+build in: September 2023
+----------------------------------------------------------------------
+*/
+
+.tx-dlf-content {
+    background: #242424;
+    padding: 60px;
+    border-top: 1px solid #505050;
+    color: #ffffff;
+}
+
+.tx-dlf-content header {
+    background: transparent;
+    text-align: left;
+}
+
+.tx-dlf-content .grid-wrapper-2-column {
+    grid-gap: 40px;
+}
+
+.tx-dlf-content .frame {
+    width: auto;
+}
+
+main .tx-dlf-content .frame-type-text,
+.tx-dlf-content .frame-type-presentationpackage_gridtwocolumn,
+main .tx-dlf-content .frame-type-presentationpackage_accordion,
+main .tx-dlf-content .frame-type-div {
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+main .tx-dlf-content .frame-type-header,
+main .tx-dlf-content .frame-type-presentationpackage_accordionelement {
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+main .tx-dlf-content .frame-type-div hr {
+    border-bottom: 1px solid #ffffff;
+}
+
+.tx-dlf-content a {
+    padding: 2px;
+}
+
+.tx-dlf-content a:hover,
+.tx-dlf-content a:active {
+    color: #242424;
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.tx-dlf-content h1,
+.tx-dlf-content h2,
+.tx-dlf-content h3,
+.tx-dlf-content h4 {
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+.tx-dlf-content .ce-table {
+    border: 1px solid #505050;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 20px 0;
+}
+
+.tx-dlf-content .ce-table th,
+.tx-dlf-content .ce-table td {
+    border: 1px solid #505050;
+    padding: 5px;
+}
+
+.tx-dlf-content .ce-bullets,
+.tx-dlf-content .frame-type-text ul {
+    margin: 0 0 20px 20px;
+    padding: 0;
+}
+
+.tx-dlf-content .frame-type-text p {
+    margin: 0 0 20px 0;
+}
+
+.tx-dlf-content .image-embed-item {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*
+----------------------------------------------------------------------
+max 1024px
+----------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 1024px) {
+
+    .tx-dlf-content {
+        padding: 30px;
+    }
+
+    .tx-dlf-content .grid-wrapper-2-column {
+        grid-template-columns: 1fr;
+        grid-gap: 0px;
+        grid-auto-rows: minmax(auto, auto);
+    }
+
+    .tx-dlf-content .col-1-2,
+    .tx-dlf-content .col-2-2 {
+        grid-column: auto;
+        grid-row: auto;
+        margin: 0 0 40px 0;
+    }
+
+}
 
 .tx-dlf-listview-list ol {
     display: none;
