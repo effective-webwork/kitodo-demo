@@ -1680,6 +1680,10 @@ dd.tx-dlf-metadata-author,
     margin: 0;
 }
 
+.tx-dlf-listview-preview em {
+    background-color: yellow;
+  }
+
 .tx-dlf-search-facets {
     padding: 30px;
 }
@@ -3267,6 +3271,10 @@ max 700px
 
     .tx-dlf-collection {
         padding: 30px 0;
+    }
+
+    .collection-intro a {
+        color: #ffffff;
     }
 
     .collection-intro article {
