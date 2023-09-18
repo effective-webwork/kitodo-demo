@@ -2300,6 +2300,11 @@ span.fullPdfDownloadSpan img {
     height: auto;
 }
 
+a#dfgviewerLink img {
+    height: 18px;
+    width: auto;
+}
+
 .tx-dlf-toolbox ul li {
     list-style: none;
 }

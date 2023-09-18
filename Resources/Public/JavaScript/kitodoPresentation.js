@@ -301,13 +301,17 @@ function addDownloadButtons() {
     // populate buttons
     for (const key in downloads) {
         if(downloads[key].class == "reachable") {
-            $(anchor).append('\
-            <li>\
-                <a href="' + downloads[key].link + '" id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '" download>\
-                    <img src="' + icon_folder + downloads[key].icon + '">\
-                </a>\
-            </li>');
-            addMatomoDownloadEventListener(downloads[key].id, downloads[key].link, downloads[key].event);
+            if (key === 'DFGViewer') {
+                $('#dfgviewerLink').attr('href', 'https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/' + record_id + '&tx_dlf[page]=' + pagenumber);
+            } else {
+                $(anchor).append('\
+                <li>\
+                    <a href="' + downloads[key].link + '" id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '" download>\
+                        <img src="' + icon_folder + downloads[key].icon + '">\
+                    </a>\
+                </li>');
+                addMatomoDownloadEventListener(downloads[key].id, downloads[key].link, downloads[key].event);
+            }
         }
         else {
             $(anchor).append('\
@@ -321,6 +325,7 @@ function addDownloadButtons() {
 
     //$('span.tx-dlf-tools-fulltext').parent().prependTo('ul.tx-dlf-navigation');
 }
+
 
 // mk 2023-09-05 # helper function for addDownloadButtons()
 // adds event listener for matomo tracking to download buttons
