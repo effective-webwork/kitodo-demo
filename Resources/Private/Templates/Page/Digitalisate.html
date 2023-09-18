@@ -2,7 +2,7 @@
      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
-     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
+     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 
     <f:layout name="default" />
 
@@ -37,7 +37,6 @@
     </f:section>
 
     <f:section name="Main">
-        <pp:menuHeaderSync />
         <f:render partial="DigitalisateHeader" arguments="{_all}"/>
 
         <header class="header-portal-home" style="background:url({f:uri.resource(path: 'Images/ph-background.jpg')}) no-repeat top center #242424;background-size: cover;">
@@ -120,8 +119,6 @@
             </div>
 
         </main>
-
-        <f:render partial="DigitalisateFooter"/>
 
     </f:section>
 

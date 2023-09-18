@@ -1,21 +1,23 @@
 <f:comment>
-<!--
- * (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
- *
- * This file is part of the Kitodo and TYPO3 projects.
- *
- * @license GNU General Public License version 3 or later.
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
--->
+    <!--
+     * (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+     *
+     * This file is part of the Kitodo and TYPO3 projects.
+     *
+     * @license GNU General Public License version 3 or later.
+     * For the full copyright and license information, please read the
+     * LICENSE.txt file that was distributed with this source code.
+    -->
 </f:comment>
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
 <ul class="tx-dlf-toolbox">
-    <li>
-        <a id="fullPdfDownload" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-pdf-white.svg" alt="PDF Download"></a>
-    </li>
+    <f:comment>
+        <li>
+            <a id="fullPdfDownload" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-pdf-white.svg" alt="PDF Download"></a>
+        </li>
+    </f:comment>
 
     <f:if condition="{annotationtool}">
         <f:then>
@@ -42,8 +44,8 @@
         <f:then>
             <li>
                 <span class="tx-dlf-tools-imagetools" id="tx-dlf-tools-imagetools"
-                        data-dic="imagemanipulation-on:{f:translate(key: 'tools.imagemanipulation.on')};imagemanipulation-off:{f:translate(key: 'tools.imagemanipulation.off')};reset:{f:translate(key: 'tools.imagemanipulation.reset')};saturation:{f:translate(key: 'tools.imagemanipulation.saturation')};hue:{f:translate(key: 'tools.imagemanipulation.hue')};contrast:{f:translate(key: 'tools.imagemanipulation.contrast')};brightness:{f:translate(key: 'tools.imagemanipulation.brightness')};invert:{f:translate(key: 'tools.imagemanipulation.invert')};parentContainer:{parentContainer}"
-                        title="{f:translate(key: 'tools.imagemanipulation.no-support')}">
+                      data-dic="imagemanipulation-on:{f:translate(key: 'tools.imagemanipulation.on')};imagemanipulation-off:{f:translate(key: 'tools.imagemanipulation.off')};reset:{f:translate(key: 'tools.imagemanipulation.reset')};saturation:{f:translate(key: 'tools.imagemanipulation.saturation')};hue:{f:translate(key: 'tools.imagemanipulation.hue')};contrast:{f:translate(key: 'tools.imagemanipulation.contrast')};brightness:{f:translate(key: 'tools.imagemanipulation.brightness')};invert:{f:translate(key: 'tools.imagemanipulation.invert')};parentContainer:{parentContainer}"
+                      title="{f:translate(key: 'tools.imagemanipulation.no-support')}">
                 </span>
             </li>
         </f:then>
@@ -86,7 +88,7 @@
                     <f:if condition="{fulltext}">
                         <f:then>
                             <a class="select switchoff" id="tx-dlf-tools-fulltext" title=""
-                                data-dic="fulltext:;fulltext-loading:;fulltext-on:;fulltext-off:;activate-full-text-initially:{activateFullTextInitially};full-text-scroll-element:{settings.fullTextScrollElement};search-hl-parameters:{settings.searchHlParameters}">
+                               data-dic="fulltext:;fulltext-loading:;fulltext-on:;fulltext-off:;activate-full-text-initially:{activateFullTextInitially};full-text-scroll-element:{settings.fullTextScrollElement};search-hl-parameters:{settings.searchHlParameters}">
                             </a>
                         </f:then>
                         <f:else>
@@ -96,6 +98,11 @@
                             </span>
                         </f:else>
                     </f:if>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <a href="#" id="pagegrid"></a>
                 </span>
             </li>
         </f:then>
@@ -108,7 +115,7 @@
                     <f:if condition="{fulltextDownload}">
                         <f:then>
                             <a href="#" id="tx-dlf-tools-fulltextdownload"
-                                title="{f:translate(key: 'tools.fulltextdownload.download-current-page')}">
+                               title="{f:translate(key: 'tools.fulltextdownload.download-current-page')}">
                                 <f:translate key="tools.fulltextdownload.download-current-page"/>
                             </a>
                         </f:then>

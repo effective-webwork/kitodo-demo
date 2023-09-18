@@ -2,7 +2,7 @@
      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
-     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
+     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 
     <f:layout name="Default" />
 
@@ -19,11 +19,13 @@
                 <flux:grid.column colPos="15" name="Basket" label="Basket" />
             </flux:grid.row>
             <flux:grid.row>
-                <flux:grid.column colPos="3" name="Docnavigation" label="Dokument Navigation" />
+                <flux:grid.column colPos="3" name="Docnavigation" label="Navigations left" />
+                <flux:grid.column colPos="15" name="Docnavigation" label="Navigation right" />
                 <flux:grid.column colPos="4" name="TOC" label="TOC" />
                 <flux:grid.column colPos="5" name="Metadaten" label="Metadaten" />
                 <flux:grid.column colPos="6" name="Preview" label="Pageview Preview" />
                 <flux:grid.column colPos="7" name="Toolbox" label="Toolbox" />
+                <flux:grid.column colPos="9" name="DocumentSearch" label="Dokument Suche" />
             </flux:grid.row>
             <flux:grid.row>
                 <flux:grid.column colPos="1" colspan="5" name="Main" label="Main" />
@@ -32,58 +34,146 @@
     </f:section>
 
     <f:section name="Main">
-        <pp:menuHeaderSync />
-        <f:render partial="DigitalisateHeader" arguments="{_all}"/>
 
-        <header>
-            <section class="portal-meta">
-                <article class="breadcrumb">
-                    <a href="/">Hamburger Kulturgut Digital</a> / <a id="backtolistview" href="">Trefferliste</a> / <span>Detailansicht</span>
-                </article>
-            </section>
-        </header>
+        <f:render partial="DigitalisateHeader" arguments="{_all}" />
+
+        <div>
+            <article class="breadcrumb">
+                <a href="https://digitalisate.sub.uni-hamburg.de/">Digitalisierte Bestände</a> / <a id="backtolistview" href="">Trefferliste</a> / Detailansicht
+            </article>
+        </div>
 
         <main class="clear" id="detail-view">
-            <aside>
-                <section>
-                    <div class="detail-aside-nav">
-                        <v:content.render column="3" />
-                        <v:content.render column="7" />
-                    </div>
-                </section>
-                <div id="c19">
-                    <v:content.render column="6" />
-                </div>
-                <article class="detail-view-itemoptions">
-                    <!-- Metadaten -->
-                    <v:content.render column="5" />
-                    <!-- Inhaltsverzeichnis -->
-                    <v:content.render column="4" />
-                </article>
-            </aside>
-
             <section id="main-content">
                 <div class="detail-view-main">
-                    <article class="detail-view-header">
-                        <div id="c9" class="detail-view-title">
-                            <div class="tx-dlf-metadata">
-                                <dl>
-                                    <dt class="tx-dlf-metadata-title">Title</dt>
-                                    <dd class="tx-dlf-metadata-title detail-view-title-main"></dd>
-                                </dl>
-                            </div>
-                        </div>
-
-                        <div class="detail-view-nav">
-                            <v:content.render column="8" />
-                        </div>
-                    </article>
                     <v:content.render column="1" />
                 </div>
             </section>
         </main>
 
-        <f:render partial="DigitalisateFooter"/>
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <v:content.render column="9" />
+                <div class="toctoc">
+                    <v:content.render column="4" />
+                </div>
+            </div>
+        </div>
+
+        <div id="toc-overlay-btn" class="active" onclick="openNav()">
+            <p style="padding: 5px">Inhaltsverzeichnis &amp; Suche</p>
+        </div>
+
+        <div id="myNav2" class="overlay2">
+            <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
+            <div class="overlay2-content">
+
+                <h2>Downloadangebote</h2>
+                <ul class="tx-dlf-toolbox">
+                    <li>
+                        <a href="#" id="citationLink" class="reachable" title="Zitierlink für dieses Dokument">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/quote.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="pageCitationLink" class="reachable" title="Zitierlink für diese Seite">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/blockquote-left.svg">
+                        </a>
+                    </li>
+                    <li>
+							<span id="iiifDownload" class="unreachable" title="Keine Metadaten als IIIF-Manifest vorhanden">
+								<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/braces.svg">
+                            </span>
+                    </li>
+                    <li>
+                        <a href="#" id="metsDownload" class="reachable" title="Metadaten als METS/MODS downloaden" download="">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/code-slash.svg">
+                        </a>
+                    </li>
+                    <!--li>
+<a id="fullPdfDownload" href="#" title="Gesamtes Dokument als PDF downloaden"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/download.svg" alt="Gesamtes Dokument als PDF downloaden"></a>
+</li-->
+                    <li>
+                        <a href="#" id="fullPdfDownload" class="reachable" title="Gesamtes Dokument als PDF downloaden">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/download.svg" alt="Gesamtes Dokument als PDF downloaden">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="singlePdfDownload" class="reachable" title="Diese Seite als PDF downloaden" download="">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/filetype-pdf.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="singleJpegDownload" class="reachable" title="Diese Seite als JPEG downloaden" download="">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/filetype-jpg.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="singleAltoDownload" class="reachable" title="Volltext dieser Seite als ALTO-XML downloaden" download="">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/filetype-xml.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="singleTxtDownload" class="reachable" title="Volltext dieser Seite als TXT downloaden" download="">
+                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/filetype-txt.svg">
+                        </a>
+                    </li>
+                </ul>
+                <v:content.render column="5" />
+            </div>
+        </div>
+
+        <div id="meta-overlay-btn" class="active" onclick="openNav2()"><p style="padding: 5px">Metadaten &amp; Download</p></div>
+
+        <div id="myNav3" class="overlay3">
+            <a href="javascript:void(0)" class="closebtn3">&times;</a>
+
+            <div class="overlay3-content">
+                <div id="tx-dlf-fulltextselection"></div>
+            </div>
+        </div>
+
+        <div id="myNav4" class="overlay4">
+            <a href="javascript:void(0)" class="closebtn4" onclick="closeNav4()">&times;</a>
+
+            <div class="overlay4-content">
+                <div class="fulltext-visible">
+                    <ul>
+                        <li>---------- ROT ---------</li>
+                        <li>---------- GRÜN ---------</li>
+                        <li>---------- BLAU ---------</li>
+                        <li>---------- HELLIGKEIT ---------</li>
+                        <li>---------- KONTRAST ---------</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <span id="dfgviewer_by">
+	        <p>
+		        <a href="https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/PPN1678760722" id="dfgviewerLink" class="reachable" title="Dokument im DFG-Viewer betrachten">
+			<!--img src="icons-bootstrap/display.svg"-->DFG-Viewer</a>
+		    </p>
+        </span>
+
+        <div id="fullsize-pagegrid" style="display: none;">
+            <v:content.render column="6" />
+        </div>
+
+        <div class="detail-view-pageview-nav tx-dlf-navigation" id="bottom-toolbar">
+
+            <div class="navigation-left">
+                <v:content.render column="3" />
+            </div>
+            <div class="navigation-right">
+                <v:content.render column="15" />
+            </div>
+        </div>
+
+        <span id="powered_by">
+            <p>powered by Staats- und Universitätsbibliothek Hamburg (c)</p>
+        </span>
     </f:section>
 
 </div>

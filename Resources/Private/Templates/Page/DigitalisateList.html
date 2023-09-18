@@ -2,7 +2,7 @@
      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
-     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
+     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 
     <f:layout name="Default" />
 
@@ -24,8 +24,7 @@
     </f:section>
 
     <f:section name="Main">
-        <pp:menuHeaderSync />
-        <f:render partial="DigitalisateHeader" arguments="{_all}"/>
+        <f:render partial="DigitalisateHeader" arguments="{_all}" />
 
         <header>
             <section class="portal-meta">
@@ -58,8 +57,6 @@
                 </div>
             </section>
         </main>
-
-        <f:render partial="DigitalisateFooter"  arguments="{_all}" />
 
     </f:section>
 
