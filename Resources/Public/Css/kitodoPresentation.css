@@ -2304,7 +2304,11 @@ span.fullPdfDownloadSpan img {
     list-style: none;
 }
 
-.tx-dlf-toolbox img {
+.tx-dlf-toolbox a.reachable img {
+    filter: invert(1.0);
+}
+
+.tx-dlf-toolbox a.unreachable img {
     filter: invert(1.0);
 }
 
