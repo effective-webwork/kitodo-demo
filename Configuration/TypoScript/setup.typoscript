@@ -9,6 +9,7 @@ page.includeCSS {
 #    main = EXT:presentation_package/Resources/Public/Css/main.css
 #    styles = EXT:presentation_package/Resources/Public/Css/styles.css
     presentation = EXT:presentation_package/Resources/Public/Css/kitodoPresentation.css
+    searchOverwrite = EXT:presentation_package/Resources/Public/Css/searchOverwrite.css
 }
 
 page.includeJSFooter {
