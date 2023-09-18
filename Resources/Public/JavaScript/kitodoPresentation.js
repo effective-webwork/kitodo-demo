@@ -319,7 +319,7 @@ function addDownloadButtons() {
         }
     }
 
-    $('span.tx-dlf-tools-fulltext').parent().prependTo('ul.tx-dlf-navigation');
+    //$('span.tx-dlf-tools-fulltext').parent().prependTo('ul.tx-dlf-navigation');
 }
 
 // mk 2023-09-05 # helper function for addDownloadButtons()
