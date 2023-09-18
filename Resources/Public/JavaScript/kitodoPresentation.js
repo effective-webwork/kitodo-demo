@@ -213,7 +213,7 @@ function addDownloadButtons() {
     icon_folder = '/typo3conf/ext/presentation_package/Resources/Public/Images/download_icons/';
 
     // our anchor for button placement
-    anchor = 'ul.tx-dlf-toolbox';
+    anchor = 'ul.download-anchor';
 
     // grab the record id
     record_id = $('dd.tx-dlf-metadata-record_id').text();
