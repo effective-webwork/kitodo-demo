@@ -159,7 +159,7 @@ function setToc (toc, container) {
             var text = $(this).parent().parent().html();
             var chapterURL = 'http://gcs.sub.uni-hamburg.de/gcs?action=pdf&pagesize=original&metsFile=' + ppn + '&divID=' + entry_id;
 
-            container.append('<tr class="'+hightlightClass+'"><td valign="middle">' + text + '</td><td><a class="chapter_download" href="' + chapterURL + '"><span class="tx-dlf-toc-chapter_download"><img src="/fileadmin/templates/jungius_template/img/icon_download_wh.gif" alt="Kapitel als PDF runterladen" title="Kapitel als PDF runterladen" /></span></a></td></tr>');
+            container.append('<tr class="'+hightlightClass+'"><td valign="middle">' + text + '</td><td><a class="chapter_download" href="' + chapterURL + '"><span class="tx-dlf-toc-chapter_download"><img src="https://digitalisate.sub.uni-hamburg.de/fileadmin/templates/jungius_template/img/icon_download_wh.gif" alt="Kapitel als PDF runterladen" title="Kapitel als PDF runterladen" /></span></a></td></tr>');
 
             if(currentElement.length !== 0) {
                 $(currentElement).each(function() {
@@ -170,9 +170,9 @@ function setToc (toc, container) {
 
                     text = $(this).html();
                     if($(this).hasClass("tx-dlf-toc-cur")) {
-                        container.append('<tr><td class="padding_toc" valign="middle"><b>' + text + '</b></td><td><a class="chapter_download" href="' + chapterURL + '"><span class="tx-dlf-toc-chapter_download"><img src="/fileadmin/templates/jungius_template/img/icon_download_wh.gif" alt="Kapitel als PDF runterladen" title="Kapitel als PDF runterladen" /></span></a></td></tr>');
+                        container.append('<tr><td class="padding_toc" valign="middle"><b>' + text + '</b></td><td><a class="chapter_download" href="' + chapterURL + '"><span class="tx-dlf-toc-chapter_download"><img src="https://digitalisate.sub.uni-hamburg.de/fileadmin/templates/jungius_template/img/icon_download_wh.gif" alt="Kapitel als PDF runterladen" title="Kapitel als PDF runterladen" /></span></a></td></tr>');
                     } else {
-                        container.append('<tr><td class="padding_toc" valign="middle">' + text + '</td><td><a class="chapter_download" href="' + chapterURL + '"><span class="tx-dlf-toc-chapter_download"><img src="/fileadmin/templates/jungius_template/img/icon_download_wh.gif" alt="Kapitel als PDF runterladen" title="Kapitel als PDF runterladen" /></span></a></td></tr>');
+                        container.append('<tr><td class="padding_toc" valign="middle">' + text + '</td><td><a class="chapter_download" href="' + chapterURL + '"><span class="tx-dlf-toc-chapter_download"><img src="https://digitalisate.sub.uni-hamburg.de/fileadmin/templates/jungius_template/img/icon_download_wh.gif" alt="Kapitel als PDF runterladen" title="Kapitel als PDF runterladen" /></span></a></td></tr>');
                     }
 
                     j++;

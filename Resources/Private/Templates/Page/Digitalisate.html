@@ -58,7 +58,7 @@
                     Hamburger Kulturgut Digital
                 </article>
                 <article class="portal-claim">
-                    Drucke, Handschriften, Karten, Fotos und mehr –<br/> durchsuchen Sie die Kollektionen der Stabi
+                    Drucke, Handschriften, Karten, Fotos und mehr –<br/> durchsuchen Sie die Kollektionen
                 </article>
 
             </section>
@@ -80,7 +80,7 @@
                         <f:for each="{menu}" as="item">
                             <li>
                                 <div class="tx-dlf-collection-thumbnail">
-                                    <v:page.resources.fal table="pages" field="media" uid="{item.uid}" as="images" slide="-1" >
+                                    <v:page.resources.fal table="pages" field="media" uid="{item.uid}" as="images" limit="1" >
                                         <f:for each="{images}" as="image">
                                             <v:page.link
                                                     pageUid="{item.uid}"

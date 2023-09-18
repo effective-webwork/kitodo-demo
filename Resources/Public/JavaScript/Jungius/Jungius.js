@@ -101,7 +101,7 @@ $(document).ready(function() {
         if (facetText.length <= 3) {
             facetText = translateLanguage(facetText, true);
         }
-        var closeImage = '<img src="http://jungius.sub.uni-hamburg.de/fileadmin/templates/jungius_template/img/icon_clear.png">' + facetText;
+        var closeImage = '<img src="http://digitalisate.sub.uni-hamburg.de/fileadmin/templates/jungius_template/img/icon_clear.png">' + facetText;
         $(this).html(closeImage);
     });
 

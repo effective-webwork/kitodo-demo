@@ -1224,7 +1224,7 @@ div.schliessen {
     width: 30px;
     left: 10px;
     bottom: 10px;
-    background: url("/fileadmin/templates/jungius_template/img/close.png") no-repeat scroll 0 0 transparent;
+    background: url("https://digitalisate.sub.uni-hamburg.de/fileadmin/templates/jungius_template/img/close.png") no-repeat scroll 0 0 transparent;
     float: right;
     cursor: pointer;
 }
