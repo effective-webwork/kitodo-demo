@@ -35,6 +35,9 @@
 			<trans-unit id="metadata.owner">
 				<source><![CDATA[Owner]]></source>
 			</trans-unit>
+			<trans-unit id="metadata.person_other">
+				<source><![CDATA[Participant]]></source>
+			</trans-unit>
 			<trans-unit id="metadata.place">
 				<source><![CDATA[Place of Publication]]></source>
 			</trans-unit>
