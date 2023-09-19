@@ -136,7 +136,7 @@ addon 03 2023
 }
 
 #dfgviewer_by a {
-    background-color: #cccccc;
+    background-color: #6a6a6a;
     padding: 5px;
     border-radius: 5px;
     text-decoration: none;
@@ -2042,17 +2042,31 @@ span.no-fulltext {
     padding: 15px;
 }
 
+/* subhh-mk2023 apply grid to metadata in detailview */
+.tx-dlf-metadata-titledata {
+    display: grid;
+    grid-template-columns: max-content auto;
+}
+
+/* subhh-mk2023 class for horizontal row within metadata-grid */
+.tx-dlf-metadata-hr {
+    grid-column: 1 / 3;
+    width: 100%;
+}
+
 .detail-view-itemdetails dt,
 .detail-view-itemdetails label dt {
     display: inline;
     padding-right: 5px;
     font-weight: 400;
+    grid-column-start: 1;
 }
 
 .detail-view-itemdetails dd,
 .detail-view-itemdetails label dd {
     font-weight: 700;
     display: inline;
+    grid-column-start: 2;
 }
 
 .detail-view-itemdetails .dropdown-menu ul dt a,
