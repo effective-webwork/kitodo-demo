@@ -46,7 +46,7 @@ $(document).ready(function() {
 
     listviewNewspaperRouting();
 
-    let pagegrid = 0;
+    pagegrid = 0;
 
     pageGridClickEvent();
     fulltextClickEvent();
@@ -64,7 +64,11 @@ function initOverlays() {
             openNav2();
         }
         if (Cookies.get('overlay3') || dlfUtils.getCookie("tx-dlf-pageview-fulltext-select") === 'enabled') {
-            openNav3();
+            if($('.no-fulltext').length > 0) {
+                closeNav3();
+            } else {
+                openNav3();
+            }
         }
         if (Cookies.get('overlay4')) {
             openNav4();

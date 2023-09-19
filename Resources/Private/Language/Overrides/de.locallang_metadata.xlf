@@ -45,6 +45,10 @@
 				<source><![CDATA[Owner]]></source>
 				<target><![CDATA[Besitzer]]></target>
 			</trans-unit>
+			<trans-unit id="metadata.person_other">
+				<source><![CDATA[Participant]]></source>
+				<target><![CDATA[Mitwirkende]]></target>
+			</trans-unit>
 			<trans-unit id="metadata.place" approved="yes">
 				<source><![CDATA[Place of Publication]]></source>
 				<target><![CDATA[Erscheinungsort]]></target>
