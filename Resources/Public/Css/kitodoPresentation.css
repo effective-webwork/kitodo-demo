@@ -527,6 +527,14 @@ addon 03 2023
     display: none;
 }
 
+#tx-dlf-search-in-document-form div > label {
+    color: rgba(0,0,0,0);
+}
+
+#tx-dlf-search-in-document-clearing {
+    display: none;
+}
+
 /*----------------------------------------------------------------------
 global structure & normalize
 ----------------------------------------------------------------------*/
@@ -1848,6 +1856,11 @@ ul.tx-dlf-toolbox span a img {
 .tx-dlf-navigation-pageselect form {
     display: inline-block;
     vertical-align: top;
+}
+
+.tx-dlf-navigation-pageselect form > label {
+    position: absolute;
+    z-index: -1000;
 }
 
 .tx-dlf-navigation-next,
