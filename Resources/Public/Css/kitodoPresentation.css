@@ -2439,16 +2439,6 @@ calendar + listview
     color: #ffffff;
 }
 
-.year-empty p {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 30px;
-    color: #999;
-    padding: 5px;
-    margin: -5px;
-    text-decoration: none;
-}
-
 table.month {
     width: 100%;
     border-spacing: 0;
@@ -2639,8 +2629,8 @@ article.calendar-metadata ul li dl {
 
 .year-empty p {
     font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 24px;
+    line-height: 30px;
     color: #999;
     padding: 5px;
     margin: -5px;
