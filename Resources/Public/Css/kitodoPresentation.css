@@ -2303,6 +2303,7 @@ span.fullPdfDownloadSpan img {
 a#dfgviewerLink img {
     height: 18px;
     width: auto;
+    vertical-align: middle;
 }
 
 .tx-dlf-toolbox ul li {
