@@ -2165,6 +2165,15 @@ aside .tx-dlf-pagegrid-pagebrowser {
     display: none;
 }
 
+.volume-info-wrapper {
+    position: fixed;
+    overflow-y: auto;
+    width: 100vw;
+    height: calc(100vh - 200px);
+    padding: 20px 50px;
+    box-sizing: border-box;
+}
+
 .volume-info {
     background-color: #ababab;
     padding: 8px 15px;
@@ -3514,6 +3523,15 @@ max 700px
 
     .tx-dlf-basket-list {
         padding: 0 15px;
+    }
+
+    .volume-info-wrapper {
+        position: fixed;
+        overflow-y: auto;
+        width: 100vw;
+        height: calc(100vh - 200px);
+        padding: 20px 50px;
+        box-sizing: border-box;
     }
 
     .volume-info {
