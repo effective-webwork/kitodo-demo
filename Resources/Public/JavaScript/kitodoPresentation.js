@@ -46,7 +46,7 @@ $(document).ready(function() {
 
     listviewNewspaperRouting();
 
-    let pagegrid = 0;
+    pagegrid = 0;
 
     pageGridClickEvent();
     fulltextClickEvent();
