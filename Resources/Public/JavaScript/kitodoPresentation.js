@@ -314,8 +314,8 @@ function addDownloadButtons() {
                         <img src="' + icon_folder + downloads[key].icon + '">\
                     </a>\
                 </li>');
-                addMatomoDownloadEventListener(downloads[key].id, downloads[key].link, downloads[key].event);
             }
+            addMatomoDownloadEventListener(downloads[key].id, downloads[key].link, downloads[key].event);
         }
         else {
             $(anchor).append('\
