@@ -11,6 +11,9 @@
 			<trans-unit id="metadata.name_author">
 				<source><![CDATA[Author]]></source>
 			</trans-unit>
+			<trans-unit id="metadata.calendar_day">
+				<source><![CDATA[Calendar Day]]></source>
+			</trans-unit>
 			<trans-unit id="metadata.collection">
 				<source><![CDATA[Collection(s)]]></source>
 			</trans-unit>
@@ -19,6 +22,9 @@
 			</trans-unit>
 			<trans-unit id="metadata.date_iso">
 				<source><![CDATA[Date]]></source>
+			</trans-unit>
+			<trans-unit id="metadata.day_of_the_week">
+				<source><![CDATA[Day of the week]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.language">
 				<source><![CDATA[Language]]></source>
