@@ -89,6 +89,12 @@
 			<trans-unit id="metadata.year">
 				<source><![CDATA[Year of Publication]]></source>
 			</trans-unit>
+			<trans-unit id="metadata.year_decade">
+				<source><![CDATA[Decade of Publication]]></source>
+			</trans-unit>
+			<trans-unit id="metadata.year_century">
+				<source><![CDATA[Century of Publication]]></source>
+			</trans-unit>
 			<trans-unit id="metadata.shelfmark">
 				<source><![CDATA[Shelfmark]]></source>
 			</trans-unit>
