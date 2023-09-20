@@ -32,6 +32,9 @@
 			<trans-unit id="metadata.license">
 				<source><![CDATA[License]]></source>
 			</trans-unit>
+			<trans-unit id="metadata.month_of_the_year">
+				<source><![CDATA[Month of the year]]></source>
+			</trans-unit>
 			<trans-unit id="metadata.opac_id">
 				<source><![CDATA[OPAC Identifier]]></source>
 			</trans-unit>
