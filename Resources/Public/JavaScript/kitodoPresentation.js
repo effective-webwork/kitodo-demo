@@ -53,6 +53,10 @@ $(document).ready(function() {
 
     // mk 2023-09-05 # add download buttons in pageview
     addDownloadButtons();
+
+    // mk 2023-09-20 # tidying up the facets
+    // - remove textparts for lexicographical sorting in facets
+    facetCleanup()
 });
 
 function initOverlays() {
@@ -372,6 +376,20 @@ function facetTouchStyle() {
             $(this).attr('for', 'checkbox-menu'+i).parent().prepend('<input type="checkbox" id="checkbox-menu'+i+'">');
         });
     }
+}
+
+/* removes textpart, that is required for lexicographical sorting of months/days of the week/calendar days in newspaper portal */
+function facetCleanup() {
+    $('.tx-dlf-search-no, .tx-dlf-search-cur').each(function () {
+        html = $(this).html();
+
+        if (html.match(/\[(\d+)\] \- /)) {
+            html = html.replace(/\[(\d+)\] \- /, ' ');
+            html = html.replace(/\[(\d+)\] \- /, ' ');
+            $(this).html(html);
+        }
+
+    });
 }
 
 function pagerFormAdjustment() {
