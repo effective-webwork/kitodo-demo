@@ -56,7 +56,8 @@ $(document).ready(function() {
 
     // mk 2023-09-20 # tidying up the facets
     // - remove textparts for lexicographical sorting in facets
-    facetCleanup()
+    // - removes "Ausgabentitel" if "n.a." from metadata
+    cleanup()
 });
 
 function initOverlays() {
@@ -378,8 +379,10 @@ function facetTouchStyle() {
     }
 }
 
-/* removes textpart, that is required for lexicographical sorting of months/days of the week/calendar days in newspaper portal */
-function facetCleanup() {
+// general cleanup functions on unwanted or ugly elements
+function cleanup() {
+
+    // removes textpart, that is required for lexicographical sorting of months/days of the week/calendar days in newspaper portal
     $('.tx-dlf-search-no, .tx-dlf-search-cur').each(function () {
         html = $(this).html();
 
@@ -389,6 +392,14 @@ function facetCleanup() {
             $(this).html(html);
         }
 
+    });
+
+    // removes "Ausgabentitel" if "n.a." from metadata in listview and metadata-plugin
+    $('dd.tx-dlf-metadata-title_issue').each(function () {
+        if($(this).text().trim() == "n.a.") {
+            $(this).prev().attr('style','display:none !important');
+            $(this).attr('style','display:none !important');
+        }
     });
 }
 
