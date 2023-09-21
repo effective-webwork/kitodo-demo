@@ -2625,6 +2625,12 @@ article.calendar-metadata ul li dl {
     padding: 10px;
 }
 
+.calendar-metadata .tx-dlf-metadata .detail-view-itemdetails .dropdown-menu {
+    display: block;
+    vertical-align: top;
+    color: #fff;
+  }
+
 .dropdown-menu ul li.tx-dlf-search-cur a {
     background: url(../Images/icon-delete-dark.svg) 10px center no-repeat;
     background-size: 16px 16px;
