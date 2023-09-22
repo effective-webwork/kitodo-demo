@@ -413,13 +413,13 @@ function cleanup() {
             license_link == 'http://creativecommons.org/publicdomain/mark/1.0/'
             ) {
             $(this).text('');
-            $(this).append("<a href=" + license_link + ">Public Domain Mark 1.0</a>");
+            $(this).append('<a href="' + license_link + '">Public Domain Mark 1.0</a>');
         }
 
         // in copyright
         if( license_link == 'http://rightsstatements.org/vocab/InC/1.0/' ) {
             $(this).text('');
-            $(this).append("<a href=" + license_link + ">Urheberrechtsschutz 1.0</a>");
+            $(this).append('<a href="' + license_link + '">Urheberrechtsschutz 1.0</a>');
         }
 
         // copyright not evaluated
@@ -428,9 +428,18 @@ function cleanup() {
             license_link == 'https://rightsstatements.org/page/CNE/1.0/?language%3Dde'
             ) {
             $(this).text('');
-            $(this).append("<a href=" + license_link + ">Urheberrechtsschutz nicht bewertet</a>");
+            $(this).append('<a href="' + license_link + '">Urheberrechtsschutz nicht bewertet</a>');
         }
     });
+
+    // replace url to context info in listview metadata with actual link
+    if (window.location.hostname == 'zeitungen.sub.uni-hamburg.de') {
+        $('dd.tx-dlf-metadata-abstract_url').each(function () {
+            var context_link = $(this).text().trim();
+            $(this).text('');
+            $(this).append('<a href="' + context_link + '">Kontextinformationen aufrufen</a>');
+        });
+    }
 
     // removes textpart from facet, that is required for lexicographical sorting of months/days of the week/calendar days in newspaper portal
     $('.tx-dlf-search-no, .tx-dlf-search-cur').each(function () {
