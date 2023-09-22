@@ -13,6 +13,10 @@
 				<source><![CDATA[Author]]></source>
 				<target><![CDATA[Autor]]></target>
 			</trans-unit>
+			<trans-unit id="metadata.calendar_day">
+				<source><![CDATA[Calendar Day]]></source>
+				<target><![CDATA[Kalendertag]]></target>
+			</trans-unit>
 			<trans-unit id="metadata.collection" approved="yes">
 				<source><![CDATA[Collection(s)]]></source>
 				<target><![CDATA[Sammlung(en)]]></target>
@@ -20,6 +24,10 @@
 			<trans-unit id="metadata.coordinates" approved="yes">
 				<source><![CDATA[Coordinates]]></source>
 				<target><![CDATA[Geoinformationen]]></target>
+			</trans-unit>
+			<trans-unit id="metadata.day_of_the_week">
+				<source><![CDATA[Day of the week]]></source>
+				<target><![CDATA[Wochentag]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.date_iso" approved="yes">
 				<source><![CDATA[Date]]></source>
@@ -32,6 +40,10 @@
 			<trans-unit id="metadata.license" approved="yes">
 				<source><![CDATA[License]]></source>
 				<target><![CDATA[Lizenz]]></target>
+			</trans-unit>
+			<trans-unit id="metadata.month_of_the_year">
+				<source><![CDATA[Month of the year]]></source>
+				<target><![CDATA[Monat]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.opac_id" approved="yes">
 				<source><![CDATA[OPAC Identifier]]></source>
@@ -120,6 +132,14 @@
 			<trans-unit id="metadata.year" approved="yes">
 				<source><![CDATA[Year of Publication]]></source>
 				<target><![CDATA[Erscheinungsjahr]]></target>
+			</trans-unit>
+			<trans-unit id="metadata.year_decade">
+				<source><![CDATA[Decade of Publication]]></source>
+				<target><![CDATA[Erscheinungsjahr (Jahrzehnt)]]></target>
+			</trans-unit>
+			<trans-unit id="metadata.year_century">
+				<source><![CDATA[Century of Publication]]></source>
+				<target><![CDATA[Erscheinungsjahr (Jahrhundert)]]></target>
 			</trans-unit>
             <trans-unit id="metadata.date" approved="yes">
                 <source><![CDATA[Date]]></source>
