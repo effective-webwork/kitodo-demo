@@ -2912,7 +2912,7 @@ max 1600px
     }
 
     .tx-dlf-calendar-years .year-view ul {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 
     #footer-content p {
@@ -2997,9 +2997,12 @@ max 1024px
 
     .tx-dlf-collection-list,
     .calendar-items,
-    .tx-dlf-calendar-years .year-view ul,
     .teaser-slot {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .tx-dlf-calendar-years .year-view ul {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 
     .portal-logo {
