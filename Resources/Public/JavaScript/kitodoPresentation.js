@@ -382,7 +382,31 @@ function facetTouchStyle() {
 // general cleanup functions on unwanted or ugly elements
 function cleanup() {
 
-    // removes textpart, that is required for lexicographical sorting of months/days of the week/calendar days in newspaper portal
+    // replace copyright link in facet with name
+    $('span.tx-dlf-facet-value-title').each(function () {
+        // public domain
+        if( $(this).text() == 'https://creativecommons.org/publicdomain/mark/1.0/' || 
+            $(this).text() == 'http://creativecommons.org/publicdomain/mark/1.0/'
+            ) {
+            $(this).text('Public Domain Mark 1.0');
+        }
+
+        // in copyright
+        if( $(this).text() == 'http://rightsstatements.org/vocab/InC/1.0/' ) {
+            $(this).text('Urheberrechtsschutz 1.0');
+        }
+
+        // copyright not evaluated
+        if( $(this).text() == 'https://rightsstatements.org/page/CNE/1.0/' || 
+            $(this).text() == 'https://rightsstatements.org/page/CNE/1.0/?language' ||
+            $(this).text() == 'https://rightsstatements.org/page/CNE/1.0/?language%3Dde'
+            ) {
+            $(this).text('Urheberrechtsschutz nicht bewertet');
+        }
+
+    });
+
+    // removes textpart from facet, that is required for lexicographical sorting of months/days of the week/calendar days in newspaper portal
     $('.tx-dlf-search-no, .tx-dlf-search-cur').each(function () {
         html = $(this).html();
 
