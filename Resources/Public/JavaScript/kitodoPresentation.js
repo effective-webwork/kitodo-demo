@@ -401,6 +401,13 @@ function cleanup() {
             $(this).attr('style','display:none !important');
         }
     });
+
+    // removes repeating hr dividers from metadata in metadata-plugin
+    $( "hr.tx-dlf-metadata-hr" ).each(function( index ) {
+        if ($(this).next("hr.tx-dlf-metadata-hr").length) {
+            $(this).remove();
+        }
+    });
 }
 
 function pagerFormAdjustment() {
