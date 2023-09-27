@@ -3211,7 +3211,11 @@ max 1024px
         background-color: rgb(200, 200, 200);
         box-shadow: 0px 0px 15px 0px rgb(0, 0, 0, 0.5);
     }
-
+    
+    .dropdown-menu input[type=checkbox]:checked ~ ul {
+        display: block;
+        position: relative;
+    }
 }
 
 @media only screen and (max-width: 980px) {
@@ -3223,6 +3227,11 @@ max 1024px
     #main-content {
         float: none;
         width: 100%;
+    }
+        
+    .dropdown-menu input[type=checkbox]:checked ~ ul {
+        display: block;
+        position: relative;
     }
 }
 
@@ -3262,7 +3271,11 @@ max 1024px
         width: calc(100% - 40px);
         padding: 60px 0 120px 40px;
         }
-
+    
+    .dropdown-menu input[type=checkbox]:checked ~ ul {
+        display: block;
+        position: relative;
+    }
 }
 
 
