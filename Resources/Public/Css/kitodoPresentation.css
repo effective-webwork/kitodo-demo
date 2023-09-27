@@ -2873,7 +2873,7 @@ Accordion
 ----------------------------------------------------------------------*/
 
 main div.frame-type-text,
-main div.frame-type-html,
+/*main div.frame-type-html,*/
 main div.frame-type-header {
     padding-left: 50px;
     padding-right: 50px;
