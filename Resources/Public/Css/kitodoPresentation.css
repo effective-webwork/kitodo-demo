@@ -2834,6 +2834,16 @@ grid content element
     grid-row: 1;
 }
 
+.grid-wrapper-aside-left-column {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.grid-wrapper-aside-right-column {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
 .frame-type-presentationpackage_gridtwocolumn {
     padding: 17px 30px 0px 30px;
 }
