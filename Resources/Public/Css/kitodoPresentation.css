@@ -2045,7 +2045,7 @@ span.no-fulltext {
 /* subhh-mk2023 apply grid to metadata in detailview */
 .tx-dlf-metadata-titledata {
     display: grid;
-    grid-template-columns: max-content auto;
+    grid-template-columns: auto auto;
 }
 
 /* subhh-mk2023 class for horizontal row within metadata-grid */
