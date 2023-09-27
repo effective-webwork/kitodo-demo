@@ -1688,6 +1688,14 @@ dd.tx-dlf-metadata-author,
     margin: 0;
 }
 
+.tx-dlf-listview-list dd.tx-dlf-metadata-abstract_url.tx-dlf-metadata a {
+    background: #6a6a6a;
+    padding: 3px !important;
+    border-radius: 3px;
+    color: #fff !important;
+    text-decoration: none;
+}
+
 .tx-dlf-listview-preview em {
     background-color: yellow;
   }
