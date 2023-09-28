@@ -1688,6 +1688,14 @@ dd.tx-dlf-metadata-author,
     margin: 0;
 }
 
+.tx-dlf-listview-list dd.tx-dlf-metadata-abstract_url.tx-dlf-metadata a {
+    background: #6a6a6a;
+    padding: 3px !important;
+    border-radius: 3px;
+    color: #fff !important;
+    text-decoration: none;
+}
+
 .tx-dlf-listview-preview em {
     background-color: yellow;
   }
@@ -2045,7 +2053,7 @@ span.no-fulltext {
 /* subhh-mk2023 apply grid to metadata in detailview */
 .tx-dlf-metadata-titledata {
     display: grid;
-    grid-template-columns: max-content auto;
+    grid-template-columns: auto auto;
 }
 
 /* subhh-mk2023 class for horizontal row within metadata-grid */
@@ -2834,6 +2842,16 @@ grid content element
     grid-row: 1;
 }
 
+.grid-wrapper-aside-left-column {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.grid-wrapper-aside-right-column {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
 .frame-type-presentationpackage_gridtwocolumn {
     padding: 17px 30px 0px 30px;
 }
@@ -2855,7 +2873,7 @@ Accordion
 ----------------------------------------------------------------------*/
 
 main div.frame-type-text,
-main div.frame-type-html,
+/*main div.frame-type-html,*/
 main div.frame-type-header {
     padding-left: 50px;
     padding-right: 50px;
@@ -3211,7 +3229,11 @@ max 1024px
         background-color: rgb(200, 200, 200);
         box-shadow: 0px 0px 15px 0px rgb(0, 0, 0, 0.5);
     }
-
+    
+    .dropdown-menu input[type=checkbox]:checked ~ ul {
+        display: block;
+        position: relative;
+    }
 }
 
 @media only screen and (max-width: 980px) {
@@ -3223,6 +3245,11 @@ max 1024px
     #main-content {
         float: none;
         width: 100%;
+    }
+        
+    .dropdown-menu input[type=checkbox]:checked ~ ul {
+        display: block;
+        position: relative;
     }
 }
 
@@ -3262,7 +3289,11 @@ max 1024px
         width: calc(100% - 40px);
         padding: 60px 0 120px 40px;
         }
-
+    
+    .dropdown-menu input[type=checkbox]:checked ~ ul {
+        display: block;
+        position: relative;
+    }
 }
 
 
