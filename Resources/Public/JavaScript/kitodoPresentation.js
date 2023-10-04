@@ -442,13 +442,12 @@ function cleanup() {
     }
 
     // removes textpart from facet, that is required for lexicographical sorting of months/days of the week/calendar days in newspaper portal
-    $('.tx-dlf-search-no, .tx-dlf-search-cur').each(function () {
-        html = $(this).html();
+    $('span.tx-dlf-facet-value-title').each(function () {
+        facet_value = $(this).text();
 
-        if (html.match(/\[(\d+)\] \- /)) {
-            html = html.replace(/\[(\d+)\] \- /, ' ');
-            html = html.replace(/\[(\d+)\] \- /, ' ');
-            $(this).html(html);
+        if (facet_value.match(/\[(\d+)\] \- /)) {
+            facet_value = facet_value.replace(/\[(\d+)\] \- /, ' ');
+            $(this).html(facet_value);
         }
 
     });
