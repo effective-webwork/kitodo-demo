@@ -1341,7 +1341,7 @@ article.calendar-metadata a {
 .tx-dlf-listview a,
 .tx-dlf-ListView a {
     padding: 5px;
-    /*margin: -5px;*/
+    margin: -5px;
     border-radius: 3px;
 }
 
@@ -1487,9 +1487,7 @@ ol.tx-dlf-listview-list {
 }
 
 .tx-dlf-listview-list li .show-volumes {
-    position: absolute;
-    top: 60px;
-    right: -10px;
+    text-align: right;
 }
 
 .tx-dlf-listview-list li .show-volumes a {
@@ -1526,10 +1524,31 @@ ol.tx-dlf-listview-list {
 }
 
 .tx-dlf-listview-list dl {
-    padding: 0 30px;
-    margin: -20px 0 0 12%;
-    width: 60%;
-    min-height: 100px;
+    padding: 0px;
+}
+
+.subhh-listview-document {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-gap: 30px;
+    padding: 0px 20px;
+}
+
+.subhh-listview-metadata {
+    grid-column-start: 2;
+}
+
+.subhh-listview-metadata dl {
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+
+.subhh-listview-metadata dl dt {
+    grid-column-start: 1;
+}
+
+.subhh-listview-metadata dl dd {
+    grid-column-start: 2
 }
 
 dt.tx-dlf-metadata-title {
@@ -1600,7 +1619,7 @@ dd.tx-dlf-metadata-author,
 
 .tx-dlf-listview-list .tx-dlf-listview-thumbnail {
     display: block;
-    position: absolute;
+    grid-column-start: 1;
 }
 
 .tx-dlf-listview-list li ol .tx-dlf-listview-thumbnail {
@@ -1608,14 +1627,9 @@ dd.tx-dlf-metadata-author,
 }
 
 .tx-dlf-listview-list .tx-dlf-listview-thumbnail img {
-    width: 60px;
-    height: auto;
-    margin: -15px 0 30px 35px;
-}
-
-.tx-dlf-listview-list .tx-dlf-listview-thumbnail img:not(.no-hover):hover {
-    width: 120px;
-    transition: width 0.5s;
+    max-width: 300px;
+    max-height: 400px;
+    vertical-align: top;
 }
 
 .tx-dlf-listview-list li ol {
@@ -1682,10 +1696,7 @@ dd.tx-dlf-metadata-author,
 }
 
 .tx-dlf-listview-list li ol li .tx-dlf-listview-thumbnail img {
-    width: 60px;
-    height: auto;
     padding: 15px;
-    margin: 0;
 }
 
 .tx-dlf-listview-list dd.tx-dlf-metadata-abstract_url.tx-dlf-metadata a {
@@ -3645,6 +3656,16 @@ span.tx-dlf-toc-pagination {
 ol.subentry,
 ol.tx-dlf-volume {
     display: none;
+}
+
+.tx-dlf-volume .pageresult dl {
+    padding-left: 15px;
+    display: grid;
+    grid-template-columns: max-content auto;
+}
+
+.tx-dlf-listview-preview {
+    padding: 15px;
 }
 
 .tx-dlf-pagegrid-list {

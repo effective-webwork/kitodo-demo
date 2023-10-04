@@ -27,7 +27,7 @@ $(document).ready(function() {
 
     facetTouchStyle();
 
-    addThumbnailPlaceholder();
+    //addThumbnailPlaceholder();
 
     // workaround
     fixLabelInputMetadata();
@@ -363,13 +363,13 @@ function addMatomoDownloadEventListener(anchor_id, event_link, event_type) {
     });
 }
 
-function addThumbnailPlaceholder() {
+/*function addThumbnailPlaceholder() {
     $('.tx-dlf-listview-thumbnail').each(function () {
         if ($(this).children('img').length == 0) {
             $(this).append('<img class="no-hover" src="/typo3conf/ext/presentation_package/Resources/Public/Images/document-collection.png"/>');
         }
     });
-}
+}*/
 
 function facetTouchStyle() {
     if ($('label.facet-sub-title')) {
