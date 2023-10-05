@@ -466,6 +466,92 @@ function cleanup() {
             $(this).remove();
         }
     });
+
+    // sort metadata in listview
+    if (window.location.hostname == 'zeitungen-dev.sub.uni-hamburg.de' || window.location.hostname == 'zeitungen.sub.uni-hamburg.de') {
+        $('div.subhh-listview-metadata dl, li.pageresult dl').each(function () {
+            // date
+            $(this).append($(this).children('.tx-dlf-metadata-date_calendar'));
+            $(this).children('dd.tx-dlf-metadata-date_calendar').after('<hr class="tx-dlf-metadata-hr">');
+            // bibliographic description
+            $(this).append($(this).children('.tx-dlf-title'));
+            $(this).append($(this).children('.tx-dlf-metadata-sub_title'));
+            $(this).append($(this).children('.tx-dlf-metadata-title_issue'));
+            $(this).append($(this).children('.tx-dlf-metadata-volume_year'));
+            $(this).append($(this).children('.tx-dlf-metadata-volume_issue'));
+            $(this).append($(this).children('.tx-dlf-metadata-place'));
+            $(this).append($(this).children('.tx-dlf-metadata-publisher'));
+            $(this).append($(this).children('.tx-dlf-metadata-publication_run_digital'));
+            $(this).append($(this).children('.tx-dlf-metadata-abstract'));
+            $(this).append($(this).children('.tx-dlf-metadata-abstract_url'));
+            // license
+            $(this).append($(this).children('.tx-dlf-metadata-license'));
+            $(this).children('dt.tx-dlf-metadata-license').before('<hr class="tx-dlf-metadata-hr">');
+            // dataset
+            $(this).append($(this).children('.tx-dlf-metadata-record_id'));
+            $(this).children('dt.tx-dlf-metadata-record_id').before('<hr class="tx-dlf-metadata-hr">');
+            $(this).append($(this).children('.tx-dlf-type'));
+        });
+    }
+
+    if (window.location.hostname == 'digitalisate-dev.sub.uni-hamburg.de' || window.location.hostname == 'digitalisate.sub.uni-hamburg.de') {
+        $('div.subhh-listview-metadata dl, li.pageresult dl').each(function () {
+            // shelfmark
+            $(this).append($(this).children('.tx-dlf-metadata-shelfmark'));
+            $(this).children('dd.tx-dlf-metadata-shelfmark').after('<hr class="tx-dlf-metadata-hr">');
+            // bibliographic description
+            $(this).append($(this).children('.tx-dlf-title'));
+            $(this).append($(this).children('.tx-dlf-metadata-author'));
+            $(this).append($(this).children('.tx-dlf-metadata-recipient'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_scribe'));
+            $(this).append($(this).children('.tx-dlf-metadata-place_of_publication'));
+            $(this).append($(this).children('.tx-dlf-metadata-year_of_publication'));
+            $(this).append($(this).children('.tx-dlf-metadata-place_of_production'));
+            $(this).append($(this).children('.tx-dlf-metadata-year_of_production'));
+            $(this).append($(this).children('.tx-dlf-metadata-production_year'));
+            $(this).append($(this).children('.tx-dlf-metadata-date_other_related'));
+            $(this).append($(this).children('.tx-dlf-metadata-publisher'));
+            $(this).append($(this).children('.tx-dlf-metadata-language'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_collector'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_artist'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_photographer'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_depicted_person'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_editor'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_translator'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_corporation'));
+            $(this).append($(this).children('.tx-dlf-metadata-catalog_kalliope'));
+            $(this).append($(this).children('.tx-dlf-metadata-volume'));
+            // license
+            $(this).append($(this).children('.tx-dlf-metadata-license'));
+            $(this).children('dt.tx-dlf-metadata-license').before('<hr class="tx-dlf-metadata-hr">');
+            // dataset
+            $(this).append($(this).children('.tx-dlf-metadata-record_id'));
+            $(this).children('dt.tx-dlf-metadata-record_id').before('<hr class="tx-dlf-metadata-hr">');
+            $(this).append($(this).children('.tx-dlf-type'));
+        });
+    }
+
+    if (window.location.hostname == 'jungius-dev.sub.uni-hamburg.de' || window.location.hostname == 'jungius.sub.uni-hamburg.de') {
+        $('div.subhh-listview-metadata dl, li.pageresult dl').each(function () {
+            // shelfmark
+            $(this).append($(this).children('.tx-dlf-metadata-shelflocator'));
+            $(this).children('dd.tx-dlf-metadata-shelflocator').after('<hr class="tx-dlf-metadata-hr">');
+            // bibliographic description
+            $(this).append($(this).children('.tx-dlf-title'));
+            $(this).append($(this).children('.tx-dlf-metadata-title_alternative'));
+            $(this).append($(this).children('.tx-dlf-metadata-author'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_recepient'));
+            $(this).append($(this).children('.tx-dlf-metadata-year'));
+            $(this).append($(this).children('.tx-dlf-metadata-language'));
+            $(this).append($(this).children('.tx-dlf-metadata-subjecttopic'));
+            $(this).append($(this).children('.tx-dlf-metadata-subjectnamepersons'));
+            // dataset
+            $(this).append($(this).children('.tx-dlf-metadata-record_id'));
+            $(this).children('dt.tx-dlf-metadata-record_id').before('<hr class="tx-dlf-metadata-hr">');
+            $(this).append($(this).children('.tx-dlf-type'));
+        });
+    }
+
 }
 
 function pagerFormAdjustment() {

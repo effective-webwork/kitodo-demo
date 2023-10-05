@@ -1595,6 +1595,7 @@ dt.tx-dlf-metadata-author,
 .tx-dlf-listview-list li ol li dt {
     float: left;
     padding-right: 15px;
+    grid-column-start: 1;
 }
 
 dd.tx-dlf-metadata,
@@ -1614,6 +1615,7 @@ dd.tx-dlf-metadata-year,
 dd.tx-dlf-metadata-author,
 .tx-dlf-listview-list li ol li dd {
     font-weight: 700;
+    grid-column-start: 2;
 }
 
 .tx-dlf-listview-list .tx-dlf-listview-thumbnail {
@@ -2092,6 +2094,10 @@ span.no-fulltext {
 .tx-dlf-metadata-hr {
     grid-column: 1 / 3;
     width: 100%;
+    height: 1px;
+    border: none;
+    color: #aaa;
+    background-color: #aaa;
 }
 
 .detail-view-itemdetails dt,
@@ -3683,6 +3689,7 @@ ol.tx-dlf-volume {
     padding-left: 15px;
     display: grid;
     grid-template-columns: max-content auto;
+    grid-column-gap: 30px;
 }
 
 .tx-dlf-listview-preview {
