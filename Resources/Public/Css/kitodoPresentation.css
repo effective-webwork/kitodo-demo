@@ -1357,8 +1357,7 @@ article.calendar-metadata a {
 }
 
 .tx-dlf-listview-label {
-    padding: 0 0 30px 0;
-    border-bottom: 1px solid #ababab;
+    padding: 10px;
 }
 
 .listview-headline-sort form {
@@ -1730,6 +1729,28 @@ dd.tx-dlf-metadata-author,
     border-radius: 5px;
     float:right;
     margin-top: -2px;
+}
+
+.tx-dlf-listview-collection-thumbnail {
+    display: inline-block;
+    position: relative;
+    margin: 0px 5px 10px 0px;
+}
+
+.tx-dlf-listview-collection-thumbnail > img {
+    vertical-align: top;
+}
+
+.tx-dlf-listview-collection-thumbnail > div {
+    position: absolute;
+    bottom: 0px;
+    background: rgba(255,255,255,0.8);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tx-dlf-search-numHits {
+    margin-top: 20px;
 }
 
 /*----------------------------------------------------------------------
