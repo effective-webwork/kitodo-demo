@@ -668,7 +668,7 @@ function listViewFunction() {
 
 /* Kitodo Presentation Detail Breadcrumb */
 function enrichBreadcrumbForVolumes() {
-    if ($('dd.tx-dlf-metadata-volume_list')) {
+    if ($('dd.tx-dlf-metadata-volume_list').length() > 0) {
         $('article.breadcrumb').html($('article.breadcrumb').html().replace('Detailansicht', ''));
         $('article.breadcrumb').append('<a href="' + $('dd.tx-dlf-metadata-volume_list a').attr('href') + '" class="fade">Bandliste</a> / Detailansicht');
     }
