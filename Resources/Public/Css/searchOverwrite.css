@@ -6,6 +6,10 @@
     width: 40%;
 }
 
+#tx-dlf-search-in-document-button {
+    width: 90px;
+}
+
 .dlf-search-switch {
     margin: 20px auto;
     width: 40%;
