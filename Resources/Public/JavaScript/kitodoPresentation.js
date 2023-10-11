@@ -668,21 +668,9 @@ function listViewFunction() {
 
 /* Kitodo Presentation Detail Breadcrumb */
 function enrichBreadcrumbForVolumes() {
-    if ($('dt#PartOf').next('dd').data('partof') > 0) {
-
-        var partOfLink = $('.tx-dlf-toc ul:first() li:first() a:first()').attr('href');
-        $('a.PartOf').attr('href', partOfLink);
-        $('dt#PartOf').next('dd').children('a.partOf').attr('href', partOfLink);
-
-        var parentVolumeLink = $('.partOf').attr('href');
-
-        var lastBreadcrumChild = $('.breadcrumb span:last-child').html();
-        $('article.breadcrumb span:last-child').remove();
-
-        $('article.breadcrumb').append('<a href="' + partOfLink + '" class="fade">Bandliste</a> /');
-        $('article.breadcrumb').append(lastBreadcrumChild);
-    } else {
-        $('dt#PartOf').hide().next('dd').hide();
+    if ($('dd.tx-dlf-metadata-volume_list')) {
+        $('article.breadcrumb').html($('article.breadcrumb').html().replace('Detailansicht', ''));
+        $('article.breadcrumb').append('<a href="' + $('dd.tx-dlf-metadata-volume_list a').attr('href') + '" class="fade">Bandliste</a> / Detailansicht');
     }
 }
 
