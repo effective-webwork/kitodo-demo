@@ -1909,9 +1909,9 @@ ul.tx-dlf-toolbox span a img {
 .tx-dlf-navigation-double {
 }
 
-.tx-dlf-navigation-double-plus {
+/*.tx-dlf-navigation-double-plus {
     display: none !important;
-}
+}*/
 
 .detail-view-itemoptions {
     margin: 30px;
