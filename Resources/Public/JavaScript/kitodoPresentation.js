@@ -226,6 +226,7 @@ function addDownloadButtons() {
 
     // grab the record id
     record_id = $('dd.tx-dlf-metadata-record_id').text();
+    pagenumber = 0;
 
     // make sure, that we have pagenumbers for objects with actual pages
     var structtype = $('dd.tx-dlf-type').text();
@@ -237,11 +238,11 @@ function addDownloadButtons() {
         structtype === 'Zeitung' ||
         structtype === 'Jahr'
     ) {
-        // those have not pages
-        pagenumber = 0;
+        // show downloads even on toplevel
+        $('.tx-dlf-toolbox').show();
     } else {
         // coming from the resultset may result in missing tx_dlf[page], so make it "1" instead of running into "undefined"
-        var pagenumber = "1";
+        pagenumber = "1";
 
         let searchParams = new URLSearchParams(window.location.search);
         if(searchParams.has('tx_dlf[page]'))
@@ -311,7 +312,7 @@ function addDownloadButtons() {
     for (const key in downloads) {
         if(downloads[key].class == "reachable") {
             if (key === 'DFGViewer') {
-                $('#dfgviewerLink').attr('href', 'https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/' + record_id + '&tx_dlf[page]=' + pagenumber);
+                $('#dfgviewerLink').attr('href', downloads[key].link);
             } else {
                 $(anchor).append('\
                 <li>\
