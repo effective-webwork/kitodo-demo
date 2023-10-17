@@ -311,7 +311,8 @@ addon 03 2023
     transform-origin: 0 0;
     transform: rotate(270deg);
     width: 300px;
-    }
+    padding: 8px 0px;
+}
 
 .overlay {
     height: calc(100% - 200px);
@@ -385,7 +386,8 @@ addon 03 2023
     transform-origin: 0 0;
     transform: rotate(270deg);
     width: 300px;
-    }
+    padding: 8px 0px;
+}
 
 .overlay2 {
     height: calc(100% - 200px);
