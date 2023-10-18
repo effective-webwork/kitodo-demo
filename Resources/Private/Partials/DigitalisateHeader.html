@@ -1,29 +1,47 @@
-<div id="banner-navigation">
-    <div class="portal-logo-area">
-        <a href="/"><strong>Hamburger Kulturgut</strong> Digital</a>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <div id="banner-navigation">
+        <div class="portal-logo-area">
+            <f:variable name="base" value="<v:site.url/>"/>
+            <f:if condition="{base} == 'https://zeitungen.sub.uni-hamburg.de/' || {base} == 'https://zeitungen-dev.sub.uni-hamburg.de/'">
+                <f:then>
+                    <a href="/"><strong>Hamburger Zeitungen</strong> Digital</a>
+                </f:then>
+            </f:if>
+            <f:if condition="{base} == 'https://digitalisate.sub.uni-hamburg.de/' || {base} == 'https://digitalisate-dev.sub.uni-hamburg.de/' || {base} == 'https://jungius.sub.uni-hamburg.de/' || {base} == 'https://jungius-dev.sub.uni-hamburg.de/'">
+                <f:then>
+                    <a href="/"><strong>Hamburger Kulturgut</strong> Digital</a>
+                </f:then>
+            </f:if>
+        </div>
+
+        <div class="portal-credits-area">
+            <a href="http://www.sub.uni-hamburg.de/">
+                <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/logo_subhh_x2.png">
+            </a>
+            <a href="https://www.sub.uni-hamburg.de/bibliotheken/universitaetsbibliothek.html">
+                <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/logo_fachbib_x2.png">
+            </a>
+            <a href="http://www.uni-hamburg.de/">
+                <img class="logo-uhh-max" src="/typo3conf/ext/presentation_package/Resources/Public/Images/logo_uhh_claim_x2.png">
+                <img class="logo-uhh-min" src="/typo3conf/ext/presentation_package/Resources/Public/Images/logo_uhh_x2.png">
+            </a>
+        </div>
+
+        <div class="portal-legal-area">
+            <ul>
+                <li><a href="/hilfe-informationen" class="pla-helpme">Hilfe</a></li>
+                <li><a href="/datenschutzerklaerung">Datenschutz</a></li>
+                <li><a href="/impressum">Impressum</a></li>
+            </ul>
+            <span id="powered-by">
+                <p>Staats- und Universitätsbibliothek Hamburg<br/>&copy; 2023</p>
+            </span>
+        </div>
     </div>
 
-    <div class="portal-credits-area">
-        <a href="http://www.sub.uni-hamburg.de/">
-            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/logo_subhh_x2.png">
-        </a>
-        <a href="https://www.sub.uni-hamburg.de/bibliotheken/universitaetsbibliothek.html">
-            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/logo_fachbib_x2.png">
-        </a>
-        <a href="http://www.uni-hamburg.de/">
-            <img class="logo-uhh-max" src="/typo3conf/ext/presentation_package/Resources/Public/Images/logo_uhh_claim_x2.png">
-            <img class="logo-uhh-min" src="/typo3conf/ext/presentation_package/Resources/Public/Images/logo_uhh_x2.png">
-        </a>
-    </div>
-
-    <div class="portal-legal-area">
-        <ul>
-            <li><a href="/hilfe-informationen" class="pla-helpme">Hilfe</a></li>
-            <li><a href="/datenschutzerklaerung">Datenschutz</a></li>
-            <li><a href="/impressum">Impressum</a></li>
-        </ul>
-        <span id="powered-by">
-            <p>Staats- und Universitätsbibliothek Hamburg<br/>&copy; 2023</p>
-        </span>
-    </div>
 </div>
