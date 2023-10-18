@@ -1719,14 +1719,15 @@ dd.tx-dlf-metadata-author,
   }
 
 .tx-dlf-search-facets {
-    padding: 30px;
+    padding: 0px 30px;
 }
 
 .tx-dlf-search-facets h2 {
     font-size: 24px;
-    background: url(../Images/icon-filter-dark.svg) no-repeat left center transparent;
+    background: url(../Images/icon-filter-dark.svg) no-repeat left bottom transparent;
     background-size: 24px 24px;
     padding-left: 34px;
+    padding-top: 30px;
 }
 
 .tx-dlf-facet-value-count {
