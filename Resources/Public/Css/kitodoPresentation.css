@@ -3339,6 +3339,15 @@ max 1024px
         display: block;
         position: relative;
     }
+
+    .subhh-listview-document {
+        display: block;
+    }
+    
+    .subhh-listview-document .subhh-listview-metadata dl{
+        margin: 20px 0px;
+        width: 100%;
+    }
 }
 
 
@@ -3471,9 +3480,9 @@ max 700px
         box-shadow: 0px 0px 0px 0px transparent;
     }
 
-    .tx-dlf-search-wrapper .dlf-search-switch {
+    /*.tx-dlf-search-wrapper .dlf-search-switch {
         margin: 0;
-    }
+    }*/
 
     .dropdown-menu input[type=checkbox]:checked ~ ul {
         display: block;
