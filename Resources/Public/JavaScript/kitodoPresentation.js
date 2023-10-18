@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    // mk 2023-09-20 # tidying up the facets
+    // - remove textparts for lexicographical sorting in facets
+    // - removes "Ausgabentitel" if "n.a." from metadata
+    cleanup()
     enrichBreadcrumbForVolumes();
 
     if (showVolumeList()) {
@@ -53,11 +57,6 @@ $(document).ready(function() {
 
     // mk 2023-09-05 # add download buttons in pageview
     addDownloadButtons();
-
-    // mk 2023-09-20 # tidying up the facets
-    // - remove textparts for lexicographical sorting in facets
-    // - removes "Ausgabentitel" if "n.a." from metadata
-    cleanup()
 });
 
 function initOverlays() {
@@ -383,6 +382,14 @@ function facetTouchStyle() {
 // general cleanup functions on unwanted or ugly elements
 function cleanup() {
 
+    // add backtolistview anchor for breadcrumbs
+    $('.active.sub').each(function() {
+        if($(this).text() == "Recherche") {
+            $(this).text('Trefferliste');
+            $(this).attr("id","backtolistview");
+        }
+    });
+
     // replace copyright link in facet with name
     $('span.tx-dlf-facet-value-title').each(function () {
         // public domain
@@ -670,8 +677,7 @@ function listViewFunction() {
 /* Kitodo Presentation Detail Breadcrumb */
 function enrichBreadcrumbForVolumes() {
     if ($('dd.tx-dlf-metadata-volume_list').length > 0) {
-        $('article.breadcrumb').html($('article.breadcrumb').html().replace('Detailansicht', ''));
-        $('article.breadcrumb').append('<a href="' + $('dd.tx-dlf-metadata-volume_list a').attr('href') + '" class="fade">Bandliste</a> / Detailansicht');
+        $('article.breadcrumb ul .active.current').before('<li class="active sub"><a href="' + $('dd.tx-dlf-metadata-volume_list a').attr('href') + '" class="active sub">Bandliste</a>&nbsp;</li>&nbsp;');
     }
 }
 
