@@ -5,7 +5,6 @@ plugin.tx_presentationpackage.view {
 }
 
 page.includeCSS {
-    subhh_main_css = https://www.sub.uni-hamburg.de/typo3conf/ext/subhh_website/Resources/Public/css/styles.css
 #    main = EXT:presentation_package/Resources/Public/Css/main.css
 #    styles = EXT:presentation_package/Resources/Public/Css/styles.css
     presentation = EXT:presentation_package/Resources/Public/Css/kitodoPresentation.css
@@ -13,10 +12,9 @@ page.includeCSS {
 }
 
 page.includeJSFooter {
-    #subhh_main = https://www.sub.uni-hamburg.de/typo3conf/ext/subhh_website/Resources/Public/js/sub-website.min.js
+#    main = EXT:presentation_package/Resources/Public/JavaScript/main.js
     accordion = EXT:presentation_package/Resources/Public/JavaScript/Accordion.js
     jsCookie = EXT:presentation_package/Resources/Public/JavaScript/Jungius/jsCookie.js
-    #main = EXT:presentation_package/Resources/Public/JavaScript/main.js
     kitodoPresentation = EXT:presentation_package/Resources/Public/JavaScript/kitodoPresentation.js
     matomo = EXT:presentation_package/Resources/Public/JavaScript/matomo.js
 }
