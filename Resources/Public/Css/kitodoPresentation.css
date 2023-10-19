@@ -752,7 +752,16 @@ header {
 }
 
 header.header-portal-home {
-    background: url(../Images/ph-background.jpg) no-repeat top center #242424;
+    background: #242424;
+}
+
+header.header-portal-home-kulturgut {
+    background: url(../Images/ph-background-kulturgut.jpg) no-repeat top center #242424;
+    background-size: cover;
+}
+
+header.header-portal-home-zeitungen {
+    background: url(../Images/ph-background-zeitungen.jpg) no-repeat top center #242424;
     background-size: cover;
 }
 
@@ -840,8 +849,22 @@ article.breadcrumb ul li:first-child {
 }
 
 .collection-intro {
+    background: #242424;
     text-align: left;
-    background: url(../Images/follow-background.jpg) no-repeat top center #242424;
+}
+
+.collection-intro-kulturgut {
+    background: url(../Images/follow-background-kulturgut.jpg) no-repeat top center #242424;
+    background-size: cover;
+}
+
+.collection-intro-jungius {
+    background: url(../Images/follow-background-jungius.jpg) no-repeat top center #242424;
+    background-size: cover;
+}
+
+.collection-intro-zeitungen {
+    background: url(../Images/follow-background-zeitungen.jpg) no-repeat top center #242424;
     background-size: cover;
 }
 
@@ -2682,6 +2705,8 @@ article.calendar-metadata ul li dl {
     display: block;
     vertical-align: top;
     color: #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 
 .dropdown-menu ul li.tx-dlf-search-cur a {
