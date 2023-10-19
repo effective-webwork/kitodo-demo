@@ -2931,6 +2931,7 @@ main div.frame-type-presentationpackage_accordionelement {
     padding-left: 25px;
     padding-right: 25px;
     color: #FFF;
+    box-sizing: border-box;
 }
 
 main .legal-info div {
