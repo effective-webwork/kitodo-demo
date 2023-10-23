@@ -3872,3 +3872,8 @@ ol.tx-dlf-volume {
     font-weight: bold;
     text-decoration: none;
 }
+
+.frame-type-menu_subpages {
+    padding: 0px 30px;
+    box-sizing: border-box;
+}
