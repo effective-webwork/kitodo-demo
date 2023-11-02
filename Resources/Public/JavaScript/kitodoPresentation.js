@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    // mk 2023-09-20 # tidying up the facets
+    // - remove textparts for lexicographical sorting in facets
+    // - removes "Ausgabentitel" if "n.a." from metadata
+    cleanup()
     enrichBreadcrumbForVolumes();
 
     if (showVolumeList()) {
@@ -27,7 +31,7 @@ $(document).ready(function() {
 
     facetTouchStyle();
 
-    addThumbnailPlaceholder();
+    //addThumbnailPlaceholder();
 
     // workaround
     fixLabelInputMetadata();
@@ -53,11 +57,6 @@ $(document).ready(function() {
 
     // mk 2023-09-05 # add download buttons in pageview
     addDownloadButtons();
-
-    // mk 2023-09-20 # tidying up the facets
-    // - remove textparts for lexicographical sorting in facets
-    // - removes "Ausgabentitel" if "n.a." from metadata
-    cleanup()
 });
 
 function initOverlays() {
@@ -226,6 +225,7 @@ function addDownloadButtons() {
 
     // grab the record id
     record_id = $('dd.tx-dlf-metadata-record_id').text();
+    pagenumber = 0;
 
     // make sure, that we have pagenumbers for objects with actual pages
     var structtype = $('dd.tx-dlf-type').text();
@@ -237,11 +237,11 @@ function addDownloadButtons() {
         structtype === 'Zeitung' ||
         structtype === 'Jahr'
     ) {
-        // those have not pages
-        pagenumber = 0;
+        // show downloads even on toplevel
+        $('.tx-dlf-toolbox').show();
     } else {
         // coming from the resultset may result in missing tx_dlf[page], so make it "1" instead of running into "undefined"
-        var pagenumber = "1";
+        pagenumber = "1";
 
         let searchParams = new URLSearchParams(window.location.search);
         if(searchParams.has('tx_dlf[page]'))
@@ -311,7 +311,7 @@ function addDownloadButtons() {
     for (const key in downloads) {
         if(downloads[key].class == "reachable") {
             if (key === 'DFGViewer') {
-                $('#dfgviewerLink').attr('href', 'https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/' + record_id + '&tx_dlf[page]=' + pagenumber);
+                $('#dfgviewerLink').attr('href', downloads[key].link);
             } else {
                 $(anchor).append('\
                 <li>\
@@ -363,13 +363,13 @@ function addMatomoDownloadEventListener(anchor_id, event_link, event_type) {
     });
 }
 
-function addThumbnailPlaceholder() {
+/*function addThumbnailPlaceholder() {
     $('.tx-dlf-listview-thumbnail').each(function () {
         if ($(this).children('img').length == 0) {
             $(this).append('<img class="no-hover" src="/typo3conf/ext/presentation_package/Resources/Public/Images/document-collection.png"/>');
         }
     });
-}
+}*/
 
 function facetTouchStyle() {
     if ($('label.facet-sub-title')) {
@@ -381,6 +381,14 @@ function facetTouchStyle() {
 
 // general cleanup functions on unwanted or ugly elements
 function cleanup() {
+
+    // add backtolistview anchor for breadcrumbs
+    $('.active.sub').each(function() {
+        if($(this).text() == "Recherche") {
+            $(this).text('Trefferliste');
+            $(this).attr("id","backtolistview");
+        }
+    });
 
     // replace copyright link in facet with name
     $('span.tx-dlf-facet-value-title').each(function () {
@@ -442,13 +450,12 @@ function cleanup() {
     }
 
     // removes textpart from facet, that is required for lexicographical sorting of months/days of the week/calendar days in newspaper portal
-    $('.tx-dlf-search-no, .tx-dlf-search-cur').each(function () {
-        html = $(this).html();
+    $('span.tx-dlf-facet-value-title').each(function () {
+        facet_value = $(this).text();
 
-        if (html.match(/\[(\d+)\] \- /)) {
-            html = html.replace(/\[(\d+)\] \- /, ' ');
-            html = html.replace(/\[(\d+)\] \- /, ' ');
-            $(this).html(html);
+        if (facet_value.match(/\[(\d+)\] \- /)) {
+            facet_value = facet_value.replace(/\[(\d+)\] \- /, ' ');
+            $(this).html(facet_value);
         }
 
     });
@@ -467,6 +474,92 @@ function cleanup() {
             $(this).remove();
         }
     });
+
+    // sort metadata in listview
+    if (window.location.hostname == 'zeitungen-dev.sub.uni-hamburg.de' || window.location.hostname == 'zeitungen.sub.uni-hamburg.de') {
+        $('div.subhh-listview-metadata dl, li.pageresult dl').each(function () {
+            // date
+            $(this).append($(this).children('.tx-dlf-metadata-date_calendar'));
+            $(this).children('dd.tx-dlf-metadata-date_calendar').after('<hr class="tx-dlf-metadata-hr">');
+            // bibliographic description
+            $(this).append($(this).children('.tx-dlf-title'));
+            $(this).append($(this).children('.tx-dlf-metadata-sub_title'));
+            $(this).append($(this).children('.tx-dlf-metadata-title_issue'));
+            $(this).append($(this).children('.tx-dlf-metadata-volume_year'));
+            $(this).append($(this).children('.tx-dlf-metadata-volume_issue'));
+            $(this).append($(this).children('.tx-dlf-metadata-place'));
+            $(this).append($(this).children('.tx-dlf-metadata-publisher'));
+            $(this).append($(this).children('.tx-dlf-metadata-publication_run_digital'));
+            $(this).append($(this).children('.tx-dlf-metadata-abstract'));
+            $(this).append($(this).children('.tx-dlf-metadata-abstract_url'));
+            // license
+            $(this).append($(this).children('.tx-dlf-metadata-license'));
+            $(this).children('dt.tx-dlf-metadata-license').before('<hr class="tx-dlf-metadata-hr">');
+            // dataset
+            $(this).append($(this).children('.tx-dlf-metadata-record_id'));
+            $(this).children('dt.tx-dlf-metadata-record_id').before('<hr class="tx-dlf-metadata-hr">');
+            $(this).append($(this).children('.tx-dlf-type'));
+        });
+    }
+
+    if (window.location.hostname == 'digitalisate-dev.sub.uni-hamburg.de' || window.location.hostname == 'digitalisate.sub.uni-hamburg.de') {
+        $('div.subhh-listview-metadata dl, li.pageresult dl').each(function () {
+            // shelfmark
+            $(this).append($(this).children('.tx-dlf-metadata-shelfmark'));
+            $(this).children('dd.tx-dlf-metadata-shelfmark').after('<hr class="tx-dlf-metadata-hr">');
+            // bibliographic description
+            $(this).append($(this).children('.tx-dlf-title'));
+            $(this).append($(this).children('.tx-dlf-metadata-author'));
+            $(this).append($(this).children('.tx-dlf-metadata-recipient'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_scribe'));
+            $(this).append($(this).children('.tx-dlf-metadata-place_of_publication'));
+            $(this).append($(this).children('.tx-dlf-metadata-year_of_publication'));
+            $(this).append($(this).children('.tx-dlf-metadata-place_of_production'));
+            $(this).append($(this).children('.tx-dlf-metadata-year_of_production'));
+            $(this).append($(this).children('.tx-dlf-metadata-production_year'));
+            $(this).append($(this).children('.tx-dlf-metadata-date_other_related'));
+            $(this).append($(this).children('.tx-dlf-metadata-publisher'));
+            $(this).append($(this).children('.tx-dlf-metadata-language'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_collector'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_artist'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_photographer'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_depicted_person'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_editor'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_translator'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_corporation'));
+            $(this).append($(this).children('.tx-dlf-metadata-catalog_kalliope'));
+            $(this).append($(this).children('.tx-dlf-metadata-volume'));
+            // license
+            $(this).append($(this).children('.tx-dlf-metadata-license'));
+            $(this).children('dt.tx-dlf-metadata-license').before('<hr class="tx-dlf-metadata-hr">');
+            // dataset
+            $(this).append($(this).children('.tx-dlf-metadata-record_id'));
+            $(this).children('dt.tx-dlf-metadata-record_id').before('<hr class="tx-dlf-metadata-hr">');
+            $(this).append($(this).children('.tx-dlf-type'));
+        });
+    }
+
+    if (window.location.hostname == 'jungius-dev.sub.uni-hamburg.de' || window.location.hostname == 'jungius.sub.uni-hamburg.de') {
+        $('div.subhh-listview-metadata dl, li.pageresult dl').each(function () {
+            // shelfmark
+            $(this).append($(this).children('.tx-dlf-metadata-shelflocator'));
+            $(this).children('dd.tx-dlf-metadata-shelflocator').after('<hr class="tx-dlf-metadata-hr">');
+            // bibliographic description
+            $(this).append($(this).children('.tx-dlf-title'));
+            $(this).append($(this).children('.tx-dlf-metadata-title_alternative'));
+            $(this).append($(this).children('.tx-dlf-metadata-author'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_recepient'));
+            $(this).append($(this).children('.tx-dlf-metadata-year'));
+            $(this).append($(this).children('.tx-dlf-metadata-language'));
+            $(this).append($(this).children('.tx-dlf-metadata-subjecttopic'));
+            $(this).append($(this).children('.tx-dlf-metadata-subjectnamepersons'));
+            // dataset
+            $(this).append($(this).children('.tx-dlf-metadata-record_id'));
+            $(this).children('dt.tx-dlf-metadata-record_id').before('<hr class="tx-dlf-metadata-hr">');
+            $(this).append($(this).children('.tx-dlf-type'));
+        });
+    }
+
 }
 
 function pagerFormAdjustment() {
@@ -535,7 +628,7 @@ function showVolumeList() {
     var documentType = $("dd.tx-dlf-type").text();
     if (documentType == "Mehrbändiges Werk" || documentType == "Zeitschrift" ||
         documentType == "periodical" || documentType == "journal" ||
-        documentType == "Mehrteilige Handschrift" || documentType == "Mehrteilige Graphik") {
+        documentType == "Mehrteilige Handschrift" || documentType == "Mehrteilige Graphik" || documentType == "Mehrteiliges Kartenwerk") {
         $('.detail-view-main').append('<div class="volume-info-wrapper"><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
         $('.tx-dlf-toc ul ul li').each(function(index) {
             $('.volume-list').append('<li>'+$(this).html() +'</li>');
@@ -583,21 +676,8 @@ function listViewFunction() {
 
 /* Kitodo Presentation Detail Breadcrumb */
 function enrichBreadcrumbForVolumes() {
-    if ($('dt#PartOf').next('dd').data('partof') > 0) {
-
-        var partOfLink = $('.tx-dlf-toc ul:first() li:first() a:first()').attr('href');
-        $('a.PartOf').attr('href', partOfLink);
-        $('dt#PartOf').next('dd').children('a.partOf').attr('href', partOfLink);
-
-        var parentVolumeLink = $('.partOf').attr('href');
-
-        var lastBreadcrumChild = $('.breadcrumb span:last-child').html();
-        $('article.breadcrumb span:last-child').remove();
-
-        $('article.breadcrumb').append('<a href="' + partOfLink + '" class="fade">Bandliste</a> /');
-        $('article.breadcrumb').append(lastBreadcrumChild);
-    } else {
-        $('dt#PartOf').hide().next('dd').hide();
+    if ($('dd.tx-dlf-metadata-volume_list').length > 0) {
+        $('article.breadcrumb ul .active.current').before('<li class="active sub"><a href="' + $('dd.tx-dlf-metadata-volume_list a').attr('href') + '" class="active sub">Bandliste</a>&nbsp;</li>&nbsp;');
     }
 }
 

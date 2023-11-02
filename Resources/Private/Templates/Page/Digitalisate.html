@@ -14,6 +14,10 @@
         <flux:grid>
             <!-- Edit this grid to change the "backend layout" structure -->
             <flux:grid.row>
+                <flux:grid.column colPos="5" colspan="2" name="Announcement" label="Ankündigung">
+                </flux:grid.column>
+            </flux:grid.row>
+            <flux:grid.row>
                 <flux:grid.column colPos="0" colspan="2" name="Search" label="Suche">
                 </flux:grid.column>
             </flux:grid.row>
@@ -37,9 +41,14 @@
     </f:section>
 
     <f:section name="Main">
+
+        <section class="subhh-announcement">
+            <v:content.render column="5" />
+        </section>
+        
         <f:render partial="DigitalisateHeader" arguments="{_all}"/>
 
-        <header class="header-portal-home" style="background:url({f:uri.resource(path: 'Images/ph-background.jpg')}) no-repeat top center #242424;background-size: cover;">
+        <header class="header-portal-home header-portal-home-kulturgut">
             <section class="portal-meta">
 
                 <article class="breadcrumb">

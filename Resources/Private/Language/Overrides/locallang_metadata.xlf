@@ -98,6 +98,9 @@
 			<trans-unit id="metadata.year">
 				<source><![CDATA[Year of Publication]]></source>
 			</trans-unit>
+			<trans-unit id="metadata.year_only">
+				<source><![CDATA[Year of Publication]]></source>
+			</trans-unit>
 			<trans-unit id="metadata.year_decade">
 				<source><![CDATA[Decade of Publication]]></source>
 			</trans-unit>

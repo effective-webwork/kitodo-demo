@@ -133,6 +133,10 @@
 				<source><![CDATA[Year of Publication]]></source>
 				<target><![CDATA[Erscheinungsjahr]]></target>
 			</trans-unit>
+			<trans-unit id="metadata.year_only" approved="yes">
+				<source><![CDATA[Year of Publication]]></source>
+				<target><![CDATA[Erscheinungsjahr]]></target>
+			</trans-unit>
 			<trans-unit id="metadata.year_decade">
 				<source><![CDATA[Decade of Publication]]></source>
 				<target><![CDATA[Erscheinungsjahr (Jahrzehnt)]]></target>

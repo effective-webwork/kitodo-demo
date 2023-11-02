@@ -38,19 +38,47 @@
         <header>
             <section class="portal-meta">
                 <article class="breadcrumb">
-                    <v:page.breadCrumb />
+                    <v:page.breadCrumb linkCurrent="false"/>
                 </article>
             </section>
 
             <section class="tx-dlf-search clear">
                 <v:content.render column="0" />
             </section>
+            
+            <f:comment><!-- Get Site URL in order to switch collection intro class for different banner image --></f:comment>
+            <f:variable name="base" value="<v:site.url/>"/>
 
-            <section class="collection-intro">
-                <article>
-                    <v:content.render column="2" />
-                </article>
-            </section>
+            <f:if condition="{base} == 'https://digitalisate.sub.uni-hamburg.de/' || {base} == 'https://digitalisate-dev.sub.uni-hamburg.de/'">
+                <f:then>
+                    <section class="collection-intro collection-intro-kulturgut">
+                        <article>
+                            <v:content.render column="2" />
+                        </article>
+                    </section>
+                </f:then>
+            </f:if>
+
+            <f:if condition="{base} == 'https://jungius.sub.uni-hamburg.de/' || {base} == 'https://jungius-dev.sub.uni-hamburg.de/'">
+                <f:then>
+                    <section class="collection-intro collection-intro-jungius">
+                        <article>
+                            <v:content.render column="2" />
+                        </article>
+                    </section>
+                </f:then>
+            </f:if>
+            
+            <f:if condition="{base} == 'https://zeitungen.sub.uni-hamburg.de/' || {base} == 'https://zeitungen-dev.sub.uni-hamburg.de/'">
+                <f:then>
+                    <section class="collection-intro collection-intro-zeitungen">
+                        <article>
+                            <v:content.render column="2" />
+                        </article>
+                    </section>
+                </f:then>
+            </f:if>
+
         </header>
 
         <main>
