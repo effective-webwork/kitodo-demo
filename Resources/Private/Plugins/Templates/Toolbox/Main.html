@@ -88,8 +88,13 @@
                     <f:if condition="{fulltext}">
                         <f:then>
                             <a class="select switchoff" id="tx-dlf-tools-fulltext" title=""
-                               data-dic="fulltext:;fulltext-loading:;fulltext-on:;fulltext-off:;activate-full-text-initially:{activateFullTextInitially};full-text-scroll-element:{settings.fullTextScrollElement};search-hl-parameters:{settings.searchHlParameters}">
+                               data-dic="fulltext:;fulltext-loading:;fulltext-on:;fulltext-off:;activate-full-text-initially:{activateFullTextInitially};full-text-scroll-element:#tx-dlf-fulltextselection;search-hl-parameters:{settings.searchHlParameters}">
                             </a>
+                            <f:comment>
+                            <!--<a class="select switchoff" id="tx-dlf-tools-fulltext" title=""
+                               data-dic="fulltext:;fulltext-loading:;fulltext-on:;fulltext-off:;activate-full-text-initially:{activateFullTextInitially};full-text-scroll-element:{settings.fullTextScrollElement};search-hl-parameters:{settings.searchHlParameters}">
+                            </a>-->
+                            </f:comment>
                         </f:then>
                         <f:else>
                             <span class="no-fulltext">

@@ -11,6 +11,9 @@
 			<trans-unit id="metadata.name_author">
 				<source><![CDATA[Author]]></source>
 			</trans-unit>
+			<trans-unit id="metadata.calendar_day">
+				<source><![CDATA[Calendar Day]]></source>
+			</trans-unit>
 			<trans-unit id="metadata.collection">
 				<source><![CDATA[Collection(s)]]></source>
 			</trans-unit>
@@ -20,11 +23,17 @@
 			<trans-unit id="metadata.date_iso">
 				<source><![CDATA[Date]]></source>
 			</trans-unit>
+			<trans-unit id="metadata.day_of_the_week">
+				<source><![CDATA[Day of the week]]></source>
+			</trans-unit>
 			<trans-unit id="metadata.language">
 				<source><![CDATA[Language]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.license">
 				<source><![CDATA[License]]></source>
+			</trans-unit>
+			<trans-unit id="metadata.month_of_the_year">
+				<source><![CDATA[Month of the year]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.opac_id">
 				<source><![CDATA[OPAC Identifier]]></source>
@@ -34,6 +43,9 @@
 			</trans-unit>
 			<trans-unit id="metadata.owner">
 				<source><![CDATA[Owner]]></source>
+			</trans-unit>
+			<trans-unit id="metadata.person_other">
+				<source><![CDATA[Participant]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.place">
 				<source><![CDATA[Place of Publication]]></source>
@@ -85,6 +97,12 @@
 			</trans-unit>
 			<trans-unit id="metadata.year">
 				<source><![CDATA[Year of Publication]]></source>
+			</trans-unit>
+			<trans-unit id="metadata.year_decade">
+				<source><![CDATA[Decade of Publication]]></source>
+			</trans-unit>
+			<trans-unit id="metadata.year_century">
+				<source><![CDATA[Century of Publication]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.shelfmark">
 				<source><![CDATA[Shelfmark]]></source>

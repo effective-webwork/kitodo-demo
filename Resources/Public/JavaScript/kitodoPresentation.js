@@ -46,13 +46,18 @@ $(document).ready(function() {
 
     listviewNewspaperRouting();
 
-    let pagegrid = 0;
+    pagegrid = 0;
 
     pageGridClickEvent();
     fulltextClickEvent();
 
     // mk 2023-09-05 # add download buttons in pageview
     addDownloadButtons();
+
+    // mk 2023-09-20 # tidying up the facets
+    // - remove textparts for lexicographical sorting in facets
+    // - removes "Ausgabentitel" if "n.a." from metadata
+    cleanup()
 });
 
 function initOverlays() {
@@ -64,7 +69,11 @@ function initOverlays() {
             openNav2();
         }
         if (Cookies.get('overlay3') || dlfUtils.getCookie("tx-dlf-pageview-fulltext-select") === 'enabled') {
-            openNav3();
+            if($('.no-fulltext').length > 0) {
+                closeNav3();
+            } else {
+                openNav3();
+            }
         }
         if (Cookies.get('overlay4')) {
             openNav4();
@@ -310,8 +319,8 @@ function addDownloadButtons() {
                         <img src="' + icon_folder + downloads[key].icon + '">\
                     </a>\
                 </li>');
-                addMatomoDownloadEventListener(downloads[key].id, downloads[key].link, downloads[key].event);
             }
+            addMatomoDownloadEventListener(downloads[key].id, downloads[key].link, downloads[key].event);
         }
         else {
             $(anchor).append('\
@@ -368,6 +377,96 @@ function facetTouchStyle() {
             $(this).attr('for', 'checkbox-menu'+i).parent().prepend('<input type="checkbox" id="checkbox-menu'+i+'">');
         });
     }
+}
+
+// general cleanup functions on unwanted or ugly elements
+function cleanup() {
+
+    // replace copyright link in facet with name
+    $('span.tx-dlf-facet-value-title').each(function () {
+        // public domain
+        if( $(this).text() == 'https://creativecommons.org/publicdomain/mark/1.0/' || 
+            $(this).text() == 'http://creativecommons.org/publicdomain/mark/1.0/'
+            ) {
+            $(this).text('Public Domain Mark 1.0');
+        }
+
+        // in copyright
+        if( $(this).text() == 'http://rightsstatements.org/vocab/InC/1.0/' ) {
+            $(this).text('Urheberrechtsschutz 1.0');
+        }
+
+        // copyright not evaluated
+        if( $(this).text() == 'https://rightsstatements.org/page/CNE/1.0/' || 
+            $(this).text() == 'https://rightsstatements.org/page/CNE/1.0/?language' ||
+            $(this).text() == 'https://rightsstatements.org/page/CNE/1.0/?language%3Dde'
+            ) {
+            $(this).text('Urheberrechtsschutz nicht bewertet');
+        }
+    });
+
+    // replace copyright url in listview metadata with actual link and proper text
+    $('dd.tx-dlf-metadata-license').each(function () {
+        var license_link = $(this).text().trim();
+        // public domain
+        if( license_link == 'https://creativecommons.org/publicdomain/mark/1.0/' || 
+            license_link == 'http://creativecommons.org/publicdomain/mark/1.0/'
+            ) {
+            $(this).text('');
+            $(this).append('<a href="' + license_link + '">Public Domain Mark 1.0</a>');
+        }
+
+        // in copyright
+        if( license_link == 'http://rightsstatements.org/vocab/InC/1.0/' ) {
+            $(this).text('');
+            $(this).append('<a href="' + license_link + '">Urheberrechtsschutz 1.0</a>');
+        }
+
+        // copyright not evaluated
+        if( license_link == 'https://rightsstatements.org/page/CNE/1.0/' || 
+            license_link == 'https://rightsstatements.org/page/CNE/1.0/?language' ||
+            license_link == 'https://rightsstatements.org/page/CNE/1.0/?language%3Dde'
+            ) {
+            $(this).text('');
+            $(this).append('<a href="' + license_link + '">Urheberrechtsschutz nicht bewertet</a>');
+        }
+    });
+
+    // replace url to context info in listview metadata with actual link
+    if (window.location.hostname == 'zeitungen.sub.uni-hamburg.de') {
+        $('dd.tx-dlf-metadata-abstract_url').each(function () {
+            var context_link = $(this).text().trim();
+            $(this).text('');
+            $(this).append('<a href="' + context_link + '">Kontextinformationen aufrufen</a>');
+        });
+    }
+
+    // removes textpart from facet, that is required for lexicographical sorting of months/days of the week/calendar days in newspaper portal
+    $('.tx-dlf-search-no, .tx-dlf-search-cur').each(function () {
+        html = $(this).html();
+
+        if (html.match(/\[(\d+)\] \- /)) {
+            html = html.replace(/\[(\d+)\] \- /, ' ');
+            html = html.replace(/\[(\d+)\] \- /, ' ');
+            $(this).html(html);
+        }
+
+    });
+
+    // removes "Ausgabentitel" if "n.a." from metadata in listview and metadata-plugin
+    $('dd.tx-dlf-metadata-title_issue').each(function () {
+        if($(this).text().trim() == "n.a.") {
+            $(this).prev().attr('style','display:none !important');
+            $(this).attr('style','display:none !important');
+        }
+    });
+
+    // removes repeating hr dividers from metadata in metadata-plugin
+    $( "hr.tx-dlf-metadata-hr" ).each(function( index ) {
+        if ($(this).next("hr.tx-dlf-metadata-hr").length) {
+            $(this).remove();
+        }
+    });
 }
 
 function pagerFormAdjustment() {
@@ -437,7 +536,7 @@ function showVolumeList() {
     if (documentType == "Mehrbändiges Werk" || documentType == "Zeitschrift" ||
         documentType == "periodical" || documentType == "journal" ||
         documentType == "Mehrteilige Handschrift" || documentType == "Mehrteilige Graphik") {
-        $('.detail-view-main').append('<div><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
+        $('.detail-view-main').append('<div class="volume-info-wrapper"><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
         $('.tx-dlf-toc ul ul li').each(function(index) {
             $('.volume-list').append('<li>'+$(this).html() +'</li>');
         });

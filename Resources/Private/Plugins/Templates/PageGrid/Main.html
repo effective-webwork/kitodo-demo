@@ -21,7 +21,7 @@
                             <f:link.page pageUid="{settings.targetPid}" additionalParams="{'tx_dlf[id]': docUid, 'tx_dlf[page]': entry.page}">
                                 <f:if condition="{entry.thumbnail}">
                                     <f:then>
-                                        <img src="{entry.thumbnail}" alt="{f:translate(key: 'thumbnail')} {f:translate(key: 'page')} {entry.pagination}" title="{f:translate(key: 'page')} {entry.pagination}" />
+                                        <img src="{entry.thumbnail}" alt="{f:translate(key: 'thumbnail')} {f:translate(key: 'page')} {entry.pagination}" title="{f:translate(key: 'page')} {entry.pagination}" loading="lazy"/>
                                     </f:then>
                                     <f:else>
                                         <f:if condition="{settings.placeholder}">
