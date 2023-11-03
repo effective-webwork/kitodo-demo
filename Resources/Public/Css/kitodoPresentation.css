@@ -768,7 +768,7 @@ header.header-portal-home-zeitungen {
 .breadcrumb {
     text-align: left;
     background: #242424;
-    padding: 5px;
+    padding: 5px 15px;
     color: #ffffff;
 }
 
@@ -798,7 +798,7 @@ article.breadcrumb ul li {
 
 article.breadcrumb ul li.current {
     background: none;
-    padding: 0px;
+    padding: 0px 5px;
 }
 
 article.breadcrumb ul li:not(:last-child):after {
