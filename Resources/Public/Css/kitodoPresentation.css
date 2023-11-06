@@ -218,7 +218,7 @@ addon 03 2023
 
 .portal-legal-area li a {
     background: #cccccc;
-    color: #ffffff;
+    color: #444444;
     padding: 2px 8px;
     border-radius: 5px;
     display: block;
@@ -226,6 +226,7 @@ addon 03 2023
 
 .portal-legal-area li a.pla-helpme {
     background: #6a6a6a;
+    color: #ffffff;
 }
 
 .portal-legal-area li a:hover,
