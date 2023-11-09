@@ -390,6 +390,17 @@ function cleanup() {
         }
     });
 
+    // link back to calendar for the current year in breadcrumbs
+    $('.active.sub').each(function() {
+        
+        if($(this).text() == "Kalender") {
+            calendar_link = $('.tx-dlf-metadata-partof a').attr('href');
+            if (calendar_link) {
+                $(this).attr("href", calendar_link);
+            }
+        }
+    });
+
     // replace copyright link in facet with name
     $('span.tx-dlf-facet-value-title').each(function () {
         // public domain
