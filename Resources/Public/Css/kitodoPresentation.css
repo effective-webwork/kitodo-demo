@@ -40,6 +40,7 @@ main .tx-dlf-content .frame-type-presentationpackage_accordionelement {
 
 main .tx-dlf-content .frame-type-div hr {
     border-bottom: 1px solid #ffffff;
+    width: calc(100% - 40px);
 }
 
 .tx-dlf-content a {
