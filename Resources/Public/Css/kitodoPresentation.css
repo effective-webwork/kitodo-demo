@@ -407,6 +407,10 @@ addon 03 2023
     padding: 30px;
 }
 
+.overlay2-content .tx-dlf-toolbox li a{
+    margin-bottom: 5px;
+}
+
 .overlay2 .closebtn2,
 .overlay4 .closebtn4 {
     position: absolute;
