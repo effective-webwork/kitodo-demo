@@ -1004,7 +1004,7 @@ collection-list + teaser
 
 .tx-dlf-collection {
     background: #242424;
-    padding: 60px 0;
+    padding: 30px 0;
 }
 
 .tx-dlf-content {
@@ -1134,6 +1134,10 @@ main .tx-dlf-collection div.span_2_of_3 {
 
 .tx-dlf-collection-item h2, .tx-dlf-collection-item p {
     padding: 0px 0px 30px 0px !important;
+}
+
+p.tx-dlf-collection-counts {
+    padding: 0px !important;
 }
 
 .teaser-slot {
