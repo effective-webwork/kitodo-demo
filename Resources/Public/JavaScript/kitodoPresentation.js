@@ -401,6 +401,11 @@ function cleanup() {
         }
     });
 
+    // change detail to title in breadcrumb
+    if ($('.active.current').text().trim() == 'Detail') {
+        $('.active.current').text($("meta[name='og:description']").attr("content"));
+    };
+
     // replace copyright link in facet with name
     $('span.tx-dlf-facet-value-title').each(function () {
         var license_facet = $(this).text().trim();
