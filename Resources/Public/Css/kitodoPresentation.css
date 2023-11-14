@@ -242,6 +242,7 @@ addon 03 2023
 
 .frame {
     width: 100%;
+    box-sizing: border-box;
 }
 
 #detail-view {
@@ -3391,6 +3392,21 @@ max 1600px
     main aside {
         float: right;
         width: 35%;
+    }
+
+    .grid-wrapper-aside-left-column {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    .col-1-2 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .col-2-2 {
+        grid-column: 1;
+        grid-row: 2;
     }
 
     #main-content {
