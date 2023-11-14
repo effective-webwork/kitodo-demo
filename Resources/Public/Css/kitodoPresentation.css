@@ -232,6 +232,7 @@ addon 03 2023
 .portal-legal-area li a:hover,
 .portal-legal-area li a.pla-helpme:hover {
     background: #8D0D1C;
+    color: #ffffff;
 }
 
 #powered-by {
@@ -1121,6 +1122,10 @@ main .tx-dlf-collection div.span_2_of_3 {
 .tx-dlf-collection-thumbnail img {
     width: 100%;
     height: auto;
+}
+
+.tx-dlf-collection-description a {
+    text-decoration: underline !important;
 }
 
 .teaser-slot {
@@ -3455,6 +3460,7 @@ max 1024px
 
     .portal-legal-area li a {
         background: transparent;
+        color: #ffffff;
         border: 1px solid #6a6a6a;
     }
 
