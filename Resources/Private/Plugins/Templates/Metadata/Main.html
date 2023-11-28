@@ -129,7 +129,14 @@
 
     <f:comment><!-- Open Graph --></f:comment>
     <meta name="og:title" content="{settings.portal}" />
-    <meta name="og:description" content="{settings.title} {settings.volume}" />
+    <f:if condition="{settings.volume}">
+        <f:then>
+            <meta name="og:description" content="{settings.title} - {settings.volume}" />
+        </f:then>
+        <f:else>
+            <meta name="og:description" content="{settings.title}" />
+        </f:else>
+    </f:if>
 
 </f:section>
 

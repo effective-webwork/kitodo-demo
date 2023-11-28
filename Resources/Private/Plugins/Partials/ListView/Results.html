@@ -16,6 +16,7 @@
     <f:widget.paginate objects="{documents}" as="paginatedDocuments" configuration="{settings.list.paginate}">
         <f:variable name="currentPage" value="{widgetPage.currentPage - 1}" />
         <f:variable name="pageOffset" value="{settings.list.paginate.itemsPerPage * currentPage}" />
+        <f:variable name="targetPage" value="{settings.targetPidPageView}" />
         <ol class="tx-dlf-abstracts tx-dlf-listview-list">
             <f:for each="{paginatedDocuments}" as="document" iteration="docIterator">
                 <f:variable name="docTitle" value="{f:if(condition:'{document.title}', then:'{document.title}', else:'{document.metsOrderlabel}')}" />
@@ -23,6 +24,11 @@
                     <div class="subhh-listview-document">
                         <div class="tx-dlf-listview-thumbnail">
                             <f:if condition="{document.thumbnail}">
+                                <f:if condition="({document.structure} == 'year' || {document.structure} == 'newspaper') && {settings.storagePid} == '42'">
+                                    <f:then>
+                                        <f:variable name="targetPage" value="97" />
+                                    </f:then>
+                                </f:if>
                                 <f:then>
                                     <f:link.page
                                     pageUid="{targetPage}"

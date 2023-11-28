@@ -390,24 +390,41 @@ function cleanup() {
         }
     });
 
+    // link back to calendar for the current year in breadcrumbs
+    $('.active.sub').each(function() {
+        
+        if($(this).text() == "Kalender") {
+            calendar_link = $('.tx-dlf-metadata-partof a').attr('href');
+            if (calendar_link) {
+                $(this).attr("href", calendar_link);
+            }
+        }
+    });
+
+    // change detail to title in breadcrumb
+    if ($('.active.current').text().trim() == 'Detail') {
+        $('.active.current').text($("meta[name='og:description']").attr("content"));
+    };
+
     // replace copyright link in facet with name
     $('span.tx-dlf-facet-value-title').each(function () {
+        var license_facet = $(this).text().trim();
         // public domain
-        if( $(this).text() == 'https://creativecommons.org/publicdomain/mark/1.0/' || 
-            $(this).text() == 'http://creativecommons.org/publicdomain/mark/1.0/'
+        if( license_facet == 'https://creativecommons.org/publicdomain/mark/1.0/' || 
+            license_facet == 'http://creativecommons.org/publicdomain/mark/1.0/'
             ) {
             $(this).text('Public Domain Mark 1.0');
         }
 
         // in copyright
-        if( $(this).text() == 'http://rightsstatements.org/vocab/InC/1.0/' ) {
+        if( license_facet == 'http://rightsstatements.org/vocab/InC/1.0/' ) {
             $(this).text('Urheberrechtsschutz 1.0');
         }
 
         // copyright not evaluated
-        if( $(this).text() == 'https://rightsstatements.org/page/CNE/1.0/' || 
-            $(this).text() == 'https://rightsstatements.org/page/CNE/1.0/?language' ||
-            $(this).text() == 'https://rightsstatements.org/page/CNE/1.0/?language%3Dde'
+        if( license_facet == 'https://rightsstatements.org/page/CNE/1.0/' || 
+            license_facet == 'https://rightsstatements.org/page/CNE/1.0/?language' ||
+            license_facet == 'https://rightsstatements.org/page/CNE/1.0/?language%3Dde'
             ) {
             $(this).text('Urheberrechtsschutz nicht bewertet');
         }

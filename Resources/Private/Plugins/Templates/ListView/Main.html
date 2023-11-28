@@ -30,7 +30,7 @@
             <f:for each="{currentCollection}" as="currentCollectionItem">
                 <div class="tx-dlf-listview-collection-thumbnail">
                     <f:if condition="{currentCollectionItem.thumbnail}">
-                        <f:image image="{currentCollectionItem.thumbnail}" />
+                        <f:image image="{currentCollectionItem.thumbnail}" maxWidth="380"/>
                     </f:if>
                     <div>
                         <f:if condition="{currentCollectionItem.label}">

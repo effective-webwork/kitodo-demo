@@ -285,9 +285,18 @@ $(document).ready(function() {
 
     // check if pageview was called from a different page - this includes links, bookmarks and direct visits
     if(referrer_page.url != current_page.url || (referrer_page.url == current_page.url && referrer_page.id != current_page.id)) {
-      //alert("Neuer Objektaufruf erkannt! -> Total_Item_Requests");
+      // count pageview
       _paq.push(['trackEvent', 'COUNTER5', 'Total_Item_Requests', 'View']);
-      _paq.push(['trackEvent', 'KITODO - TOP', record_id, 'View']);
+      
+      // check if object is HZD newspaper
+      if(window.location.hostname == 'zeitungen.sub.uni-hamburg.de' || window.location.hostname == 'zeitungen-dev.sub.uni-hamburg.de') {
+        // count HZD TOP newspaper
+        _paq.push(['trackEvent', 'KITODO - TOP NEWSPAPER', record_id.split('_')[0], 'View']);
+      } else {
+        // count HKD TOP object
+        _paq.push(['trackEvent', 'KITODO - TOP', record_id, 'View']);
+      }
+      
       // check if object is part of tracked HKD collections
       $('dd.tx-dlf-metadata-collection').each(function( index ) {
         let current_collection = $(this).text();
@@ -295,13 +304,7 @@ $(document).ready(function() {
           _paq.push(['trackEvent', 'KITODO - ' + current_collection, record_id, 'View']);
         }
       });
-      // check if object is HZD newspaper
-      if($('dd.tx-dlf-metadata-newspaper').length){
-        //_paq.push(['trackEvent', 'KITODO - ' + current_collection, record_id, 'View']);
-        //_paq.push(['trackEvent', 'KITODO - ' + record_id.substring(0, record_id.indexOf("_")), record_id, 'View']);
-        //console.log(record_id.substring(0, record_id.indexOf("_") + 5));
-        //console.log($('dd.tx-dlf-metadata-newspaper').text());
-      }
+      
       // check if object is out of print or orphan work
       if(is_orphan) {
         //alert("Vergriffenes oder verwaistes Werk erkannt!");

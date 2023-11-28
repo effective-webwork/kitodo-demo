@@ -40,6 +40,7 @@ main .tx-dlf-content .frame-type-presentationpackage_accordionelement {
 
 main .tx-dlf-content .frame-type-div hr {
     border-bottom: 1px solid #ffffff;
+    width: calc(100% - 40px);
 }
 
 .tx-dlf-content a {
@@ -218,7 +219,7 @@ addon 03 2023
 
 .portal-legal-area li a {
     background: #cccccc;
-    color: #ffffff;
+    color: #444444;
     padding: 2px 8px;
     border-radius: 5px;
     display: block;
@@ -226,11 +227,13 @@ addon 03 2023
 
 .portal-legal-area li a.pla-helpme {
     background: #6a6a6a;
+    color: #ffffff;
 }
 
 .portal-legal-area li a:hover,
 .portal-legal-area li a.pla-helpme:hover {
     background: #8D0D1C;
+    color: #ffffff;
 }
 
 #powered-by {
@@ -240,6 +243,7 @@ addon 03 2023
 
 .frame {
     width: 100%;
+    box-sizing: border-box;
 }
 
 #detail-view {
@@ -403,6 +407,10 @@ addon 03 2023
 
 .overlay2-content {
     padding: 30px;
+}
+
+.overlay2-content .tx-dlf-toolbox li a{
+    margin-bottom: 5px;
 }
 
 .overlay2 .closebtn2,
@@ -768,7 +776,7 @@ header.header-portal-home-zeitungen {
 .breadcrumb {
     text-align: left;
     background: #242424;
-    padding: 5px;
+    padding: 5px 15px;
     color: #ffffff;
 }
 
@@ -798,7 +806,7 @@ article.breadcrumb ul li {
 
 article.breadcrumb ul li.current {
     background: none;
-    padding: 0px;
+    padding: 0px 5px;
 }
 
 article.breadcrumb ul li:not(:last-child):after {
@@ -962,12 +970,43 @@ main aside {
 }
 
 /*----------------------------------------------------------------------
+recherchehilfe
+----------------------------------------------------------------------*/
+
+.rh_example {
+    background: -moz-linear-gradient(to bottom, rgb(65, 65, 65) 5%, rgb(50, 50, 50) 100%) repeat scroll 0% 0% rgb(35, 35, 35);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid white;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+    
+.rh_operator {
+    background: -moz-linear-gradient(to bottom, rgb(210, 61, 78) 5%, rgb(141, 13, 28) 100%) repeat scroll 0% 0% rgb(210, 61, 78);
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid white;
+    border-radius: 3px;
+    font-family: monospace;
+    font-weight: bold;
+}
+  
+.rh_search {
+    font-family: monospace;
+    color: gainsboro;
+}
+
+/*----------------------------------------------------------------------
 collection-list + teaser
 ----------------------------------------------------------------------*/
 
 .tx-dlf-collection {
     background: #242424;
-    padding: 60px 0;
+    padding: 30px 0;
 }
 
 .tx-dlf-content {
@@ -976,7 +1015,32 @@ collection-list + teaser
 }
 
 .tx-dlf-collection div.frame p {
-    /*.tx-dlf-content div.frame p {*/
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 24px;
+    color: #ffffff;
+}
+
+.tx-dlf-collection div.frame h1,
+.tx-dlf-collection div.frame h2,
+.tx-dlf-collection div.frame h3,
+.tx-dlf-collection div.frame h4,
+.tx-dlf-collection div.frame h5,
+.tx-dlf-collection div.frame h6 {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 24px;
+    color: #ffffff;
+}
+
+.tx-dlf-collection div.frame blockquote {
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #ffffff;
+    font-style: italic;
+}
+
+.tx-dlf-collection div.frame-type-presentationpackage_accordionelement ul ul {
     padding-left: 30px;
     padding-right: 30px;
     color: #ffffff;
@@ -1064,6 +1128,18 @@ main .tx-dlf-collection div.span_2_of_3 {
 .tx-dlf-collection-thumbnail img {
     width: 100%;
     height: auto;
+}
+
+.tx-dlf-collection-description a {
+    text-decoration: underline !important;
+}
+
+.tx-dlf-collection-item h2, .tx-dlf-collection-item p {
+    padding: 0px 0px 30px 0px !important;
+}
+
+p.tx-dlf-collection-counts {
+    padding: 0px !important;
 }
 
 .teaser-slot {
@@ -2946,14 +3022,11 @@ Accordion
 main div.frame-type-text,
 /*main div.frame-type-html,*/
 main div.frame-type-header {
-    padding-left: 50px;
-    padding-right: 50px;
     color: #FFF;
     box-sizing: border-box;
 }
 
-main div.frame-type-presentationpackage_accordion,
-main div.frame-type-presentationpackage_accordionelement {
+main div.frame-type-presentationpackage_accordion {
     padding-left: 25px;
     padding-right: 25px;
     color: #FFF;
@@ -2965,6 +3038,7 @@ main .legal-info div {
 }
 
 main div.frame-type-presentationpackage_accordion,
+main div.frame-type-presentationpackage_accordionelement,
 main div.frame-type-presentationpackage_accordionelement div.frame {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -2978,6 +3052,338 @@ main div.frame-type-presentationpackage_accordionelement div.frame {
     max-width: initial !important;
 }
 
+.button_red {
+    background: #8E0E1D; /* IE 9 only */
+    box-shadow: 0px 3px 0px 0px rgb(86, 7, 16);
+    background: linear-gradient(to bottom, rgb(210, 61, 78) 5%, rgb(141, 13, 28) 100%) repeat scroll 0% 0% rgb(210, 61, 78);
+    background: -webkit-linear-gradient(to bottom, rgb(210, 61, 78) 5%, rgb(141, 13, 28) 100%) repeat scroll 0% 0% rgb(210, 61, 78);
+    background: -moz-linear-gradient(to bottom, rgb(210, 61, 78) 5%, rgb(141, 13, 28) 100%) repeat scroll 0% 0% rgb(210, 61, 78);
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#8D0D1C), to(#D23D4E));
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFF !important;
+    font-size: 16px;
+    padding: 10px 15px !important;
+    text-decoration: none !important;
+    text-shadow: 0px 1px 0px rgb(86, 7, 16);
+    border: 0;
+    }
+
+.button_red:hover {
+    background: rgb(141, 13, 28) !important;
+    transition: background 0.5s ease-in-out;
+    -webkit-transition: background 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out;
+    }
+
+h2 a.button_grey,
+h3 a.button_grey,
+h4 a.button_grey,
+h5 a.button_grey {
+    font-weight: normal;
+    line-height: 22px;
+}    
+
+h2.accordion_header a.button_grey,
+h3.accordion_header a.button_grey,
+h4.accordion_header a.button_grey,
+h5.accordion_header a.button_grey {
+    font-weight: normal;
+    line-height: 26px;
+}    
+
+h2.header_button_width_100per,
+h3.header_button_width_100per,
+h4.header_button_width_100per,
+h5.header_button_width_100per {
+    width: auto !important;
+    padding: 0 0 0 0 !important;    
+}
+
+.button_grey,
+#maincontent form input[type="submit"],
+#maincontent .tx-ptextlist-pager li a,
+.news-single-backlink a,
+.news-single-item-prev a,
+.news-single-item-next a {
+    background: #646464; /* IE 9 only */
+    box-shadow: 0px 3px 0px 0px rgb(70, 70, 70);
+    background: linear-gradient(to bottom, rgb(90, 90, 90) 5%, rgb(120, 120, 120) 100%) repeat scroll 0% 0% rgb(90, 90, 90);
+    background: -webkit-linear-gradient(to bottom, rgb(90, 90, 90) 5%, rgb(120, 120, 120) 100%) repeat scroll 0% 0% rgb(90, 90, 90);
+    background: -moz-linear-gradient(to bottom, rgb(90, 90, 90) 5%, rgb(120, 120, 120) 100%) repeat scroll 0% 0% rgb(90, 90, 90);
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#777777), to(#5A5A5A));
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFF !important;
+    font-size: 16px;
+    padding: 10px 15px !important;
+    text-decoration: none !important;
+    text-shadow: 0px 1px 1px rgb(60, 60, 60);
+    border: 0;
+    }
+
+.button_grey:hover,
+.select_field:hover,
+#maincontent form input[type="submit"]:hover,
+#maincontent .tx-ptextlist-pager li a:hover,
+.news-single-backlink a:hover,
+.news-single-item-prev a:hover,
+.news-single-item-next a:hover,
+.select_me_the_ul_way:hover {
+    background: rgb(149, 149, 149) !important;
+    transition: background 0.5s ease-in-out;
+    -webkit-transition: background 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out;
+    }
+
+.button_black {
+    background: #2A2A2A; /* IE 9 only */
+    box-shadow: 0px 3px 0px 0px rgb(30, 30, 30);
+    background: linear-gradient(to bottom, rgb(60, 60, 60) 5%, rgb(50, 50, 50) 100%) repeat scroll 0% 0% rgb(60, 60, 60);
+    background: -webkit-linear-gradient(to bottom, rgb(60, 60, 60) 5%, rgb(50, 50, 50) 100%) repeat scroll 0% 0% rgb(60, 60, 60);
+    background: -moz-linear-gradient(to bottom, rgb(60, 60, 60) 5%, rgb(50, 50, 50) 100%) repeat scroll 0% 0% rgb(60, 60, 60);
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#323232), to(#3C3C3C));
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFF !important;
+    font-size: 16px;
+    padding: 10px 15px !important;
+    text-decoration: none !important;
+    text-shadow: 0px 1px 0px rgb(30, 30, 30);
+    border: 0;
+    }
+
+.button_black:hover {
+    background: rgb(50, 50, 50) !important;
+    transition: background 0.5s ease-in-out;
+    -webkit-transition: background 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out;
+    }
+
+.button_darkgrey {
+    background: #646464; /* IE 9 only */
+    box-shadow: 0px 3px 0px 0px rgb(70, 70, 70);
+    background: linear-gradient(to bottom, rgb(90, 90, 90) 5%, rgb(120, 120, 120) 100%) repeat scroll 0% 0% rgb(90, 90, 90);
+    background: -webkit-linear-gradient(to bottom, rgb(90, 90, 90) 5%, rgb(120, 120, 120) 100%) repeat scroll 0% 0% rgb(90, 90, 90);
+    background: -moz-linear-gradient(to bottom, rgb(90, 90, 90) 5%, rgb(120, 120, 120) 100%) repeat scroll 0% 0% rgb(90, 90, 90);
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#777777), to(#5A5A5A));
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFF !important;
+    font-size: 16px;
+    padding: 10px 15px !important;
+    text-decoration: none !important;
+    text-shadow: 0px 1px 0px rgb(70, 70, 70);
+    border: 0;
+    }
+
+.button_darkgrey:hover {
+    background: rgb(120, 120, 120) !important;
+    transition: background 0.5s ease-in-out;
+    -webkit-transition: background 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out;
+    }
+
+.button_width_40 {
+    width: 20px;
+    }
+
+.button_width_200 {
+    width: 200px;
+    }
+
+.button_width_100per {
+    width: auto;
+    display: block;
+    }
+
+.select_field select {
+    background-color: transparent;
+    width: 270px;
+    padding: 10px 15px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #FFF;
+    text-shadow: 0px 1px 1px rgb(60, 60, 60);
+    cursor: pointer !important;
+    }
+   
+.select_field {
+    box-shadow: 0px 3px 0px 0px rgb(120, 120, 120);
+    background: #787878; /* IE 9 only */
+    background: linear-gradient(to bottom, rgb(150, 150, 150) 5%, rgb(149, 149, 149) 100%) repeat scroll 0% 0% rgb(198, 191, 184);
+    background: -webkit-linear-gradient(to bottom, rgb(150, 150, 150) 5%, rgb(149, 149, 149) 100%) repeat scroll 0% 0% rgb(198, 191, 184);
+    background: -moz-linear-gradient(to bottom, rgb(150, 150, 150) 5%, rgb(149, 149, 149) 100%) repeat scroll 0% 0% rgb(198, 191, 184);
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#989898), to(#C6BFB8));
+    width: 230px;
+    border-radius: 3px;   
+    overflow: hidden;
+    height: 41px;
+    }
+
+.select_field em {
+    position: relative;
+    top: 16px;
+    right: 10px;
+    float: right;
+    margin-bottom: -20px;
+    font-size: 10px;
+    color: #FFF;
+    text-shadow: 0 1px 0 #787878;
+    }
+
+.select_field:hover em {
+    color: #787878;
+    text-shadow: 0 1px 0 #FFF;
+    cursor: pointer;
+    }   
+
+.select_field option {
+    border-bottom: 1px solid #CCC;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #787878;  
+    }
+
+.select_field option:hover {
+    background: #989898; /* IE 9 only */
+    background: linear-gradient(to bottom, rgb(150, 150, 150) 5%, rgb(130, 130, 130) 100%) repeat scroll 0% 0% rgb(198, 191, 184);
+    background: -webkit-linear-gradient(to bottom, rgb(150, 150, 150) 5%, rgb(130, 130, 130) 100%) repeat scroll 0% 0% rgb(198, 191, 184);
+    background: -moz-linear-gradient(to bottom, rgb(150, 150, 150) 5%, rgb(130, 130, 130) 100%) repeat scroll 0% 0% rgb(198, 191, 184);
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#989898), to(#C6BFB8));    
+    }
+
+.select_field option:focus,
+.select_field optionn:active,
+.select_field option:checked {
+    background: #8E0E1D; /* IE 9 only */
+    background: linear-gradient(to bottom, rgb(210, 61, 78) 5%, rgb(141, 13, 28) 100%) repeat scroll 0% 0% rgb(210, 61, 78);
+    background: -webkit-linear-gradient(to bottom, rgb(210, 61, 78) 5%, rgb(141, 13, 28) 100%) repeat scroll 0% 0% rgb(210, 61, 78);
+    background: -moz-linear-gradient(to bottom, rgb(210, 61, 78) 5%, rgb(141, 13, 28) 100%) repeat scroll 0% 0% rgb(210, 61, 78);
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#8D0D1C), to(#D23D4E));
+    }
+
+form input.input_width_auto {
+    padding: 10px 15px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 0px 0px rgb(120, 120, 120);
+    border: 1px solid #959595;
+    vertical-align: middle;
+    float: left;
+    width: 40% !important;
+    margin-right: 2px;
+    }
+
+a:focus,
+a:focus em,
+.button_grey:focus,
+.button_red:focus {
+    background-color: #EDD3B4 !important;
+    background-image: none !important;
+    color: #000 !important;
+    border-radius: 3px 3px 3px 3px;
+}
+
+input:focus {
+    background-color: #EDD3B4;
+}
+
+ul.accordion {
+    margin: 0px !important;
+    width: 100% !important;
+}
+
+ul.accordion li,
+ul.accordion li ul.accordion li {
+    list-style-type: none;
+}
+
+ul.accordion li {
+    padding-bottom: 0px !important;
+}    
+
+ul.accordion li a.button_red ul,
+ul.accordion li a.button_grey ul {
+    display: none !important;
+    padding: 0px 0px 0px 15px;
+}
+
+ul.accordion li a span {
+    width: 75%;
+    display: block;
+    float: left;
+}
+
+ul.accordion li a em {
+    float: right;
+    width: 20px;
+    display: block;
+    font-size: 20px;
+    line-height: 20px;
+    padding-top: 2px;
+    text-align: right;
+}
+
+ul.accordion li ul {
+    display: none;
+}
+
+ul.accordion li ul li ul,
+ul.accordion li ul li ol {
+    display: block;
+}
+
+ul.accordion li ul li ul li,
+ul.accordion ul.accordion li ul li ul li {
+    list-style-type: disc;
+    padding-bottom: 10px !important;
+}
+
+ul.accordion li ul li ul li ul li,
+ul.accordion li ul li ol li ul li,
+ul.accordion ul.accordion li ul li ul li ul li,
+ul.accordion ul.accordion li ul li ol li ul li {
+    list-style-type: circle;
+}
+
+ul.accordion li ul li ol li,
+ul.accordion ul.accordion li ul li ol li  {
+    list-style-type: decimal;
+    padding-bottom: 10px !important;
+}  
+
+ul.accordion ul ul,
+ul.accordion ul ol {
+    margin-left: 15px;
+}
+
+ul.accordion ul ul ul,
+ul.accordion ul ul ol,
+ul.accordion ul ol ul,
+ul.accordion ul ol ol,
+ul.accordion ul ul.accordion ul ul,
+ul.accordion ul ul.accordion ul ol,
+ul.accordion ul ul.accordion ol ul,
+ul.accordion ul ul.accordion ol ol {
+    margin-left: 20px;
+}
+
+ul.accordion .span_2_of_2 {
+    width: 100% !important;
+}
+
+ul.accordion label {
+    text-align: left !important;
+    display: block;
+}
+
 /*----------------------------------------------------------------------
 max 1600px
 ----------------------------------------------------------------------*/
@@ -2987,6 +3393,21 @@ max 1600px
     main aside {
         float: right;
         width: 35%;
+    }
+
+    .grid-wrapper-aside-left-column {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    .col-1-2 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .col-2-2 {
+        grid-column: 1;
+        grid-row: 2;
     }
 
     #main-content {
@@ -3068,6 +3489,7 @@ max 1024px
 
     .portal-legal-area li a {
         background: transparent;
+        color: #ffffff;
         border: 1px solid #6a6a6a;
     }
 
