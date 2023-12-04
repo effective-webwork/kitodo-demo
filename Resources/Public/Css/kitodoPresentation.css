@@ -924,6 +924,10 @@ main div.frame-type-text ul {
     padding: 15px 60px;
 }
 
+.frame-type-text hr {
+    width: calc(100% - 60px);
+}
+
 .logo-uhh-min {
     display: none;
 }
