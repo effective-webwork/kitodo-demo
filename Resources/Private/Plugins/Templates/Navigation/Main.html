@@ -190,7 +190,7 @@
                 </f:link.action>
             </f:then>
             <f:else>
-                <span title="{f:translate(key: 'lastPage'}">
+                <span title="{f:translate(key: 'lastPage')}">
                     <f:translate key="lastPage"/>
                 </span>
             </f:else>
@@ -249,4 +249,40 @@
     </li>
     </f:comment>
 </f:section>
+
+<!-- MK 2023 START -->
+<f:section name="render.volumeBack">
+    <li class="tx-dlf-navigation-volumeBack">
+        <f:if condition="{volumeBack}">
+            <f:then>
+                <f:link.action addQueryString="1" addQueryStringMethod="GET" additionalParams="{'tx_dlf[page]':'1', 'tx_dlf[id]': '{volumeBack}'}" title="{f:translate(key: 'navigation.volumeBack')}">
+                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/folder-symlink-left.svg" alt="{f:translate(key: 'navigation.volumeBack')}">
+                </f:link.action>
+            </f:then>
+            <f:else>
+                <span title="{f:translate(key: 'navigation.volumeBack')}">
+                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/folder-symlink-left.svg" alt="{f:translate(key: 'navigation.volumeBack')}">
+                </span>
+            </f:else>
+        </f:if>
+    </li>
+</f:section>
+
+<f:section name="render.volumeForward">
+    <li class="tx-dlf-navigation-volumeForward">
+        <f:if condition="{volumeForward}">
+            <f:then>
+                <f:link.action addQueryString="1" addQueryStringMethod="GET" additionalParams="{'tx_dlf[page]':'1', 'tx_dlf[id]': '{volumeForward}'}" title="{f:translate(key: 'navigation.volumeForward')}">
+                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/folder-symlink-right.svg" alt="{f:translate(key: 'navigation.volumeForward')}">
+                </f:link.action>
+            </f:then>
+            <f:else>
+                <span title="{f:translate(key: 'navigation.volumeForward')}">
+                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/folder-symlink-right.svg" alt="{f:translate(key: 'navigation.volumeForward')}">
+                </span>
+            </f:else>
+        </f:if>
+    </li>
+</f:section>
+<!-- MK 2023 END -->
 </html>
