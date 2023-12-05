@@ -924,6 +924,10 @@ main div.frame-type-text ul {
     padding: 15px 60px;
 }
 
+.frame-type-text hr {
+    width: calc(100% - 60px);
+}
+
 .logo-uhh-min {
     display: none;
 }
@@ -2753,6 +2757,8 @@ table.month h4:hover {
 .tx-dlf-calendar .list-view a {
     display: inline-block;
     margin-left: 5px;
+    display: table;
+    font-size: 16px;
 }
 
 .tx-dlf-calendar-years .year-view li a:hover,
