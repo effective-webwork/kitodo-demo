@@ -1737,6 +1737,7 @@ dd.tx-dlf-metadata-author,
 }
 
 .tx-dlf-listview-list .tx-dlf-listview-thumbnail img {
+    width: 100%;
     max-width: 300px;
     max-height: 400px;
     vertical-align: top;
@@ -3761,7 +3762,7 @@ max 1024px
     }
 
     #myNav.active, #myNav2.active {
-        height: calc(100% - 290px);
+        height: calc(100% - 330px);
     }
 
     #bottom-toolbar .navigation-left {
@@ -3791,9 +3792,10 @@ max 1024px
     }
 
     #fullsize-pagegrid {
-        width: calc(100% - 40px);
-        padding: 60px 0 120px 40px;
-        }
+        width: calc(100% - 20px) !important;
+        height: calc(100% - 350px) !important;
+        padding: 10px !important;
+    }
     
     .dropdown-menu input[type=checkbox]:checked ~ ul {
         display: block;
@@ -3940,6 +3942,25 @@ max 700px
         box-shadow: 0px 0px 0px 0px transparent;
     }
 
+    .subhh-listview-metadata dl {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .subhh-listview-metadata dl dd {
+        grid-column-start: 1;
+    }
+
+    .tx-dlf-metadata-titledata {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .detail-view-itemdetails dd, .detail-view-itemdetails label dd {
+        font-weight: 700;
+        display: inline;
+        grid-column-start: 1;
+    }
     /*.tx-dlf-search-wrapper .dlf-search-switch {
         margin: 0;
     }*/
@@ -4133,6 +4154,22 @@ max 700px
     .tx-dlf-toolbox {
         display: inline-block;
         position: initial;
+    }
+
+    #meta-overlay-btn.active {
+        width: 28px;
+    }
+
+    #meta-overlay-btn p {
+        padding: 2px;
+    }
+
+    #toc-overlay-btn.active {
+        width: 28px;
+    }
+
+    #toc-overlay-btn p {
+        padding: 2px;
     }
 
 }
