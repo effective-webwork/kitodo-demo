@@ -4156,6 +4156,22 @@ max 700px
         position: initial;
     }
 
+    #meta-overlay-btn.active {
+        width: 28px;
+    }
+
+    #meta-overlay-btn p {
+        padding: 2px;
+    }
+
+    #toc-overlay-btn.active {
+        width: 28px;
+    }
+
+    #toc-overlay-btn p {
+        padding: 2px;
+    }
+
 }
 
 .tx-dlf-map {
