@@ -3792,9 +3792,10 @@ max 1024px
     }
 
     #fullsize-pagegrid {
-        width: calc(100% - 40px);
-        padding: 60px 0 120px 40px;
-        }
+        width: calc(100% - 20px) !important;
+        height: calc(100% - 350px) !important;
+        padding: 10px !important;
+    }
     
     .dropdown-menu input[type=checkbox]:checked ~ ul {
         display: block;
