@@ -616,7 +616,7 @@ function setToolboxControl() {
 
 function initialFacetValueRestriction() {
     $('.tx-dlf-search-facets ul').each(function () {
-        if ($(this).children("li").length != 0 && $(this).children("li").length > 10) {
+        if ($(this).children("li").length != 0 && $(this).children("li").length > 12) {
             $($(this).children("li")[9]).nextAll().hide();
             $(this).append('<li><a class="facetShowMore" href="#">Mehr ...</a></li>');
             $(this).append('<li><a class="facetShowLess" href="#">Weniger ...</a></li>');
