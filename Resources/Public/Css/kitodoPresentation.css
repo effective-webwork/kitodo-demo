@@ -1737,7 +1737,7 @@ dd.tx-dlf-metadata-author,
 }
 
 .tx-dlf-listview-list .tx-dlf-listview-thumbnail img {
-    width: 100%;
+    width: auto;
     max-width: 300px;
     max-height: 400px;
     vertical-align: top;
