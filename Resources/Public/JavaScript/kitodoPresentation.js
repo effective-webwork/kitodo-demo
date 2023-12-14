@@ -342,24 +342,26 @@ function addMatomoDownloadEventListener(anchor_id, event_link, event_type) {
     $('[id="' + anchor_id +  '"]').on('click', function (event) {
         event.preventDefault();
 
+        // count as TOP content visit
+        _paq.push(['trackEvent', 'KITODO - TOP', record_id, event_type]);
+
         // matomo statistic
         // total_item_requests are actual download and views
         if (
-            event_type != 'Aufruf Zitierlink' &&
+            event_type != 'Zitierlink' &&
             event_type != 'Download IIIF-Manifest' &&
             event_type != 'Download METS/MODS' &&
-            event_type != 'Aufruf Zitierlink (Einzelseite)' &&
+            event_type != 'Zitierlink (Einzelseite)' &&
             event_type != 'Aufruf DFG-Viewer'
         ){
             _paq.push(['trackEvent', 'COUNTER5', 'Total_Item_Requests', event_type]);
+            window.open(event_link);
         }
         // redirects, citation-links and viewing of metadata is not part of total_item_requests
         else {
             _paq.push(['trackEvent', 'KITODO - REDIRECTS', event_type]);
+            window.open(event_link);
         }
-        _paq.push(['trackEvent', 'KITODO - TOP', record_id, event_type]);
-
-        window.open(event_link);
     });
 }
 
