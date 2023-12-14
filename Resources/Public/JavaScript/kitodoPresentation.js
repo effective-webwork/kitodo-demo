@@ -12,8 +12,6 @@ $(document).ready(function() {
     }
     initOverlays();
 
-    setTitleOnDetailPage();
-
     setBackToListviewInBreadcrumb();
 
     listViewFunction();
@@ -700,23 +698,6 @@ function enrichBreadcrumbForVolumes() {
 function setBackToListviewInBreadcrumb() {
     $('#backtolistview').attr("href", $('li.tx-dlf-navigation-backtolist a').attr("href"));
 
-}
-
-function setTitleOnDetailPage() {
-    var title = '';
-    title = $('dd.tx-dlf-metadata-title').text();
-
-    // use class add2title to add metadata to title
-    // default separator is "-" for a custom separator the data attribute "data-separator" can be used
-    $('.tx-dlf-metadata dd.add2title').each(function () {
-        if ($(this).data('separator')) {
-            title = title + ' ' + $(this).data('separator') + ' ' + $(this).text();
-        } else {
-            title = title + ' - ' + $(this).text();
-        }
-    });
-
-    $('.detail-view-header dd.tx-dlf-metadata-title').text(title);
 }
 
 function setNavigationControls() {
