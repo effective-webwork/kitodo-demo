@@ -358,7 +358,18 @@ function addMatomoDownloadEventListener(anchor_id, event_link, event_type) {
         // redirects, citation-links and viewing of metadata is not part of total_item_requests
         else {
             _paq.push(['trackEvent', 'KITODO - REDIRECTS', event_type]);
-            window.open(event_link);
+            if (event_type == 'Zitierlink' || event_type == 'Zitierlink (Einzelseite)')
+            {
+                if ($('#subhh-share-container').is(':visible') && event_type == $("label[for='subhh-share-anchor']").text()) {
+                    $('#subhh-share-container').css("display", "none");
+                } else {
+                    $("label[for='subhh-share-anchor']").text(event_type);
+                    $('#subhh-share-anchor').attr('value', event_link);
+                    $('#subhh-share-container').css("display", "block");
+                }
+            } else {
+                window.open(event_link);
+            }
         }
     });
 }

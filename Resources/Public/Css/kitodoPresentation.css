@@ -1915,6 +1915,10 @@ ul.tx-dlf-toolbox span a img {
     margin-bottom: 5px;
 }
 
+#subhh-share-anchor {
+    width: 100%;
+}
+
 .tx-dlf-toolbox {
     display: block;
     margin: 10px 0 0 0;
