@@ -891,10 +891,13 @@ function translateISIL() {
 function getNameFromISIL (isil) {
     return {
         'DE-18': 'Staats- und Universitätsbibliothek Hamburg Carl von Ossietzky',
+        'DE-205': 'Commerzbibliothek der Handelskammer Hamburg',
+        'DE-206': 'ZBW - Leibniz-Informationszentrum Wirtschaft',
+        'DE-46': 'Staats- und Universitätsbibliothek Bremen',
         'DE-68': 'Schleswig-Holsteinische Landesbibliothek',
         'DE-B479': 'Bibliothek des Bundesarchivs',
         'DE-Bo133': 'Bibliothek der Friedrich-Ebert-Stiftung',
-        'DE-H46': 'Staatsarchiv Hamburg, Bibliothek',
-        'DE-205': 'Commerzbibliothek der Handelskammer Hamburg'
+        'DE-H250': 'Forschungsstelle für Zeitgeschichte in Hamburg',
+        'DE-H46': 'Staatsarchiv Hamburg, Bibliothek'
     }[isil];
 }
