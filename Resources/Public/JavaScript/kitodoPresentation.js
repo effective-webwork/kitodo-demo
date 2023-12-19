@@ -5,6 +5,9 @@ $(document).ready(function() {
     cleanup()
     enrichBreadcrumbForVolumes();
 
+    // translate ISIL to institutional name
+    translateISIL()
+
     if (showVolumeList()) {
         setNavigationControls();
     } else {
@@ -856,4 +859,31 @@ function listviewNewspaperRouting() {
     //         $(this).siblings('dd.tx-dlf-title').children().prop('href', url);
     //     }
     // });
+}
+
+// mk 2022-11-07 # translate ISIL to institutional name
+function translateISIL() {
+    $('dd.tx-dlf-metadata-owner').each(function() {
+        var isil = $(this).text().trim();
+        var name = getNameFromISIL(isil);
+        if(name) {
+            var link = $("<a>" + name + "</a>");
+            link.attr("title", "Deutsche ISIL-Agentur und Sigelstelle");
+            link.attr("href", "https://sigel.staatsbibliothek-berlin.de/suche?isil=" + isil);
+            $(this).text("");
+            $(this).append(link);
+        };
+    });
+}
+
+// mk 2022-11-07 # get name from ISIL (using object literals)
+function getNameFromISIL (isil) {
+    return {
+        'DE-18': 'Staats- und Universitätsbibliothek Hamburg Carl von Ossietzky',
+        'DE-68': 'Schleswig-Holsteinische Landesbibliothek',
+        'DE-B479': 'Bibliothek des Bundesarchivs',
+        'DE-Bo133': 'Bibliothek der Friedrich-Ebert-Stiftung',
+        'DE-H46': 'Staatsarchiv Hamburg, Bibliothek',
+        'DE-205': 'Commerzbibliothek der Handelskammer Hamburg'
+    }[isil];
 }
