@@ -5,17 +5,15 @@ $(document).ready(function() {
     cleanup()
     enrichBreadcrumbForVolumes();
 
+    // translate ISIL to institutional name
+    translateISIL()
+
     if (showVolumeList()) {
         setNavigationControls();
     } else {
         $('div.tx-dlf-navigation').hide();
     }
     initOverlays();
-
-    // mk 2022-11-07 # apply date format transformation before adding it to the title
-    transformDateFormat();
-
-    setTitleOnDetailPage();
 
     setBackToListviewInBreadcrumb();
 
@@ -342,24 +340,37 @@ function addMatomoDownloadEventListener(anchor_id, event_link, event_type) {
     $('[id="' + anchor_id +  '"]').on('click', function (event) {
         event.preventDefault();
 
+        // count as TOP content visit
+        _paq.push(['trackEvent', 'KITODO - TOP', record_id, event_type]);
+
         // matomo statistic
         // total_item_requests are actual download and views
         if (
-            event_type != 'Aufruf Zitierlink' &&
+            event_type != 'Zitierlink' &&
             event_type != 'Download IIIF-Manifest' &&
             event_type != 'Download METS/MODS' &&
-            event_type != 'Aufruf Zitierlink (Einzelseite)' &&
+            event_type != 'Zitierlink (Einzelseite)' &&
             event_type != 'Aufruf DFG-Viewer'
         ){
             _paq.push(['trackEvent', 'COUNTER5', 'Total_Item_Requests', event_type]);
+            window.open(event_link);
         }
         // redirects, citation-links and viewing of metadata is not part of total_item_requests
         else {
             _paq.push(['trackEvent', 'KITODO - REDIRECTS', event_type]);
+            if (event_type == 'Zitierlink' || event_type == 'Zitierlink (Einzelseite)')
+            {
+                if ($('#subhh-share-container').is(':visible') && event_type == $("label[for='subhh-share-anchor']").text()) {
+                    $('#subhh-share-container').css("display", "none");
+                } else {
+                    $("label[for='subhh-share-anchor']").text(event_type);
+                    $('#subhh-share-anchor').attr('value', event_link);
+                    $('#subhh-share-container').css("display", "block");
+                }
+            } else {
+                window.open(event_link);
+            }
         }
-        _paq.push(['trackEvent', 'KITODO - TOP', record_id, event_type]);
-
-        window.open(event_link);
     });
 }
 
@@ -619,7 +630,7 @@ function setToolboxControl() {
 
 function initialFacetValueRestriction() {
     $('.tx-dlf-search-facets ul').each(function () {
-        if ($(this).children("li").length != 0 && $(this).children("li").length > 10) {
+        if ($(this).children("li").length != 0 && $(this).children("li").length > 12) {
             $($(this).children("li")[9]).nextAll().hide();
             $(this).append('<li><a class="facetShowMore" href="#">Mehr ...</a></li>');
             $(this).append('<li><a class="facetShowLess" href="#">Weniger ...</a></li>');
@@ -701,23 +712,6 @@ function enrichBreadcrumbForVolumes() {
 function setBackToListviewInBreadcrumb() {
     $('#backtolistview').attr("href", $('li.tx-dlf-navigation-backtolist a').attr("href"));
 
-}
-
-function setTitleOnDetailPage() {
-    var title = '';
-    title = $('dd.tx-dlf-metadata-title').text();
-
-    // use class add2title to add metadata to title
-    // default separator is "-" for a custom separator the data attribute "data-separator" can be used
-    $('.tx-dlf-metadata dd.add2title').each(function () {
-        if ($(this).data('separator')) {
-            title = title + ' ' + $(this).data('separator') + ' ' + $(this).text();
-        } else {
-            title = title + ' - ' + $(this).text();
-        }
-    });
-
-    $('.detail-view-header dd.tx-dlf-metadata-title').text(title);
 }
 
 function setNavigationControls() {
@@ -878,12 +872,32 @@ function listviewNewspaperRouting() {
     // });
 }
 
-// mk 2022-11-07 # transform ISO formatted date to locale date string
-function transformDateFormat() {
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    $('dd.tx-dlf-metadata-date').each(function() {
-        var rawDate = $(this).text().trim();
-        var dateString = new Date(rawDate).toLocaleDateString(undefined, options);
-        $(this).text(dateString);
+// mk 2022-11-07 # translate ISIL to institutional name
+function translateISIL() {
+    $('dd.tx-dlf-metadata-owner').each(function() {
+        var isil = $(this).text().trim();
+        var name = getNameFromISIL(isil);
+        if(name) {
+            var link = $("<a>" + name + "</a>");
+            link.attr("title", "Deutsche ISIL-Agentur und Sigelstelle");
+            link.attr("href", "https://sigel.staatsbibliothek-berlin.de/suche?isil=" + isil);
+            $(this).text("");
+            $(this).append(link);
+        };
     });
+}
+
+// mk 2022-11-07 # get name from ISIL (using object literals)
+function getNameFromISIL (isil) {
+    return {
+        'DE-18': 'Staats- und Universitätsbibliothek Hamburg Carl von Ossietzky',
+        'DE-205': 'Commerzbibliothek der Handelskammer Hamburg',
+        'DE-206': 'ZBW - Leibniz-Informationszentrum Wirtschaft',
+        'DE-46': 'Staats- und Universitätsbibliothek Bremen',
+        'DE-68': 'Schleswig-Holsteinische Landesbibliothek',
+        'DE-B479': 'Bibliothek des Bundesarchivs',
+        'DE-Bo133': 'Bibliothek der Friedrich-Ebert-Stiftung',
+        'DE-H250': 'Forschungsstelle für Zeitgeschichte in Hamburg',
+        'DE-H46': 'Staatsarchiv Hamburg, Bibliothek'
+    }[isil];
 }
