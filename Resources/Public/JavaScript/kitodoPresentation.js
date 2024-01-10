@@ -540,6 +540,8 @@ function cleanup() {
             $(this).append($(this).children('.tx-dlf-metadata-author'));
             $(this).append($(this).children('.tx-dlf-metadata-recipient'));
             $(this).append($(this).children('.tx-dlf-metadata-name_scribe'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_creator'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_engraver'));
             $(this).append($(this).children('.tx-dlf-metadata-place_of_publication'));
             $(this).append($(this).children('.tx-dlf-metadata-year_of_publication'));
             $(this).append($(this).children('.tx-dlf-metadata-place_of_production'));
