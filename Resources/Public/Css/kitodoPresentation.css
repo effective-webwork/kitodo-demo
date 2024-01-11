@@ -2798,6 +2798,7 @@ article.calendar-metadata ul li dl {
     color: #fff;
     -webkit-box-shadow: none;
     box-shadow: none;
+    margin-top: 30px;
   }
 
 .dropdown-menu ul li.tx-dlf-search-cur a {

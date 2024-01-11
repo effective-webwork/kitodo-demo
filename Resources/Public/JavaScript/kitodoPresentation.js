@@ -226,7 +226,7 @@ function addDownloadButtons() {
     pagenumber = 0;
 
     // make sure, that we have pagenumbers for objects with actual pages
-    var structtype = $('dd.tx-dlf-type').text();
+    var structtype = $('dd.tx-dlf-metadata-type').text();
     if( structtype === 'Zeitschrift' ||
         structtype === 'Mehrbändiges Werk' ||
         structtype === 'Mehrteilige Graphik' ||
@@ -294,6 +294,7 @@ function addDownloadButtons() {
 
     // decide whether a buttons target is reachable
     if(pagenumber == 0) {
+        downloads['iiifDownload'].class = "unreachable";
         downloads['fullPDFDownload'].class = "unreachable";
         downloads['pageLinkDownload'].class = "unreachable";
         downloads['pagePDFDownload'].class = "unreachable";
