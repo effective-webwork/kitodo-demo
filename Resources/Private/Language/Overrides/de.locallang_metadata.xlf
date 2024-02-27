@@ -57,6 +57,10 @@
 				<source><![CDATA[Owner]]></source>
 				<target><![CDATA[Besitzer]]></target>
 			</trans-unit>
+			<trans-unit id="metadata.person_originator">
+				<source><![CDATA[Originator]]></source>
+				<target><![CDATA[UrheberIn]]></target>
+			</trans-unit>
 			<trans-unit id="metadata.person_other">
 				<source><![CDATA[Participant]]></source>
 				<target><![CDATA[Mitwirkende]]></target>

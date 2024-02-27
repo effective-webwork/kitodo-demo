@@ -226,7 +226,7 @@ function addDownloadButtons() {
     pagenumber = 0;
 
     // make sure, that we have pagenumbers for objects with actual pages
-    var structtype = $('dd.tx-dlf-metadata-type').text();
+    var structtype = $('dd.tx-dlf-type').text();
     if( structtype === 'Zeitschrift' ||
         structtype === 'Mehrbändiges Werk' ||
         structtype === 'Mehrteilige Graphik' ||
@@ -538,11 +538,20 @@ function cleanup() {
             $(this).children('dd.tx-dlf-metadata-shelfmark').after('<hr class="tx-dlf-metadata-hr">');
             // bibliographic description
             $(this).append($(this).children('.tx-dlf-title'));
+            $(this).append($(this).children('.tx-dlf-metadata-subtitle'));
             $(this).append($(this).children('.tx-dlf-metadata-author'));
-            $(this).append($(this).children('.tx-dlf-metadata-recipient'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_scribe'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_creator'));
             $(this).append($(this).children('.tx-dlf-metadata-name_engraver'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_composer'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_artist'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_creator'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_recipient'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_scribe'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_collector'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_photographer'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_depicted_person'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_editor'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_translator'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_corporation'));
             $(this).append($(this).children('.tx-dlf-metadata-place_of_publication'));
             $(this).append($(this).children('.tx-dlf-metadata-year_of_publication'));
             $(this).append($(this).children('.tx-dlf-metadata-place_of_production'));
@@ -551,13 +560,6 @@ function cleanup() {
             $(this).append($(this).children('.tx-dlf-metadata-date_other_related'));
             $(this).append($(this).children('.tx-dlf-metadata-publisher'));
             $(this).append($(this).children('.tx-dlf-metadata-language'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_collector'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_artist'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_photographer'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_depicted_person'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_editor'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_translator'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_corporation'));
             $(this).append($(this).children('.tx-dlf-metadata-catalog_kalliope'));
             $(this).append($(this).children('.tx-dlf-metadata-volume'));
             // license
@@ -579,7 +581,7 @@ function cleanup() {
             $(this).append($(this).children('.tx-dlf-title'));
             $(this).append($(this).children('.tx-dlf-metadata-title_alternative'));
             $(this).append($(this).children('.tx-dlf-metadata-author'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_recepient'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_recipient'));
             $(this).append($(this).children('.tx-dlf-metadata-year'));
             $(this).append($(this).children('.tx-dlf-metadata-language'));
             $(this).append($(this).children('.tx-dlf-metadata-subjecttopic'));
