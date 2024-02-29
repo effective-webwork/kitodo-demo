@@ -429,7 +429,9 @@ function cleanup() {
         }
 
         // in copyright
-        if( license_facet == 'http://rightsstatements.org/vocab/InC/1.0/' ) {
+        if( license_facet == 'http://rightsstatements.org/vocab/InC/1.0/' ||
+            license_facet == 'https://rightsstatements.org/vocab/InC/1.0/'
+            ) {
             $(this).text('Urheberrechtsschutz 1.0');
         }
 
@@ -454,7 +456,9 @@ function cleanup() {
         }
 
         // in copyright
-        if( license_link == 'http://rightsstatements.org/vocab/InC/1.0/' ) {
+        if( license_link == 'http://rightsstatements.org/vocab/InC/1.0/' || 
+            license_link == 'https://rightsstatements.org/vocab/InC/1.0/'
+            ) {
             $(this).text('');
             $(this).append('<a href="' + license_link + '">Urheberrechtsschutz 1.0</a>');
         }
