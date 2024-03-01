@@ -161,7 +161,7 @@ function pageGridClickEvent() {
 }
 
 function fulltextClickEvent() {
-    $('#tx-dlf-tools-fulltext').on('click', function () {
+    $('#tx-dlf-tools-fulltext').on('click touchend', function () {
         if ($('#myNav3').hasClass('active')) {
             closeNav3();
         } else {
