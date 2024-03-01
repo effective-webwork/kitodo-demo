@@ -530,7 +530,8 @@ addon 03 2023
 }
 
 #myNav3.active, #myNav4.active {
-    height: 35%;
+    height: calc(100% - 180px);
+    bottom: 60px;
 }
 
 .reset-search-in-document {
@@ -3827,6 +3828,15 @@ max 700px
 ----------------------------------------------------------------------*/
 
 @media only screen and (max-width: 700px) {
+
+    #myNav3, #myNav4 {
+        min-width: auto;
+    }
+
+    #myNav3.active, #myNav4.active {
+        height: calc(100% - 240px);
+        bottom: 60px;
+    }
 
     .portal-logo-area {
         margin: 10px auto 0px auto;

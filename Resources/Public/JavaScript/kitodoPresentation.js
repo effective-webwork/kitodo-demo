@@ -233,7 +233,9 @@ function addDownloadButtons() {
         structtype === 'Mehrteilige Handschrift' ||
         structtype === 'Mehrteiliges Kartenwerk' ||
         structtype === 'Zeitung' ||
-        structtype === 'Jahr'
+        structtype === 'Jahr' ||
+        structtype === 'Bestand' ||
+        structtype === 'Unterbestand'
     ) {
         // show downloads even on toplevel
         $('.tx-dlf-toolbox').show();
@@ -662,10 +664,17 @@ function initialFacetValueRestriction() {
 }
 
 function showVolumeList() {
-    var documentType = $("dd.tx-dlf-type").text();
-    if (documentType == "Mehrbändiges Werk" || documentType == "Zeitschrift" ||
-        documentType == "periodical" || documentType == "journal" ||
-        documentType == "Mehrteilige Handschrift" || documentType == "Mehrteilige Graphik" || documentType == "Mehrteiliges Kartenwerk") {
+    var structtype = $('dd.tx-dlf-type').text();
+    if( structtype === 'Zeitschrift' ||
+        structtype === 'Mehrbändiges Werk' ||
+        structtype === 'Mehrteilige Graphik' ||
+        structtype === 'Mehrteilige Handschrift' ||
+        structtype === 'Mehrteiliges Kartenwerk' ||
+        structtype === 'Zeitung' ||
+        structtype === 'Jahr' ||
+        structtype === 'Bestand' ||
+        structtype === 'Unterbestand'
+    ) {
         $('.detail-view-main').append('<div class="volume-info-wrapper"><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
         $('.tx-dlf-toc ul ul li').each(function(index) {
             $('.volume-list').append('<li>'+$(this).html() +'</li>');
