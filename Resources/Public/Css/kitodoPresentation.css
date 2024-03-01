@@ -452,7 +452,7 @@ addon 03 2023
 }
 
 .overlay3-content {
-    padding: 30px;
+    padding: 60px 0px 0px 0px;
 }
 
 .overlay3-content h1{
@@ -2434,6 +2434,7 @@ div#tx-dlf-fulltextselection .highlight {
 #tx-dlf-fulltextselection {
     overflow: auto;
     margin-left: 60px;
+    height: calc(100vh - 240px);
 }
 
 #tx-dlf-fulltextselection:empty {
