@@ -23,8 +23,6 @@ $(document).ready(function() {
 
     setToolboxControl();
 
-    addTocPlus();
-
     pagerFormAdjustment();
 
     facetTouchStyle();
@@ -610,10 +608,6 @@ function pagerFormAdjustment() {
     $('#pagerFormText').on('change', function (event) {
         $('#pagerFormHidden').val($(this).val()-1);
     })
-}
-
-function addTocPlus() {
-    $('.tx-dlf-tableofcontents li.tx-dlf-toc-ifsub > a > span.tx-dlf-toc-title').prepend('+ ');
 }
 
 function setToolboxControl() {
