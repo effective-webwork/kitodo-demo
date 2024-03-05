@@ -540,22 +540,29 @@ function cleanup() {
             // shelfmark
             $(this).append($(this).children('.tx-dlf-metadata-shelfmark'));
             $(this).children('dd.tx-dlf-metadata-shelfmark').after('<hr class="tx-dlf-metadata-hr">');
-            // bibliographic description
+            // title
             $(this).append($(this).children('.tx-dlf-title'));
             $(this).append($(this).children('.tx-dlf-metadata-subtitle'));
+            // rolecodes originator
             $(this).append($(this).children('.tx-dlf-metadata-author'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_engraver'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_composer'));
             $(this).append($(this).children('.tx-dlf-metadata-name_artist'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_calligrapher'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_composer'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_compiler'));
             $(this).append($(this).children('.tx-dlf-metadata-name_creator'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_cartographer'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_engraver'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_librettist'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_photographer'));
+            // rolecodes other
             $(this).append($(this).children('.tx-dlf-metadata-name_recipient'));
             $(this).append($(this).children('.tx-dlf-metadata-name_scribe'));
             $(this).append($(this).children('.tx-dlf-metadata-name_collector'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_photographer'));
             $(this).append($(this).children('.tx-dlf-metadata-name_depicted_person'));
             $(this).append($(this).children('.tx-dlf-metadata-name_editor'));
             $(this).append($(this).children('.tx-dlf-metadata-name_translator'));
             $(this).append($(this).children('.tx-dlf-metadata-name_corporation'));
+            // other bibliographic metadata
             $(this).append($(this).children('.tx-dlf-metadata-place_of_publication'));
             $(this).append($(this).children('.tx-dlf-metadata-year_of_publication'));
             $(this).append($(this).children('.tx-dlf-metadata-place_of_production'));
