@@ -452,7 +452,7 @@ addon 03 2023
 }
 
 .overlay3-content {
-    padding: 30px;
+    padding: 60px 0px 0px 0px;
 }
 
 .overlay3-content h1{
@@ -530,7 +530,8 @@ addon 03 2023
 }
 
 #myNav3.active, #myNav4.active {
-    height: 35%;
+    height: calc(100% - 180px);
+    bottom: 60px;
 }
 
 .reset-search-in-document {
@@ -2236,6 +2237,10 @@ span.no-fulltext {
     display: inline;
 }
 
+.tx-dlf-tableofcontents li.tx-dlf-toc-ifsub > a > span.tx-dlf-toc-title::before {
+    content: "+ ";
+}
+
 /*.tx-dlf-pagegrid {
     z-index: 4;
     text-align: center;
@@ -2429,6 +2434,7 @@ div#tx-dlf-fulltextselection .highlight {
 #tx-dlf-fulltextselection {
     overflow: auto;
     margin-left: 60px;
+    height: calc(100vh - 240px);
 }
 
 #tx-dlf-fulltextselection:empty {
@@ -2798,6 +2804,7 @@ article.calendar-metadata ul li dl {
     color: #fff;
     -webkit-box-shadow: none;
     box-shadow: none;
+    margin-top: 30px;
   }
 
 .dropdown-menu ul li.tx-dlf-search-cur a {
@@ -3801,7 +3808,7 @@ max 1024px
 
     #fullsize-pagegrid {
         width: calc(100% - 20px) !important;
-        height: calc(100% - 350px) !important;
+        height: calc(100% - 280px) !important;
         padding: 10px !important;
     }
     
@@ -3826,6 +3833,15 @@ max 700px
 ----------------------------------------------------------------------*/
 
 @media only screen and (max-width: 700px) {
+
+    #myNav3, #myNav4 {
+        min-width: auto;
+    }
+
+    #myNav3.active, #myNav4.active {
+        height: calc(100% - 240px);
+        bottom: 60px;
+    }
 
     .portal-logo-area {
         margin: 10px auto 0px auto;
@@ -4227,7 +4243,7 @@ ol.tx-dlf-volume {
 #fullsize-pagegrid {
     position: fixed;
     width: calc(100% - 160px);
-    height: calc(100% - 200px);
+    height: calc(100% - 280px);
     z-index: 60;
     background: rgba(255, 255, 255, 0.85);
     padding: 80px;

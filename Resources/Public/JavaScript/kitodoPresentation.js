@@ -23,8 +23,6 @@ $(document).ready(function() {
 
     setToolboxControl();
 
-    addTocPlus();
-
     pagerFormAdjustment();
 
     facetTouchStyle();
@@ -163,7 +161,7 @@ function pageGridClickEvent() {
 }
 
 function fulltextClickEvent() {
-    $('#tx-dlf-tools-fulltext').on('click', function () {
+    $('#tx-dlf-tools-fulltext').on('click touchend', function () {
         if ($('#myNav3').hasClass('active')) {
             closeNav3();
         } else {
@@ -233,7 +231,9 @@ function addDownloadButtons() {
         structtype === 'Mehrteilige Handschrift' ||
         structtype === 'Mehrteiliges Kartenwerk' ||
         structtype === 'Zeitung' ||
-        structtype === 'Jahr'
+        structtype === 'Jahr' ||
+        structtype === 'Bestand' ||
+        structtype === 'Unterbestand'
     ) {
         // show downloads even on toplevel
         $('.tx-dlf-toolbox').show();
@@ -294,6 +294,7 @@ function addDownloadButtons() {
 
     // decide whether a buttons target is reachable
     if(pagenumber == 0) {
+        downloads['iiifDownload'].class = "unreachable";
         downloads['fullPDFDownload'].class = "unreachable";
         downloads['pageLinkDownload'].class = "unreachable";
         downloads['pagePDFDownload'].class = "unreachable";
@@ -428,7 +429,9 @@ function cleanup() {
         }
 
         // in copyright
-        if( license_facet == 'http://rightsstatements.org/vocab/InC/1.0/' ) {
+        if( license_facet == 'http://rightsstatements.org/vocab/InC/1.0/' ||
+            license_facet == 'https://rightsstatements.org/vocab/InC/1.0/'
+            ) {
             $(this).text('Urheberrechtsschutz 1.0');
         }
 
@@ -453,7 +456,9 @@ function cleanup() {
         }
 
         // in copyright
-        if( license_link == 'http://rightsstatements.org/vocab/InC/1.0/' ) {
+        if( license_link == 'http://rightsstatements.org/vocab/InC/1.0/' || 
+            license_link == 'https://rightsstatements.org/vocab/InC/1.0/'
+            ) {
             $(this).text('');
             $(this).append('<a href="' + license_link + '">Urheberrechtsschutz 1.0</a>');
         }
@@ -535,11 +540,29 @@ function cleanup() {
             // shelfmark
             $(this).append($(this).children('.tx-dlf-metadata-shelfmark'));
             $(this).children('dd.tx-dlf-metadata-shelfmark').after('<hr class="tx-dlf-metadata-hr">');
-            // bibliographic description
+            // title
             $(this).append($(this).children('.tx-dlf-title'));
+            $(this).append($(this).children('.tx-dlf-metadata-subtitle'));
+            // rolecodes originator
             $(this).append($(this).children('.tx-dlf-metadata-author'));
-            $(this).append($(this).children('.tx-dlf-metadata-recipient'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_artist'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_calligrapher'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_composer'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_compiler'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_creator'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_cartographer'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_engraver'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_librettist'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_photographer'));
+            // rolecodes other
+            $(this).append($(this).children('.tx-dlf-metadata-name_recipient'));
             $(this).append($(this).children('.tx-dlf-metadata-name_scribe'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_collector'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_depicted_person'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_editor'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_translator'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_corporation'));
+            // other bibliographic metadata
             $(this).append($(this).children('.tx-dlf-metadata-place_of_publication'));
             $(this).append($(this).children('.tx-dlf-metadata-year_of_publication'));
             $(this).append($(this).children('.tx-dlf-metadata-place_of_production'));
@@ -548,13 +571,6 @@ function cleanup() {
             $(this).append($(this).children('.tx-dlf-metadata-date_other_related'));
             $(this).append($(this).children('.tx-dlf-metadata-publisher'));
             $(this).append($(this).children('.tx-dlf-metadata-language'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_collector'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_artist'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_photographer'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_depicted_person'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_editor'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_translator'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_corporation'));
             $(this).append($(this).children('.tx-dlf-metadata-catalog_kalliope'));
             $(this).append($(this).children('.tx-dlf-metadata-volume'));
             // license
@@ -576,7 +592,7 @@ function cleanup() {
             $(this).append($(this).children('.tx-dlf-title'));
             $(this).append($(this).children('.tx-dlf-metadata-title_alternative'));
             $(this).append($(this).children('.tx-dlf-metadata-author'));
-            $(this).append($(this).children('.tx-dlf-metadata-name_recepient'));
+            $(this).append($(this).children('.tx-dlf-metadata-name_recipient'));
             $(this).append($(this).children('.tx-dlf-metadata-year'));
             $(this).append($(this).children('.tx-dlf-metadata-language'));
             $(this).append($(this).children('.tx-dlf-metadata-subjecttopic'));
@@ -599,10 +615,6 @@ function pagerFormAdjustment() {
     $('#pagerFormText').on('change', function (event) {
         $('#pagerFormHidden').val($(this).val()-1);
     })
-}
-
-function addTocPlus() {
-    $('.tx-dlf-tableofcontents li.tx-dlf-toc-ifsub > a > span.tx-dlf-toc-title').prepend('+ ');
 }
 
 function setToolboxControl() {
@@ -653,10 +665,17 @@ function initialFacetValueRestriction() {
 }
 
 function showVolumeList() {
-    var documentType = $("dd.tx-dlf-type").text();
-    if (documentType == "Mehrbändiges Werk" || documentType == "Zeitschrift" ||
-        documentType == "periodical" || documentType == "journal" ||
-        documentType == "Mehrteilige Handschrift" || documentType == "Mehrteilige Graphik" || documentType == "Mehrteiliges Kartenwerk") {
+    var structtype = $('dd.tx-dlf-type').text();
+    if( structtype === 'Zeitschrift' ||
+        structtype === 'Mehrbändiges Werk' ||
+        structtype === 'Mehrteilige Graphik' ||
+        structtype === 'Mehrteilige Handschrift' ||
+        structtype === 'Mehrteiliges Kartenwerk' ||
+        structtype === 'Zeitung' ||
+        structtype === 'Jahr' ||
+        structtype === 'Bestand' ||
+        structtype === 'Unterbestand'
+    ) {
         $('.detail-view-main').append('<div class="volume-info-wrapper"><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
         $('.tx-dlf-toc ul ul li').each(function(index) {
             $('.volume-list').append('<li>'+$(this).html() +'</li>');
