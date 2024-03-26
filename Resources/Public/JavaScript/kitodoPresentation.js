@@ -422,24 +422,17 @@ function cleanup() {
     $('span.tx-dlf-facet-value-title').each(function () {
         var license_facet = $(this).text().trim();
         // public domain
-        if( license_facet == 'https://creativecommons.org/publicdomain/mark/1.0/' || 
-            license_facet == 'http://creativecommons.org/publicdomain/mark/1.0/'
-            ) {
+        if(license_facet == 'https://creativecommons.org/publicdomain/mark/1.0/') {
             $(this).text('Public Domain Mark 1.0');
         }
 
         // in copyright
-        if( license_facet == 'http://rightsstatements.org/vocab/InC/1.0/' ||
-            license_facet == 'https://rightsstatements.org/vocab/InC/1.0/'
-            ) {
+        if(license_facet == 'https://rightsstatements.org/vocab/InC/1.0/') {
             $(this).text('Urheberrechtsschutz 1.0');
         }
 
         // copyright not evaluated
-        if( license_facet == 'https://rightsstatements.org/page/CNE/1.0/' || 
-            license_facet == 'https://rightsstatements.org/page/CNE/1.0/?language' ||
-            license_facet == 'https://rightsstatements.org/page/CNE/1.0/?language%3Dde'
-            ) {
+        if(license_facet == 'https://rightsstatements.org/vocab/CNE/1.0/') {
             $(this).text('Urheberrechtsschutz nicht bewertet');
         }
     });
@@ -448,26 +441,19 @@ function cleanup() {
     $('dd.tx-dlf-metadata-license').each(function () {
         var license_link = $(this).text().trim();
         // public domain
-        if( license_link == 'https://creativecommons.org/publicdomain/mark/1.0/' || 
-            license_link == 'http://creativecommons.org/publicdomain/mark/1.0/'
-            ) {
+        if(license_link == 'https://creativecommons.org/publicdomain/mark/1.0/') {
             $(this).text('');
             $(this).append('<a href="' + license_link + '">Public Domain Mark 1.0</a>');
         }
 
         // in copyright
-        if( license_link == 'http://rightsstatements.org/vocab/InC/1.0/' || 
-            license_link == 'https://rightsstatements.org/vocab/InC/1.0/'
-            ) {
+        if(license_link == 'https://rightsstatements.org/vocab/InC/1.0/') {
             $(this).text('');
             $(this).append('<a href="' + license_link + '">Urheberrechtsschutz 1.0</a>');
         }
 
         // copyright not evaluated
-        if( license_link == 'https://rightsstatements.org/page/CNE/1.0/' || 
-            license_link == 'https://rightsstatements.org/page/CNE/1.0/?language' ||
-            license_link == 'https://rightsstatements.org/page/CNE/1.0/?language%3Dde'
-            ) {
+        if(license_link == 'https://rightsstatements.org/vocab/CNE/1.0/') {
             $(this).text('');
             $(this).append('<a href="' + license_link + '">Urheberrechtsschutz nicht bewertet</a>');
         }
