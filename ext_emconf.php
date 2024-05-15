@@ -14,8 +14,6 @@ $EM_CONF[$_EXTKEY] = array(
 	'version' => '8.7',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '8.7-9.9.99',
-			'flux' => '8-9.9',
 		),
 		'suggests' => array(
 		),
