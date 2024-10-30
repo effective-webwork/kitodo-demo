@@ -20,6 +20,7 @@ page.includeJSFooterlibs {
 }
 
 page.includeJSFooter {
+	jsCookie = {$resDir}/Resources/Public/JavaScript/jsCookie.js
 	main = {$resDir}/Resources/Public/JavaScript/main.js
 }
 

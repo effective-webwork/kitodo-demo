@@ -175,6 +175,30 @@ $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text(
 $(".tx-dlf-metadata input[type=checkbox]").prop('checked', true);
 
 
+// add fullscreen button
+if ($('div.tx-dlf-navigation').length > 0) {
+    $('.detail-view-nav ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-fullscreen"><a href="#">Vollbild</a></li>');
+
+    if (Cookies.get('fullscreen')) {
+        Cookies.set('fullscreen', '1');
+        $('section.portal-meta').hide();
+    } else {
+        $('section.portal-meta').show();
+    }
+
+    $('li.tx-dlf-navigation-fullscreen a').on('click', function(evt) {
+        evt.preventDefault();
+
+        if (Cookies.get('fullscreen')) {
+            Cookies.remove('fullscreen');
+            $('section.portal-meta').show();
+        } else {
+            Cookies.set('fullscreen', '1');
+            $('section.portal-meta').hide();
+        }
+    });
+}
+
 $(".tx-dlf-metadata .show-metadata").on("click", function (evt) {
     evt.preventDefault();
 
