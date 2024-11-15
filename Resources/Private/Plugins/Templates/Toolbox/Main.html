@@ -40,7 +40,7 @@
         </f:then>
     </f:if>
 
-    <f:if condition="{imagemanipulationtool}">
+    <f:if condition="{renderImageManipulationTool}">
         <f:then>
             <li>
                 <span class="tx-dlf-tools-imagetools" id="tx-dlf-tools-imagetools"
@@ -51,7 +51,7 @@
         </f:then>
     </f:if>
 
-    <f:if condition="{imagedownloadtool} && {imageDownload}">
+    <f:if condition="{renderImageDownloadTool} && {imageDownload}">
         <f:then>
             <li>
                 <span class="tx-dlf-tools-imagedownload">
@@ -81,7 +81,7 @@
         </f:then>
     </f:if>
 
-    <f:if condition="{fulltexttool}">
+    <f:if condition="{renderFulltextTool}">
         <f:then>
             <li>
                 <span class="tx-dlf-tools-fulltext">
@@ -113,7 +113,7 @@
         </f:then>
     </f:if>
 
-    <f:if condition="{fulltextdownloadtool}">
+    <f:if condition="{renderFulltextDownloadTool}">
         <f:then>
             <li>
                 <span class="tx-dlf-tools-fulltextdownload">
@@ -135,7 +135,7 @@
         </f:then>
     </f:if>
 
-    <f:if condition="{pdfdownloadtool}">
+    <f:if condition="{renderPdfDownloadTool}">
         <f:then>
             <li>
                 <span class="tx-dlf-tools-pdf-page">
@@ -172,7 +172,7 @@
         </f:then>
     </f:if>
 
-    <f:if condition="{searchindocumenttool} && {searchInDocument}">
+    <f:if condition="{renderSearchInDocumentTool} && {searchInDocument}">
         <f:then>
             <li>
                 <f:if condition="{settings.searchUrl}">
