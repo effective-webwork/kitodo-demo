@@ -716,7 +716,7 @@ function enrichBreadcrumbForVolumes() {
 }
 
 function setBackToListviewInBreadcrumb() {
-    $('#backtolistview').attr("href", $('li.tx-dlf-navigation-backtolist a').attr("href"));
+    $('#backtolistview a').attr("href", $('li.tx-dlf-navigation-backtolist a').attr("href"));
 
 }
 
