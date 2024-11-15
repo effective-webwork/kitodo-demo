@@ -397,9 +397,10 @@ function cleanup() {
 
     // add backtolistview anchor for breadcrumbs
     breadcrumbLi.each(function() {
-        if($(this).text().trim() == "Recherche") {
-            $(this).text('Trefferliste');
-            $(this).attr("id","backtolistview");
+        var breadcrumbSection = $(this).find('a');
+        if (breadcrumbSection.trim() === "Recherche") {
+            breadcrumbSection.text('Trefferliste');
+            breadcrumbSection.attr("id","backtolistview");
         }
     });
 
@@ -716,7 +717,7 @@ function enrichBreadcrumbForVolumes() {
 }
 
 function setBackToListviewInBreadcrumb() {
-    $('#backtolistview a').attr("href", $('li.tx-dlf-navigation-backtolist a').attr("href"));
+    $('#backtolistview').attr("href", $('li.tx-dlf-navigation-backtolist a').attr("href"));
 
 }
 
