@@ -4210,6 +4210,12 @@ max 700px
 
 }
 
+.ol-viewport {
+    position: initial !important;
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
 .tx-dlf-map {
     min-height: 100vh;
 }
