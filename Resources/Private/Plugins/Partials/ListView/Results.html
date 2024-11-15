@@ -13,7 +13,7 @@
       xmlns:kitodo="http://typo3.org/ns/Kitodo/Dlf/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-
+    <f:render partial="Lists/Pagination" arguments="{_all}" />
     <f:variable name="currentPage" value="{pagination.currentPageNumber - 1}" />
     <f:variable name="pageOffset" value="{settings.list.paginate.itemsPerPage * currentPage}" />
     <f:variable name="targetPage" value="{settings.targetPidPageView}" />
@@ -248,6 +248,6 @@
             </li>
         </f:for>
     </ol>
-
+    <f:render partial="Lists/Pagination" arguments="{_all}" />
 
 </html>
