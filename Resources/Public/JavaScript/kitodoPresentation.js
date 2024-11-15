@@ -394,10 +394,10 @@ function facetTouchStyle() {
 // general cleanup functions on unwanted or ugly elements
 function cleanup() {
     var breadcrumbLi = $('article.breadcrumb li.active');
-    
+
     // add backtolistview anchor for breadcrumbs
     breadcrumbLi.each(function() {
-        if($(this).text() == "Recherche") {
+        if($(this).text().trim() == "Recherche") {
             $(this).text('Trefferliste');
             $(this).attr("id","backtolistview");
         }
@@ -406,7 +406,7 @@ function cleanup() {
     // link back to calendar for the current year in breadcrumbs
     breadcrumbLi.each(function() {
         
-        if($(this).text() == "Kalender") {
+        if($(this).text().trim() == "Kalender") {
             calendar_link = $('.tx-dlf-metadata-partof a').attr('href');
             if (calendar_link) {
                 $(this).attr("href", calendar_link);
