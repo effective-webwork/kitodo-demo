@@ -1483,19 +1483,19 @@ article.calendar-metadata a {
     width: 180px;
 }
 
-.f3-widget-paginator {
+.pagination {
     display: block;
     margin: 0 30px;
     font-size: 0;
 }
 
-.f3-widget-paginator li {
+.pagination li {
     display: inline-block;
     margin: 5px 5px 0 0;
     font-size: 16px;
 }
 
-.f3-widget-paginator a {
+.pagination a {
     background: #e4e4e4;
     border-radius: 3px;
     display: inline-block;
@@ -1506,7 +1506,7 @@ article.calendar-metadata a {
     text-decoration: none;
 }
 
-.f3-widget-paginator a:hover {
+.pagination a:hover {
     background: #8D0D1C;
     color: #ffffff;
 }
@@ -1528,28 +1528,28 @@ li.current {
     text-decoration: none;
 }
 
-.f3-widget-paginator li:first-child a {
+.pagination li:first-child a {
     background: url(../Images/icon-arrow-left-dark.svg) no-repeat center center #e4e4e4;
     background-size: 24px 24px;
     color: transparent;
     text-indent: -9999px;
 }
 
-.f3-widget-paginator li:first-child a:hover {
+.pagination li:first-child a:hover {
     background: url(../Images/icon-arrow-left.svg) no-repeat center center #8D0D1C;
     background-size: 24px 24px;
     color: transparent;
     text-indent: -9999px;
 }
 
-.f3-widget-paginator li:last-child a {
+.pagination li:last-child a {
     background: url(../Images/icon-arrow-right-dark.svg) no-repeat center center #e4e4e4;
     background-size: 24px 24px;
     color: transparent;
     text-indent: -9999px;
 }
 
-.f3-widget-paginator li:last-child a:hover {
+.pagination li:last-child a:hover {
     background: url(../Images/icon-arrow-right.svg) no-repeat center center #8D0D1C;
     background-size: 24px 24px;
     color: transparent;
@@ -4003,22 +4003,22 @@ max 700px
         width: 100%;
     }
 
-    .f3-widget-paginator {
+    .pagination {
         display: block;
         margin: 15px;
     }
 
-    .f3-widget-paginator p {
+    .pagination p {
         padding: 0 15px;
         display: block;
         text-align: center;
     }
 
-    .f3-widget-paginator a {
+    .pagination a {
         margin-top: 5px;
     }
 
-    .f3-widget-paginator p:last-child {
+    .pagination p:last-child {
         text-align: center;
     }
 
