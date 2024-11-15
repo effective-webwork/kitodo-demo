@@ -1517,7 +1517,18 @@ article.calendar-metadata a {
     color: #ffffff;
 }
 
-li.current {
+li.disabled span {
+    background: #6a6a6a;
+    color: #ffffff;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 10px;
+    min-width: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+li.current a {
     background: #6a6a6a;
     color: #ffffff;
     border-radius: 3px;
