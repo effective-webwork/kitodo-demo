@@ -398,7 +398,7 @@ function cleanup() {
     // add backtolistview anchor for breadcrumbs
     breadcrumbLi.each(function() {
         var breadcrumbSection = $(this).find('a');
-        if (breadcrumbSection.trim() === "Recherche") {
+        if (breadcrumbSection.text().trim() === "Recherche") {
             breadcrumbSection.text('Trefferliste');
             breadcrumbSection.attr("id","backtolistview");
         }
