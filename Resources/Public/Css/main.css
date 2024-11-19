@@ -322,3 +322,41 @@ dt.tx-dlf-metadata-title {
 .tx-dlf-searchindocumenttool em {
     color: #c51819;
 }
+
+.volume-info-wrapper {
+    position: fixed;
+    overflow-y: auto;
+    width: calc(75vw - 120px);
+    height: calc(100vh - 200px);
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: 20px;
+    left: 60px;
+}
+
+.volume-info {
+    background-color: #ababab;
+    padding: 8px 15px;
+    color: #ffffff;
+    border-radius: 3px;
+    margin: 30px;
+}
+
+.volume-list {
+    padding: 0 30px 30px 30px;
+    list-style: none;
+}
+
+.volume-list li a {
+    background: #444444;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 8px 15px;
+    color: #ffffff;
+    margin: 0 5px 5px 0;
+    text-decoration: none;
+}
+
+.volume-list li a:hover {
+    background: #c5181a;
+}

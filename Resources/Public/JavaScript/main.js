@@ -5,14 +5,39 @@ $('#submitBasketForm').text("merken");
 
 $('#kitodo-logo').attr("href", "index.php?id=1");
 
-
 // calendar functions
 
 $( document ).ready(function() {
     // switch between list and calendar
     calendarSwitchViews();
     calendarSelectBox();
+    showVolumeList();
 });
+
+function showVolumeList() {
+    // Volume list
+    $('.metadata-title-only .secondpart').remove();
+    
+    var structtype = $('dd.doc-type').text();
+    if( structtype === 'Zeitschrift' ||
+        structtype === 'Mehrbändiges Werk'
+    ) {
+        $('.detail-view-main').append('<div class="volume-info-wrapper"><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
+        $('.tx-dlf-toc ul ul li').each(function(index) {
+            $('.volume-list').append('<li>'+$(this).html() +'</li>');
+        });
+        $('a.chapter_download, a#pdfdownloadbutton').hide();
+        $('div.tx-dlf-toc span.headline_info').html('Bandliste');
+
+        // reduce height of pageview map
+        $('.tx-dlf-map').css('min-height', '0px');
+
+        // Hide toolbox
+        $('.tx-dlf-toolbox').hide();
+
+        return false;
+    }
+}
 
 function calendarSwitchViews() {
     // ,calendar-items // .list-view
