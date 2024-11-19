@@ -1163,6 +1163,10 @@ span.textline {
     padding:0!important;
 }
 
+section#main-content .tx-dlf-pagegrid {
+    display: none;
+}
+
 .tx-dlf-pagegrid {
     z-index:4;
     text-align:center;
