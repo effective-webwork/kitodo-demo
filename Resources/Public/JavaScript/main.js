@@ -199,6 +199,16 @@ $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text(
 // collapse metadata
 $(".tx-dlf-metadata input[type=checkbox]").prop('checked', true);
 
+// add pagegrid button
+if ($('div.tx-dlf-navigation').length > 0) {
+    $('.detail-view-nav ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-pagegrid"><a href="#">Bildübersicht</a></li>');
+
+    $('li.tx-dlf-navigation-pagegrid a').on('click', function(evt) {
+        evt.preventDefault();
+        $('section#main-content .tx-dlf-pagegrid .tx-dlf-pagegrid').toggle();
+    });
+}
+
 
 // add fullscreen button
 if ($('div.tx-dlf-navigation').length > 0) {
