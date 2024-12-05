@@ -209,6 +209,19 @@ if ($('div.tx-dlf-navigation').length > 0) {
     });
 }
 
+// add ol reset button
+if ($('div.tx-dlf-navigation').length > 0) {
+    $('.detail-view-nav ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-reset"><a href="#">Zurücksetzen</a></li>');
+
+    $('li.tx-dlf-navigation-reset a').on('click', function(evt) {
+        evt.preventDefault();
+        if (tx_dlf_viewer) {
+            tx_dlf_viewer.map.resetRotation();
+            tx_dlf_viewer.map.zoom(1);
+        }
+    });
+}
+
 
 // add fullscreen button
 if ($('div.tx-dlf-navigation').length > 0) {
