@@ -992,7 +992,8 @@ li.tx-dlf-navigation-fullscreen a {
     margin-left: 10px;
 }
 
-li.tx-dlf-navigation-pagegrid a {
+li.tx-dlf-navigation-pagegrid a,
+li.tx-dlf-navigation-reset a {
     height: 24px;
     line-height: 28px;
     transform: translateY(-6px);
