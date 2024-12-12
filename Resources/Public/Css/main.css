@@ -324,7 +324,7 @@ dt.tx-dlf-metadata-title {
 }
 
 .volume-info-wrapper {
-    position: fixed;
+    position: relative;
     overflow-y: auto;
     width: calc(75vw - 120px);
     height: calc(100vh - 200px);
