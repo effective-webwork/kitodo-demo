@@ -19,6 +19,8 @@ page.includeJSFooter {
     matomo = EXT:presentation_package/Resources/Public/JavaScript/matomo.js
 }
 
+page.shortcutIcon = EXT:presentation_package/Resources/Public/Icons/favicon.ico
+
 plugin.tx_dlf_search {
     view {
         templateRootPaths {
