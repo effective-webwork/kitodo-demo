@@ -774,6 +774,11 @@ header.header-portal-home-zeitungen {
     background-size: cover;
 }
 
+header.header-portal-home-adressbuecher {
+    background: url(../Images/ph-background-adressbuch.jpg) no-repeat top center #242424;
+    background-size: cover;
+}
+
 .breadcrumb {
     text-align: left;
     background: #242424;

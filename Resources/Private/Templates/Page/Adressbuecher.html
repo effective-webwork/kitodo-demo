@@ -1,0 +1,138 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
+
+    <f:layout name="default" />
+
+    <f:section name="Configuration">
+        <flux:form id="adressbuecherStartpage" label="Adressbücher Startseite">
+            <!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:form tag -->
+        </flux:form>
+
+        <flux:grid>
+            <!-- Edit this grid to change the "backend layout" structure -->
+            <flux:grid.row>
+                <flux:grid.column colPos="5" colspan="2" name="Announcement" label="Ankündigung">
+                </flux:grid.column>
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="0" colspan="2" name="Search" label="Suche">
+                </flux:grid.column>
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="2" colspan="2" name="Statistik" label="Statistik">
+                </flux:grid.column>
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="1" colspan="2" name="Main" label="Main">
+                </flux:grid.column>
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="3" colspan="2" name="Teaser" label="Teaser Elemente">
+                </flux:grid.column>
+            </flux:grid.row>
+            <flux:grid.row>
+                <flux:grid.column colPos="4" colspan="2" name="Info" label="Zusatzinfo">
+                </flux:grid.column>
+            </flux:grid.row>
+        </flux:grid>
+    </f:section>
+
+    <f:section name="Main">
+        <section class="subhh-announcement">
+            <v:content.render column="5" />
+        </section>
+        <f:render partial="DigitalisateHeader" arguments="{_all}"/>
+
+        <header class="header-portal-home header-portal-home-adressbuecher">
+            <section class="portal-meta">
+
+                <article class="breadcrumb">
+                    <v:page.breadCrumb linkCurrent="false"/>
+                </article>
+
+                <!--<article class="meta-navigation">
+                    <a href="" title="favorites"><img src="{f:uri.resource(path: 'img/icon-star.svg')}" alt="favorites" /><span class="meta-batchcount">11</span></a>
+                </article>-->
+
+            </section>
+
+            <section class="portal-home-intro">
+
+                <article class="portal-logo">
+                    <strong>Hamburger Adressbücher</strong> Digital
+                </article>
+                <article class="portal-claim">
+                    Adressbücher und älteren Fernsprechbücher im Gebiet des heutigen Hamburg
+                </article>
+
+            </section>
+
+            <section class="home-tx-dlf-search tx-dlf-search clear">
+                <v:content.render column="0" />
+            </section>
+
+            <section class="tx-dlf-statistics-wrapper">
+                <v:content.render column="2" />
+            </section>
+
+        </header>
+
+        <main>
+            <f:comment>
+            <div class="tx-dlf-collection">
+                <v:menu pageUid="{settings.categoryStartUid}" expandAll="0" levels="0" showHiddenInMenu="1">
+                    <ul class="tx-dlf-collection-list">
+                        <f:for each="{menu}" as="item">
+                            <li>
+                                <div class="tx-dlf-collection-thumbnail">
+                                    <v:page.resources.fal table="pages" field="media" uid="{item.uid}" as="images" slide="-1" >
+                                        <f:for each="{images}" as="image">
+                                            <v:page.link
+                                                    pageUid="{item.uid}"
+                                                    title="{item.linktext}"
+                                                    class="{itemClass}"
+                                                    target="{itemTarget}">
+                                                <f:image src="{image.url}" alt="{item.linktext}" title="{image.title}" />
+                                            </v:page.link>
+                                        </f:for>
+                                    </v:page.resources.fal>
+                                </div>
+
+                                <h2>
+                                    <v:page.link
+                                            pageUid="{item.uid}"
+                                            title="{item.linktext}"
+                                            class="{itemClass}"
+                                            target="{itemTarget}">
+                                        {item.linktext}
+                                    </v:page.link>
+                                </h2>
+                            </li>
+                        </f:for>
+                    </ul>
+                </v:menu>
+            </div>
+            </f:comment>
+
+            <div class="tx-dlf-collection">
+                <v:content.render column="1" />
+            </div>
+
+            <f:render partial="AdressbuecherTeaserSlot"/>
+
+            <section class="hero-teaser">
+
+            </section>
+
+            <div class="legal-info clear">
+                <v:content.render column="4" />
+            </div>
+
+        </main>
+
+    </f:section>
+
+</div>
