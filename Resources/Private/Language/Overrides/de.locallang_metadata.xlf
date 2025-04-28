@@ -45,6 +45,14 @@
 				<source><![CDATA[Month of the year]]></source>
 				<target><![CDATA[Monat]]></target>
 			</trans-unit>
+			<trans-unit id="metadata.note_region">
+				<source><![CDATA[Region]]></source>
+				<target><![CDATA[Region]]></target>
+			</trans-unit>
+			<trans-unit id="metadata.note_structure">
+				<source><![CDATA[Structure]]></source>
+				<target><![CDATA[Struktur]]></target>
+			</trans-unit>
 			<trans-unit id="metadata.opac_id" approved="yes">
 				<source><![CDATA[OPAC Identifier]]></source>
 				<target><![CDATA[OPAC-Identifier]]></target>
