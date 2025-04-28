@@ -301,7 +301,7 @@ function addDownloadButtons() {
         downloads['pageJPEGDownload'].class = "unreachable";
     }
 
-    if($('dd.tx-dlf-metadata-fulltext_flag').text() != "FULLTEXT") {
+    if(!$('dd.tx-dlf-metadata-fulltext_flag').text().includes("FULLTEXT")) {
         downloads['pageALTODownload'].class = "unreachable";
         downloads['pageTXTDownload'].class = "unreachable";
     }
