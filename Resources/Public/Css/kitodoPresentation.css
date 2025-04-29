@@ -888,6 +888,11 @@ article.breadcrumb ul li:first-child {
     background-size: cover;
 }
 
+.collection-intro-adressbuecher {
+    background: url(../Images/follow-background-adressbuecher.jpg) no-repeat top center #242424;
+    background-size: cover;
+}
+
 .collection-intro a {
     color: #ffffff;
 }
