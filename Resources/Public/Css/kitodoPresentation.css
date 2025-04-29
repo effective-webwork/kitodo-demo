@@ -654,6 +654,12 @@ sup {
     font-size: 0;
 }
 
+.contenttable { width: 100%; border-collapse: collapse; text-align: left; font-size: 15px; color: #fff}
+.contenttable thead { background-color: #333; color: #fff; }
+.contenttable tbody tr:nth-child(even) { background-color: rgba(255,255,255,.03); }
+.contenttable th,
+.contenttable td { padding: 10px 15px; border-bottom: 0px solid rgba(255,255,255,.06); }
+.cron1 {width: 150px; text-align: right; vertical-align: top}
 
 /*----------------------------------------------------------------------
 fonts
