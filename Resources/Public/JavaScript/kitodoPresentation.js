@@ -523,7 +523,12 @@ function cleanup() {
         });
     }
 
-    if (window.location.hostname == 'digitalisate-dev.sub.uni-hamburg.de' || window.location.hostname == 'digitalisate.sub.uni-hamburg.de') {
+    if (
+        window.location.hostname == 'digitalisate-dev.sub.uni-hamburg.de' || 
+        window.location.hostname == 'digitalisate.sub.uni-hamburg.de' || 
+        window.location.hostname == 'adressbuecher-dev.sub.uni-hamburg.de' || 
+        window.location.hostname == 'adressbuecher.sub.uni-hamburg.de'
+    ) {
         $('div.subhh-listview-metadata dl, li.pageresult dl').each(function () {
             // shelfmark
             $(this).append($(this).children('.tx-dlf-metadata-shelfmark'));
