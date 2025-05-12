@@ -654,6 +654,12 @@ sup {
     font-size: 0;
 }
 
+.contenttable { width: 100%; border-collapse: collapse; text-align: left; font-size: 15px; color: #fff}
+.contenttable thead { background-color: #333; color: #fff; }
+.contenttable tbody tr:nth-child(even) { background-color: rgba(255,255,255,.03); }
+.contenttable th,
+.contenttable td { padding: 10px 15px; border-bottom: 0px solid rgba(255,255,255,.06); }
+.cron1 {width: 150px; text-align: right; vertical-align: top}
 
 /*----------------------------------------------------------------------
 fonts
@@ -774,6 +780,11 @@ header.header-portal-home-zeitungen {
     background-size: cover;
 }
 
+header.header-portal-home-adressbuecher {
+    background: url(../Images/ph-background-adressbuch.jpg) no-repeat top center #242424;
+    background-size: cover;
+}
+
 .breadcrumb {
     text-align: left;
     background: #242424;
@@ -874,6 +885,11 @@ article.breadcrumb ul li:first-child {
 
 .collection-intro-zeitungen {
     background: url(../Images/follow-background-zeitungen.jpg) no-repeat top center #242424;
+    background-size: cover;
+}
+
+.collection-intro-adressbuecher {
+    background: url(../Images/follow-background-adressbuecher.jpg) no-repeat top center #242424;
     background-size: cover;
 }
 

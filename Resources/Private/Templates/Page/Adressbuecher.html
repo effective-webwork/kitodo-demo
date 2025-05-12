@@ -2,12 +2,12 @@
      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
-     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
 
     <f:layout name="default" />
 
     <f:section name="Configuration">
-        <flux:form id="digitalisateStartpage" label="Digitalisate Startseite">
+        <flux:form id="adressbuecherStartpage" label="Adressbücher Startseite">
             <!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:form tag -->
         </flux:form>
 
@@ -41,14 +41,12 @@
     </f:section>
 
     <f:section name="Main">
-
         <section class="subhh-announcement">
             <v:content.render column="5" />
         </section>
-        
         <f:render partial="DigitalisateHeader" arguments="{_all}"/>
 
-        <header class="header-portal-home header-portal-home-kulturgut">
+        <header class="header-portal-home header-portal-home-adressbuecher">
             <section class="portal-meta">
 
                 <article class="breadcrumb">
@@ -64,10 +62,10 @@
             <section class="portal-home-intro">
 
                 <article class="portal-logo">
-                    <strong>Hamburger Kulturgut</strong> Digital
+                    <strong>Hamburger Adressbücher</strong> Digital
                 </article>
                 <article class="portal-claim">
-                    Drucke, Handschriften, Karten, Fotos und mehr –<br/> durchsuchen Sie die Kollektionen
+                    Adressbücher und älteren Fernsprechbücher im Gebiet des heutigen Hamburg
                 </article>
 
             </section>
@@ -83,13 +81,14 @@
         </header>
 
         <main>
+            <f:comment>
             <div class="tx-dlf-collection">
                 <v:menu pageUid="{settings.categoryStartUid}" expandAll="0" levels="0" showHiddenInMenu="1">
                     <ul class="tx-dlf-collection-list">
                         <f:for each="{menu}" as="item">
                             <li>
                                 <div class="tx-dlf-collection-thumbnail">
-                                    <v:page.resources.fal table="pages" field="media" uid="{item.uid}" as="images" limit="1" >
+                                    <v:page.resources.fal table="pages" field="media" uid="{item.uid}" as="images" slide="-1" >
                                         <f:for each="{images}" as="image">
                                             <v:page.link
                                                     pageUid="{item.uid}"
@@ -116,8 +115,13 @@
                     </ul>
                 </v:menu>
             </div>
+            </f:comment>
 
-            <f:render partial="DigitalisateTeaserSlot"/>
+            <div class="tx-dlf-collection">
+                <v:content.render column="1" />
+            </div>
+
+            <f:render partial="AdressbuecherTeaserSlot"/>
 
             <section class="hero-teaser">
 
