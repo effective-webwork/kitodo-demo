@@ -79,6 +79,16 @@
                 </f:then>
             </f:if>
 
+            <f:if condition="{base} == 'https://hoerzu.sub.uni-hamburg.de/' || {base} == 'https://hoerzu-dev.sub.uni-hamburg.de/'">
+                <f:then>
+                    <section class="collection-intro collection-intro-hoerzu">
+                        <article>
+                            <v:content.render column="2" />
+                        </article>
+                    </section>
+                </f:then>
+            </f:if>
+
             <f:if condition="{base} == 'https://adressbuecher.sub.uni-hamburg.de/' || {base} == 'https://adressbuecher-dev.sub.uni-hamburg.de/'">
                 <f:then>
                     <section class="collection-intro collection-intro-adressbuecher">

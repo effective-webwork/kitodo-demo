@@ -10,6 +10,11 @@ if (!defined('TYPO3_MODE')) {
     "@import 'EXT:presentation_package/Configuration/TypoScript/setup.typoscript'"
 );
 
+$domain = \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_HOST');
+if ($domain === 'https://hoerzu.sub.uni-hamburg.de' || $domain === 'https://hoerzu-dev.sub.uni-hamburg.de') {
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['tx_dlf_pageview_proxy'] = \Kitodo\Dlf\Eid\PageViewProxy::class . '::main';
+}
+
 // Override language files
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:dlf/Resources/Private/Language/locallang_metadata.xlf'][] = 'EXT:presentation_package/Resources/Private/Language/Overrides/locallang_metadata.xlf';
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:dlf/Resources/Private/Language/locallang_metadata.xlf'][] = 'EXT:presentation_package/Resources/Private/Language/Overrides/de.locallang_metadata.xlf';

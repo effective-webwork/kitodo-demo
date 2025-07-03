@@ -25,6 +25,10 @@
 				<source><![CDATA[Coordinates]]></source>
 				<target><![CDATA[Geoinformationen]]></target>
 			</trans-unit>
+			<trans-unit id="metadata.content_type" approved="yes">
+				<source><![CDATA[Content type]]></source>
+				<target><![CDATA[Inhaltstyp]]></target>
+			</trans-unit>
 			<trans-unit id="metadata.day_of_the_week">
 				<source><![CDATA[Day of the week]]></source>
 				<target><![CDATA[Wochentag]]></target>
@@ -32,6 +36,10 @@
 			<trans-unit id="metadata.date_iso" approved="yes">
 				<source><![CDATA[Date]]></source>
 				<target><![CDATA[Datum]]></target>
+			</trans-unit>
+			<trans-unit id="metadata.issue" approved="yes">
+				<source><![CDATA[Issue]]></source>
+				<target><![CDATA[Heftnummer]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.language" approved="yes">
 				<source><![CDATA[Language]]></source>

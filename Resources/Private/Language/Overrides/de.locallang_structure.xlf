@@ -17,6 +17,10 @@
 				<source><![CDATA[Address]]></source>
 				<target><![CDATA[Anrede]]></target>
 			</trans-unit>
+			<trans-unit id="structure.advertising" approved="yes">
+				<source><![CDATA[Advertising]]></source>
+				<target><![CDATA[Werbung]]></target>
+			</trans-unit>
 			<trans-unit id="structure.album" approved="yes">
 				<source><![CDATA[Album]]></source>
 				<target><![CDATA[Album]]></target>
@@ -116,6 +120,10 @@
 			<trans-unit id="structure.edge" approved="yes">
 				<source><![CDATA[Edge]]></source>
 				<target><![CDATA[Schnitt]]></target>
+			</trans-unit>
+			<trans-unit id="structure.EditorialPage" approved="yes">
+				<source><![CDATA[Editorial Page]]></source>
+				<target><![CDATA[Redaktionsseite]]></target>
 			</trans-unit>
 			<trans-unit id="structure.endsheet" approved="yes">
 				<source><![CDATA[Endsheet]]></source>
@@ -312,6 +320,10 @@
 			<trans-unit id="structure.PeriodicalVolume" approved="yes">
 				<source><![CDATA[Periodical volume]]></source>
 				<target><![CDATA[Zeitschriftenband]]></target>
+			</trans-unit>
+			<trans-unit id="structure.PeriodicalPart" approved="yes">
+				<source><![CDATA[Periodical Part]]></source>
+				<target><![CDATA[Zeitschriftenteil]]></target>
 			</trans-unit>
 			<trans-unit id="structure.photograph" approved="yes">
 				<source><![CDATA[Photograph]]></source>
