@@ -20,11 +20,17 @@
 			<trans-unit id="metadata.coordinates">
 				<source><![CDATA[Coordinates]]></source>
 			</trans-unit>
+			<trans-unit id="metadata.content_type">
+				<source><![CDATA[Content type]]></source>
+			</trans-unit>
 			<trans-unit id="metadata.date_iso">
 				<source><![CDATA[Date]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.day_of_the_week">
 				<source><![CDATA[Day of the week]]></source>
+			</trans-unit>
+			<trans-unit id="metadata.issue">
+				<source><![CDATA[Issue]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.language">
 				<source><![CDATA[Language]]></source>

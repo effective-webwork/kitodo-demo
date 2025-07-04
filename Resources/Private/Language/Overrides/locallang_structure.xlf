@@ -14,6 +14,9 @@
 			<trans-unit id="structure.address">
 				<source><![CDATA[Address]]></source>
 			</trans-unit>
+			<trans-unit id="structure.advertising">
+				<source><![CDATA[Advertising]]></source>
+			</trans-unit>
 			<trans-unit id="structure.album">
 				<source><![CDATA[Album]]></source>
 			</trans-unit>
@@ -88,6 +91,9 @@
 			</trans-unit>
 			<trans-unit id="structure.edge">
 				<source><![CDATA[Edge]]></source>
+			</trans-unit>
+			<trans-unit id="structure.EditorialPage">
+				<source><![CDATA[Editorial Page]]></source>
 			</trans-unit>
 			<trans-unit id="structure.endsheet">
 				<source><![CDATA[Endsheet]]></source>
@@ -235,6 +241,9 @@
 			</trans-unit>
 			<trans-unit id="structure.PeriodicalVolume">
 				<source><![CDATA[Periodical Volume]]></source>
+			</trans-unit>
+			<trans-unit id="structure.PeriodicalPart">
+				<source><![CDATA[Periodical Part]]></source>
 			</trans-unit>
 			<trans-unit id="structure.photograph">
 				<source><![CDATA[Photograph]]></source>

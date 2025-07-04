@@ -52,7 +52,11 @@ $(document).ready(function() {
     fulltextClickEvent();
 
     // mk 2023-09-05 # add download buttons in pageview
-    addDownloadButtons();
+    if (window.location.hostname == 'hoerzu-dev.sub.uni-hamburg.de' || window.location.hostname == 'hoerzu.sub.uni-hamburg.de') {
+        addRestrictDownloadButtons();
+    } else {
+        addDownloadButtons();
+    }
 });
 
 function initOverlays() {
@@ -334,6 +338,130 @@ function addDownloadButtons() {
     //$('span.tx-dlf-tools-fulltext').parent().prependTo('ul.tx-dlf-navigation');
 }
 
+// mk 2023-02-02 # create additional download buttons
+function addRestrictDownloadButtons() {
+    // declare path to folder for icons
+    icon_folder = '/typo3conf/ext/presentation_package/Resources/Public/Images/download_icons/';
+    pageviewproxy = 'https://hoerzu.sub.uni-hamburg.de/?eID=tx_dlf_pageview_proxy&url=';
+
+    // our anchor for button placement
+    anchor = 'ul.download-anchor';
+
+    // grab the record id
+    record_id = $('dd.tx-dlf-metadata-record_id').text();
+    pagenumber = 0;
+
+    // make sure, that we have pagenumbers for objects with actual pages
+    var structtype = $('dd.tx-dlf-type').text();
+    if( structtype === 'Zeitschrift' ||
+        structtype === 'Mehrbändiges Werk' ||
+        structtype === 'Mehrteilige Graphik' ||
+        structtype === 'Mehrteilige Handschrift' ||
+        structtype === 'Mehrteiliges Kartenwerk' ||
+        structtype === 'Zeitung' ||
+        structtype === 'Jahr' ||
+        structtype === 'Bestand' ||
+        structtype === 'Unterbestand'
+    ) {
+        // show downloads even on toplevel
+        $('.tx-dlf-toolbox').show();
+    } else {
+        // coming from the resultset may result in missing tx_dlf[page], so make it "1" instead of running into "undefined"
+        pagenumber = "1";
+
+        let searchParams = new URLSearchParams(window.location.search);
+        if(searchParams.has('tx_dlf[page]'))
+        {
+            pagenumber = searchParams.get('tx_dlf[page]');
+        }
+    }
+
+    // create data structure for download buttons
+    var downloads = {
+        fullLinkDownload:   {id:"fullLinkDownload", title:"Persistente URL zum Objekt teilen",                          icon:"filetype-share-fill-full.svg",    class:"reachable", event:"Zitierlink"},
+        pageLinkDownload:   {id:"pageLinkDownload", title:"Persistente URL zur Einzelseite teilen",                     icon:"filetype-share-fill.svg",         class:"reachable", event:"Zitierlink (Einzelseite)"},
+        iiifDownload:       {id:"iiifDownload",     title:"IIIF-Manifest für Objekt herunterladen",                     icon:"filetype-iiif.svg",               class:"reachable", event:"Download IIIF-Manifest"},
+        metsDownload:       {id:"metsDownload",     title:"METS/MODS für Objekt herunterladen",                         icon:"filetype-mets.svg",               class:"reachable", event:"Download METS/MODS"},
+        fullPDFDownload:    {id:"fullPDFDownload",  title:"Gesamtes Objekt als PDF herunterladen",                      icon:"filetype-pdf-full.svg",           class:"reachable", event:"Download PDF"},
+        pagePDFDownload:    {id:"pagePDFDownload",  title:"Aktuelle Einzelseite als PDF herunterladen",                 icon:"filetype-pdf.svg",                class:"reachable", event:"Download PDF (Einzelseiten)"},
+        pageJPEGDownload:   {id:"pageJPEGDownload", title:"Aktuelle Seite als JPEG herunterladen",                      icon:"filetype-jpeg.svg",               class:"reachable", event:"Download JPEG (Einzelseite)"},
+        pageALTODownload:   {id:"pageALTODownload", title:"Volltext der aktuellen Seite als ALTO-XML herunterladen",    icon:"filetype-alto.svg",               class:"reachable", event:"Download ALTO-XML (Einzelseite)"},
+        pageTXTDownload:    {id:"pageTXTDownload",  title:"Volltext der aktuellen Seite als TXT herunterladen",         icon:"filetype-txt.svg",                class:"reachable", event:"Download TXT (Einzelseite)"},
+        //DFGViewer:          {id:"DFGViewer",        title:"Zur Ansicht in den DFG-Viewer wechseln",                     icon:"dfgviewerLogo.svg",               class:"reachable", event:"Aufruf DFG-Viewer"},
+    }
+
+    // per document URLs
+    downloads['fullPDFDownload'].link = pageviewproxy + 'https://restrict.sub.uni-hamburg.de/restrict/' + record_id + '/PDF/' + record_id + '.pdf';        // https://img.sub.uni-hamburg.de/kitodo/PPN175933782X/PDF/PPN175933782X.pdf
+    downloads['fullLinkDownload'].link = 'https://resolver.sub.uni-hamburg.de/restrict/' + record_id;                                 // https://resolver.sub.uni-hamburg.de/kitodo/PPN175933782X
+    downloads['iiifDownload'].link = 'https://iiif.sub.uni-hamburg.de/object/' + record_id + '/manifest';                           // https://iiif.sub.uni-hamburg.de/object/PPN175933782X/manifest
+    downloads['metsDownload'].link = 'https://mets.sub.uni-hamburg.de/kitodo/' + record_id;                                         // https://mets.sub.uni-hamburg.de/kitodo/PPN175933782X
+
+    // DFG Viewer URL
+    //downloads['DFGViewer'].link = 'https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/' + record_id;     // https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/PPN175933782X
+
+    // per page URLs
+    if(pagenumber > 0) {
+
+        // use pagenumber as is here
+        downloads['pageLinkDownload'].link = 'https://resolver.sub.uni-hamburg.de/restrict/' + record_id + '/page/' + pagenumber;     // https://resolver.sub.uni-hamburg.de/kitodo/PPN175933782X/page/9
+
+        // and update DFG-Viewer link if actual page navigation was in place
+        //downloads['DFGViewer'].link = 'https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/' + record_id + '&tx_dlf[page]=' + pagenumber;     // https://dfg-viewer.de/show/?tx_dlf[id]=https://mets.sub.uni-hamburg.de/kitodo/PPN175933782X&tx_dlf[page]=9
+
+        // change pagenumber to one with leading zeros now
+        pagenumber = pagenumber.padStart(8, '0');
+
+        downloads['pagePDFDownload'].link = pageviewproxy + 'https://restrict.sub.uni-hamburg.de/restrict/' + record_id + '/PDF/' + pagenumber + '.pdf';   // https://img.sub.uni-hamburg.de/kitodo/PPN175933782X/PDF/00000009.pdf
+        downloads['pageJPEGDownload'].link = pageviewproxy + 'https://restrict.sub.uni-hamburg.de/restrict/' + record_id + '/' + pagenumber + '.tif';      // https://pic.sub.uni-hamburg.de/kitodo/PPN175933782X/00000009.tif
+        downloads['pageALTODownload'].link = pageviewproxy + 'https://restrict.sub.uni-hamburg.de/restrict/' + record_id + '/' + pagenumber + '.xml';      // https://img.sub.uni-hamburg.de/kitodo/PPN175933782X/00000009.xml
+        downloads['pageTXTDownload'].link = pageviewproxy + 'https://restrict.sub.uni-hamburg.de/restrict/' + record_id + '/' + pagenumber + '.txt';       // https://img.sub.uni-hamburg.de/kitodo/PPN175933782X/00000009.txt
+
+    }
+
+
+
+    // decide whether a buttons target is reachable
+    if(pagenumber == 0) {
+        downloads['iiifDownload'].class = "unreachable";
+        downloads['fullPDFDownload'].class = "unreachable";
+        downloads['pageLinkDownload'].class = "unreachable";
+        downloads['pagePDFDownload'].class = "unreachable";
+        downloads['pageJPEGDownload'].class = "unreachable";
+    }
+
+    if(!$('dd.tx-dlf-metadata-fulltext_flag').text().includes("FULLTEXT")) {
+        downloads['pageALTODownload'].class = "unreachable";
+        downloads['pageTXTDownload'].class = "unreachable";
+    }
+
+    // populate buttons
+    for (const key in downloads) {
+        if(downloads[key].class == "reachable") {
+            //if (key === 'DFGViewer') {
+            //    $('#dfgviewerLink').attr('href', downloads[key].link);
+            //} else {
+                $(anchor).append('\
+                <li>\
+                    <a href="' + downloads[key].link + '" id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '" download>\
+                        <img src="' + icon_folder + downloads[key].icon + '">\
+                    </a>\
+                </li>');
+            //}
+            addMatomoDownloadEventListener(downloads[key].id, downloads[key].link, downloads[key].event);
+        }
+        else {
+            $(anchor).append('\
+            <li>\
+                <span id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '">\
+                    <img src="' + icon_folder + downloads[key].icon + '">\
+                </span>\
+            </li>');
+        }
+    }
+
+    //$('span.tx-dlf-tools-fulltext').parent().prependTo('ul.tx-dlf-navigation');
+}
+
 
 // mk 2023-09-05 # helper function for addDownloadButtons()
 // adds event listener for matomo tracking to download buttons
@@ -489,14 +617,43 @@ function cleanup() {
         }
     });
 
-    // removes repeating hr dividers from metadata in metadata-plugin
-    $( "hr.tx-dlf-metadata-hr" ).each(function( index ) {
-        if ($(this).next("hr.tx-dlf-metadata-hr").length) {
-            $(this).remove();
-        }
-    });
-
     // sort metadata in listview
+    if (window.location.hostname == 'hoerzu-dev.sub.uni-hamburg.de' || window.location.hostname == 'hoerzu.sub.uni-hamburg.de') {
+        $('div.subhh-listview-metadata dl, li.pageresult dl').each(function () {
+            // shelfmark
+            $(this).append($(this).children('.tx-dlf-metadata-shelfmark'));
+            $(this).children('dd.tx-dlf-metadata-shelfmark').after('<hr class="tx-dlf-metadata-hr">');
+            // title
+            $(this).append($(this).children('.tx-dlf-title'));
+            $(this).append($(this).children('.tx-dlf-metadata-subtitle'));
+            
+            $(this).append($(this).children('.tx-dlf-page'));
+            // other bibliographic metadata
+            $(this).append($(this).children('.tx-dlf-metadata-place_of_publication'));
+            $(this).append($(this).children('.tx-dlf-metadata-issue'));
+            $(this).children('dt.tx-dlf-metadata-issue').before('<hr class="tx-dlf-metadata-hr">');
+            $(this).append($(this).children('.tx-dlf-metadata-year_only'));
+            $(this).append($(this).children('.tx-dlf-metadata-place_of_production'));
+            $(this).append($(this).children('.tx-dlf-metadata-year_of_production'));
+            $(this).append($(this).children('.tx-dlf-metadata-production_year'));
+            $(this).append($(this).children('.tx-dlf-metadata-date_other_related'));
+            $(this).append($(this).children('.tx-dlf-metadata-publisher'));
+            $(this).append($(this).children('.tx-dlf-metadata-language'));
+            $(this).append($(this).children('.tx-dlf-metadata-catalog_kalliope'));
+            $(this).append($(this).children('.tx-dlf-metadata-volume'));
+            // license
+            $(this).append($(this).children('.tx-dlf-metadata-license'));
+            $(this).children('dt.tx-dlf-metadata-license').before('<hr class="tx-dlf-metadata-hr">');
+            // dataset
+            $(this).append($(this).children('.tx-dlf-metadata-record_id'));
+            $(this).children('dt.tx-dlf-metadata-record_id').before('<hr class="tx-dlf-metadata-hr">');
+            $(this).append($(this).children('.tx-dlf-metadata-content_type'));
+            $(this).append($(this).children('.tx-dlf-type'));
+            $(this).children('dt.tx-dlf-metadata-content_type').before('<hr class="tx-dlf-metadata-hr">');
+            $(this).children('dt.tx-dlf-type').before('<hr class="tx-dlf-metadata-hr">');
+        });
+    }
+    
     if (window.location.hostname == 'zeitungen-dev.sub.uni-hamburg.de' || window.location.hostname == 'zeitungen.sub.uni-hamburg.de') {
         $('div.subhh-listview-metadata dl, li.pageresult dl').each(function () {
             // date
@@ -596,6 +753,13 @@ function cleanup() {
             $(this).append($(this).children('.tx-dlf-type'));
         });
     }
+
+    // removes repeating hr dividers from metadata in metadata-plugin
+    $( "hr.tx-dlf-metadata-hr" ).each(function( index ) {
+        if ($(this).next("hr.tx-dlf-metadata-hr").length) {
+            $(this).remove();
+        }
+    });
 
 }
 

@@ -780,6 +780,11 @@ header.header-portal-home-zeitungen {
     background-size: cover;
 }
 
+header.header-portal-home-hoerzu {
+    background: url(../Images/ph-background-hoerzu.jpg) no-repeat top center #242424;
+    background-size: cover;
+}
+
 header.header-portal-home-adressbuecher {
     background: url(../Images/ph-background-adressbuch.jpg) no-repeat top center #242424;
     background-size: cover;
@@ -885,6 +890,11 @@ article.breadcrumb ul li:first-child {
 
 .collection-intro-zeitungen {
     background: url(../Images/follow-background-zeitungen.jpg) no-repeat top center #242424;
+    background-size: cover;
+}
+
+.collection-intro-hoerzu {
+    background: url(../Images/follow-background-hoerzu.jpg) no-repeat top center #242424;
     background-size: cover;
 }
 
