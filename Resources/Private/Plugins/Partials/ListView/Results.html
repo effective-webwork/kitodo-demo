@@ -129,7 +129,13 @@
                                 <li value="{childIterator.cycle}" class="pageresult">
                                         <div class="tx-dlf-listview-thumbnail">
                                         <f:if condition="{child.thumbnail}">
-                                            <img src="{child.thumbnail}" alt="Vorschaubild von {f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}" loading="lazy"/>
+                                            <f:link.page
+                                            pageUid="{settings.targetPidPageView}"
+                                            additionalParams="{tx_dlf:{page:'1', double:'0', id:'{child.uid}', pagegrid:'0'}}"
+                                            class=""
+                                            title="{f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}">
+                                                <img src="{child.thumbnail}" alt="Vorschaubild von {f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}" loading="lazy"/>
+                                            </f:link.page>
                                         </f:if>
                                         </div>
                                         <dl>
@@ -181,7 +187,13 @@
 
                                 <div class="tx-dlf-listview-thumbnail">
                                     <f:if condition="{result.thumbnail}">
-                                        <img src="{result.thumbnail}" alt="Vorschaubild von {f:if(condition:'{result.title}', then:'{result.title}', else:'[{document.title}]')}" loading="lazy"/>
+                                        <f:link.page
+                                        pageUid="{settings.targetPidPageView}"
+                                        additionalParams="{tx_dlf:{page:'{result.page}', double:'0', id:'{document.uid}', pagegrid:'0', highlight_word: '{result.highlight_word}'}}"
+                                        class=""
+                                        title="{f:if(condition:'{result.title}', then:'{result.title}', else:'[{document.title}]')}, Seite {result.page}">
+                                            <img src="{result.thumbnail}" alt="Vorschaubild von {f:if(condition:'{result.title}', then:'{result.title}', else:'[{document.title}]')}" loading="lazy"/>
+                                        </f:link.page>
                                     </f:if>
                                 </div>
                                 <div>
@@ -191,10 +203,10 @@
                                                 <dt class="tx-dlf-title"><f:translate key='LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.title' /></dt>
                                                 <dd class="tx-dlf-title">
                                                     <f:link.page
-                                                            pageUid="{settings.targetPidPageView}"
-                                                            additionalParams="{tx_dlf:{page:'{result.page}', double:'0', id:'{document.uid}', pagegrid:'0', highlight_word: '{result.highlight_word}'}}"
-                                                            class=""
-                                                            title="{f:if(condition:'{result.title}', then:'{result.title}', else:'[{document.title}]')}, Seite {result.page}">
+                                                    pageUid="{settings.targetPidPageView}"
+                                                    additionalParams="{tx_dlf:{page:'{result.page}', double:'0', id:'{document.uid}', pagegrid:'0', highlight_word: '{result.highlight_word}'}}"
+                                                    class=""
+                                                    title="{f:if(condition:'{result.title}', then:'{result.title}', else:'[{document.title}]')}, Seite {result.page}">
                                                         {result.title}
                                                     </f:link.page>
                                                 </dd>
@@ -203,10 +215,10 @@
                                                 <dt class="tx-dlf-title"><f:translate key='LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.title' /></dt>
                                                 <dd class="tx-dlf-title">
                                                     <f:link.page
-                                                            pageUid="{settings.targetPidPageView}"
-                                                            additionalParams="{tx_dlf:{page:'{result.page}', double:'0', id:'{document.uid}', pagegrid:'0', highlight_word: '{result.highlight_word}'}}"
-                                                            class=""
-                                                            title="{f:if(condition:'{result.title}', then:'{result.title}', else:'[{document.title}]')}, Seite {result.page}">
+                                                    pageUid="{settings.targetPidPageView}"
+                                                    additionalParams="{tx_dlf:{page:'{result.page}', double:'0', id:'{document.uid}', pagegrid:'0', highlight_word: '{result.highlight_word}'}}"
+                                                    class=""
+                                                    title="{f:if(condition:'{result.title}', then:'{result.title}', else:'[{document.title}]')}, Seite {result.page}">
                                                         {docTitle}
                                                     </f:link.page>
                                                 </dd>
