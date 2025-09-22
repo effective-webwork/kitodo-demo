@@ -603,9 +603,17 @@ a:hover, a:active {
     background-size: 24px 24px !important;;
 }
 
+.show-volumes-expand::after {
+  content: " verbergen";
+}
+
 .tx-dlf-listview-list li .show-volumes a.show-volumes-minimize:focus {
     background: url(../Images/icon-arrow-down.svg) no-repeat 10px center #EDD3B4 !important;;
     background-size: 24px 24px !important;;
+}
+
+.show-volumes-minimize::after {
+  content: " anzeigen";
 }
 
 a:focus,
