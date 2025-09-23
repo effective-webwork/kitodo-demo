@@ -61,20 +61,20 @@ $(document).ready(function() {
 
 function initOverlays() {
     if (document.getElementById("myNav") || document.getElementById("myNav2")) {
-        if (Cookies.get('overlay1')) {
+        if (dlfUtils.getCookie("overlay1") === '1') {
             openNav();
         }
-        if (Cookies.get('overlay2')) {
+        if (dlfUtils.getCookie("overlay2") === '1') {
             openNav2();
         }
-        if (Cookies.get('overlay3') || dlfUtils.getCookie("tx-dlf-pageview-fulltext-select") === 'enabled') {
+        if (dlfUtils.getCookie("overlay3") === '1' || dlfUtils.getCookie("tx-dlf-pageview-fulltext-select") === 'enabled') {
             if($('.no-fulltext').length > 0) {
                 closeNav3();
             } else {
                 openNav3();
             }
         }
-        if (Cookies.get('overlay4')) {
+        if (dlfUtils.getCookie("overlay4") === '1') {
             openNav4();
         }
     }
@@ -82,49 +82,49 @@ function initOverlays() {
 
 
 function openNav() {
-    Cookies.set('overlay1', '1');
+    document.cookie = "overlay1 = 1; sameSite=Lax;"
     $('#myNav').addClass('active');
     $('#toc-overlay-btn').removeClass('active');
 }
 
 function closeNav() {
-    Cookies.remove('overlay1');
+    document.cookie = "overlay1 = 0; sameSite=Lax;"
     $('#myNav').removeClass('active');
     $('#toc-overlay-btn').addClass('active');
 }
 
 function openNav2() {
-    Cookies.set('overlay2', '1');
+    document.cookie = "overlay2 = 1; sameSite=Lax;"
     $('#myNav2').addClass('active');
     $('#meta-overlay-btn').removeClass('active');
 }
 
 function closeNav2() {
-    Cookies.remove('overlay2');
+    document.cookie = "overlay2 = 0; sameSite=Lax;"
     $('#myNav2').removeClass('active');
     $('#meta-overlay-btn').addClass('active');
 }
 
 function openNav3() {
-    Cookies.set('overlay3', '1');
+    document.cookie = "overlay3 = 1; sameSite=Lax;"
     document.getElementById("myNav").style.height = "calc(65% - 120px)";
     $('#myNav3').addClass('active');
 }
 
 function closeNav3() {
-    Cookies.remove('overlay3');
+    document.cookie = "overlay3 = 0; sameSite=Lax;"
     document.getElementById("myNav").style.height = "calc(100% - 200px)";
     $('#myNav3').removeClass('active');
 }
 
 function openNav4() {
-    Cookies.set('overlay4', '1');
+    document.cookie = "overlay4 = 1; sameSite=Lax;"
     document.getElementById("myNav2").style.height = "calc(60% - 120px)";
     $('#myNav4').addClass('active');
 }
 
 function closeNav4() {
-    Cookies.remove('overlay4');
+    document.cookie = "overlay4 = 0; sameSite=Lax;"
     document.getElementById("myNav2").style.height = "calc(100% - 200px)";
     $('#myNav4').removeClass('active');
 }
