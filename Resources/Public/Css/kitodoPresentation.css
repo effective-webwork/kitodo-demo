@@ -1436,9 +1436,11 @@ listview
 
 .dropdown-menu ul li a {
     padding: 8px 15px;
-    display: block;
+    display: flex;
     line-height: 16px;
     margin-bottom: 2px;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .dropdown-menu ul li a:hover {
@@ -2283,7 +2285,15 @@ span.no-fulltext {
 }
 
 .tx-dlf-tableofcontents li.tx-dlf-toc-ifsub > a > span.tx-dlf-toc-title::before {
-    content: "+ ";
+    content: "⏵";
+}
+
+.tx-dlf-tableofcontents li.tx-dlf-toc-ifsub.tx-dlf-toc-act > a > span.tx-dlf-toc-title::before {
+  content: "⏷";
+}
+
+.tx-dlf-tableofcontents ul ul {
+  padding-left: 10px;
 }
 
 /*.tx-dlf-pagegrid {
