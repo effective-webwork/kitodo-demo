@@ -5,16 +5,12 @@ plugin.tx_presentationpackage.view {
 }
 
 page.includeCSS {
-#    main = EXT:presentation_package/Resources/Public/Css/main.css
-#    styles = EXT:presentation_package/Resources/Public/Css/styles.css
     presentation = EXT:presentation_package/Resources/Public/Css/kitodoPresentation.css
     searchOverwrite = EXT:presentation_package/Resources/Public/Css/searchOverwrite.css
 }
 
 page.includeJSFooter {
-#    main = EXT:presentation_package/Resources/Public/JavaScript/main.js
     accordion = EXT:presentation_package/Resources/Public/JavaScript/Accordion.js
-    jsCookie = EXT:presentation_package/Resources/Public/JavaScript/Jungius/jsCookie.js
     kitodoPresentation = EXT:presentation_package/Resources/Public/JavaScript/kitodoPresentation.js
     matomo = EXT:presentation_package/Resources/Public/JavaScript/matomo.js
 }
