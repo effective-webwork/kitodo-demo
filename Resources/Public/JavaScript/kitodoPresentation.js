@@ -57,7 +57,36 @@ $(document).ready(function() {
     } else {
         addDownloadButtons();
     }
+
+    tocToggler();
 });
+
+function tocToggler() {
+    // select all toggle spans inside TOC items with 'ifsub'
+    const toggles = document.querySelectorAll(".tx-dlf-tableofcontents li.tx-dlf-toc-ifsub > .toc-entry > .toggle");
+
+    toggles.forEach(toggle => {
+        toggle.addEventListener("click", (e) => {
+            e.stopPropagation(); // prevent bubbling
+
+            // find the parent <li> with ifsub
+            const li = toggle.closest("li.tx-dlf-toc-ifsub");
+            if (!li) return;
+
+            // toggle classes
+            const isClosed = li.classList.contains("tx-dlf-toc-no");
+            if (isClosed) {
+                li.classList.remove("tx-dlf-toc-no");
+                li.classList.add("tx-dlf-toc-act");
+                toggle.textContent = "−"; // open
+            } else {
+                li.classList.remove("tx-dlf-toc-act");
+                li.classList.add("tx-dlf-toc-no");
+                toggle.textContent = "+"; // closed
+            }
+        });
+    });
+}
 
 function initOverlays() {
     if (document.getElementById("myNav") || document.getElementById("myNav2")) {

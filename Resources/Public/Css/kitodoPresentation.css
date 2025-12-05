@@ -1430,6 +1430,13 @@ listview
     list-style-type: none;
 }
 
+.tx-dlf-tableofcontents .dropdown-menu ul li {
+    border-bottom: none !important;
+    background: #e4e4e4;
+    hyphens: auto;
+    list-style-type: none;
+}
+
 .dropdown-menu ul li:last-child {
     border-bottom: 0;
 }
@@ -1441,6 +1448,15 @@ listview
     margin-bottom: 2px;
     justify-content: space-between;
     gap: 10px;
+}
+
+.tx-dlf-tableofcontents .dropdown-menu ul li a {
+    display: flex;
+    line-height: 16px;
+    margin-bottom: 2px;
+    justify-content: space-between;
+    gap: 10px;
+    flex-grow: 1;
 }
 
 .dropdown-menu ul li a:hover {
@@ -2293,7 +2309,60 @@ span.no-fulltext {
 }
 
 .tx-dlf-tableofcontents ul ul {
-  padding-left: 10px;
+  padding-left: 15px;
+}
+
+.toc-entry {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+}
+
+.toggle {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: #ffffff;   /* light grey */
+  color: #555;                 /* darker grey for the + */
+  border-radius: 50%;
+  cursor: pointer;
+
+  font-family: "Courier New", monospace;  /* ensures + is centered */
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;              /* prevents vertical misalignment */
+  user-select: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.toggle:hover {
+  background-color: rgb(141, 13, 28);
+  transition: all 0.5s ease-in-out;
+  color: #fff;
+}
+
+.toggle:active {
+  background-color: #c8c8c8;
+  transform: scale(0.95);
+}
+
+.tx-dlf-tableofcontents li.tx-dlf-toc-ifsub.tx-dlf-toc-no > ul {
+    display: none;
+}
+
+.tx-dlf-tableofcontents li.tx-dlf-toc-ifsub.tx-dlf-toc-act > ul {
+    display: block;
+}
+
+.tx-dlf-tableofcontents ul > li:has(.tx-dlf-toc-cur) > .toc-entry {
+  font-weight: bold;
 }
 
 /*.tx-dlf-pagegrid {
