@@ -16,21 +16,30 @@
     <f:switch expression="{child.ITEM_STATE}">
         <f:case value="ACT">
             <li class="tx-dlf-toc-act">
+                <div class="toc-entry">
         </f:case>
         <f:case value="CUR">
             <li class="tx-dlf-toc-cur">
+                <div class="toc-entry">
         </f:case>
         <f:case value="ACTIFSUB">
             <li class="tx-dlf-toc-act tx-dlf-toc-ifsub">
+                <div class="toc-entry">
+                <span class="toggle">-</span>
         </f:case>
         <f:case value="CURIFSUB">
             <li class="tx-dlf-toc-cur tx-dlf-toc-ifsub">
+                <div class="toc-entry">
+                <span class="toggle">-</span>
         </f:case>
         <f:case value="IFSUB">
             <li class="tx-dlf-toc-no tx-dlf-toc-ifsub">
+                <div class="toc-entry">
+                <span class="toggle">+</span>
         </f:case>
         <f:defaultCase>
             <li class="tx-dlf-toc-no">
+                <div class="toc-entry">
         </f:defaultCase>
     </f:switch>
 
@@ -62,6 +71,7 @@
                 </f:link.action>
         </span>
     </f:if>
+    </div>
 
     <f:if condition="{child._SUB_MENU} && ({child.ITEM_STATE} == 'IFSUB' || {child.ITEM_STATE} == 'ACTIFSUB' || {child.ITEM_STATE} == 'CURIFSUB')">
         <ul>
