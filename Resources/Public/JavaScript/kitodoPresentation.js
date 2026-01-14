@@ -655,6 +655,7 @@ function cleanup() {
             // title
             $(this).append($(this).children('.tx-dlf-title'));
             $(this).append($(this).children('.tx-dlf-metadata-subtitle'));
+            $(this).append($(this).children('.tx-dlf-structure_path'));
             
             $(this).append($(this).children('.tx-dlf-page'));
             // other bibliographic metadata
@@ -722,6 +723,7 @@ function cleanup() {
             // title
             $(this).append($(this).children('.tx-dlf-title'));
             $(this).append($(this).children('.tx-dlf-metadata-subtitle'));
+            $(this).append($(this).children('.tx-dlf-structure_path'));
             // rolecodes originator
             $(this).append($(this).children('.tx-dlf-metadata-author'));
             $(this).append($(this).children('.tx-dlf-metadata-name_artist'));
@@ -770,6 +772,7 @@ function cleanup() {
             // bibliographic description
             $(this).append($(this).children('.tx-dlf-title'));
             $(this).append($(this).children('.tx-dlf-metadata-title_alternative'));
+            $(this).append($(this).children('.tx-dlf-structure_path'));
             $(this).append($(this).children('.tx-dlf-metadata-author'));
             $(this).append($(this).children('.tx-dlf-metadata-name_recipient'));
             $(this).append($(this).children('.tx-dlf-metadata-year'));
