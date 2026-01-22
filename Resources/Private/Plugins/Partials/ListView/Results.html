@@ -152,6 +152,13 @@
                                             </f:link.page>
                                         </dd>
 
+                                        <f:if condition="{settings.getStructurePath}">
+                                            <f:for each="{result.structure_path}" as="structure_path">
+                                                <dt class="tx-dlf-structure_path"><f:translate key='LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.structure_path' /></dt>
+                                                <dd class="tx-dlf-structure_path">{structure_path}</dd>
+                                            </f:for>
+                                        </f:if>
+
                                         <f:for each="{listedMetadata}" as="metadata">
                                             <f:if condition="{child.metadata.{metadata.indexName}.0} && {metadata.indexName} != 'type' && {metadata.indexName} != 'title'">
                                                 <dt class="tx-dlf-metadata-{metadata.indexName}">
@@ -223,6 +230,13 @@
                                                     </f:link.page>
                                                 </dd>
                                             </f:else>
+                                        </f:if>
+                                        <f:if condition="{settings.getStructurePath}">
+                                            <hr class="tx-dlf-structure_path tx-dlf-metadata-hr">
+                                            <f:for each="{result.structure_path}" as="structure_path">
+                                                <dt class="tx-dlf-structure_path"><f:translate key='LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.structure_path' /></dt>
+                                                <dd class="tx-dlf-structure_path">{structure_path}</dd>
+                                            </f:for>
                                         </f:if>
                                         <f:if condition="{result.structure} != 'page'">
                                             <dt class="tx-dlf-type"><f:translate key='LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.type' /></dt>
