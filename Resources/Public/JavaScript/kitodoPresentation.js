@@ -862,6 +862,7 @@ function showVolumeList() {
         structtype === 'Mehrteiliges Kartenwerk' ||
         structtype === 'Zeitung' ||
         structtype === 'Jahr' ||
+        structtype === 'Ephemera' ||
         structtype === 'Bestand' ||
         structtype === 'Unterbestand'
     ) {
