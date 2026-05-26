@@ -1,8 +1,6 @@
 $(document).ready(function() {
-    // mk 2023-09-20 # tidying up the facets
-    // - remove textparts for lexicographical sorting in facets
-    // - removes "Ausgabentitel" if "n.a." from metadata
     cleanup()
+
     enrichBreadcrumbForVolumes();
 
     // translate ISIL to institutional name
@@ -13,6 +11,7 @@ $(document).ready(function() {
     } else {
         $('div.tx-dlf-navigation').hide();
     }
+
     initOverlays();
 
     setBackToListviewInBreadcrumb();
@@ -26,8 +25,6 @@ $(document).ready(function() {
     pagerFormAdjustment();
 
     facetTouchStyle();
-
-    //addThumbnailPlaceholder();
 
     // workaround
     fixLabelInputMetadata();
@@ -44,11 +41,9 @@ $(document).ready(function() {
 
     replaceRssFeedImage();
 
-    listviewNewspaperRouting();
-
     pagegrid = 0;
-
     pageGridClickEvent();
+
     fulltextClickEvent();
 
     // mk 2023-09-05 # add download buttons in pageview
@@ -108,7 +103,6 @@ function initOverlays() {
         }
     }
 }
-
 
 function openNav() {
     document.cookie = "overlay1 = 1; sameSite=Lax;"
@@ -239,8 +233,6 @@ function fixLabelInputMetadata() {
             $($('input#checkbox-menu3')[1]).next().attr('for', 'checkbox-menu3'+i);
             $($('input#checkbox-menu3')[1]).attr('id', 'checkbox-menu3'+i);
         }
-
-
     }
 }
 
@@ -264,6 +256,7 @@ function addDownloadButtons() {
         structtype === 'Mehrteilige Handschrift' ||
         structtype === 'Mehrteiliges Kartenwerk' ||
         structtype === 'Zeitung' ||
+        structtype === 'Ephemera' ||
         structtype === 'Jahr' ||
         structtype === 'Bestand' ||
         structtype === 'Unterbestand'
@@ -323,8 +316,6 @@ function addDownloadButtons() {
 
     }
 
-
-
     // decide whether a buttons target is reachable
     if(pagenumber == 0) {
         downloads['iiifDownload'].class = "unreachable";
@@ -363,8 +354,6 @@ function addDownloadButtons() {
             </li>');
         }
     }
-
-    //$('span.tx-dlf-tools-fulltext').parent().prependTo('ul.tx-dlf-navigation');
 }
 
 // mk 2023-02-02 # create additional download buttons
@@ -388,6 +377,7 @@ function addRestrictDownloadButtons() {
         structtype === 'Mehrteilige Handschrift' ||
         structtype === 'Mehrteiliges Kartenwerk' ||
         structtype === 'Zeitung' ||
+        structtype === 'Ephemera' ||
         structtype === 'Jahr' ||
         structtype === 'Bestand' ||
         structtype === 'Unterbestand'
@@ -447,8 +437,6 @@ function addRestrictDownloadButtons() {
 
     }
 
-
-
     // decide whether a buttons target is reachable
     if(pagenumber == 0) {
         downloads['iiifDownload'].class = "unreachable";
@@ -487,10 +475,7 @@ function addRestrictDownloadButtons() {
             </li>');
         }
     }
-
-    //$('span.tx-dlf-tools-fulltext').parent().prependTo('ul.tx-dlf-navigation');
 }
-
 
 // mk 2023-09-05 # helper function for addDownloadButtons()
 // adds event listener for matomo tracking to download buttons
@@ -531,14 +516,6 @@ function addMatomoDownloadEventListener(anchor_id, event_link, event_type) {
         }
     });
 }
-
-/*function addThumbnailPlaceholder() {
-    $('.tx-dlf-listview-thumbnail').each(function () {
-        if ($(this).children('img').length == 0) {
-            $(this).append('<img class="no-hover" src="/typo3conf/ext/presentation_package/Resources/Public/Images/document-collection.png"/>');
-        }
-    });
-}*/
 
 function facetTouchStyle() {
     if ($('label.facet-sub-title')) {
@@ -630,12 +607,10 @@ function cleanup() {
     // removes textpart from facet, that is required for lexicographical sorting of months/days of the week/calendar days in newspaper portal
     $('span.tx-dlf-facet-value-title').each(function () {
         facet_value = $(this).text();
-
         if (facet_value.match(/\[(\d+)\] \- /)) {
             facet_value = facet_value.replace(/\[(\d+)\] \- /, ' ');
             $(this).html(facet_value);
         }
-
     });
 
     // removes "Ausgabentitel" if "n.a." from metadata in listview and metadata-plugin
@@ -792,7 +767,6 @@ function cleanup() {
             $(this).remove();
         }
     });
-
 }
 
 function pagerFormAdjustment() {
@@ -807,22 +781,6 @@ function pagerFormAdjustment() {
 }
 
 function setToolboxControl() {
-
-    $('#tx-dlf-tools-fulltext').on('change', function() {
-        console.log("TRIGGERED");
-    });
-
-    // PDF download is build in addFullPdfDownload function
-    // $('.tx-dlf-tools-fulltext span.no-fulltext')
-    //     .text('')
-    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg" alt="Kein Volltext vorhanden">');
-    //
-    // $('.tx-dlf-tools-fulltext a')
-    //     .text('')
-    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg" alt="Volltext anzeigen">');
-
-
-
     if ($('.detail-view-tools').length > 0) {
         var innerToolbox = $('.detail-view-tools')[0].innerHTML;
         $('.detail-aside-nav .tx-dlf-navigation ul').append('<li class="tx-dlf-navigation-tools"><div class="detail-view-tools">' + innerToolbox + '</div></li>');
@@ -880,18 +838,8 @@ function showVolumeList() {
         $('.tx-dlf-toolbox').hide();
 
         return false;
-    } else {
-        // click handler toc
-        $('a.chapter_download, a#pdfdownloadbutton').on('click', function(event) {
-            $('#p_nutzungsbedingungen_kapitel').show();
-            // http://gcs.sub.uni-hamburg.de/gcs?action=pdf&pagesize=original&metsFile=PPN734636776&divID=LOG_0002
-            var link = $(this).attr('href');
-            link = link.replace("http://resolver.sub.uni-hamburg.de/goobi/", "");
-            $('#pdfdownloader_kapitel').attr('href', link);
-            event.preventDefault();
-        });
-        return true;
     }
+    return true
 }
 
 // Listview
@@ -908,7 +856,6 @@ function listViewFunction() {
     var pagingForm = $('#pagingForm');
     $('.tx-dlf-listview').append(pagingForm.html());
     pagingForm.hide();
-
 }
 
 /* Kitodo Presentation Detail Breadcrumb */
@@ -920,64 +867,14 @@ function enrichBreadcrumbForVolumes() {
 
 function setBackToListviewInBreadcrumb() {
     $('#backtolistview').attr("href", $('li.tx-dlf-navigation-backtolist a').attr("href"));
-
 }
 
 function setNavigationControls() {
-
-    // set icons
-    // $('.tx-dlf-navigation .tx-dlf-navigation-prev a, .tx-dlf-navigation .tx-dlf-navigation-prev span')
-    //     .text("")
-    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-left.svg" alt="Previous Page">');
-
-    // $('.tx-dlf-navigation .tx-dlf-navigation-next span, .tx-dlf-navigation .tx-dlf-navigation-next a')
-    //     .text("")
-    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-right.svg" alt="Next Page">');
-    //
-    // $('.tx-dlf-navigation .tx-dlf-navigation-zoom-in span, .tx-dlf-navigation .tx-dlf-navigation-zoom-in a')
-    //     .text("")
-    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomin.svg" alt="Zoom in">');
-    //
-    // $('.tx-dlf-navigation .tx-dlf-navigation-zoom-out span, .tx-dlf-navigation .tx-dlf-navigation-zoom-out a')
-    //     .text("")
-    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomout.svg" alt="Zoom out">');
-    //
-    // $('.tx-dlf-navigation .tx-dlf-navigation-rotate-left span, .tx-dlf-navigation .tx-dlf-navigation-rotate-left a')
-    //     .text("")
-    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateleft.svg" alt="Rotate left">');
-    //
-    // $('.tx-dlf-navigation .tx-dlf-navigation-rotate-right span, .tx-dlf-navigation .tx-dlf-navigation-rotate-right a')
-    //     .text("")
-    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateright.svg" alt="Rotate right">');
-    //
-    // $('.tx-dlf-navigation .tx-dlf-navigation-double span, .tx-dlf-navigation .tx-dlf-navigation-double a')
-    //     .text("")
-    //     .append('<img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-doublepage.svg" alt="Show double pages">');
-
     $('#main-content ul.tx-dlf-navigation')
         .append('<li><a id="collapse" class="collexpand" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-bigger.svg" alt="Größer"></a></li>');
 
     $('#main-content ul.tx-dlf-navigation')
         .append('<li><a id="expand" class="collexpand" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-smaller.svg" alt="Kleiner"></a></li>');
-
-    // $(".tx-dlf-navigation-zoom-in").click(function(event) {
-    //     event.preventDefault();
-    //     tx_dlf_viewer.map.zoomIn();
-    // });
-    // $(".tx-dlf-navigation-zoom-out").click(function(event) {
-    //     event.preventDefault();
-    //     tx_dlf_viewer.map.zoomOut();
-    // });
-    //
-    // $(".tx-dlf-navigation-rotate-right a").click(function (event) {
-    //     event.preventDefault();
-    //     tx_dlf_viewer.map.rotate(90);
-    // });
-    // $(".tx-dlf-navigation-rotate-left a").click(function (event) {
-    //     event.preventDefault();
-    //     tx_dlf_viewer.map.rotate(-90);
-    // });
-
 }
 
 function calendarSelectBox() {
@@ -1069,16 +966,6 @@ function calendarSwitchViews() {
         $('.list-view').show();
         $('.calendar-items').hide();
     });
-
-}
-
-function listviewNewspaperRouting() {
-    // $('dd.tx-dlf-type').each(function () {
-    //     if ($(this).text().trim() == 'Jahr') {
-    //         var url = $($(this).siblings('dd.tx-dlf-title')[0]).children().prop('href').replace('recherche-zeitungen/detail-zeitungen', 'kalender-zeitungen');
-    //         $(this).siblings('dd.tx-dlf-title').children().prop('href', url);
-    //     }
-    // });
 }
 
 // mk 2022-11-07 # translate ISIL to institutional name
