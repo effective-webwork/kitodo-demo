@@ -2857,7 +2857,9 @@ table.month h4:hover {
 .tx-dlf-calendar,
 .tx-dlf-calendar-years {
     background: #242424;
-    padding: 60px 30px;
+    padding: 60px;
+    height: calc(100vh - 240px);
+    overflow: auto;
 }
 
 .tx-dlf-calendar .list-view {
