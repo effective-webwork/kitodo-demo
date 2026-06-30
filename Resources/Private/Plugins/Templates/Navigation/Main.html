@@ -1,23 +1,26 @@
-<f:comment>
-<!--
- * (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
- *
- * This file is part of the Kitodo and TYPO3 projects.
- *
- * @license GNU General Public License version 3 or later.
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
--->
-</f:comment>
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<f:if condition="{debugActive}">
+    <f:debug title="all">{_all}</f:debug>
+</f:if>
 
 <f:comment>Render all navigation features in the given order.</f:comment>
 <div class="tx-dlf-navigation">
     <ul class="tx-dlf-navigation">
         <f:for each="{features}" key="feature" as="enabled">
             <f:if condition="{feature}">
-                <f:render section="render.{feature}" arguments="{_all}"/>
+                <f:render section="render.{feature}" arguments="{_all}" optional="1"/>
             </f:if>
         </f:for>
     </ul>
@@ -25,269 +28,67 @@
 
 <f:comment>One section for each feature.</f:comment>
 <f:section name="render.doublePage">
-    <f:if condition="{numPages} > 0">
-        <f:then>
-            <f:if condition="{viewData.requestData.double}">
-                <f:then>
-                    <li class="tx-dlf-navigation-double">
-                        <f:link.action addQueryString="1" additionalParams="{'tx_dlf[double]':'0'}" title="{f:translate(key: 'doublePageOff')}">
-                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-singlepage.svg" alt="{f:translate(key: 'doublePageOff')}">
-                        </f:link.action>
-                    </li>
+    <f:render partial="Navigation/DoublePage" arguments="{_all}" />
+</f:section>
 
-                    <li class="tx-dlf-navigation-double-plus">
-                        <f:if condition="{viewData.requestData.double} && ({viewData.requestData.page} < {numPages})">
-                            <f:then>
-                                <f:link.action addQueryString="1" additionalParams="{'tx_dlf[page]':'{viewData.requestData.page + 1}'}" title="{f:translate(key: 'doublePage+1')}">
-                                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-recto-verso.svg" alt="{f:translate(key: 'doublePageOn')}">
-                                </f:link.action>
-                            </f:then>
-                            <f:else>
-                                <span title="{f:translate(key: 'doublePage+1')}">
-                                    <f:translate key="doublePage+1"/>
-                                </span>
-                            </f:else>
-                        </f:if>
-                    </li>
-
-                </f:then>
-                <f:else>
-                    <li class="tx-dlf-navigation-double">
-                        <f:link.action addQueryString="1" additionalParams="{'tx_dlf[double]':'1'}" title="{f:translate(key: 'doublePageOn')}">
-                            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-doublepage.svg" alt="{f:translate(key: 'doublePageOn')}">
-                        </f:link.action>
-                    </li>
-                </f:else>
-            </f:if>
-        </f:then>
-        <f:else>
-            <li class="tx-dlf-navigation-double">
-                <span title="{f:translate(key: 'doublePageOn')}">
-                    <f:translate key="doublePageOn"/>
-                </span>
-            </li>
-        </f:else>
-    </f:if>
+<f:section name="render.pagesBackward">
+    <f:render partial="Navigation/PageFirst" arguments="{_all}" />
+    <f:render partial="Navigation/PageStepBack" arguments="{_all}" />
+    <f:render partial="Navigation/PageBack" arguments="{_all}" />
 </f:section>
 
 <f:section name="render.pageFirst">
-    <li class="tx-dlf-navigation-first">
-        <f:if condition="{viewData.requestData.page} > 1">
-            <f:then>
-                <f:link.action addQueryString="1" additionalParams="{'tx_dlf[page]':'1'}">
-                    <f:translate key="firstPage"/>
-                </f:link.action>
-            </f:then>
-            <f:else>
-                <span title="{f:translate(key: 'firstPage')}">
-                    <f:translate key="firstPage"/>
-                </span>
-            </f:else>
-        </f:if>
-    </li>
+    <f:render partial="Navigation/PageFirst" arguments="{_all}" />
 </f:section>
 
 <f:section name="render.pageStepBack">
-    <li class="tx-dlf-navigation-back">
-        <f:if condition="{viewData.requestData.page} > {pageSteps}">
-            <f:then>
-                <f:link.action addQueryString="1" additionalParams="{'tx_dlf[page]':'{viewData.requestData.page - pageSteps}'}">
-                    <f:translate key="backXPages" arguments="{0: '{pageSteps}'}"/>
-                </f:link.action>
-            </f:then>
-            <f:else>
-                <span title="{f:translate(key: 'backXPages', arguments: '{0: pageSteps}')}">
-                    <f:translate key="backXPages" arguments="{0: '{pageSteps}'}"/>
-                </span>
-            </f:else>
-        </f:if>
-    </li>
+    <f:render partial="Navigation/PageStepBack" arguments="{_all}" />
 </f:section>
 
 <f:section name="render.pageBack">
-    <li class="tx-dlf-navigation-prev">
-        <f:if condition="{viewData.requestData.page} > {viewData.requestData.double + 1}">
-            <f:then>
-                <f:link.action addQueryString="1" additionalParams="{'tx_dlf[page]':'{viewData.requestData.page - 1 - viewData.requestData.double}'}" title="{f:translate(key: 'prevPage')}">
-                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-left.svg" alt="{f:translate(key: 'prevPage')}">
-                </f:link.action>
-            </f:then>
-            <f:else>
-                <span title="{f:translate(key: 'prevPage')}">
-                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-left.svg" alt="{f:translate(key: 'prevPage')}">
-                </span>
-            </f:else>
-        </f:if>
-    </li>
+    <f:render partial="Navigation/PageBack" arguments="{_all}" />
 </f:section>
 
 <f:section name="render.pageSelect">
-    <f:spaceless>
-        <li class="pages tx-dlf-navigation-pageselect">
-            <f:form method="post" action="pageSelect" controller="Navigation" name="pageSelectForm" object="{pageSelectForm}" addQueryString="1">
-                <f:if condition="{viewData.requestData.id}">
-                    <f:form.hidden property="id" value="{viewData.requestData.id}"/>
-                </f:if>
-                <f:if condition="{viewData.requestData.recordId}">
-                    <f:form.hidden property="recordId" value="{viewData.requestData.recordId}"/>
-                </f:if>
-                <f:if condition="{viewData.requestData.double}">
-                    <f:then>
-                        <f:form.hidden property="double" value="{viewData.requestData.double}"/>
-                    </f:then>
-                    <f:else>
-                        <f:form.hidden property="double" value="0"/>
-                    </f:else>
-                </f:if>
-                <label for="tx-dlf-page-{viewData.uniqueId}">
-                    <f:translate key="selectPage"/>
-                </label>
-                <f:form.select id="tx-dlf-page-{viewData.uniqueId}" property="page"
-                            options="{pageOptions}"
-                            value="{viewData.requestData.page}"
-                            additionalAttributes="{'onchange': 'javascript:this.form.submit();'}">
-                </f:form.select>
-            </f:form>
-        </li>
-    </f:spaceless>
+    <f:render partial="Navigation/PageSelect" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.pagesForward">
+    <f:render partial="Navigation/PageForward" arguments="{_all}" />
+    <f:render partial="Navigation/PageStepForward" arguments="{_all}" />
+    <f:render partial="Navigation/PageLast" arguments="{_all}" />
 </f:section>
 
 <f:section name="render.pageForward">
-    <li class="tx-dlf-navigation-next">
-        <f:if condition="{viewData.requestData.page + viewData.requestData.double} < {numPages}">
-            <f:then>
-                <f:link.action addQueryString="1" additionalParams="{'tx_dlf[page]':'{viewData.requestData.page + 1 + viewData.requestData.double}'}" title="{f:translate(key: 'nextPage')}">
-                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-right.svg" alt="{f:translate(key: 'nextPage')}">
-                </f:link.action>
-            </f:then>
-            <f:else>
-                <span title="{f:translate(key: 'nextPage')}">
-                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-arrow-right.svg" alt="{f:translate(key: 'nextPage')}">
-                </span>
-            </f:else>
-        </f:if>
-    </li>
+    <f:render partial="Navigation/PageForward" arguments="{_all}" />
 </f:section>
 
 <f:section name="render.pageStepForward">
-        <li class="tx-dlf-navigation-fwd">
-            <f:if condition="{viewData.requestData.page} <= {numPages - pageSteps}">
-                <f:then>
-                    <f:link.action addQueryString="1" additionalParams="{'tx_dlf[page]':'{viewData.requestData.page + pageSteps}'}">
-                        <f:translate key="forwardXPages" arguments="{0: '{pageSteps}'}"/>
-                    </f:link.action>
-                </f:then>
-                <f:else>
-                    <span title="{f:translate(key: 'forwardXPages', arguments: '{0: pageSteps}')}">
-                        <f:translate key="forwardXPages" arguments="{0: '{pageSteps}'}"/>
-                    </span>
-                </f:else>
-            </f:if>
-        </li>
+    <f:render partial="Navigation/PageStepForward" arguments="{_all}" />
 </f:section>
 
 <f:section name="render.pageLast">
-    <li class="tx-dlf-navigation-last">
-        <f:if condition="{viewData.requestData.page} < {numPages - viewData.requestData.double}">
-            <f:then>
-                <f:link.action addQueryString="1" additionalParams="{'tx_dlf[page]':'{numPages - viewData.requestData.double}'}">
-                    <f:translate key="lastPage"/>
-                </f:link.action>
-            </f:then>
-            <f:else>
-                <span title="{f:translate(key: 'lastPage')}">
-                    <f:translate key="lastPage"/>
-                </span>
-            </f:else>
-        </f:if>
-    </li>
+    <f:render partial="Navigation/PageLast" arguments="{_all}" />
 </f:section>
 
 <f:section name="render.listView">
-    <f:if condition="{lastSearchParams}">
-        <f:then>
-            <li class="tx-dlf-navigation-listview tx-dlf-navigation-backtolist" style="display: none;">
-                <f:link.page pageUid="{settings.targetPid}" additionalParams="{lastSearchParams}">
-                    <f:translate key="linkToList"/>
-                </f:link.page>
-            </li>
-        </f:then>
-    </f:if>
+    <f:render partial="Navigation/ListView" arguments="{_all}" />
 </f:section>
 
-<f:section name="render.zoom">
-    <li class="tx-dlf-navigation-zoom-in">
-        <a href="#" title="{f:translate(key: 'zoomIn')}" onclick="tx_dlf_viewer.map.zoomIn();">
-            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomin.svg" alt="{f:translate(key: 'zoomIn')}">
-        </a>
-    </li>
-    <li class="tx-dlf-navigation-zoom-out">
-        <a href="#" title="{f:translate(key: 'zoomOut')}" onclick="tx_dlf_viewer.map.zoomOut();">
-            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomout.svg" alt="{f:translate(key: 'zoomOut')}">
-        </a>
-    </li>
-    <f:comment>
-    <li class="tx-dlf-navigation-fullscreen">
-        <a href="#" title="{f:translate(key: 'zoomFullscreen')}">
-            <f:translate key="zoomFullscreen"/>
-        </a>
-    </li>
-    </f:comment>
+<f:section name="render.measureBack">
+    <f:render partial="Navigation/MeasureBack" arguments="{_all}" />
 </f:section>
 
-<f:section name="render.rotation">
-    <li class="tx-dlf-navigation-rotate-left">
-        <a href="#" title="{f:translate(key: 'rotateLeft')}" onclick="tx_dlf_viewer.map.rotate(-90);">
-            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateleft.svg" alt="{f:translate(key: 'rotateLeft')}">
-        </a>
-    </li>
-    <li class="tx-dlf-navigation-rotate-right">
-        <a href="#" title="{f:translate(key: 'rotateRight')}" onclick="tx_dlf_viewer.map.rotate(90);">
-            <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateright.svg" alt="{f:translate(key: 'rotateRight')}">
-        </a>
-    </li>
-    <f:comment>
-    <li class="tx-dlf-navigation-rotate-reset">
-        <a href="#" title="{f:translate(key: 'rotateReset')}" onclick="tx_dlf_viewer.map.resetRotation();">
-            <f:translate key="rotateReset"/>
-        </a>
-    </li>
-    </f:comment>
+<f:section name="render.measureForward">
+    <f:render partial="Navigation/MeasureForward" arguments="{_all}" />
 </f:section>
 
-<!-- MK 2023 START -->
 <f:section name="render.documentBack">
-    <li class="tx-dlf-navigation-documentBack">
-        <f:if condition="{documentBack}">
-            <f:then>
-                <f:link.action addQueryString="1" addQueryStringMethod="GET" additionalParams="{'tx_dlf[page]':'1', 'tx_dlf[id]': '{documentBack}'}" title="{f:translate(key: 'navigation.documentBack')}">
-                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/folder-symlink-left.svg" alt="{f:translate(key: 'navigation.documentBack')}">
-                </f:link.action>
-            </f:then>
-            <f:else>
-                <span title="{f:translate(key: 'navigation.documentBack')}">
-                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/folder-symlink-left.svg" alt="{f:translate(key: 'navigation.documentBack')}">
-                </span>
-            </f:else>
-        </f:if>
-    </li>
+    <f:render partial="Navigation/DocumentBack" arguments="{_all}" />
 </f:section>
 
 <f:section name="render.documentForward">
-    <li class="tx-dlf-navigation-documentForward">
-        <f:if condition="{documentForward}">
-            <f:then>
-                <f:link.action addQueryString="1" addQueryStringMethod="GET" additionalParams="{'tx_dlf[page]':'1', 'tx_dlf[id]': '{documentForward}'}" title="{f:translate(key: 'navigation.documentForward')}">
-                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/folder-symlink-right.svg" alt="{f:translate(key: 'navigation.documentForward')}">
-                </f:link.action>
-            </f:then>
-            <f:else>
-                <span title="{f:translate(key: 'navigation.documentForward')}">
-                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/folder-symlink-right.svg" alt="{f:translate(key: 'navigation.documentForward')}">
-                </span>
-            </f:else>
-        </f:if>
-    </li>
+    <f:render partial="Navigation/DocumentForward" arguments="{_all}" />
 </f:section>
-<!-- MK 2023 END -->
+
 </html>

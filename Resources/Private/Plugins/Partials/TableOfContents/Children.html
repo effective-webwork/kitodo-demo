@@ -1,44 +1,44 @@
-<f:comment>
-<!--
- * (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
- *
- * This file is part of the Kitodo and TYPO3 projects.
- *
- * @license GNU General Public License version 3 or later.
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
--->
-</f:comment>
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:kitodo="http://typo3.org/ns/Kitodo/Dlf/ViewHelpers"
       data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
 
 <f:for each="{children}" as="child">
     <f:switch expression="{child.ITEM_STATE}">
         <f:case value="ACT">
-            <li class="tx-dlf-toc-act">
+            <li class="tx-dlf-tableofcontents-active">
                 <div class="toc-entry">
         </f:case>
         <f:case value="CUR">
-            <li class="tx-dlf-toc-cur">
+            <li class="tx-dlf-tableofcontents-current">
                 <div class="toc-entry">
         </f:case>
         <f:case value="ACTIFSUB">
-            <li class="tx-dlf-toc-act tx-dlf-toc-ifsub">
+            <li class="tx-dlf-tableofcontents-active tx-dlf-tableofcontents-submenu">
                 <div class="toc-entry">
                 <span class="toggle">-</span>
         </f:case>
         <f:case value="CURIFSUB">
-            <li class="tx-dlf-toc-cur tx-dlf-toc-ifsub">
+            <li class="tx-dlf-tableofcontents-current tx-dlf-tableofcontents-submenu">
                 <div class="toc-entry">
                 <span class="toggle">-</span>
         </f:case>
         <f:case value="IFSUB">
-            <li class="tx-dlf-toc-no tx-dlf-toc-ifsub">
+            <li class="tx-dlf-tableofcontents-no tx-dlf-tableofcontents-submenu">
                 <div class="toc-entry">
                 <span class="toggle">+</span>
         </f:case>
         <f:defaultCase>
-            <li class="tx-dlf-toc-no">
+            <li class="tx-dlf-tableofcontents-no">
                 <div class="toc-entry">
         </f:defaultCase>
     </f:switch>
@@ -48,16 +48,18 @@
             <f:render partial="TableOfContents/Title" arguments="{child: child}"/>
         </f:then>
         <f:else>
-            <f:link.action
-                action="main"
+            <kitodo:link
+                viewData="{viewData}"
                 pageUid="{settings.targetPid}"
-                additionalParams="{f:if(condition:'{child.id}', then:'{\'tx_dlf[id]\':child.id, \'tx_dlf[page]\':child.page}', else: '{\'tx_dlf[page]\':child.page}')}"
-                addQueryString="1"
+                additionalParams="{f:if(condition:'{child.id}', then:'{\'id\':child.id, \'page\':child.page}', else: '{\'page\':child.page}')}"
+                excludedParams="{0: 'measure', 1: 'multiview'}"
+                section="{child.section}"
                 title="{f:if(condition:'{child.title}', then: '{child.title}', else: '{child.type}')}">
                     <f:render partial="TableOfContents/Title" arguments="{child: child}"/>
-            </f:link.action>
+            </kitodo:link>
         </f:else>
     </f:if>
+
     <div class="tx-dlf-metadata-hidden tx-dlf-metadata-log_id" id="{child.basketButton.logId}"></div>
     <f:if condition="{settings.basketButton} && {settings.targetBasket}">
         <span class="tx-dlf-basket-button">
@@ -66,8 +68,8 @@
                     action="main"
                     controller="Basket"
                     additionalParams="{'tx_dlf[addToBasket]':'toc', 'tx_dlf[logId]':child.basketButton.logId, 'tx_dlf[startpage]':child.basketButton.startpage, 'tx_dlf_basket[action]':'add', 'tx_dlf_basket[controller]':'Basket'}"
-                    addQueryString="1">
-                        <f:translate key="AddToBasket" />
+                    addQueryString="untrusted">
+                        <f:translate key="basket.addBasket" />
                 </f:link.action>
         </span>
     </f:if>
@@ -75,9 +77,11 @@
 
     <f:if condition="{child._SUB_MENU} && ({child.ITEM_STATE} == 'IFSUB' || {child.ITEM_STATE} == 'ACTIFSUB' || {child.ITEM_STATE} == 'CURIFSUB')">
         <ul>
-            <f:render partial="TableOfContents/Children" arguments="{children: child._SUB_MENU}"/>
+            <f:render partial="TableOfContents/Children" arguments="{children: child._SUB_MENU, viewData: viewData}"/>
         </ul>
     </f:if>
 
     </li>
 </f:for>
+
+</html>

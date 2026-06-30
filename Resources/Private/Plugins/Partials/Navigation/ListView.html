@@ -1,5 +1,4 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:kitodo="http://typo3.org/ns/Kitodo/Dlf/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
 <f:comment>
@@ -12,11 +11,12 @@
     LICENSE.txt file that was distributed with this source code.
 </f:comment>
 
-<f:variable name="urlParameterId" value="{buildUrlVariable.{configObject.indexName}.buildUrl.id}" />
-<kitodo:stdWrap wrap="{metadataWrap.value}" data="{metaSectionConfigObject}">
-    <f:link.page pageUid="{buildUrlVariable.{configObject.indexName}.buildUrl.targetPid}" additionalParams="{tx_dlf: '{id: \'{urlParameterId}\'}'}">
-        {value}
-    </f:link.page>
-</kitodo:stdWrap>
+<f:if condition="{lastSearch}">
+    <f:then>
+        <li class="tx-dlf-navigation-listview tx-dlf-navigation-backtolist" style="display: none;">
+            <f:link.page pageUid="{settings.targetPid}" additionalParams="{lastSearch}"><f:translate key="navigation.linkToList"/></f:link.page>
+        </li>
+    </f:then>
+</f:if>
 
 </html>

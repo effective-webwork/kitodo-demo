@@ -1,51 +1,48 @@
-<f:comment>
-<!--
- * (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
- *
- * This file is part of the Kitodo and TYPO3 projects.
- *
- * @license GNU General Public License version 3 or later.
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
--->
-</f:comment>
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<f:if condition="{debugActive}">
+    <f:debug title="all">{_all}</f:debug>
+</f:if>
+
 <div class="tx-dlf-calendar">
-    <div class="meta-header">
-        <div class="year-anchor">
-            <div class="year-link">
-                <f:link.page additionalParams="{'tx_dlf[id]': parentDocumentId}">
-                    <f:translate key="calendar.allYears" /> {allYearDocTitle}
-                </f:link.page>
-            </div>
+    <div class="tx-dlf-calendar-meta-header meta-header">
+        <div class="tx-dlf-calendar-year-anchor year-anchor">
+            <f:link.page additionalParams="{'tx_dlf[id]': parentDocumentId}">
+                <f:translate key="calendar.allYears" /> {allYearDocTitle}
+            </f:link.page>
         </div>
-        <div class="year">
+        <div class="tx-dlf-calendar-year year">
             <f:link.page additionalParams="{'tx_dlf[id]': documentId}">
                 {yearLinkTitle}
             </f:link.page>
         </div>
-        <div class="calendar-list-selection">
-            <a class="select-calendar-view {f:if(condition:'calendarData->f:count() > 5', then : 'active')}">
-                <f:translate key="calendar.view_calendar" />
+        <div class="tx-dlf-calendar-list-selection calendar-list-selection">
+            <a class="tx-dlf-calendar-select-calendar-view {f:if(condition:'calendarData->f:count() > 5', then : 'active')}">
+                <f:translate key="calendar.view.calendar" />
             </a>
-            <a class="select-list-view {f:if(condition:'calendarData->f:count() < 6', then : 'active')}">
-                <f:translate key="calendar.view_list" />
+            <a class="tx-dlf-calendar-select-list-view {f:if(condition:'calendarData->f:count() < 6', then : 'active')}">
+                <f:translate key="calendar.view.list" />
             </a>
         </div>
     </div>
-    <div class="calendar-items">
+    <div class="tx-dlf-calendar-calendar-view calendar-items">
 
         <f:for each="{calendarData}" as="month">
             <f:comment><f:if condition="{month.CALYEAR}">
-                <f:then>
-                    <div class="year">
-                        {month.CALYEAR}
-                    </div>
-                </f:then>
+                <div class="tx-dlf-calendar-year">{month.CALYEAR}</div>
             </f:if></f:comment>
-            <div class="calendar-view">
+            <div class="tx-dlf-calendar-month calendar-view">
                 <table class="month">
                     <caption>{month.MONTHNAME}</caption>
                     <tr>
@@ -88,11 +85,11 @@
         </f:for>
     </div>
 
-    <div class="list-view">
+    <div class="tx-dlf-calendar-list-view list-view">
         <ul>
             <f:for each="{issueData}" as="issueDay">
                 <li>
-                    <span class="listview-date">{issueDay.dateString}</span>
+                    <span class="tx-dlf-calendar-list-view-date">{issueDay.dateString}</span>
                     <f:for each="{issueDay.items}" as="item">
                         <f:link.page pageUid="{settings.targetPid}" additionalParams="{'tx_dlf[id]': item.documentId}">
                             {item.text}

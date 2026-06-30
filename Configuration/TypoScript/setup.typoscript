@@ -156,3 +156,17 @@ plugin.tx_dlf_pagegrid {
         }
     }
 }
+
+plugin.tx_dlf_statistics {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
+        }
+    }
+}

@@ -1,216 +1,102 @@
-<f:comment>
-    <!--
-     * (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
-     *
-     * This file is part of the Kitodo and TYPO3 projects.
-     *
-     * @license GNU General Public License version 3 or later.
-     * For the full copyright and license information, please read the
-     * LICENSE.txt file that was distributed with this source code.
-    -->
-</f:comment>
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<f:if condition="{debugActive}">
+    <f:debug title="all">{_all}</f:debug>
+</f:if>
+
 <ul class="tx-dlf-toolbox">
-    <f:comment>
-        <li>
-            <a id="fullPdfDownload" href="#"><img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-pdf-white.svg" alt="PDF Download"></a>
-        </li>
-    </f:comment>
 
-    <f:if condition="{annotationtool}">
-        <f:then>
-            <li>
-                <span class="tx-dlf-tools-annotations">
-                    <f:if condition="{annotationTool}">
-                        <f:then>
-                            <a class="select switchoff" id="tx-dlf-tools-annotations" title="" data-dic="annotations-on:{f:translate(key: 'tools.annotation.on')};annotations-off:{f:translate(key: 'tools.annotation.off')}">
-                                <f:format.html>&nbsp;</f:format.html>
-                            </a>
-                        </f:then>
-                        <f:else>
-                            <span class="no-annotations">
-                                <f:translate key="tools.annotation.not-available"/>
-                            </span>
-                        </f:else>
-                    </f:if>
-                </span>
-            </li>
-        </f:then>
-    </f:if>
+    <f:comment>Render all toolbox tools in the given order.</f:comment>
+    <f:for each="{tools}" key="tool" as="enabled">
+        <f:if condition="{tool}">
+            <f:render section="render.{tool}" arguments="{_all}" optional="1"/>
+        </f:if>
+    </f:for>
 
-    <f:if condition="{renderImageManipulationTool}">
-        <f:then>
-            <li>
-                <span class="tx-dlf-tools-imagetools" id="tx-dlf-tools-imagetools"
-                      data-dic="imagemanipulation-on:{f:translate(key: 'tools.imagemanipulation.on')};imagemanipulation-off:{f:translate(key: 'tools.imagemanipulation.off')};reset:{f:translate(key: 'tools.imagemanipulation.reset')};saturation:{f:translate(key: 'tools.imagemanipulation.saturation')};hue:{f:translate(key: 'tools.imagemanipulation.hue')};contrast:{f:translate(key: 'tools.imagemanipulation.contrast')};brightness:{f:translate(key: 'tools.imagemanipulation.brightness')};invert:{f:translate(key: 'tools.imagemanipulation.invert')};parentContainer:{parentContainer}"
-                      title="{f:translate(key: 'tools.imagemanipulation.no-support')}">
-                </span>
-            </li>
-        </f:then>
-    </f:if>
+    <f:comment><!-- subhh: custom page grid toggle --></f:comment>
+    <li>
+        <a href="#" id="pagegrid" title="Miniaturansichten öffnen">
+            <img src="{f:uri.resource(path: 'Images/icon-pagegrid.svg', extensionName: 'PresentationPackage')}" alt="Miniaturansichten öffnen">
+        </a>
+    </li>
 
-    <f:if condition="{renderImageDownloadTool} && {imageDownload}">
-        <f:then>
-            <li>
-                <span class="tx-dlf-tools-imagedownload">
-                    <f:if condition="{double} === 0">
-                        <f:then>
-                            <f:link.external uri="{imageDownload.0.url}">
-                                <f:translate key="downloadSinglePage" /> {imageDownload.0.mimetypeLabel}
-                            </f:link.external>
-                        </f:then>
-                        <f:else>
-                            <f:link.external uri="{imageDownload.0.url}">
-                                <f:translate key="downloadLeftPage" /> {imageDownload.0.mimetypeLabel}
-                            </f:link.external>
-                            <f:if condition="{imageDownload.1}">
-                                <f:then>
-                                    <span class="tx-dlf-tools-imagedownload">
-                                        <f:link.external uri="{imageDownload.1.url}">
-                                            <f:translate key="downloadRightPage" /> {imageDownload.1.mimetypeLabel}
-                                        </f:link.external>
-                                    </span>
-                                </f:then>
-                            </f:if>
-                        </f:else>
-                    </f:if>
-                </span>
-            </li>
-        </f:then>
-    </f:if>
-
-    <f:if condition="{renderFulltextTool}">
-        <f:then>
-            <li>
-                <span class="tx-dlf-tools-fulltext">
-                    <f:if condition="{fulltext}">
-                        <f:then>
-                            <a class="select switchoff" id="tx-dlf-tools-fulltext" title=""
-                               data-dic="fulltext:;fulltext-loading:;fulltext-on:;fulltext-off:;activate-full-text-initially:{activateFullTextInitially};full-text-scroll-element:#tx-dlf-fulltextselection;search-hl-parameters:{settings.searchHlParameters}">
-                            </a>
-                            <f:comment>
-                            <!--<a class="select switchoff" id="tx-dlf-tools-fulltext" title=""
-                               data-dic="fulltext:;fulltext-loading:;fulltext-on:;fulltext-off:;activate-full-text-initially:{activateFullTextInitially};full-text-scroll-element:{settings.fullTextScrollElement};search-hl-parameters:{settings.searchHlParameters}">
-                            </a>-->
-                            </f:comment>
-                        </f:then>
-                        <f:else>
-                            <span class="no-fulltext">
-                                <f:comment><f:translate key="tools.fulltext.not-available"/></f:comment>
-                                <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg" alt="{f:translate(key: 'tools.fulltext.not-available')}">
-                            </span>
-                        </f:else>
-                    </f:if>
-                </span>
-            </li>
-            <li>
-                <a href="#" id="pagegrid" title="Miniaturansichten öffnen">
-                    <img src="/typo3conf/ext/presentation_package/Resources/Public/Images/icon-pagegrid.svg">
-                </a>
-            </li>
-        </f:then>
-    </f:if>
-
-    <f:if condition="{renderFulltextDownloadTool}">
-        <f:then>
-            <li>
-                <span class="tx-dlf-tools-fulltextdownload">
-                    <f:if condition="{fulltextDownload}">
-                        <f:then>
-                            <a href="#" id="tx-dlf-tools-fulltextdownload"
-                               title="{f:translate(key: 'tools.fulltextdownload.download-current-page')}">
-                                <f:translate key="tools.fulltextdownload.download-current-page"/>
-                            </a>
-                        </f:then>
-                        <f:else>
-                            <span class="no-fulltext">
-                                <f:translate key="tools.fulltext.not-available"/>
-                            </span>
-                        </f:else>
-                    </f:if>
-                </span>
-            </li>
-        </f:then>
-    </f:if>
-
-    <f:if condition="{renderPdfDownloadTool}">
-        <f:then>
-            <li>
-                <span class="tx-dlf-tools-pdf-page">
-                    <f:if condition="{double} === 0">
-                        <f:then>
-                            <f:link.external uri="{pageLinks.0}">
-                                <f:translate key="downloadSinglePage" /> (PDF)
-                            </f:link.external>
-                        </f:then>
-                        <f:else>
-                            <f:link.external uri="{pageLinks.0}">
-                                <f:translate key="downloadLeftPage" /> (PDF)
-                            </f:link.external>
-                            <f:if condition="{pageLinks.1}">
-                                <f:then>
-                                    <f:link.external uri="{pageLinks.1}">
-                                        <f:translate key="downloadRightPage" /> (PDF)
-                                    </f:link.external>
-                                </f:then>
-                            </f:if>
-                        </f:else>
-                    </f:if>
-                </span>
-                <span class="tx-dlf-tools-pdf-work">
-                    <f:if condition="{workLink}">
-                        <f:then>
-                            <f:link.external uri="{workLink}">
-                                <f:translate key="downloadWork"/> (PDF)
-                            </f:link.external>
-                        </f:then>
-                    </f:if>
-                </span>
-            </li>
-        </f:then>
-    </f:if>
-
-    <f:if condition="{renderSearchInDocumentTool} && {searchInDocument}">
-        <f:then>
-            <li>
-                <f:if condition="{settings.searchUrl}">
-                    <f:then>
-                        <f:variable name="actionUrl" value="{settings.searchUrl}" />
-                    </f:then>
-                    <f:else>
-                        <f:variable name="actionUrl" value="{f:uri.page(pageUid='{viewData.pageUid}')}" />
-                    </f:else>
-                </f:if>
-                <form class="tx-dlf-search-form" id="tx-dlf-search-in-document-form" action="{actionUrl}" method="get" enctype="multipart/form-data">
-                    <div>
-                        <label for="tx-dlf-search-in-document-query">
-                            <f:translate key="search.query"/>
-                        </label>
-                        <!-- Never change the @id of this input field! Otherwise search won't work! -->
-                        <input type="text" id="tx-dlf-search-in-document-query" placeholder="{f:translate(key: 'tools.searchindocument.searchInDocument')}" name="{searchInDocument.labelQueryUrl}" />
-                        <input type="submit" id="tx-dlf-search-in-document-button" value="{f:translate(key: 'search.submit')}" onclick="resetStart();" />
-                        <input type="hidden" id="tx-dlf-search-in-document-start" name="{searchInDocument.labelStart}" value="0" />
-                        <input type="hidden" id="tx-dlf-search-in-document-id" name="{searchInDocument.labelId}" value="{searchInDocument.documentId}" />
-                        <input type="hidden" id="tx-dlf-search-in-document-pid" name="{searchInDocument.labelPid}" value="{viewData.pageUid}" />
-                        <input type="hidden" id="tx-dlf-search-in-document-page" name="{searchInDocument.labelPageUrl}" />
-                        <input type="hidden" id="tx-dlf-search-in-document-highlight-word" name="{searchInDocument.labelHighlightWord}" />
-                        <input type="hidden" id="tx-dlf-search-in-document-encrypted" name="{searchInDocument.labelEncrypted}" value="{searchInDocument.solrEncrypted}" />
-                    </div>
-                </form>
-                <div id="tx-dlf-search-in-document-loading" style="display: none;"><f:translate key="tools.searchindocument.loading"/>...</div>
-                <div id="tx-dlf-search-in-document-clearing"><f:translate key="tools.searchindocument.deleteSearch"/>...</div>
-                <div id="tx-dlf-search-in-document-results"></div>
-                <div id="tx-dlf-search-in-document-labels" style="display:none;">
-                    <span id="tx-dlf-search-in-document-label-next"><f:translate key="tools.searchindocument.next"/></span>
-                    <span id="tx-dlf-search-in-document-label-previous"><f:translate key="tools.searchindocument.previous"/></span>
-                    <span id="tx-dlf-search-in-document-label-page"><f:translate key="search.logicalPage"/></span>
-                    <span id="tx-dlf-search-in-document-label-noresult"><f:translate key="tools.searchindocument.noresult"/></span>
-                </div>
-            </li>
-        </f:then>
-    </f:if>
 </ul>
+
+<f:section name="render.multiViewAddSourceTool">
+    <f:render partial="Toolbox/MultiViewAddSourceTool" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.annotationTool">
+    <f:render partial="Toolbox/AnnotationTool" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.audioVideoTool">
+    <f:render partial="Toolbox/AudioVideoTool" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.imageDownloadTool">
+    <f:if condition="{imageDownload}">
+        <f:render partial="Toolbox/ImageDownloadTool" arguments="{_all}" />
+    </f:if>
+</f:section>
+
+<f:section name="render.imageManipulationTool">
+    <f:render partial="Toolbox/ImageManipulationTool" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.fulltextDownloadTool">
+    <f:render partial="Toolbox/FulltextDownloadTool" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.fulltextTool">
+    <f:render partial="Toolbox/FulltextTool" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.modelDownloadTool">
+    <f:if condition="{modelUrl}">
+        <f:render partial="Toolbox/ModelDownloadTool" arguments="{_all}" />
+    </f:if>
+</f:section>
+
+<f:section name="render.pdfDownloadTool">
+    <f:render partial="Toolbox/PdfDownloadTool" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.rotationTool">
+    <f:render partial="Toolbox/RotationTool" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.scoreTool">
+    <f:if condition="{score}">
+        <f:render partial="Toolbox/ScoreTool" arguments="{_all}" />
+    </f:if>
+</f:section>
+
+<f:section name="render.searchInDocumentTool">
+    <f:if condition="{searchInDocument}">
+        <f:render partial="Toolbox/SearchInDocumentTool" arguments="{_all}" />
+    </f:if>
+</f:section>
+
+<f:section name="render.viewerSelectionTool">
+    <f:if condition="{viewers}">
+        <f:render partial="Toolbox/ViewerSelectionTool" arguments="{_all}" />
+    </f:if>
+</f:section>
+
+<f:section name="render.zoomTool">
+    <f:render partial="Toolbox/ZoomTool" arguments="{_all}" />
+</f:section>
 
 </html>

@@ -1,0 +1,97 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:kitodo="http://typo3.org/ns/Kitodo/Dlf/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      lang="en">
+
+<f:if condition="{debugActive}">
+    <f:debug title="all">{_all}</f:debug>
+</f:if>
+
+<f:if condition="{media}">
+    <script>
+        document.body.setAttribute("data-mediaplayer", "yes");
+    </script>
+
+    <kitodo:mediaPlayerConfig id="MEDIA_CONFIG" settings="{settings}" />
+
+    <div id="combined-container" class="combined-container">
+        <div class="media-panel">
+            <!-- Wrapper panels for toolbox toggles -->
+            <div class="media-panel-wrappers">
+                <f:if condition="{settings.constants.showAudioLabelImage} == 1 && {media.url.audioLabelImage}">
+                    <div id="panel-audiolabelimage" class="panel panel-audiolabelimage visible" data-panel="audiolabelimage">
+                        <div class="audiolabelimage-inner">
+                            <div class="audiolabelimage-bg" style="background-image: url('{media.url.audioLabelImage.url}');"></div>
+                            <div class="audiolabelimage-art">
+                                <img src="{media.url.audioLabelImage.url}" alt="Audio Label Image">
+                            </div>
+                        </div>
+                    </div>
+                </f:if>
+
+                <div id="panel-equalizer" class="panel panel-equalizer" data-panel="equalizer" hidden>
+                    <f:if condition="{settings.equalizer.enabled}">
+                        <dlf-equalizer id="{settings.elementId}-equalizer" forPlayer="{settings.elementId}"></dlf-equalizer>
+
+                        <f:comment>
+                            <!-- Workaround: Define variables for javascript curly braces to prevent parsing by the Fluid parser -->
+                            <!-- Source: https://docs.typo3.org/other/typo3fluid/fluid/4.5/en-us/Syntax/Escaping.html#using-variables-for-curly-braces -->
+                        </f:comment>
+                        <f:asset.script type="text/javascript" identifier="parse-equalizer-presets">
+                            <f:alias map="{ocb: '{', ccb: '}'}">
+                                window.addEventListener('DOMContentLoaded', function () {ocb}
+                                    var equalizer = document.getElementById("{settings.elementId}-equalizer");
+                                    equalizer.parsePresets(MEDIA_CONFIG['equalizer']['presets']);
+
+                                    if (MEDIA_CONFIG['equalizer']['default'])
+                                        equalizer.selectPreset(MEDIA_CONFIG['equalizer']['default']);
+                                {ccb});
+                            </f:alias>
+                        </f:asset.script>
+                    </f:if>
+                </div>
+
+                <div id="panel-markertable" class="panel panel-markertable" data-panel="markertable" hidden>
+                    <dlf-marker-table forPlayer="{settings.elementId}"></dlf-marker-table>
+                </div>
+            </div>
+        </div>
+
+        <div id="tx-dlf-view" class="tx-dlf-view">
+            <f:if condition="{media.url.waveform}">
+                <dlf-waveform hidden id="{settings.elementId}-waveform" forPlayer="{settings.elementId}" src="{media.url.waveform.url}" type="{media.url.waveform.mimeType}"></dlf-waveform>
+            </f:if>
+
+            <slub-media id="{settings.elementId}" player-view="combined-container" poster="{media.url.poster.url}" config="MEDIA_CONFIG" start="{media.start}" mode="auto" mode-fallback="{media.mode}">
+                <f:comment>NOTE: If one of these doesn't exist, the player will try the next one.</f:comment>
+                <f:for each="{media.sources}" as="source">
+                    <source src="{source.url}" type="{source.mimeType}" data-fps="{source.frameRate}" data-fileid="{source.fileId}">
+                </f:for>
+
+                <f:for each="{media.chapters}" as="chapter">
+                    <dlf-chapter title="{chapter.title}" timecode="{chapter.timecode}" fileids="{chapter.fileIdsJoin}" pageNo="{chapter.pageNo}"></dlf-chapter>
+                </f:for>
+
+                <f:for each="{media.metadata}" as="values" key="key">
+                    <f:for each="{values}" as="value">
+                        <dlf-meta key="{key}" value="{value}"></dlf-meta>
+                    </f:for>
+                </f:for>
+
+                <dlf-media-controls>
+                    <button data-type="volume"></button>
+                    <button data-type="mute"></button>
+                    <f:if condition="{media.url.waveform}">
+                        <button class="material-icons-round sxnd-waveform-button" data-t-title="control.waveform.tooltip" data-action="sound_tools.waveform.toggle">graphic_eq</button>
+                    </f:if>
+                    <button class="material-icons-round sxnd-screenshot-button" data-t-title="control.screenshot.tooltip" data-action="modal.screenshot.open">photo_camera</button>
+                    <button class="material-icons-round sxnd-bookmark-button" data-t-title="control.bookmark.tooltip" data-action="modal.bookmark.open">bookmark_border</button>
+                    <button data-type="fullscreen"></button>
+                    <button class="material-icons-round sxnd-help-button" data-t-title="control.help.tooltip" data-action="modal.help.open">info_outline</button>
+                </dlf-media-controls>
+            </slub-media>
+        </div>
+    </div>
+</f:if>
+
+</html>

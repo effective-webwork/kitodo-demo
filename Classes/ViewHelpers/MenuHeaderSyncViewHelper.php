@@ -24,8 +24,9 @@ class MenuHeaderSyncViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\Abstrac
         $content = explode('<div id="content_cols" class="clear" style="background: url(/fileadmin/redaktion/Startseite_2016/architectura.jpg) no-repeat center center fixed #8D0D1B; background-size: cover;">
         </div>', $content);
 
-        $this->templateVariableContainer->add('topContent', $content[0]);
-        $this->templateVariableContainer->add('bottomContent', $content[1]);
+        $variableProvider = $this->renderingContext->getVariableProvider();
+        $variableProvider->add('topContent', $content[0]);
+        $variableProvider->add('bottomContent', $content[1]);
     }
 
 }

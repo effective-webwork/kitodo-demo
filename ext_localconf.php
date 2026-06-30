@@ -1,7 +1,5 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
-}
+defined('TYPO3') or die('Access denied.');
 
 \FluidTYPO3\Flux\Core::registerProviderExtensionKey('Kitodo.PresentationPackage', 'Content');
 \FluidTYPO3\Flux\Core::registerProviderExtensionKey('Kitodo.PresentationPackage', 'Page');

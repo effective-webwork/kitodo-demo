@@ -2222,7 +2222,7 @@ span.no-fulltext {
     border-top: 0;
 }
 
-.detail-view-itemoptions .tx-dlf-toc-title {
+.detail-view-itemoptions .tx-dlf-tableofcontents-title {
     width: 90%;
     display: block;
 }
@@ -2251,11 +2251,11 @@ span.no-fulltext {
 }
 
 
-.tx-dlf-toc-act {
+.tx-dlf-tableofcontents-active {
     margin: 0;
 }
 
-.tx-dlf-toc-ifsub dl {
+.tx-dlf-tableofcontents-submenu dl {
     padding: 15px;
 }
 
@@ -2300,11 +2300,11 @@ span.no-fulltext {
     display: inline;
 }
 
-.tx-dlf-tableofcontents li.tx-dlf-toc-ifsub > a > span.tx-dlf-toc-title::before {
+.tx-dlf-tableofcontents li.tx-dlf-tableofcontents-submenu > a > span.tx-dlf-tableofcontents-title::before {
     content: "⏵";
 }
 
-.tx-dlf-tableofcontents li.tx-dlf-toc-ifsub.tx-dlf-toc-act > a > span.tx-dlf-toc-title::before {
+.tx-dlf-tableofcontents li.tx-dlf-tableofcontents-submenu.tx-dlf-tableofcontents-active > a > span.tx-dlf-tableofcontents-title::before {
   content: "⏷";
 }
 
@@ -2353,15 +2353,15 @@ span.no-fulltext {
   transform: scale(0.95);
 }
 
-.tx-dlf-tableofcontents li.tx-dlf-toc-ifsub.tx-dlf-toc-no > ul {
+.tx-dlf-tableofcontents li.tx-dlf-tableofcontents-submenu.tx-dlf-tableofcontents-no > ul {
     display: none;
 }
 
-.tx-dlf-tableofcontents li.tx-dlf-toc-ifsub.tx-dlf-toc-act > ul {
+.tx-dlf-tableofcontents li.tx-dlf-tableofcontents-submenu.tx-dlf-tableofcontents-active > ul {
     display: block;
 }
 
-.tx-dlf-tableofcontents ul > li:has(.tx-dlf-toc-cur) > .toc-entry {
+.tx-dlf-tableofcontents ul > li:has(.tx-dlf-tableofcontents-current) > .toc-entry {
   font-weight: bold;
 }
 
@@ -3065,7 +3065,7 @@ basket
     padding-top: 10px;
 }
 
-li.tx-dlf-toc-cur {
+li.tx-dlf-tableofcontents-current {
     font-weight: bold;
 }
 
@@ -3787,7 +3787,7 @@ max 1024px
     }
 
     .tx-dlf-navigation-next,
-    .tx-dlf-navigation-rotate-right {
+    .tx-dlf-tools-rotate-right {
         margin-right: 0px;
     }
 
@@ -3813,11 +3813,11 @@ max 1024px
         text-align: left;
     }
 
-    .tx-dlf-navigation-rotate-right {
+    .tx-dlf-tools-rotate-right {
         margin-right: 0;
     }
 
-    .detail-view-itemoptions .tx-dlf-toc-title {
+    .detail-view-itemoptions .tx-dlf-tableofcontents-title {
         width: 100%;
     }
 
@@ -4335,7 +4335,7 @@ max 700px
     min-height: 100vh;
 }
 
-span.tx-dlf-toc-pagination {
+span.tx-dlf-tableofcontents-pagination {
     float: right;
     font-weight: lighter;
 }
