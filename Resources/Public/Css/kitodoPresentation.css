@@ -4232,6 +4232,14 @@ max 700px
         text-align: center;
     }
 
+    /* subhh: dlf 7 Paginierung – gleiche responsive Ausrichtung wie .pagination (linksbündig).
+       Kein margin-top auf a (würde nur die <a>-Buttons gegenüber den disabled <span> versetzen);
+       der Zeilenabstand beim Umbruch kommt einheitlich vom li-margin. */
+    .tx-dlf-pagination {
+        display: block;
+        margin: 15px;
+    }
+
     .tx-dlf-listview-list .tx-dlf-listview-thumbnail {
         position: relative;
     }
