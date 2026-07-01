@@ -20,6 +20,10 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:dlf/Resour
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:dlf/Resources/Private/Language/locallang_structure.xlf'][] = 'EXT:presentation_package/Resources/Private/Language/Overrides/locallang_structure.xlf';
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:dlf/Resources/Private/Language/locallang_structure.xlf'][] = 'EXT:presentation_package/Resources/Private/Language/Overrides/de.locallang_structure.xlf';
 
+// subhh: Paginierung – Prev/Next wieder mit Text statt "<"/">" (dlf 7 Default)
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:dlf/Resources/Private/Language/locallang.xlf'][] = 'EXT:presentation_package/Resources/Private/Language/Overrides/locallang.xlf';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:dlf/Resources/Private/Language/locallang.xlf'][] = 'EXT:presentation_package/Resources/Private/Language/Overrides/de.locallang.xlf';
+
 // override Caching Framework for Solr queries
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['tx_dlf_solr'] = [];
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['tx_dlf_solr']['backend'] = 'TYPO3\\CMS\\Core\\Cache\\Backend\\FileBackend';

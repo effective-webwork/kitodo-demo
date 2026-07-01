@@ -1,0 +1,85 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<ul class="tx-dlf-pagination">
+    <f:if condition="{pagination.previousPageNumberG} && {pagination.previousPageNumberG} >= {pagination.firstPageNumber}">
+        <f:then>
+            <li class="tx-dlf-pagination-first">
+                <f:link.action action="{action}" addQueryString="untrusted" argumentsToBeExcludedFromQueryString="{0: 'tx_dlf[page]'}" additionalParams="{'tx_dlf[page]': 1, 'tx_dlf[id]': docUid}" arguments="{page: 1, search: lastSearch}" title="1">1</f:link.action>
+            </li>
+            <li class="tx-dlf-pagination-previous">
+                <f:link.action action="{action}" addQueryString="untrusted" argumentsToBeExcludedFromQueryString="{0: 'tx_dlf[page]'}" additionalParams="{'tx_dlf[page]': pagination.previousPageNumber, 'tx_dlf[id]': docUid}" arguments="{page: pagination.previousPageNumber, search: lastSearch}" title="{f:translate(key: 'navigation.page.prevPage')}">{f:translate(key: 'listView.pagination.prevPage')->f:format.htmlentitiesDecode(encoding: 'UTF-8')}</f:link.action>
+            </li>
+        </f:then>
+        <f:else>
+            <li class="tx-dlf-pagination-first disabled">
+                <span>1</span>
+            </li>
+            <li class="tx-dlf-pagination-previous disabled">
+                <span>{f:translate(key: 'listView.pagination.prevPage')->f:format.htmlentitiesDecode(encoding: 'UTF-8')}</span>
+            </li>
+        </f:else>
+    </f:if>
+    <f:comment>add pages between first and last page, with dots if there are more than 5 pages (before or after) the respective page</f:comment>
+    <f:for each="{pagination.pagesR}" as="page">
+        <f:switch expression="{page.label}">
+            <f:comment>If page 1 is not to be output twice, please remove the comment</f:comment>
+            <f:comment>
+                <f:case value="1">
+                    <f:comment>don't add first page a second time</f:comment>
+                </f:case>
+            </f:comment>
+            <f:comment>If last page is not to be output twice, please remove the comment</f:comment>
+            <f:comment>
+                <f:case value="{pagination.lastPageNumber}">
+                    <f:comment>don't add last page a second time</f:comment>
+                </f:case>
+            </f:comment>
+            <f:defaultCase>
+                <f:switch expression="{page.label}">
+                    <f:comment>add the dots</f:comment>
+                    <f:case value="...">
+                        <li class="dots">
+                            <span class="dots">...</span>
+                        </li>
+                    </f:case>
+                    <f:defaultCase>
+                        <li class="{f:if(condition: '{page.label} == {paginator.currentPageNumber}', then:'tx-dlf-pagination-current')}">
+                            <f:link.action action="{action}" addQueryString="untrusted" argumentsToBeExcludedFromQueryString="{0: 'tx_dlf[page]'}" additionalParams="{'tx_dlf[page]': page.startRecordNumber, 'tx_dlf[id]': docUid}" arguments="{page: page.startRecordNumber, search: lastSearch}">{page.label}</f:link.action>
+                        </li>
+                    </f:defaultCase>
+                </f:switch>
+            </f:defaultCase>
+        </f:switch>
+    </f:for>
+    <f:if condition="{pagination.nextPageNumberG} && {pagination.nextPageNumberG} <= {pagination.lastPageNumber}">
+        <f:then>
+            <li class="tx-dlf-pagination-next">
+                <f:link.action action="{action}" addQueryString="untrusted" argumentsToBeExcludedFromQueryString="{0: 'tx_dlf[page]'}" additionalParams="{'tx_dlf[page]': pagination.nextPageNumber, 'tx_dlf[id]': docUid}" arguments="{page: pagination.nextPageNumber, search: lastSearch}" title="{f:translate(key: 'navigation.page.nextPage')}">{f:translate(key: 'listView.pagination.nextPage')->f:format.htmlentitiesDecode(encoding: 'UTF-8')}</f:link.action>
+            </li>
+            <li class="tx-dlf-pagination-last">
+                <f:link.action action="{action}" addQueryString="untrusted" argumentsToBeExcludedFromQueryString="{0: 'tx_dlf[page]'}" additionalParams="{'tx_dlf[page]': pagination.lastPageNumberG, 'tx_dlf[id]': docUid}" arguments="{page: pagination.lastPageNumberG, search: lastSearch}" title="{pagination.lastPageNumber}">{pagination.lastPageNumber}</f:link.action>
+            </li>
+        </f:then>
+        <f:else>
+            <li class="tx-dlf-pagination-next disabled">
+                <span>{f:translate(key: 'listView.pagination.nextPage')->f:format.htmlentitiesDecode(encoding: 'UTF-8')}</span>
+            </li>
+            <li class="tx-dlf-pagination-last disabled">
+                <span>{pagination.lastPageNumber}</span>
+            </li>
+        </f:else>
+    </f:if>
+</ul>
+
+</html>

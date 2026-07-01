@@ -1619,6 +1619,90 @@ li.current a {
     text-indent: -9999px;
 }
 
+/* subhh: dlf 7 Paginierung (<ul class="tx-dlf-pagination">) = 1:1 die originale
+   Paginierung (vorher .pagination), nur mit den neuen dlf-7-Klassen.
+   :first-child = erste Seite (Pfeil links), :last-child = letzte Seite (Pfeil rechts),
+   Zurück/Vor als Text. */
+.tx-dlf-pagination {
+    display: block;
+    margin: 0 30px;
+    font-size: 0;
+    padding: 0;
+    list-style: none;
+}
+.tx-dlf-pagination li {
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    font-size: 16px;
+    vertical-align: middle;
+}
+.tx-dlf-pagination a {
+    background: #e4e4e4;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 10px;
+    margin: 0;
+    min-width: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.tx-dlf-pagination a:hover {
+    background: #8D0D1C;
+    color: #ffffff;
+}
+.tx-dlf-pagination li.disabled span {
+    background: #6a6a6a;
+    color: #ffffff;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 10px;
+    min-width: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.tx-dlf-pagination-current a {
+    background: #6a6a6a;
+    color: #ffffff;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 10px;
+    min-width: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.tx-dlf-pagination li.dots span {
+    display: inline-block;
+    padding: 10px 4px;
+    min-width: 20px;
+    text-align: center;
+    color: #6a6a6a;
+    font-size: 16px;
+}
+.tx-dlf-pagination li:first-child a {
+    background: url(../Images/icon-arrow-left-dark.svg) no-repeat center center #e4e4e4;
+    background-size: 24px 24px;
+    color: transparent;
+    text-indent: -9999px;
+}
+.tx-dlf-pagination li:first-child a:hover {
+    background: url(../Images/icon-arrow-left.svg) no-repeat center center #8D0D1C;
+    background-size: 24px 24px;
+    color: transparent;
+    text-indent: -9999px;
+}
+.tx-dlf-pagination li:last-child a {
+    background: url(../Images/icon-arrow-right-dark.svg) no-repeat center center #e4e4e4;
+    background-size: 24px 24px;
+    color: transparent;
+    text-indent: -9999px;
+}
+.tx-dlf-pagination li:last-child a:hover {
+    background: url(../Images/icon-arrow-right.svg) no-repeat center center #8D0D1C;
+    background-size: 24px 24px;
+    color: transparent;
+    text-indent: -9999px;
+}
+
 ol.tx-dlf-listview-list {
     list-style-type: decimal;
     list-style-position: inside;
