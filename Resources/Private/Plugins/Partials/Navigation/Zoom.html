@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+
+    subhh: Zoom buttons for the navigation bar (bottom-toolbar). Kept as a
+    navigation feature ("zoom" in FlexForm settings.features) like the previous
+    installation. Uses tx_dlf_viewer.map.zoomIn()/zoomOut().
+</f:comment>
+
+<li class="tx-dlf-tools-zoom-in">
+    <f:variable name="zoomIn"><f:translate key="toolbox.zoom.in"/></f:variable>
+    <a href="#" title="{zoomIn}" onclick="tx_dlf_viewer.map.zoomIn();">
+        <img src="{f:uri.resource(path: 'Images/icon-zoomin.svg', extensionName: 'PresentationPackage')}" alt="{zoomIn}">
+    </a>
+</li>
+<li class="tx-dlf-tools-zoom-out">
+    <f:variable name="zoomOut"><f:translate key="toolbox.zoom.out"/></f:variable>
+    <a href="#" title="{zoomOut}" onclick="tx_dlf_viewer.map.zoomOut();">
+        <img src="{f:uri.resource(path: 'Images/icon-zoomout.svg', extensionName: 'PresentationPackage')}" alt="{zoomOut}">
+    </a>
+</li>
+
+</html>

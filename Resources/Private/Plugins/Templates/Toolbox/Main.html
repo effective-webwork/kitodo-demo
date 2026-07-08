@@ -24,12 +24,21 @@
         </f:if>
     </f:for>
 
-    <f:comment><!-- subhh: custom page grid toggle --></f:comment>
-    <li>
-        <a href="#" id="pagegrid" title="Miniaturansichten öffnen">
-            <img src="{f:uri.resource(path: 'Images/icon-pagegrid.svg', extensionName: 'PresentationPackage')}" alt="Miniaturansichten öffnen">
-        </a>
-    </li>
+    <f:comment>
+        subhh: custom page grid toggle. Only render it in the toolbox that has the
+        fulltext tool (bottom-toolbar), matching the old installation where the pagegrid
+        button lived inside the fulltext block. Otherwise it would render in every toolbox
+        instance (e.g. also the TOC toolbox with searchInDocumentTool) and produce a
+        duplicate id="pagegrid" — jQuery's $('#pagegrid') would then bind the click handler
+        to only the first occurrence, leaving the visible button unresponsive.
+    </f:comment>
+    <f:if condition="{tools.fulltextTool}">
+        <li>
+            <a href="#" id="pagegrid" title="Miniaturansichten öffnen">
+                <img src="{f:uri.resource(path: 'Images/icon-pagegrid.svg', extensionName: 'PresentationPackage')}" alt="Miniaturansichten öffnen">
+            </a>
+        </li>
+    </f:if>
 
 </ul>
 

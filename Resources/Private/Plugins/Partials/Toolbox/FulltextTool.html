@@ -14,7 +14,14 @@
 <li class="tx-dlf-tools-fulltext">
     <f:if condition="{fulltext}">
         <f:then>
-            <a class="select switchoff" id="tx-dlf-tools-fulltext" title="{f:translate(key: 'toolbox.fulltext')}" data-dic="fulltext:{f:translate(key: 'toolbox.fulltext')};fulltext-loading:{f:translate(key: 'toolbox.fulltext.loading')};fulltext-on:{f:translate(key: 'toolbox.fulltext.on')};fulltext-off:{f:translate(key: 'toolbox.fulltext.off')};activate-full-text-initially:{activateFullTextInitially};full-text-scroll-element:{settings.fullTextScrollElement};search-hl-parameters:{settings.searchHlParameters}">
+            <f:comment>
+                subhh: fulltext/fulltext-on/fulltext-off labels intentionally left empty.
+                dlf's FulltextControl.js sets the button text via
+                $(button).text(dic['fulltext'|'fulltext-on'|'fulltext-off']); empty values
+                mean only the icon (CSS ::after) shows, without a "Volltext an/aus" text
+                label next to it — matching the previous installation.
+            </f:comment>
+            <a class="select switchoff" id="tx-dlf-tools-fulltext" title="{f:translate(key: 'toolbox.fulltext')}" data-dic="fulltext:;fulltext-loading:;fulltext-on:;fulltext-off:;activate-full-text-initially:{activateFullTextInitially};full-text-scroll-element:{settings.fullTextScrollElement};search-hl-parameters:{settings.searchHlParameters}">
                 <img src="{f:uri.resource(path: 'Images/icon-text-white.svg', extensionName: 'PresentationPackage')}" alt="{f:translate(key: 'toolbox.fulltext')}">
             </a>
         </f:then>

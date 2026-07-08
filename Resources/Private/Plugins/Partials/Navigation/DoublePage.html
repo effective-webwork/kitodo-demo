@@ -14,18 +14,18 @@
 
 <f:if condition="{numPages} > 0">
     <f:then>
-        <f:if condition="{viewData.requestData.double}">
+        <f:if condition="{requestData.double}">
             <f:then>
                 <li class="tx-dlf-navigation-double">
-                    <kitodo:link viewData="{viewData}" additionalParams="{'double':'0'}" excludedParams="{0: 'measure'}">
+                    <kitodo:link requestData="{requestData}" additionalParams="{'double':'0'}" excludedParams="{0: 'measure'}">
                         <img src="{f:uri.resource(path: 'Images/icon-singlepage.svg', extensionName: 'PresentationPackage')}" alt="{f:translate(key: 'navigation.doublePage.singlePageView')}">
                     </kitodo:link>
                 </li>
 
                 <li class="tx-dlf-navigation-double-plus">
-                    <f:if condition="{viewData.requestData.double} && ({viewData.requestData.page} < {numPages})">
+                    <f:if condition="{requestData.double} && ({requestData.page} < {numPages})">
                         <f:then>
-                            <kitodo:link viewData="{viewData}" additionalParams="{'page':'{viewData.requestData.page + 1}'}" excludedParams="{0: 'measure'}">
+                            <kitodo:link requestData="{requestData}" additionalParams="{'page':'{requestData.page + 1}'}" excludedParams="{0: 'measure'}">
                                 <img src="{f:uri.resource(path: 'Images/icon-recto-verso.svg', extensionName: 'PresentationPackage')}" alt="{f:translate(key: 'navigation.doublePage.rectoVerso')}">
                             </kitodo:link>
                         </f:then>
@@ -39,7 +39,7 @@
             </f:then>
             <f:else>
                 <li class="tx-dlf-navigation-double">
-                    <kitodo:link viewData="{viewData}" additionalParams="{'double':'1'}" excludedParams="{0: 'measure'}">
+                    <kitodo:link requestData="{requestData}" additionalParams="{'double':'1'}" excludedParams="{0: 'measure'}">
                         <img src="{f:uri.resource(path: 'Images/icon-doublepage.svg', extensionName: 'PresentationPackage')}" alt="{f:translate(key: 'navigation.doublePage.doublePageView')}">
                     </kitodo:link>
                 </li>
