@@ -8,6 +8,13 @@ defined('TYPO3') or die('Access denied.');
     "@import 'EXT:presentation_package/Configuration/TypoScript/setup.typoscript'"
 );
 
+// subhh: Fix empty "Available items" in the Toolbox plugin FlexForm. dlf 7's
+// ItemsProcFunc::toolList() reads SC_OPTIONS from the persisted settings.php (always
+// empty for the runtime-registered tools); our subclass reads $GLOBALS instead.
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\Kitodo\Dlf\Hooks\ItemsProcFunc::class] = [
+    'className' => \Kitodo\PresentationPackage\Hooks\ItemsProcFunc::class,
+];
+
 $domain = \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_HOST');
 if ($domain === 'https://hoerzu.sub.uni-hamburg.de' || $domain === 'https://hoerzu-dev.sub.uni-hamburg.de') {
     $GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['tx_dlf_pageview_proxy'] = \Kitodo\Dlf\Eid\PageViewProxy::class . '::main';
