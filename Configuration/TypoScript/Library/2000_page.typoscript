@@ -3,7 +3,7 @@
 page = PAGE
 
 ## Favicon
-page.shortcutIcon = {$resDir}/Resources/Public/Icons/favicon.ico
+page.shortcutIcon = {$resDir}/Resources/Public/Icons/favicon_.ico
 
 ## CSS Dateien laden
 page.includeCSS {
@@ -24,11 +24,20 @@ page.includeJSFooter {
 	main = {$resDir}/Resources/Public/JavaScript/main.js
 }
 
+## Ersatz fuer das entfernte styles.content.get (css_styled_content):
+## Standard-CONTENT-Objekt, das tt_content einer Spalte holt. Das eigentliche
+## Rendering der Elemente uebernimmt fluid_styled_content ueber das TS-Objekt "tt_content".
+lib.presentationContent = CONTENT
+lib.presentationContent {
+	table = tt_content
+	select {
+		orderBy = sorting
+		where = colPos = 0
+	}
+}
+
 page.10 = FLUIDTEMPLATE
 page.10 {
-	#partialRootPath = {$resDir}/Resources/Private/Partials
-	#layoutRootPath = {$resDir}/Resources/Private/Layouts
-
 	layoutRootPaths {
 		10 = {$resDir}/Resources/Private/Layouts
 	}
@@ -40,73 +49,71 @@ page.10 {
 	}
 
 	variables {
-		contentMain < styles.content.get
+		contentMain < lib.presentationContent
 
-		contentAside < styles.content.get
+		contentAside < lib.presentationContent
 		contentAside.select.where = colPos = 2
 		contentAside.stdWrap {
 			wrap = |
 			required = 1
 		}
 
-		contentHeader < styles.content.get
+		contentHeader < lib.presentationContent
 		contentHeader.select.where = colPos = 1
 		contentHeader.stdWrap {
 			wrap = |
 			required = 1
 		}
 
-		contentTOC < styles.content.get
+		contentTOC < lib.presentationContent
 		contentTOC.select.where = colPos = 3
 		contentTOC.stdWrap {
 			wrap = |
 			required = 1
 		}
 
-		contentMetadata < styles.content.get
+		contentMetadata < lib.presentationContent
 		contentMetadata.select.where = colPos = 4
 		contentMetadata.stdWrap {
 			wrap = |
 			required = 1
 		}
 
-		contentTools < styles.content.get
+		contentTools < lib.presentationContent
 		contentTools.select.where = colPos = 5
 		contentTools.stdWrap {
 			wrap = |
 			required = 1
 		}
 
-		contentNavigation < styles.content.get
+		contentNavigation < lib.presentationContent
 		contentNavigation.select.where = colPos = 6
 		contentNavigation.stdWrap {
 			wrap = |
 			required = 1
 		}
 
-		contentBasket < styles.content.get
+		contentBasket < lib.presentationContent
 		contentBasket.select.where = colPos = 7
 		contentBasket.stdWrap {
 			wrap = |
 			required = 1
 		}
 
-		contentMetadataTitle < styles.content.get
+		contentMetadataTitle < lib.presentationContent
 		contentMetadataTitle.select.where = colPos = 8
 		contentMetadataTitle.stdWrap {
 			wrap = |
 			required = 1
 		}
 
-		contentPageviewNavigation < styles.content.get
+		contentPageviewNavigation < lib.presentationContent
 		contentPageviewNavigation.select.where = colPos = 9
 		contentPageviewNavigation.stdWrap {
 			wrap = |
 			required = 1
 		}
 	}
-
-	#file = {$resDir}/Resources/Private/Templates/DefaultTemplate.html
 }
 
 page.10.file.stdWrap.cObject = CASE

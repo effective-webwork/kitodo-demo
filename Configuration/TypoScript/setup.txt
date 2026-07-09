@@ -1,3 +1,1 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:css_styled_content/static/setup.txt">
-
-<INCLUDE_TYPOSCRIPT: source="DIR: ./Library" extensions="ts">
+@import 'EXT:presentation_package/Configuration/TypoScript/Library/*.typoscript'
