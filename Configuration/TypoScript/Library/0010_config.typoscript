@@ -1,6 +1,4 @@
 config {
-	pageRendererTemplateFile = {$resDir}/Resources/Private/Templates/PageRenderer.html
-
 	absRefPrefix = auto
 
 	disablePrefixComment = 1
