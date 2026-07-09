@@ -48,6 +48,31 @@ page.10 {
 		10 = {$resDir}/Resources/Private/Templates
 	}
 
+	dataProcessing {
+		# Kollektions-Menu fuer die Startseite (Unterseiten von PID 34) inkl. media-Thumbnail
+		10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+		10 {
+			special = directory
+			special.value = 34
+			includeNotInMenu = 1
+			as = collectionMenu
+			dataProcessing {
+				10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+				10 {
+					references.fieldName = media
+					as = media
+				}
+			}
+		}
+		# Breadcrumb / Rootline
+		20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+		20 {
+			special = rootline
+			includeNotInMenu = 1
+			as = breadcrumbMenu
+		}
+	}
+
 	variables {
 		contentMain < lib.presentationContent
 

@@ -1,22 +1,15 @@
 <article class="breadcrumb">
-    <v:page.breadCrumb tagName="" tagNameChildren="" showHiddenInMenu="1">
-
-        <f:for each="{breadcrumb}" as="item" iteration="iteratorItem">
-            <f:if condition="{item.uid} != {settings.navigation.areas.home.uid}">
-                <f:if condition="{item.uid} != {settings.subsystem.home.uid}">
-                    <f:if condition="{iteratorItem.isFirst}==0">
-                        <f:then> / </f:then>
-                    </f:if>
-                    <f:if condition="{iteratorItem.isLast}">
-                        <f:then>
-                            <span>{item.linktext}</span>
-                        </f:then>
-                        <f:else>
-                            <a href="{item.link}" class="fade">{item.linktext}</a>
-                        </f:else>
-                    </f:if>
-                </f:if>
-            </f:if>
-        </f:for>
-    </v:page.breadCrumb>
+    <f:for each="{breadcrumbMenu}" as="item" iteration="iteratorItem">
+        <f:if condition="{iteratorItem.isFirst} == 0">
+            <f:then> / </f:then>
+        </f:if>
+        <f:if condition="{iteratorItem.isLast}">
+            <f:then>
+                <span>{item.title}</span>
+            </f:then>
+            <f:else>
+                <a href="{item.link}" class="fade">{item.title}</a>
+            </f:else>
+        </f:if>
+    </f:for>
 </article>
