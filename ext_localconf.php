@@ -1,11 +1,5 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
-}
+defined('TYPO3') or die();
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-	'<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TSconfig/Page.txt">'
-);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
-	'<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TSconfig/User.txt">'
-);
+// Page-/User-TSconfig werden in TYPO3 v13 automatisch aus
+// Configuration/page.tsconfig bzw. Configuration/user.tsconfig geladen.

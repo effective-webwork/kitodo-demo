@@ -9,5 +9,10 @@
   "require": {
   },
   "autoload": {
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "presentation_package"
+    }
   }
 }
