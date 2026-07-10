@@ -200,52 +200,66 @@ $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text(
 $(".tx-dlf-metadata input[type=checkbox]").prop('checked', true);
 
 // add pagegrid button
-if ($('div.tx-dlf-navigation').length > 0) {
-    $('.detail-view-nav ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-pagegrid"><a href="#">Bildübersicht</a></li>');
-
-    $('li.tx-dlf-navigation-pagegrid a').on('click', function(evt) {
-        evt.preventDefault();
-        $('section#main-content .tx-dlf-pagegrid .tx-dlf-pagegrid').toggle();
-    });
-}
+// dlf 7 has no ul.tx-dlf-navigation; append to the existing nav buttons' container.
+(function() {
+    var $navContainer = $('.detail-view-nav .tx-dlf-navigation-last').parent();
+    if ($navContainer.length === 0) { $navContainer = $('.detail-view-nav .frame').first(); }
+    if ($navContainer.length) {
+        var $pg = $('<div class="tx-dlf-navigation-pagegrid"><a href="#">Bildübersicht</a></div>');
+        $pg.find('a').on('click', function(evt) {
+            evt.preventDefault();
+            $('section#main-content .tx-dlf-pagegrid').toggle();
+        });
+        $navContainer.append($pg);
+    }
+})();
 
 // add ol reset button
-if ($('div.tx-dlf-navigation').length > 0) {
-    $('.detail-view-nav ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-reset"><a href="#">Zurücksetzen</a></li>');
-
-    $('li.tx-dlf-navigation-reset a').on('click', function(evt) {
-        evt.preventDefault();
-        if (tx_dlf_viewer) {
-            tx_dlf_viewer.map.resetRotation();
-            tx_dlf_viewer.map.zoom(1);
-        }
-    });
-}
+(function() {
+    var $navContainer = $('.detail-view-nav .tx-dlf-navigation-last').parent();
+    if ($navContainer.length === 0) { $navContainer = $('.detail-view-nav .frame').first(); }
+    if ($navContainer.length) {
+        var $reset = $('<div class="tx-dlf-navigation-reset"><a href="#">Zurücksetzen</a></div>');
+        $reset.find('a').on('click', function(evt) {
+            evt.preventDefault();
+            if (window.tx_dlf_viewer) {
+                tx_dlf_viewer.map.resetRotation();
+                tx_dlf_viewer.map.zoom(1);
+            }
+        });
+        $navContainer.append($reset);
+    }
+})();
 
 
 // add fullscreen button
-if ($('div.tx-dlf-navigation').length > 0) {
-    $('.detail-view-nav ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-fullscreen"><a href="#">Vollbild</a></li>');
-
-    if (Cookies.get('fullscreen')) {
-        Cookies.set('fullscreen', '1');
-        $('section.portal-meta').hide();
-    } else {
-        $('section.portal-meta').show();
-    }
-
-    $('li.tx-dlf-navigation-fullscreen a').on('click', function(evt) {
-        evt.preventDefault();
+(function() {
+    var $navContainer = $('.detail-view-nav .tx-dlf-navigation-last').parent();
+    if ($navContainer.length === 0) { $navContainer = $('.detail-view-nav .frame').first(); }
+    if ($navContainer.length) {
+        var $fs = $('<div class="tx-dlf-navigation-fullscreen"><a href="#">Vollbild</a></div>');
 
         if (Cookies.get('fullscreen')) {
-            Cookies.remove('fullscreen');
-            $('section.portal-meta').show();
-        } else {
             Cookies.set('fullscreen', '1');
             $('section.portal-meta').hide();
+        } else {
+            $('section.portal-meta').show();
         }
-    });
-}
+
+        $fs.find('a').on('click', function(evt) {
+            evt.preventDefault();
+
+            if (Cookies.get('fullscreen')) {
+                Cookies.remove('fullscreen');
+                $('section.portal-meta').show();
+            } else {
+                Cookies.set('fullscreen', '1');
+                $('section.portal-meta').hide();
+            }
+        });
+        $navContainer.append($fs);
+    }
+})();
 
 $(".tx-dlf-metadata .show-metadata").on("click", function (evt) {
     evt.preventDefault();
@@ -269,15 +283,33 @@ $(".tx-dlf-metadata .show-metadata").on("click", function (evt) {
 
 });
 
-$(".tx-dlf-navigation-zoom-in").click(function() { tx_dlf_viewer.map.zoomIn(); });
-$(".tx-dlf-navigation-zoom-out").click(function() { tx_dlf_viewer.map.zoomOut(); });
+// dlf 7 no longer renders zoom buttons in navigation; create them and bind to the viewer API.
+(function() {
+    var $navContainer = $('.detail-view-nav .tx-dlf-navigation-last').parent();
+    if ($navContainer.length === 0) { $navContainer = $('.detail-view-nav .frame').first(); }
+    if ($navContainer.length) {
+        var base = window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/';
+        var $zin = $('<div class="tx-dlf-navigation-zoom-in"><a href="#" title="Zoom In"><img src="' + base + 'icon-zoomin.svg" alt="Zoom In"></a></div>');
+        var $zout = $('<div class="tx-dlf-navigation-zoom-out"><a href="#" title="Zoom Out"><img src="' + base + 'icon-zoomout.svg" alt="Zoom Out"></a></div>');
+        $zin.find('a').on('click', function(e) { e.preventDefault(); if (window.tx_dlf_viewer) tx_dlf_viewer.map.zoomIn(); });
+        $zout.find('a').on('click', function(e) { e.preventDefault(); if (window.tx_dlf_viewer) tx_dlf_viewer.map.zoomOut(); });
+        $navContainer.append($zin, $zout);
+    }
+})();
 
-$(".tx-dlf-navigation-rotate-right a").click(function () {
-    tx_dlf_viewer.map.rotate(90);
-});
-$(".tx-dlf-navigation-rotate-left a").click(function () {
-    tx_dlf_viewer.map.rotate(-90);
-});
+// dlf 7 no longer renders rotate buttons in navigation; create and bind them.
+(function() {
+    var $navContainer = $('.detail-view-nav .tx-dlf-navigation-last').parent();
+    if ($navContainer.length === 0) { $navContainer = $('.detail-view-nav .frame').first(); }
+    if ($navContainer.length) {
+        var base = window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/';
+        var $rl = $('<div class="tx-dlf-navigation-rotate-left"><a href="#" title="Rotate Left"><img src="' + base + 'icon-rotateleft.svg" alt="Rotate Left"></a></div>');
+        var $rr = $('<div class="tx-dlf-navigation-rotate-right"><a href="#" title="Rotate Right"><img src="' + base + 'icon-rotateright.svg" alt="Rotate Right"></a></div>');
+        $rl.find('a').on('click', function(e) { e.preventDefault(); if (window.tx_dlf_viewer) tx_dlf_viewer.map.rotate(-90); });
+        $rr.find('a').on('click', function(e) { e.preventDefault(); if (window.tx_dlf_viewer) tx_dlf_viewer.map.rotate(90); });
+        $navContainer.append($rl, $rr);
+    }
+})();
 
 $('.tx-dlf-navigation-double a, .tx-dlf-navigation-double span')
     .text("")
@@ -288,21 +320,6 @@ $('.tx-dlf-navigation-double-plus a, .tx-dlf-navigation-double-plus span')
     .text("")
     .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-verso.svg" alt="Adjust recto/verso">');
 
-$('.tx-dlf-navigation-zoom-in a, .tx-dlf-navigation-zoom-in span')
-    .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomin.svg" alt="Zoom In">');
-
-$('.tx-dlf-navigation-zoom-out a, .tx-dlf-navigation-zoom-out span')
-    .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomout.svg" alt="Zoom Out">');
-
-$('.tx-dlf-navigation-rotate-left a, .tx-dlf-navigation-rotate-left span')
-    .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateleft.svg" alt="Rotate Left">');
-
-$('.tx-dlf-navigation-rotate-right a, .tx-dlf-navigation-rotate-right span')
-    .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateright.svg" alt="Rotate Right">');
 
 $('.tx-dlf-navigation-first a, .tx-dlf-navigation-first span')
     .text("")
@@ -360,9 +377,9 @@ if ($('.tx-dlf-navigation-magnifier').length) {
 }
 
 // TOOLBOX
-$('aside ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-tools" style="margin-left:10px;"><div id="c16" class="detail-view-tools" style="display:inline-block;">' + $('.detail-view-tools').html() + '</div></li>');
-$('aside li.tx-dlf-navigation-tools label[for="checkbox-menu2"]').text("").prepend('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-tool.svg" alt="Toolbox">');
-$('aside .detail-view-itemoptions .detail-view-tools').hide();
+// dlf 7 renders navigation without ul.tx-dlf-navigation, so the old relocation failed and hid the
+// toolbox. Keep it in place; it expands via the "Werkzeuge" checkbox.
+$('.detail-view-tools label[for="checkbox-menu2"]').text("").prepend('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-tool.svg" alt="Toolbox">');
 
 
 $('.tx-dlf-navigation-edit a, .tx-dlf-navigation-edit span')
