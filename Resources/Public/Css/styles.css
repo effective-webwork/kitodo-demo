@@ -1045,7 +1045,7 @@ span.textline {
 }
 
 #tx-dlf-map {
-    min-height:1000px;
+    height:1000px;
     line-height:0;
 }
 
