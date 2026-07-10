@@ -9,6 +9,9 @@
   "require": {
   },
   "autoload": {
+    "psr-4": {
+      "Kitodo\\PresentationPackage\\": "Classes/"
+    }
   },
   "extra": {
     "typo3/cms": {
