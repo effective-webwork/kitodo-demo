@@ -6,23 +6,22 @@
 
     <div id="banner-navigation">
         <div class="portal-logo-area">
-            <f:variable name="base" value="<v:site.url/>"/>
-            <f:if condition="{base} == 'https://zeitungen.sub.uni-hamburg.de/' || {base} == 'https://zeitungen-dev.sub.uni-hamburg.de/'">
+            <f:if condition="{settings.siteKey} == 'zeitungen'">
                 <f:then>
                     <a href="/"><strong>Hamburger Zeitungen</strong> Digital</a>
                 </f:then>
             </f:if>
-            <f:if condition="{base} == 'https://digitalisate.sub.uni-hamburg.de/' || {base} == 'https://digitalisate-dev.sub.uni-hamburg.de/' || {base} == 'https://jungius.sub.uni-hamburg.de/' || {base} == 'https://jungius-dev.sub.uni-hamburg.de/' || {base} == 'https://digitalisatev13.test.eww-server.de/'">
+            <f:if condition="{settings.siteKey} == 'kulturgut' || {settings.siteKey} == 'jungius'">
                 <f:then>
                     <a href="/"><strong>Hamburger Kulturgut</strong> Digital</a>
                 </f:then>
             </f:if>
-            <f:if condition="{base} == 'https://adressbuecher.sub.uni-hamburg.de/' || {base} == 'https://adressbuecher-dev.sub.uni-hamburg.de/'">
+            <f:if condition="{settings.siteKey} == 'adressbuecher'">
                 <f:then>
                     <a href="/"><strong>Hamburger Adressbücher</strong> Digital</a>
                 </f:then>
             </f:if>
-            <f:if condition="{base} == 'https://hoerzu.sub.uni-hamburg.de/' || {base} == 'https://hoerzu-dev.sub.uni-hamburg.de/'">
+            <f:if condition="{settings.siteKey} == 'hoerzu'">
                 <f:then>
                     <a href="/"><strong>Hörzu</strong> Digital</a>
                 </f:then>

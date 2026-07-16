@@ -4,6 +4,23 @@ plugin.tx_presentationpackage.view {
     layoutRootPaths.0 = EXT:presentation_package/Resources/Private/Layouts
 }
 
+# siteKey: Site-Identifier from site configuration
+# Used for site specific parts in templates.
+[site("identifier") == "subhh-digitalisate"]
+    plugin.tx_presentationpackage.settings.siteKey = kulturgut
+[site("identifier") == "jungius"]
+    plugin.tx_presentationpackage.settings.siteKey = jungius
+[END]
+    [site("identifier") == "zeitungen"]
+plugin.tx_presentationpackage.settings.siteKey = zeitungen
+[END]
+[site("identifier") == "hoerzu"]
+    plugin.tx_presentationpackage.settings.siteKey = hoerzu
+[END]
+[site("identifier") == "adressbuecher"]
+    plugin.tx_presentationpackage.settings.siteKey = adressbuecher
+[END]
+
 page.includeCSS {
     presentation = EXT:presentation_package/Resources/Public/Css/kitodoPresentation.css
     searchOverwrite = EXT:presentation_package/Resources/Public/Css/searchOverwrite.css
