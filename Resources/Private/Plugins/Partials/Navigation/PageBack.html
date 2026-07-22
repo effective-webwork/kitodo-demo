@@ -12,12 +12,12 @@
     LICENSE.txt file that was distributed with this source code.
 </f:comment>
 
-<f:variable name="navigationPage" value="{requestData.page - 1 - requestData.double}" />
+<f:variable name="navigationPage" value="{viewData.requestData.page - 1 - viewData.requestData.double}" />
 
 <li class="tx-dlf-navigation-prev">
     <f:if condition="{pageBackActive}">
         <f:then>
-            <kitodo:link requestData="{requestData}" additionalParams="{'page':'{navigationPage}'}" excludedParams="{0: 'measure'}">
+            <kitodo:link viewData="{viewData}" additionalParams="{'page':'{navigationPage}'}" excludedParams="{0: 'measure'}">
                 <img src="{f:uri.resource(path: 'Images/icon-arrow-left.svg', extensionName: 'PresentationPackage')}" alt="{f:translate(key: 'navigation.page.prevPage')}">
             </kitodo:link>
         </f:then>
