@@ -238,8 +238,8 @@ function fixLabelInputMetadata() {
 
 // mk 2023-02-02 # create additional download buttons
 function addDownloadButtons() {
-    // declare path to folder for icons
-    icon_folder = '/typo3conf/ext/presentation_package/Resources/Public/Images/download_icons/';
+    // init resource paths to icons
+    downloadButtonIcons = getImageResourcePaths();
 
     // our anchor for button placement
     anchor = 'ul.download-anchor';
@@ -276,16 +276,16 @@ function addDownloadButtons() {
 
     // create data structure for download buttons
     var downloads = {
-        fullLinkDownload:   {id:"fullLinkDownload", title:"Persistente URL zum Objekt teilen",                          icon:"filetype-share-fill-full.svg",    class:"reachable", event:"Zitierlink"},
-        pageLinkDownload:   {id:"pageLinkDownload", title:"Persistente URL zur Einzelseite teilen",                     icon:"filetype-share-fill.svg",         class:"reachable", event:"Zitierlink (Einzelseite)"},
-        iiifDownload:       {id:"iiifDownload",     title:"IIIF-Manifest für Objekt herunterladen",                     icon:"filetype-iiif.svg",               class:"reachable", event:"Download IIIF-Manifest"},
-        metsDownload:       {id:"metsDownload",     title:"METS/MODS für Objekt herunterladen",                         icon:"filetype-mets.svg",               class:"reachable", event:"Download METS/MODS"},
-        fullPDFDownload:    {id:"fullPDFDownload",  title:"Gesamtes Objekt als PDF herunterladen",                      icon:"filetype-pdf-full.svg",           class:"reachable", event:"Download PDF"},
-        pagePDFDownload:    {id:"pagePDFDownload",  title:"Aktuelle Einzelseite als PDF herunterladen",                 icon:"filetype-pdf.svg",                class:"reachable", event:"Download PDF (Einzelseiten)"},
-        pageJPEGDownload:   {id:"pageJPEGDownload", title:"Aktuelle Seite als JPEG herunterladen",                      icon:"filetype-jpeg.svg",               class:"reachable", event:"Download JPEG (Einzelseite)"},
-        pageALTODownload:   {id:"pageALTODownload", title:"Volltext der aktuellen Seite als ALTO-XML herunterladen",    icon:"filetype-alto.svg",               class:"reachable", event:"Download ALTO-XML (Einzelseite)"},
-        pageTXTDownload:    {id:"pageTXTDownload",  title:"Volltext der aktuellen Seite als TXT herunterladen",         icon:"filetype-txt.svg",                class:"reachable", event:"Download TXT (Einzelseite)"},
-        DFGViewer:          {id:"DFGViewer",        title:"Zur Ansicht in den DFG-Viewer wechseln",                     icon:"dfgviewerLogo.svg",               class:"reachable", event:"Aufruf DFG-Viewer"},
+        fullLinkDownload:   {id:"fullLinkDownload", title:"Persistente URL zum Objekt teilen",                          icon:"iconFiletypeShareFillFull",    class:"reachable", event:"Zitierlink"},
+        pageLinkDownload:   {id:"pageLinkDownload", title:"Persistente URL zur Einzelseite teilen",                     icon:"iconFiletypeShareFill",         class:"reachable", event:"Zitierlink (Einzelseite)"},
+        iiifDownload:       {id:"iiifDownload",     title:"IIIF-Manifest für Objekt herunterladen",                     icon:"iconFiletypeIiif",               class:"reachable", event:"Download IIIF-Manifest"},
+        metsDownload:       {id:"metsDownload",     title:"METS/MODS für Objekt herunterladen",                         icon:"iconFiletypeMets",               class:"reachable", event:"Download METS/MODS"},
+        fullPDFDownload:    {id:"fullPDFDownload",  title:"Gesamtes Objekt als PDF herunterladen",                      icon:"iconFiletypePdfFull",           class:"reachable", event:"Download PDF"},
+        pagePDFDownload:    {id:"pagePDFDownload",  title:"Aktuelle Einzelseite als PDF herunterladen",                 icon:"iconFiletypePdf",                class:"reachable", event:"Download PDF (Einzelseiten)"},
+        pageJPEGDownload:   {id:"pageJPEGDownload", title:"Aktuelle Seite als JPEG herunterladen",                      icon:"iconFiletypeJpeg",               class:"reachable", event:"Download JPEG (Einzelseite)"},
+        pageALTODownload:   {id:"pageALTODownload", title:"Volltext der aktuellen Seite als ALTO-XML herunterladen",    icon:"iconFiletypeAlto",               class:"reachable", event:"Download ALTO-XML (Einzelseite)"},
+        pageTXTDownload:    {id:"pageTXTDownload",  title:"Volltext der aktuellen Seite als TXT herunterladen",         icon:"iconFiletypeTxt",                class:"reachable", event:"Download TXT (Einzelseite)"},
+        DFGViewer:          {id:"DFGViewer",        title:"Zur Ansicht in den DFG-Viewer wechseln",                     icon:"iconDfgviewerLogo",               class:"reachable", event:"Aufruf DFG-Viewer"},
     }
 
     // per document URLs
@@ -339,7 +339,7 @@ function addDownloadButtons() {
                 $(anchor).append('\
                 <li>\
                     <a href="' + downloads[key].link + '" id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '" download>\
-                        <img src="' + icon_folder + downloads[key].icon + '">\
+                        <img src="' + downloadButtonIcons[downloads[key].icon] + '">\
                     </a>\
                 </li>');
             }
@@ -349,7 +349,7 @@ function addDownloadButtons() {
             $(anchor).append('\
             <li>\
                 <span id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '">\
-                    <img src="' + icon_folder + downloads[key].icon + '">\
+                    <img src="' + downloadButtonIcons[downloads[key].icon] + '">\
                 </span>\
             </li>');
         }
@@ -358,8 +358,9 @@ function addDownloadButtons() {
 
 // mk 2023-02-02 # create additional download buttons
 function addRestrictDownloadButtons() {
-    // declare path to folder for icons
-    icon_folder = '/typo3conf/ext/presentation_package/Resources/Public/Images/download_icons/';
+    // init resource paths to icons
+    downloadButtonIcons = getImageResourcePaths();
+
     pageviewproxy = 'https://hoerzu.sub.uni-hamburg.de/?eID=tx_dlf_pageview_proxy&url=';
 
     // our anchor for button placement
@@ -397,16 +398,16 @@ function addRestrictDownloadButtons() {
 
     // create data structure for download buttons
     var downloads = {
-        fullLinkDownload:   {id:"fullLinkDownload", title:"Persistente URL zum Objekt teilen",                          icon:"filetype-share-fill-full.svg",    class:"reachable", event:"Zitierlink"},
-        pageLinkDownload:   {id:"pageLinkDownload", title:"Persistente URL zur Einzelseite teilen",                     icon:"filetype-share-fill.svg",         class:"reachable", event:"Zitierlink (Einzelseite)"},
-        iiifDownload:       {id:"iiifDownload",     title:"IIIF-Manifest für Objekt herunterladen",                     icon:"filetype-iiif.svg",               class:"reachable", event:"Download IIIF-Manifest"},
-        metsDownload:       {id:"metsDownload",     title:"METS/MODS für Objekt herunterladen",                         icon:"filetype-mets.svg",               class:"reachable", event:"Download METS/MODS"},
-        fullPDFDownload:    {id:"fullPDFDownload",  title:"Gesamtes Objekt als PDF herunterladen",                      icon:"filetype-pdf-full.svg",           class:"reachable", event:"Download PDF"},
-        pagePDFDownload:    {id:"pagePDFDownload",  title:"Aktuelle Einzelseite als PDF herunterladen",                 icon:"filetype-pdf.svg",                class:"reachable", event:"Download PDF (Einzelseiten)"},
-        pageJPEGDownload:   {id:"pageJPEGDownload", title:"Aktuelle Seite als JPEG herunterladen",                      icon:"filetype-jpeg.svg",               class:"reachable", event:"Download JPEG (Einzelseite)"},
-        pageALTODownload:   {id:"pageALTODownload", title:"Volltext der aktuellen Seite als ALTO-XML herunterladen",    icon:"filetype-alto.svg",               class:"reachable", event:"Download ALTO-XML (Einzelseite)"},
-        pageTXTDownload:    {id:"pageTXTDownload",  title:"Volltext der aktuellen Seite als TXT herunterladen",         icon:"filetype-txt.svg",                class:"reachable", event:"Download TXT (Einzelseite)"},
-        //DFGViewer:          {id:"DFGViewer",        title:"Zur Ansicht in den DFG-Viewer wechseln",                     icon:"dfgviewerLogo.svg",               class:"reachable", event:"Aufruf DFG-Viewer"},
+        fullLinkDownload:   {id:"fullLinkDownload", title:"Persistente URL zum Objekt teilen",                          icon:"iconFiletypeShareFillFull",    class:"reachable", event:"Zitierlink"},
+        pageLinkDownload:   {id:"pageLinkDownload", title:"Persistente URL zur Einzelseite teilen",                     icon:"iconFiletypeShareFill",         class:"reachable", event:"Zitierlink (Einzelseite)"},
+        iiifDownload:       {id:"iiifDownload",     title:"IIIF-Manifest für Objekt herunterladen",                     icon:"iconFiletypeIiif",               class:"reachable", event:"Download IIIF-Manifest"},
+        metsDownload:       {id:"metsDownload",     title:"METS/MODS für Objekt herunterladen",                         icon:"iconFiletypeMets",               class:"reachable", event:"Download METS/MODS"},
+        fullPDFDownload:    {id:"fullPDFDownload",  title:"Gesamtes Objekt als PDF herunterladen",                      icon:"iconFiletypePdfFull",           class:"reachable", event:"Download PDF"},
+        pagePDFDownload:    {id:"pagePDFDownload",  title:"Aktuelle Einzelseite als PDF herunterladen",                 icon:"iconFiletypePdf",                class:"reachable", event:"Download PDF (Einzelseiten)"},
+        pageJPEGDownload:   {id:"pageJPEGDownload", title:"Aktuelle Seite als JPEG herunterladen",                      icon:"iconFiletypeJpeg",               class:"reachable", event:"Download JPEG (Einzelseite)"},
+        pageALTODownload:   {id:"pageALTODownload", title:"Volltext der aktuellen Seite als ALTO-XML herunterladen",    icon:"iconFiletypeAlto",               class:"reachable", event:"Download ALTO-XML (Einzelseite)"},
+        pageTXTDownload:    {id:"pageTXTDownload",  title:"Volltext der aktuellen Seite als TXT herunterladen",         icon:"iconFiletypeTxt",                class:"reachable", event:"Download TXT (Einzelseite)"},
+        //DFGViewer:          {id:"DFGViewer",        title:"Zur Ansicht in den DFG-Viewer wechseln",                     icon:"iconDfgviewerLogo",               class:"reachable", event:"Aufruf DFG-Viewer"},
     }
 
     // per document URLs
@@ -460,7 +461,7 @@ function addRestrictDownloadButtons() {
                 $(anchor).append('\
                 <li>\
                     <a href="' + downloads[key].link + '" id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '" download>\
-                        <img src="' + icon_folder + downloads[key].icon + '">\
+                        <img src="' + downloadButtonIcons[downloads[key].icon] + '">\
                     </a>\
                 </li>');
             //}
@@ -470,7 +471,7 @@ function addRestrictDownloadButtons() {
             $(anchor).append('\
             <li>\
                 <span id="' + downloads[key].id + '" class="' + downloads[key].class + '" title="' + downloads[key].title + '">\
-                    <img src="' + icon_folder + downloads[key].icon + '">\
+                    <img src="' + downloadButtonIcons[downloads[key].icon] + '">\
                 </span>\
             </li>');
         }
@@ -996,4 +997,18 @@ function getNameFromISIL (isil) {
         'DE-H250': 'Forschungsstelle für Zeitgeschichte in Hamburg',
         'DE-H46': 'Staatsarchiv Hamburg, Bibliothek'
     }[isil];
+}
+
+
+// Gets resource paths for image assets found in the given html element
+function getImageResourcePaths(elementId ="js-image-assets") {
+    const assetStorage = document.getElementById(elementId);
+    let icons = {};
+    if (assetStorage && assetStorage.dataset) {
+        for (const [key, value] of Object.entries(assetStorage.dataset)) {
+            icons[key] = value;
+        }
+    }
+
+    return icons;
 }
