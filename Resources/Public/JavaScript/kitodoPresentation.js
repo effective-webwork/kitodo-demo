@@ -826,11 +826,11 @@ function showVolumeList() {
         structtype === 'Unterbestand'
     ) {
         $('.detail-view-main').append('<div class="volume-info-wrapper"><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
-        $('.tx-dlf-toc ul ul li').each(function(index) {
+        $('.tx-dlf-tableofcontents ul ul li').each(function(index) {
             $('.volume-list').append('<li>'+$(this).html() +'</li>');
         });
         $('a.chapter_download, a#pdfdownloadbutton').hide();
-        $('div.tx-dlf-toc span.headline_info').html('Bandliste');
+        $('div.tx-dlf-tableofcontents span.headline_info').html('Bandliste');
 
         // reduce height of pageview map
         $('.tx-dlf-map').css('min-height', '0px');
