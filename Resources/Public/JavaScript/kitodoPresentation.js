@@ -202,10 +202,6 @@ function fulltextClickEvent() {
     });
 }
 
-function replaceRssFeedImage() {
-    $('.tx-dlf-rss-feed a img').attr('src', '/typo3conf/ext/presentation_package/Resources/Public/Images/rss-feed.png');
-}
-
 function renameMetadataTab() {
     $('.tx-dlf-metadata .detail-view-itemdetails').each(function (index) {
         if (index > 0) {
