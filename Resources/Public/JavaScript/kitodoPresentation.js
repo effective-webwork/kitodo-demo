@@ -26,6 +26,8 @@ $(document).ready(function() {
 
     facetTouchStyle();
 
+    preventEmptyFulltextSubmit();
+
     // workaround
     fixLabelInputMetadata();
 
@@ -53,6 +55,21 @@ $(document).ready(function() {
 
     tocToggler();
 });
+
+function preventEmptyFulltextSubmit() {
+    // In dlf 7 fulltext=0 in parameters leads to wrong facet results.
+    $('form.tx-dlf-search-form').on('submit', function () {
+        $(this).find('[name$="[fulltext]"]').each(function () {
+            var $el = $(this);
+            if ($el.is(':radio') && !$el.is(':checked')) {
+                return;
+            }
+            if ($el.val() !== '1') {
+                $el.prop('disabled', true);
+            }
+        });
+    });
+}
 
 function tocToggler() {
     // select all toggle spans inside TOC items with a submenu
