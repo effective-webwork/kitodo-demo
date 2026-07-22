@@ -39,8 +39,6 @@ $(document).ready(function() {
 
     calendarSwitchViews();
 
-    replaceRssFeedImage();
-
     pagegrid = 0;
     pageGridClickEvent();
 
