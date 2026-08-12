@@ -14,8 +14,7 @@ namespace Kitodo\PresentationPackage\Hooks;
 
 use Kitodo\Dlf\Common\Helper;
 use Kitodo\Dlf\Hooks\ItemsProcFunc as DlfItemsProcFunc;
-use TYPO3\CMS\Core\Utility\DebugUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
 
 /**
  * XCLASS of {@see \Kitodo\Dlf\Hooks\ItemsProcFunc} (registered in ext_localconf.php).
@@ -63,7 +62,7 @@ class ItemsProcFunc extends DlfItemsProcFunc
         $tools = $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['dlf/Classes/Plugin/Toolbox.php']['tools'] ?? [];
         foreach ($tools as $class => $label) {
             $toolName = self::TOOL_KEY_MAP[$class] ?? $class;
-            $params['items'][] = [\Kitodo\Dlf\Common\Helper::getLanguageService()->sL($label), $toolName];
+            $params['items'][] = [Helper::getLanguageService()->sL($label), $toolName];
         }
     }
     
