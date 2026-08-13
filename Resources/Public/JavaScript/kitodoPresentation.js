@@ -969,12 +969,12 @@ function calendarSwitchViews() {
     // .select-calendar-view // .select-list-view active
     // .calendar-list-selection
     $('.list-view').hide();
-    $('.calendar-list-selection .select-calendar-view').on('click', function (evt) {
+    $('.calendar-list-selection .tx-dlf-calendar-select-calendar-view').on('click', function (evt) {
         $('.calendar-items').show();
         $('.list-view').hide();
     });
 
-    $('.calendar-list-selection .select-list-view').on('click', function (evt) {
+    $('.calendar-list-selection .tx-dlf-calendar-select-list-view').on('click', function (evt) {
         $('.list-view').show();
         $('.calendar-items').hide();
     });
