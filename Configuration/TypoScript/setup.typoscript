@@ -130,6 +130,8 @@ plugin.tx_dlf_toolbox {
             1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
         }
     }
+
+    settings.fullTextScrollElement = #tx-dlf-fulltextselection
 }
 
 plugin.tx_dlf_collection {
