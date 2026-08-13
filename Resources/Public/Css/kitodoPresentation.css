@@ -2699,12 +2699,26 @@ tx-dlf-search-in-document-loading {
     display: none;
 }
 
+a#tx-dlf-tools-fulltext {
+    font-size: 0;
+}
+
 a#tx-dlf-tools-fulltext:after {
     content: '';
     width: 24px;
     height: 24px;
     display: inline-block;
-    background-image: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg');
+    background-image: url('../Images/icon-text-white.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tx-dlf-tools-fulltext-not-available:after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-image: url('../Images/icon-text-white.svg');
     background-position: center;
     background-repeat: no-repeat;
 }

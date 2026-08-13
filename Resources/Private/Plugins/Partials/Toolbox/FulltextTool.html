@@ -14,21 +14,12 @@
 <li class="tx-dlf-tools-fulltext">
     <f:if condition="{fulltext}">
         <f:then>
-            <f:comment>
-                subhh: fulltext/fulltext-on/fulltext-off labels intentionally left empty.
-                dlf's FulltextControl.js sets the button text via
-                $(button).text(dic['fulltext'|'fulltext-on'|'fulltext-off']); empty values
-                mean only the icon (CSS ::after) shows, without a "Volltext an/aus" text
-                label next to it — matching the previous installation.
-            </f:comment>
-            <a class="select switchoff" id="tx-dlf-tools-fulltext" title="{f:translate(key: 'toolbox.fulltext')}" data-dic="fulltext:;fulltext-loading:;fulltext-on:;fulltext-off:;activate-full-text-initially:{activateFullTextInitially};full-text-scroll-element:{settings.fullTextScrollElement};search-hl-parameters:{settings.searchHlParameters}">
-                <img src="{f:uri.resource(path: 'Images/icon-text-white.svg', extensionName: 'PresentationPackage')}" alt="{f:translate(key: 'toolbox.fulltext')}">
+            <a class="select switchoff" id="tx-dlf-tools-fulltext" title="" data-dic="fulltext:{f:translate(key: 'toolbox.fulltext')};fulltext-loading:{f:translate(key: 'toolbox.fulltext.loading')};fulltext-on:{f:translate(key: 'toolbox.fulltext.on')};fulltext-off:{f:translate(key: 'toolbox.fulltext.off')};activate-full-text-initially:{activateFullTextInitially};full-text-scroll-element:{settings.fullTextScrollElement};search-hl-parameters:{settings.searchHlParameters}">
+                &nbsp;
             </a>
         </f:then>
         <f:else>
-            <span class="tx-dlf-tools-fulltext-not-available">
-                <img src="{f:uri.resource(path: 'Images/icon-text-white.svg', extensionName: 'PresentationPackage')}" alt="{f:translate(key: 'toolbox.fulltext.notAvailable')}">
-            </span>
+            <span class="tx-dlf-tools-fulltext-not-available" title="{f:translate(key: 'toolbox.fulltext.notAvailable')}"></span>
         </f:else>
     </f:if>
 </li>
