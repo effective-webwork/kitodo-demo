@@ -894,7 +894,7 @@ function calendarSelectBox() {
     if (isTouchDevice()) {
         $(document).mouseup(function(e)
         {
-            var container = $("div.issues div.openSelectBox");
+            var container = $("div.tx-dlf-calendar-issues div.openSelectBox");
 
             // if the target of the click isn't the container nor a descendant of the container
             if (!container.is(e.target) && container.has(e.target).length === 0)
@@ -904,11 +904,11 @@ function calendarSelectBox() {
             }
         });
 
-        $("div.issues div.dayLinkList").each(function () {
-            var interactiveElement = $(this).closest('div.issues');
+        $("div.tx-dlf-calendar-issues div.tx-dlf-calendar-day-link-list").each(function () {
+            var interactiveElement = $(this).closest('div.tx-dlf-calendar-issues');
             if ($(this).children('a').length > 1) {
                 interactiveElement.on('click', function (event) {
-                    $("div.issues div.openSelectBox").hide();
+                    $("div.tx-dlf-calendar-issues div.openSelectBox").hide();
 
                     $(this).children("div").addClass('openSelectBox');
                     $(this).children("div").show();
@@ -924,19 +924,19 @@ function calendarSelectBox() {
 
     } else {
 
-        $("div.issues div.dayLinkList").each(function () {
-            var interactiveElement = $(this).closest('div.issues');
+        $("div.tx-dlf-calendar-issues div.tx-dlf-calendar-day-link-list").each(function () {
+            var interactiveElement = $(this).closest('div.tx-dlf-calendar-issues');
             if ($(this).children('a').length > 1) {
                 // show select box
                 interactiveElement.on('mouseenter', function (event) {
-                    $("div.issues div.openSelectBox").hide();
+                    $("div.tx-dlf-calendar-issues div.openSelectBox").hide();
 
                     $(this).children("div").addClass('openSelectBox');
                     $(this).children("div").show();
 
                     setTimeout(function hoverTimeoutCheck() {
-                        if ($('div.issues div.openSelectBox:hover').length == 0 && $('div.issues:hover').length == 0) {
-                            $("div.issues div.openSelectBox").hide();
+                        if ($('div.tx-dlf-calendar-issues div.openSelectBox:hover').length == 0 && $('div.tx-dlf-calendar-issues:hover').length == 0) {
+                            $("div.tx-dlf-calendar-issues div.openSelectBox").hide();
                         } else {
                             setTimeout(hoverTimeoutCheck, 1000);
                         }
@@ -955,7 +955,7 @@ function calendarSelectBox() {
 }
 
 function hoverTimeoutCheck() {
-    $("div.issues div.openSelectBox").hide();
+    $("div.tx-dlf-calendar-issues div.openSelectBox").hide();
 }
 
 function isTouchDevice() {

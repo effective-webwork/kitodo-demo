@@ -3029,7 +3029,7 @@ article.calendar-metadata ul li dl {
     padding: 8px 15px 8px 35px;
 }
 
-.issues div {
+.tx-dlf-calendar-issues div {
     position: absolute;
     background-color: white;
     padding: 1rem;
@@ -3039,21 +3039,21 @@ article.calendar-metadata ul li dl {
     z-index: 100;
 }
 
-.issues div ul {
+.tx-dlf-calendar-issues div ul {
     list-style: none;
 }
 
-.dayLinkList a {
+.tx-dlf-calendar-day-link-list a {
     color: #000000;
     text-decoration: none;
 }
 
-.dayLinkList a:hover {
+.tx-dlf-calendar-day-link-list a:hover {
     color: #c83141;
     text-decoration: none;
 }
 
-.issues .dayLinkList a {
+.tx-dlf-calendar-issues .tx-dlf-calendar-day-link-list a {
     display: block;
 }
 
