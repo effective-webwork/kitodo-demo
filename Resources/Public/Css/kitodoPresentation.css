@@ -2837,8 +2837,8 @@ a#dfgviewerLink img {
 calendar + listview
 ----------------------------------------------------------------------*/
 
-.tx-dlf-calendar .meta-header,
-.tx-dlf-calendar-years .meta-header {
+.tx-dlf-calendar .tx-dlf-calendar-meta-header,
+.tx-dlf-calendar-years .tx-dlf-calendar-meta-header {
     background-color: #6a6a6a;
     border-radius: 3px;
     webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
@@ -2849,15 +2849,15 @@ calendar + listview
     table-layout: fixed;
 }
 
-.calendar-items {
+.tx-dlf-calendar-calendar-view {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 30px;
     list-style-type: none;
 }
 
-.calendar-view,
-.tx-dlf-calendar-years .year-view li {
+.tx-dlf-calendar-month,
+.tx-dlf-calendar-years .tx-dlf-calendar-year-view li {
     position: relative;
     padding: 30px;
     text-align: center;
@@ -2916,27 +2916,27 @@ table.month h4:hover {
     border: 1px solid #F2FBFF;
 }
 
-.year-anchor {
+.tx-dlf-calendar-year-anchor {
     display: table-cell;
     padding: 30px;
     vertical-align: middle;
 }
 
-.tx-dlf-calendar .meta-header .year,
-.tx-dlf-calendar .meta-header .meta-hint-year,
-.tx-dlf-calendar-years .meta-hint-year {
+.tx-dlf-calendar .tx-dlf-calendar-meta-header .tx-dlf-calendar-year,
+.tx-dlf-calendar .tx-dlf-calendar-meta-header .tx-dlf-calendar-meta-hint-year,
+.tx-dlf-calendar-years .tx-dlf-calendar-meta-hint-year {
     padding-top: 5px;
     color: #999;
 }
 
-.calendar-list-selection {
+.tx-dlf-calendar-list-selection {
     display: table-cell;
     text-align: right;
     padding: 30px;
     vertical-align: middle;
 }
 
-.calendar-list-selection a {
+.tx-dlf-calendar-list-selection a {
     background: #a8a8a8;
     border-radius: 3px;
     display: inline-block;
@@ -2947,7 +2947,7 @@ table.month h4:hover {
     text-decoration: none;
 }
 
-.calendar-list-selection a:hover {
+.tx-dlf-calendar-list-selection a:hover {
     background: #8D0D1C;
     color: #ffffff;
 }
@@ -2960,30 +2960,30 @@ table.month h4:hover {
     overflow: auto;
 }
 
-.tx-dlf-calendar .list-view {
+.tx-dlf-calendar .tx-dlf-calendar-list-view {
     background-color: #242424;
     color: #ffffff;
 }
 
-.tx-dlf-calendar .list-view li {
+.tx-dlf-calendar .tx-dlf-calendar-list-view li {
     border-top: 1px solid #505050;
     padding: 15px 0;
     list-style-type: none;
 }
 
-.tx-dlf-calendar .list-view li:first-child {
+.tx-dlf-calendar .tx-dlf-calendar-list-view li:first-child {
     border-top: 0;
 }
 
-.tx-dlf-calendar-years .year-view ul {
+.tx-dlf-calendar-years .tx-dlf-calendar-year-view ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 30px;
     list-style-type: none;
 }
 
-.tx-dlf-calendar-years .year-view li a,
-.tx-dlf-calendar .list-view a {
+.tx-dlf-calendar-years .tx-dlf-calendar-year-view li a,
+.tx-dlf-calendar .tx-dlf-calendar-list-view a {
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
@@ -2993,15 +2993,15 @@ table.month h4:hover {
     text-decoration: none;
 }
 
-.tx-dlf-calendar .list-view a {
+.tx-dlf-calendar .tx-dlf-calendar-list-view a {
     display: inline-block;
     margin-left: 5px;
     display: table;
     font-size: 16px;
 }
 
-.tx-dlf-calendar-years .year-view li a:hover,
-.tx-dlf-calendar .list-view a:hover {
+.tx-dlf-calendar-years .tx-dlf-calendar-year-view li a:hover,
+.tx-dlf-calendar .tx-dlf-calendar-list-view a:hover {
     color: #242424;
     background: #ffffff;
     border-radius: 3px;
@@ -3071,7 +3071,7 @@ article.calendar-metadata ul li dl {
     display: block;
 }
 
-.tx-dlf-calendar .meta-header .year {
+.tx-dlf-calendar .tx-dlf-calendar-meta-header .tx-dlf-calendar-year {
     color: #999;
     display: table-cell;
     padding: 30px;
@@ -3081,7 +3081,7 @@ article.calendar-metadata ul li dl {
     font-weight: bold;
 }
 
-.year-empty p {
+.tx-dlf-calendar-year-empty p {
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
@@ -3664,11 +3664,11 @@ max 1600px
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .calendar-items {
+    .tx-dlf-calendar-calendar-view {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
-    .tx-dlf-calendar-years .year-view ul {
+    .tx-dlf-calendar-years .tx-dlf-calendar-year-view ul {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 
@@ -3754,12 +3754,12 @@ max 1024px
     }
 
     .tx-dlf-collection-list,
-    .calendar-items,
+    .tx-dlf-calendar-calendar-view,
     .teaser-slot {
         grid-template-columns: 1fr 1fr;
     }
 
-    .tx-dlf-calendar-years .year-view ul {
+    .tx-dlf-calendar-years .tx-dlf-calendar-year-view ul {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 
@@ -3787,8 +3787,8 @@ max 1024px
     .teaser-slot article h2,
     .hero-teaser h2,
     .tx-dlf-basket-list a,
-    .tx-dlf-calendar-years .year-view li a,
-    .tx-dlf-calendar .list-view a {
+    .tx-dlf-calendar-years .tx-dlf-calendar-year-view li a,
+    .tx-dlf-calendar .tx-dlf-calendar-list-view a {
         font-size: 20px;
         line-height: 24px;
     }
@@ -4154,8 +4154,8 @@ max 700px
     }
 
     .tx-dlf-collection-list,
-    .calendar-items,
-    .tx-dlf-calendar-years .year-view ul,
+    .tx-dlf-calendar-calendar-view,
+    .tx-dlf-calendar-years .tx-dlf-calendar-year-view ul,
     .teaser-slot {
         grid-template-columns: 1fr;
         grid-gap: 15px;
@@ -4357,32 +4357,32 @@ max 700px
         width: 25px;
     }
 
-    .tx-dlf-calendar .meta-header,
-    .tx-dlf-calendar-years .meta-header {
+    .tx-dlf-calendar .tx-dlf-calendar-meta-header,
+    .tx-dlf-calendar-years .tx-dlf-calendar-meta-header {
         display: block;
     }
 
-    .year-anchor {
+    .tx-dlf-calendar-year-anchor {
         display: block;
         text-align: center;
         padding: 15px 15px 0 15px;
     }
 
-    .calendar-list-selection {
+    .tx-dlf-calendar-list-selection {
         padding: 15px 0 15px 0;
     }
 
-    .calendar-view {
+    .tx-dlf-calendar-month {
         padding: 15px;
     }
 
-    .tx-dlf-calendar .list-view li {
+    .tx-dlf-calendar .tx-dlf-calendar-list-view li {
         padding: 5px 0;
     }
 
-    .tx-dlf-calendar .meta-header .year,
-    .tx-dlf-calendar .meta-header .meta-hint-year,
-    .tx-dlf-calendar-years .meta-hint-year {
+    .tx-dlf-calendar .tx-dlf-calendar-meta-header .tx-dlf-calendar-year,
+    .tx-dlf-calendar .tx-dlf-calendar-meta-header .tx-dlf-calendar-meta-hint-year,
+    .tx-dlf-calendar-years .tx-dlf-calendar-meta-hint-year {
         padding-bottom: 15px;
     }
 
