@@ -15,19 +15,7 @@
     <f:debug title="all">{_all}</f:debug>
 </f:if>
 
-
-<div id="js-image-assets" style="display: none;"
-     data-icon-filetype-share-fill-full="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/download_icons/filetype-share-fill-full.svg', extensionName: 'presentation_package')}"
-     data-icon-filetype-share-fill="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/download_icons/filetype-share-fill.svg', extensionName: 'presentation_package')}"
-     data-icon-filetype-iiif="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/download_icons/filetype-iiif.svg', extensionName: 'presentation_package')}"
-     data-icon-filetype-mets="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/download_icons/filetype-mets.svg', extensionName: 'presentation_package')}"
-     data-icon-filetype-pdf-full="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/download_icons/filetype-pdf-full.svg', extensionName: 'presentation_package')}"
-     data-icon-filetype-pdf="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/download_icons/filetype-pdf.svg', extensionName: 'presentation_package')}"
-     data-icon-filetype-jpeg="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/download_icons/filetype-jpeg.svg', extensionName: 'presentation_package')}"
-     data-icon-filetype-alto="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/download_icons/filetype-alto.svg', extensionName: 'presentation_package')}"
-     data-icon-filetype-txt="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/download_icons/filetype-txt.svg', extensionName: 'presentation_package')}"
-     data-icon-dfgviewerLogo="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/download_icons/dfgviewerLogo.svg', extensionName: 'presentation_package')}">
-</div>
+<f:render partial="DownloadIconAssets" />
 
 <ul class="tx-dlf-toolbox">
 

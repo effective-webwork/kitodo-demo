@@ -125,6 +125,7 @@ plugin.tx_dlf_toolbox {
         }
         partialRootPaths {
             1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
+            2 = EXT:presentation_package/Resources/Private/Partials
         }
         layoutRootPaths {
             1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
