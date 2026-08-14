@@ -54,6 +54,9 @@ $(document).ready(function() {
     }
 
     tocToggler();
+
+    setDefaultDateRange();
+
 });
 
 function preventEmptyFulltextSubmit() {
@@ -1023,3 +1026,26 @@ function getImageResourcePaths(elementId ="js-image-assets") {
 
     return icons;
 }
+
+function setDefaultDateRange() {
+    // Temporary fix for a bug in the Kitodo-Presentation search caused by an empty date range.
+    if ($(".portal-logo-area a strong").text() == "Hamburger Zeitungen") {
+        setHamburgJournalsDefaultDateRange();
+        $(".tx-dlf-search-form").on("submit", function (e) {
+            setHamburgJournalsDefaultDateRange();
+        });
+    }
+}
+
+function setHamburgJournalsDefaultDateRange() {
+    let dateFrom = $("#tx-dlf-search-dateFrom").val();
+    let dateTo = $("#tx-dlf-search-dateTo").val();
+    if (dateFrom.length != 10) {
+        $("#tx-dlf-search-dateFrom").val("1600-01-01");
+    }
+    if (dateTo.length != 10) {
+        //$("#tx-dlf-search-dateTo").val(new Date().toISOString().split('T')[0]);
+        $("#tx-dlf-search-dateTo").val("2000-12-31");
+    }
+}
+
