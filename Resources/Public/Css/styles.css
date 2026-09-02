@@ -78,6 +78,11 @@ aside .tx-dlf-search {
 .tx-dlf-pagegrid-cur .tx-dlf-pagegrid-thumbnail img {
     border: 2px solid #444;
 }
+
+.tx-dlf-pagegrid-pagination {
+    display: none;
+}
+
 .image-manipulation .slider-container .slider .ui-slider-handle:after {
     position: absolute;
     top: 0;
