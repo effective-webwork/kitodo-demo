@@ -1,0 +1,94 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<f:if condition="{debugActive}">
+    <f:debug title="all">{_all}</f:debug>
+</f:if>
+
+<f:comment>Render all navigation features in the given order.</f:comment>
+<f:for each="{features}" key="feature" as="enabled">
+    <f:if condition="{feature}">
+        <f:render section="render.{feature}" arguments="{_all}"/>
+    </f:if>
+</f:for>
+
+<f:comment>One section for each feature.</f:comment>
+<f:section name="render.doublePage">
+    <f:render partial="Navigation/DoublePage" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.pagesBackward">
+    <div class="tx-dlf-navigation-backward">
+        <f:render partial="Navigation/PageFirst" arguments="{_all}" />
+        <f:render partial="Navigation/PageStepBack" arguments="{_all}" />
+        <f:render partial="Navigation/PageBack" arguments="{_all}" />
+    </div>
+</f:section>
+
+<f:section name="render.pageFirst">
+    <f:render partial="Navigation/PageFirst" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.pageStepBack">
+    <f:render partial="Navigation/PageStepBack" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.pageBack">
+    <f:render partial="Navigation/PageBack" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.pageSelect">
+    <f:render partial="Navigation/PageSelect" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.pagesForward">
+    <div class="tx-dlf-navigation-forward">
+        <f:render partial="Navigation/PageForward" arguments="{_all}" />
+        <f:render partial="Navigation/PageStepForward" arguments="{_all}" />
+        <f:render partial="Navigation/PageLast" arguments="{_all}" />
+    </div>
+</f:section>
+
+<f:section name="render.pageForward">
+    <f:render partial="Navigation/PageForward" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.pageStepForward">
+    <f:render partial="Navigation/PageStepForward" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.pageLast">
+    <f:render partial="Navigation/PageLast" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.listView">
+    <f:render partial="Navigation/ListView" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.measureBack">
+    <f:render partial="Navigation/MeasureBack" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.measureForward">
+    <f:render partial="Navigation/MeasureForward" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.documentBack">
+    <f:render partial="Navigation/DocumentBack" arguments="{_all}" />
+</f:section>
+
+<f:section name="render.documentForward">
+    <f:render partial="Navigation/DocumentForward" arguments="{_all}" />
+</f:section>
+
+</html>

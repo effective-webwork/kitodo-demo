@@ -1001,6 +1001,9 @@ dd.tx-dlf-metadata-year0 {
 .detail-aside-nav {
     padding: 30px 30px 15px;
 }
+
+
+/*
 .tx-dlf-navigation li {
     display: inline;
     list-style-type: none;
@@ -1057,6 +1060,54 @@ li.tx-dlf-navigation-reset a {
     padding: 9px 10px;
 }
 .tx-dlf-navigation li img {
+    width: 24px;
+    height: auto;
+}
+*/
+
+
+/* The entries are divs and would stack; gap replaces their individual margins. */
+.detail-view-nav .frame {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.detail-view-nav div[class*="tx-dlf-navigation-"] {
+    margin: 0;
+}
+
+.detail-view-nav div[class*="tx-dlf-navigation-"] a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 8px;
+    border-radius: 5px;
+    background: #0c5998;
+    color: #fff !important;
+    line-height: 1;
+    text-decoration: none !important;
+    transition: background 0.5s ease-in-out;
+}
+.detail-view-nav div[class*="tx-dlf-navigation-"] a:hover,
+.detail-view-nav div[class*="tx-dlf-navigation-"] a:focus {
+    background: #242424;
+}
+/* Disabled entries render a span instead of a link; same shape, desaturated blue. */
+.detail-view-nav div[class*="tx-dlf-navigation-"] > span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 8px;
+    border-radius: 5px;
+    background: #5983a6;
+    color: #fff;
+    line-height: 1;
+    cursor: default;
+}
+.detail-view-nav div[class*="tx-dlf-navigation-"] img {
+    display: block;
     width: 24px;
     height: auto;
 }
@@ -1534,6 +1585,11 @@ li.tx-dlf-navigation-pageselect label,
     width: 100%;
     padding: 30px;
     box-sizing: border-box;
+}
+/* Shares the rule above with .portal-meta, which wants flex-end; here the buttons
+   line up with the top of the title block, as the table layout did before. */
+.detail-view-header {
+    align-items: flex-start;
 }
 .portal-meta article,
 .listview-baseline-addon p {
@@ -2063,6 +2119,9 @@ max 1530px
         width: 100%;
         display: block;
         text-align: left;
+    }
+    .detail-view-nav .frame {
+        justify-content: flex-start;
     }
     .detail-view-itemoptions .tx-dlf-toc-title {
         width: 100%;

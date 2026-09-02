@@ -5,6 +5,10 @@ plugin.tx_dlf.view {
 		0 = EXT:dlf/Resources/Private/Partials
 		20 = {$resDir}/Resources/Private/Extensions/Dlf/Partials
 	}
+	templateRootPaths {
+    	0 = EXT:dlf/Resources/Private/Templates
+    	20 = {$resDir}/Resources/Private/Extensions/Dlf/Templates
+    }
 }
 
 ## Variants of search forms

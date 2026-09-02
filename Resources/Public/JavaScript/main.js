@@ -1,4 +1,6 @@
 
+var IMAGE_BASE = window.mobImageBase;
+
 $('.tx-dlf-basket-button a').text("merken");
 $('.add-to-cart a').text("merken");
 $('#submitBasketForm').text("merken");
@@ -199,8 +201,6 @@ $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text(
 // collapse metadata
 $(".tx-dlf-metadata input[type=checkbox]").prop('checked', true);
 
-// add pagegrid button
-// dlf 7 has no ul.tx-dlf-navigation; append to the existing nav buttons' container.
 (function() {
     var $navContainer = $('.detail-view-nav .tx-dlf-navigation-last').parent();
     if ($navContainer.length === 0) { $navContainer = $('.detail-view-nav .frame').first(); }
@@ -283,79 +283,66 @@ $(".tx-dlf-metadata .show-metadata").on("click", function (evt) {
 
 });
 
-// dlf 7 no longer renders zoom buttons in navigation; create them and bind to the viewer API.
 (function() {
     var $navContainer = $('.detail-view-nav .tx-dlf-navigation-last').parent();
     if ($navContainer.length === 0) { $navContainer = $('.detail-view-nav .frame').first(); }
     if ($navContainer.length) {
-        var base = window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/';
-        var $zin = $('<div class="tx-dlf-navigation-zoom-in"><a href="#" title="Zoom In"><img src="' + base + 'icon-zoomin.svg" alt="Zoom In"></a></div>');
-        var $zout = $('<div class="tx-dlf-navigation-zoom-out"><a href="#" title="Zoom Out"><img src="' + base + 'icon-zoomout.svg" alt="Zoom Out"></a></div>');
+        var $zin = $('<div class="tx-dlf-navigation-zoom-in"><a href="#" title="Zoom In"><img src="' + IMAGE_BASE + 'icon-zoomin.svg" alt="Zoom In"></a></div>');
+        var $zout = $('<div class="tx-dlf-navigation-zoom-out"><a href="#" title="Zoom Out"><img src="' + IMAGE_BASE + 'icon-zoomout.svg" alt="Zoom Out"></a></div>');
         $zin.find('a').on('click', function(e) { e.preventDefault(); if (window.tx_dlf_viewer) tx_dlf_viewer.map.zoomIn(); });
         $zout.find('a').on('click', function(e) { e.preventDefault(); if (window.tx_dlf_viewer) tx_dlf_viewer.map.zoomOut(); });
-        $navContainer.append($zin, $zout);
+        // Viewer controls belong left of the page-view toggle, which is already in the markup.
+        var $pageToggle = $navContainer.find('.tx-dlf-navigation-double, .tx-dlf-navigation-single').first();
+        if ($pageToggle.length) { $pageToggle.before($zin, $zout); } else { $navContainer.append($zin, $zout); }
     }
 })();
 
-// dlf 7 no longer renders rotate buttons in navigation; create and bind them.
 (function() {
     var $navContainer = $('.detail-view-nav .tx-dlf-navigation-last').parent();
     if ($navContainer.length === 0) { $navContainer = $('.detail-view-nav .frame').first(); }
     if ($navContainer.length) {
-        var base = window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/';
-        var $rl = $('<div class="tx-dlf-navigation-rotate-left"><a href="#" title="Rotate Left"><img src="' + base + 'icon-rotateleft.svg" alt="Rotate Left"></a></div>');
-        var $rr = $('<div class="tx-dlf-navigation-rotate-right"><a href="#" title="Rotate Right"><img src="' + base + 'icon-rotateright.svg" alt="Rotate Right"></a></div>');
+        var $rl = $('<div class="tx-dlf-navigation-rotate-left"><a href="#" title="Rotate Left"><img src="' + IMAGE_BASE + 'icon-rotateleft.svg" alt="Rotate Left"></a></div>');
+        var $rr = $('<div class="tx-dlf-navigation-rotate-right"><a href="#" title="Rotate Right"><img src="' + IMAGE_BASE + 'icon-rotateright.svg" alt="Rotate Right"></a></div>');
         $rl.find('a').on('click', function(e) { e.preventDefault(); if (window.tx_dlf_viewer) tx_dlf_viewer.map.rotate(-90); });
         $rr.find('a').on('click', function(e) { e.preventDefault(); if (window.tx_dlf_viewer) tx_dlf_viewer.map.rotate(90); });
-        $navContainer.append($rl, $rr);
+        var $pageToggle = $navContainer.find('.tx-dlf-navigation-double, .tx-dlf-navigation-single').first();
+        if ($pageToggle.length) { $pageToggle.before($rl, $rr); } else { $navContainer.append($rl, $rr); }
     }
 })();
 
 $('.tx-dlf-navigation-double a, .tx-dlf-navigation-double span')
     .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-doublepage.svg" alt="Show double pages">');
+    .append('<img src="' + IMAGE_BASE + 'icon-doublepage.svg" alt="Show double pages">');
 
 
 $('.tx-dlf-navigation-double-plus a, .tx-dlf-navigation-double-plus span')
     .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-verso.svg" alt="Adjust recto/verso">');
+    .append('<img src="' + IMAGE_BASE + 'icon-verso.svg" alt="Adjust recto/verso">');
 
 
 $('.tx-dlf-navigation-first a, .tx-dlf-navigation-first span')
     .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-skipleft.svg" alt="First Page">');
+    .append('<img src="' + IMAGE_BASE + 'icon-skipleft.svg" alt="First Page">');
 
 $('.tx-dlf-navigation-back a, .tx-dlf-navigation-back span')
     .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-doubleleft.svg" alt="Back 5 Pages">');
+    .append('<img src="' + IMAGE_BASE + 'icon-doubleleft.svg" alt="Back 5 Pages">');
 
 $('.tx-dlf-navigation-prev a, .tx-dlf-navigation-prev span')
     .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-singleleft.svg" alt="Previous Page">');
+    .append('<img src="' + IMAGE_BASE + 'icon-singleleft.svg" alt="Previous Page">');
 
 $('.tx-dlf-navigation-next a, .tx-dlf-navigation-next span')
     .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-singleright.svg" alt="Next Page">');
+    .append('<img src="' + IMAGE_BASE + 'icon-singleright.svg" alt="Next Page">');
 
 $('.tx-dlf-navigation-fwd a, .tx-dlf-navigation-fwd span')
     .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-doubleright.svg" alt="Forward 5 Pages">');
+    .append('<img src="' + IMAGE_BASE + 'icon-doubleright.svg" alt="Forward 5 Pages">');
 
 $('.tx-dlf-navigation-last a, .tx-dlf-navigation-last span')
     .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-skipright.svg" alt="Last Page">');
-
-$('.tx-dlf-navigation-listview a, .tx-dlf-navigation-listview span')
-    .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-skipright.svg" alt="Zurück zur Liste">');
-
-$('.tx-dlf-navigation-listview a, .tx-dlf-navigation-listview span')
-    .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-skipright.svg" alt="Last Page">');
-
-$('.tx-dlf-navigation-listview a, .tx-dlf-navigation-listview span')
-    .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-tool.svg" alt="Toolbox">');
+    .append('<img src="' + IMAGE_BASE + 'icon-skipright.svg" alt="Last Page">');
 
 
 if ($('.tx-dlf-navigation-edit').length) {
@@ -376,23 +363,20 @@ if ($('.tx-dlf-navigation-magnifier').length) {
     $('ul.tx-dlf-navigation').append('<li class="tx-dlf-navigation-magnifier" style="padding-left: 4px;"><span></span></li>');
 }
 
-// TOOLBOX
-// dlf 7 renders navigation without ul.tx-dlf-navigation, so the old relocation failed and hid the
-// toolbox. Keep it in place; it expands via the "Werkzeuge" checkbox.
-$('.detail-view-tools label[for="checkbox-menu2"]').text("").prepend('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-tool.svg" alt="Toolbox">');
+$('.detail-view-tools label[for="checkbox-menu2"]').text("").prepend('<img src="' + IMAGE_BASE + 'icon-tool.svg" alt="Toolbox">');
 
 
 $('.tx-dlf-navigation-edit a, .tx-dlf-navigation-edit span')
     .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-selection.svg" alt="Ausschnitt auswählen">');
+    .append('<img src="' + IMAGE_BASE + 'icon-selection.svg" alt="Ausschnitt auswählen">');
 
 $('.tx-dlf-navigation-editRemove a, .tx-dlf-navigation-editRemove span')
     .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-selection-x.svg" alt="Ausschnitt entfernen">');
+    .append('<img src="' + IMAGE_BASE + 'icon-selection-x.svg" alt="Ausschnitt entfernen">');
 
 $('.tx-dlf-navigation-magnifier a, .tx-dlf-navigation-magnifier span')
     .text("")
-    .append('<img src="' + window.location.origin + '/typo3conf/ext/presentation_package/Resources/Public/Images/icon-magnifying.svg" alt="Lupe">');
+    .append('<img src="' + IMAGE_BASE + 'icon-magnifying.svg" alt="Lupe">');
 
 
 $('div.tx-dlf-navigation-edit').hide();
