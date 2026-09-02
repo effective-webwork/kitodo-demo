@@ -1282,15 +1282,10 @@ span.textline {
     display: inline;
     padding: 0 !important;
 }
-section#main-content .tx-dlf-pagegrid .tx-dlf-pagegrid {
-    display: none;
-    position: absolute;
-    width: 73%;
-    height: 89%;
-    background-color: #fffffff0;
-    padding: 0px;
-}
+/* Hidden until the button swaps it in for the viewer; stays in the flow, so only
+   the page itself ever scrolls. */
 section#main-content .tx-dlf-pagegrid {
+    display: none;
     background-color: #ffffff;
 }
 section#main-content .tx-dlf-pagegrid .tx-dlf-pagegrid-thumbnail a {

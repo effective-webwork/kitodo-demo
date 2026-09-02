@@ -209,7 +209,14 @@ $('.detail-view-itemdetails > .dropdown-menu > input[type=checkbox]').prop('chec
         var $pg = $('<div class="tx-dlf-navigation-pagegrid"><a href="#">Bildübersicht</a></div>');
         $pg.find('a').on('click', function(evt) {
             evt.preventDefault();
+            // Both plugins sit in colPos 0, so the viewer has to give way while the grid is up.
+            var $viewer = $('#tx-dlf-map').closest('.frame');
             $('section#main-content .tx-dlf-pagegrid').toggle();
+            $viewer.toggle();
+            // OpenLayers miscalculates its canvas size while hidden.
+            if ($viewer.is(':visible') && window.tx_dlf_viewer) {
+                tx_dlf_viewer.map.updateSize();
+            }
         });
         $navContainer.append($pg);
     }
