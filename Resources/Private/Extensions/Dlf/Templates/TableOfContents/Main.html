@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<f:if condition="{debugActive}">
+    <f:debug title="all">{_all}</f:debug>
+</f:if>
+
+<div class="tx-dlf-tableofcontents">
+    <div class="dropdown-menu">
+        <input type="checkbox" id="checkbox-menu1">
+        <label for="checkbox-menu1">Inhaltsverzeichnis</label>
+        <ul class="tx-dlf-tableofcontents-list">
+            <f:render partial="TableOfContents/Children" arguments="{children: toc, viewData: viewData}"/>
+        </ul>
+    </div>
+</div>
+
+</html>
