@@ -1,0 +1,14 @@
+## Template-Overrides third-party-Extensions
+
+plugin.tx_dlf.view {
+	partialRootPaths {
+		0 = EXT:dlf/Resources/Private/Partials
+		20 = {$resDir}/Resources/Private/Extensions/Dlf/Partials
+	}
+}
+
+## Variants of search forms
+plugin.tx_dlf_search.settings.searchFormVariant = follow
+[page["is_siteroot"] == 1]
+	plugin.tx_dlf_search.settings.searchFormVariant = home
+[end]
