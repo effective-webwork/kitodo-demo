@@ -199,7 +199,8 @@ $(".tx-dlf-metadata dd.tx-dlf-metadata-title").text(
 );
 
 // collapse metadata
-$(".tx-dlf-metadata input[type=checkbox]").prop('checked', true);
+// The wrapper comes from DetailTemplate.html, so the checkbox sits outside .tx-dlf-metadata.
+$('.detail-view-itemdetails > .dropdown-menu > input[type=checkbox]').prop('checked', true);
 
 (function() {
     var $navContainer = $('.detail-view-nav .tx-dlf-navigation-last').parent();

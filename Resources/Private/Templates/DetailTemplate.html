@@ -36,15 +36,21 @@
 
 				<f:format.raw>{contentTOC}</f:format.raw>
 
-				<div class="detail-view-itemdetails">
+				<f:if condition="{contentMetadata}">
+					<div class="detail-view-itemdetails">
+						<div class="dropdown-menu">
 
-					<ul style="list-style: none;">
-						<li class="tx-dlf-toc-act tx-dlf-toc-ifsub">
-							<f:format.raw>{contentMetadata}</f:format.raw>
-						</li>
-					</ul>
+							<input type="checkbox" id="checkbox-menu3">
+							<label for="checkbox-menu3">Metadaten</label>
+							<ul>
+								<li class="tx-dlf-toc-act tx-dlf-toc-ifsub">
+									<f:format.raw>{contentMetadata}</f:format.raw>
+								</li>
+							</ul>
 
-				</div>
+						</div>
+					</div>
+				</f:if>
 
 			</article>
 		</aside>
