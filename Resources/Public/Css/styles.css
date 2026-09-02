@@ -1067,18 +1067,23 @@ li.tx-dlf-navigation-reset a {
 
 
 /* The entries are divs and would stack; gap replaces their individual margins. */
-.detail-view-nav .frame {
+:is(.detail-view-nav, .detail-aside-nav) .frame {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
     gap: 10px;
 }
-.detail-view-nav div[class*="tx-dlf-navigation-"] {
+.detail-view-nav .frame {
+    justify-content: flex-end;
+}
+:is(.detail-view-nav, .detail-aside-nav) div[class*="tx-dlf-navigation-"] {
     margin: 0;
 }
+:is(.detail-view-nav, .detail-aside-nav) li[class*="tx-dlf-navigation-"] {
+    list-style: none;
+}
 
-.detail-view-nav div[class*="tx-dlf-navigation-"] a {
+:is(.detail-view-nav, .detail-aside-nav) div[class*="tx-dlf-navigation-"] a {
     display: inline-flex;
     align-items: center;
     min-height: 24px;
@@ -1090,12 +1095,12 @@ li.tx-dlf-navigation-reset a {
     text-decoration: none !important;
     transition: background 0.5s ease-in-out;
 }
-.detail-view-nav div[class*="tx-dlf-navigation-"] a:hover,
-.detail-view-nav div[class*="tx-dlf-navigation-"] a:focus {
+:is(.detail-view-nav, .detail-aside-nav) div[class*="tx-dlf-navigation-"] a:hover,
+:is(.detail-view-nav, .detail-aside-nav) div[class*="tx-dlf-navigation-"] a:focus {
     background: #242424;
 }
 /* Disabled entries render a span instead of a link; same shape, desaturated blue. */
-.detail-view-nav div[class*="tx-dlf-navigation-"] > span {
+:is(.detail-view-nav, .detail-aside-nav) div[class*="tx-dlf-navigation-"] > span {
     display: inline-flex;
     align-items: center;
     min-height: 24px;
@@ -1106,15 +1111,23 @@ li.tx-dlf-navigation-reset a {
     line-height: 1;
     cursor: default;
 }
-.detail-view-nav div[class*="tx-dlf-navigation-"] img {
+:is(.detail-view-nav, .detail-aside-nav) div[class*="tx-dlf-navigation-"] img {
     display: block;
     width: 24px;
     height: auto;
 }
-.tx-dlf-navigation-pageselect div,
-.tx-dlf-navigation-pageselect form {
+.tx-dlf-navigation-pages div,
+.tx-dlf-navigation-pages form {
     display: inline-block;
     vertical-align: top;
+}
+.tx-dlf-navigation-pages label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 .detail-view-itemoptions {
     position: relative;
@@ -1150,20 +1163,28 @@ span.textline {
     height: 1000px;
     line-height: 0;
 }
+/* Same shape as the navigation buttons; the arrow on hover/open stays the dropdown cue. */
 .detail-view-tools .dropdown-menu label {
-    background: #444;
+    background: #0c5998;
     margin-top: 0;
     color: #fff;
-    border-radius: 2px;
+    border-radius: 5px;
     cursor: pointer;
-    display: inline-block;
-    line-height: 0;
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    line-height: 1;
     background-position: 24px bottom;
     padding: 8px;
 }
+.detail-view-tools .dropdown-menu label img {
+    display: block;
+    width: 24px;
+    height: auto;
+}
 .detail-view-tools .dropdown-menu label:hover {
     background: url("../Images/icon-arrow-down.svg") no-repeat 24px 24px
-        #0c5998;
+        #242424;
     background-size: 10px auto;
     transition: background 0.5s ease-in-out;
 }
@@ -1545,7 +1566,7 @@ footer {
 }
 .tx-dlf-listview-list ol,
 .tx-dlf-abstracts ol,
-li.tx-dlf-navigation-pageselect label,
+li.tx-dlf-navigation-pages label,
 .tx-dlf-listview img,
 .show-volumes,
 .tx-dlf-goto-basket label,
@@ -1573,10 +1594,14 @@ li.tx-dlf-navigation-pageselect label,
 .tx-dlf-navigation-zoom-in,
 .tx-dlf-navigation-zoom-out,
 .tx-dlf-navigation-rotate-left,
-.tx-dlf-navigation-rotate-right,
-.tx-dlf-navigation-pageselect {
+.tx-dlf-navigation-rotate-right {
     margin-right: 10px;
 }
+
+.tx-dlf-navigation-pages select {
+    margin-right: 0px;
+}
+
 .portal-meta,
 .detail-view-header {
     display: flex;
