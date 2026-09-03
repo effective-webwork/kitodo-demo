@@ -704,6 +704,19 @@ main aside {
 .tx-dlf-search-facets ul li:last-child {
     border-bottom: 0;
 }
+/* Active facet */
+.tx-dlf-search-facets ul li.tx-dlf-search-cur a {
+    background: #0c5998;
+    color: #fff;
+    border-radius: 5px;
+    padding: 15px 10px;
+    font-weight: 700;
+}
+.tx-dlf-search-facets ul li.tx-dlf-search-cur a:hover,
+.tx-dlf-search-facets ul li.tx-dlf-search-cur a:focus {
+    background: #242424;
+    color: #fff !important;
+}
 .dropdown-menu ul li a,
 .tx-dlf-search-facets ul li a {
     display: block;

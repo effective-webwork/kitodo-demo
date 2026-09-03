@@ -1,0 +1,86 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<f:if condition="{debugActive}">
+    <f:debug title="all">{_all}</f:debug>
+</f:if>
+
+<f:render partial="Search/Form" arguments="{_all}" />
+
+<f:if condition="{settings.targetPid} == '' && {documents}">
+
+    <div class="tx-dlf-listview">
+        <f:render partial="ListView/SearchHits" arguments="{_all}" />
+        <f:variable name="action" value="search" />
+        <f:variable name="controller" value="Search" />
+        <f:if condition="{numResults} > 0">
+            <f:render partial="ListView/SortingForm" arguments="{_all}" />
+            <f:render partial="ListView/Results" arguments="{_all}" />
+        </f:if>
+    </div>
+
+</f:if>
+
+<div class="tx-dlf-search-facets">
+    <f:for each="{facetsMenu}" as="facet">
+        <ul>
+            <li class="tx-dlf-search-no {f:if(condition: '{facet._SUB_MENU}', then: 'tx-dlf-search-ifsub')}">
+                <span class="tx-dlf-facet-title">
+                    <f:translate key="LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.{facet.field}" />
+                </span>
+                <f:if condition="{facet._SUB_MENU}">
+                    <ul>
+                        <f:for each="{facet._SUB_MENU}" as="values">
+                            <f:if condition="{values.resetFacet}">
+                                <f:then>
+                                    <li class="tx-dlf-search-cur">
+                                        <f:if condition="{lastSearch.dateFrom} || {lastSearch.dateTo}">
+                                            <f:then>
+                                                <f:link.action title="{f:translate(key:'search.resetFacet', arguments:{0: '{values.title}'})}" additionalParams="{'tx_dlf_search[search][fq]':'{values.queryColumn}', 'tx_dlf_search[search][query]':'{lastSearch.query}', 'tx_dlf_search[search][collection]':'{lastSearch.collection}', 'tx_dlf_search[search][fulltext]':'{lastSearch.fulltext}', 'tx_dlf_search[search][order]':'{lastSearch.order}', 'tx_dlf_search[search][orderBy]':'{lastSearch.orderBy}', 'tx_dlf_search[search][extQuery]':'{lastSearch.extQuery}', 'tx_dlf_search[search][extField]':'{lastSearch.extField}', 'tx_dlf_search[search][extOperator]':'{lastSearch.extField}', 'tx_dlf_search[search][dateFrom]':'{lastSearch.dateFrom}', 'tx_dlf_search[search][dateTo]':'{lastSearch.dateTo}'}">
+                                                    <f:translate key="search.resetFacet" arguments="{0: '{values.title}'}"/>
+                                                </f:link.action>
+                                            </f:then>
+                                            <f:else>
+                                                <f:link.action title="{f:translate(key:'search.resetFacet', arguments:{0: '{values.title}'})}" additionalParams="{'tx_dlf_search[search][fq]':'{values.queryColumn}', 'tx_dlf_search[search][query]':'{lastSearch.query}', 'tx_dlf_search[search][collection]':'{lastSearch.collection}', 'tx_dlf_search[search][fulltext]':'{lastSearch.fulltext}', 'tx_dlf_search[search][order]':'{lastSearch.order}', 'tx_dlf_search[search][orderBy]':'{lastSearch.orderBy}', 'tx_dlf_search[search][extQuery]':'{lastSearch.extQuery}', 'tx_dlf_search[search][extField]':'{lastSearch.extField}', 'tx_dlf_search[search][extOperator]':'{lastSearch.extField}'}">
+                                                    <f:translate key="search.resetFacet" arguments="{0: '{values.title}'}"/>
+                                                </f:link.action>
+                                            </f:else>
+                                        </f:if>
+                                    </li>
+                                </f:then>
+                                <f:else>
+                                    <li class="tx-dlf-search-no">
+                                        <f:if condition="{lastSearch.dateFrom} || {lastSearch.dateTo}">
+                                            <f:then>
+                                                <f:link.action additionalParams="{'tx_dlf_search[search][fq]':'{values.queryColumn}', 'tx_dlf_search[search][query]':'{lastSearch.query}', 'tx_dlf_search[search][collection]':'{lastSearch.collection}', 'tx_dlf_search[search][fulltext]':'{lastSearch.fulltext}', 'tx_dlf_search[search][order]':'{lastSearch.order}', 'tx_dlf_search[search][orderBy]':'{lastSearch.orderBy}', 'tx_dlf_search[search][extQuery]':'{lastSearch.extQuery}', 'tx_dlf_search[search][extField]':'{lastSearch.extField}', 'tx_dlf_search[search][extOperator]':'{lastSearch.extField}', 'tx_dlf_search[search][dateFrom]':'{lastSearch.dateFrom}', 'tx_dlf_search[search][dateTo]':'{lastSearch.dateTo}'}">
+                                                    {values.title} ({values.count})
+                                                </f:link.action>
+                                            </f:then>
+                                            <f:else>
+                                                <f:link.action additionalParams="{'tx_dlf_search[search][fq]':'{values.queryColumn}', 'tx_dlf_search[search][query]':'{lastSearch.query}', 'tx_dlf_search[search][collection]':'{lastSearch.collection}', 'tx_dlf_search[search][fulltext]':'{lastSearch.fulltext}', 'tx_dlf_search[search][order]':'{lastSearch.order}', 'tx_dlf_search[search][orderBy]':'{lastSearch.orderBy}', 'tx_dlf_search[search][extQuery]':'{lastSearch.extQuery}', 'tx_dlf_search[search][extField]':'{lastSearch.extField}', 'tx_dlf_search[search][extOperator]':'{lastSearch.extField}'}">
+                                                    {values.title} ({values.count})
+                                                </f:link.action>
+                                            </f:else>
+                                        </f:if>
+                                    </li>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </ul>
+                </f:if>
+            </li>
+        </ul>
+    </f:for>
+</div>
+
+</html>
