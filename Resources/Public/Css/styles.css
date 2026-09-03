@@ -1176,8 +1176,8 @@ span.textline {
     height: 1000px;
     line-height: 0;
 }
-/* Same shape as the navigation buttons; the arrow on hover/open stays the dropdown cue. */
-.detail-view-tools .dropdown-menu label {
+
+.detail-view-tools .dropdown-menu > label {
     background: #0c5998;
     margin-top: 0;
     color: #fff;
@@ -1190,12 +1190,12 @@ span.textline {
     background-position: 24px bottom;
     padding: 8px;
 }
-.detail-view-tools .dropdown-menu label img {
+.detail-view-tools .dropdown-menu > label img {
     display: block;
     width: 24px;
     height: auto;
 }
-.detail-view-tools .dropdown-menu label:hover {
+.detail-view-tools .dropdown-menu > label:hover {
     background: url("../Images/icon-arrow-down.svg") no-repeat 24px 24px
         #242424;
     background-size: 10px auto;
@@ -1221,10 +1221,85 @@ span.textline {
     background-size: 10px auto;
     color: #fff;
 }
-.detail-view-tools .dropdown-menu input[type="checkbox"]:checked ~ ul div.tx-dlf-toolbox > ul {
+
+.detail-view-tools .dropdown-menu input[type="checkbox"]:checked ~ ul {
     background-color: #fff;
-    right: 5%;
     min-width: 200px;
+    border-radius: 5px;
+}
+
+#tx-dlf-toolbox-searchindocument-form label,
+#tx-dlf-toolbox-searchindocument-form label:hover {
+    background: none;
+    color: #242424;
+    margin: 0 0 5px;
+    padding: 0;
+    border-radius: 0;
+    font-weight: 400;
+    cursor: auto;
+}
+
+#tx-dlf-toolbox-searchindocument-input-query {
+    margin-bottom: 5px;
+}
+
+#tx-dlf-toolbox-searchindocument-form > div > label {
+    width: 100%;
+}
+
+.detail-view-tools #tx-dlf-tools-fulltext,
+.detail-view-tools #tx-dlf-tools-imagemanipulation a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    background: #0c5998;
+    color: #fff !important;
+    line-height: 1;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+}
+.detail-view-tools #tx-dlf-tools-fulltext:hover,
+.detail-view-tools #tx-dlf-tools-imagemanipulation a:hover,
+.detail-view-tools #tx-dlf-tools-fulltext.fulltext-visible,
+.detail-view-tools #tx-dlf-tools-imagemanipulation a.active {
+    background: #242424;
+}
+
+.image-manipulation .slider-container .checkbox label {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 8px;
+    font-weight: 400;
+    border-radius: 5px;
+    background: #0c5998;
+    color: #fff;
+    cursor: pointer;
+}
+.image-manipulation .slider-container .checkbox label:has(input:checked) {
+    background: #242424;
+}
+
+.image-manipulation .slider-container .reset-btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    margin: 5px 0 0;
+    padding: 8px;
+    border: 0;
+    border-radius: 5px;
+    background: #0c5998;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+}
+.image-manipulation .slider-container .reset-btn:hover,
+.image-manipulation .slider-container .reset-btn:focus {
+    background: #242424;
 }
 #tx-dlf-search-in-document-results ul {
     display: block;
@@ -2409,7 +2484,7 @@ max 1000px
     }
     .tx-dlf-navigation li a,
     .tx-dlf-navigation li span,
-    .detail-view-tools .dropdown-menu label {
+    .detail-view-tools .dropdown-menu > label {
         margin-bottom: 5px;
         padding: 8px 5px;
     }
