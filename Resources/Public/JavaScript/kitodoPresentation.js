@@ -1029,11 +1029,39 @@ function getImageResourcePaths(elementId ="js-image-assets") {
 
 function setDefaultDateRange() {
     // Temporary fix for a bug in the Kitodo-Presentation search caused by an empty date range.
-    if ($(".portal-logo-area a strong").text() == "Hamburger Zeitungen") {
+    if (window.location.hostname == "zeitungen.sub.uni-hamburg.de") {
         setHamburgJournalsDefaultDateRange();
         $(".tx-dlf-search-form").on("submit", function (e) {
             setHamburgJournalsDefaultDateRange();
         });
+    } else if (window.location.hostname == "adressbuecher.sub.uni-hamburg.de") {
+       setAdressbooksDefaultDateRange();
+    } else {
+       setOtherDefaultDateRange();
+    }
+}
+
+function setOtherDefaultDateRange() {
+    let dateFrom = $("#tx-dlf-search-dateFrom").val();
+    let dateTo = $("#tx-dlf-search-dateTo").val();
+    if (dateFrom.length != 10) {
+        $("#tx-dlf-search-dateFrom").val("1600-01-01");
+    }
+    if (dateTo.length != 10) {
+        //$("#tx-dlf-search-dateTo").val(new Date().toISOString().split('T')[0]);
+        $("#tx-dlf-search-dateTo").val("2025-12-31");
+    }
+}
+
+function setAdressbooksDefaultDateRange() {
+    let dateFrom = $("#tx-dlf-search-dateFrom").val();
+    let dateTo = $("#tx-dlf-search-dateTo").val();
+    if (dateFrom.length != 4) {
+        $("#tx-dlf-search-dateFrom").val("1650");
+    }
+    if (dateTo.length != 4) {
+        //$("#tx-dlf-search-dateTo").val(new Date().toISOString().split('T')[0]);
+        $("#tx-dlf-search-dateTo").val("2000");
     }
 }
 
@@ -1047,5 +1075,4 @@ function setHamburgJournalsDefaultDateRange() {
         //$("#tx-dlf-search-dateTo").val(new Date().toISOString().split('T')[0]);
         $("#tx-dlf-search-dateTo").val("2000-12-31");
     }
-}
 
