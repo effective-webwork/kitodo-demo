@@ -7,3 +7,9 @@ defined('TYPO3') or die();
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\Kitodo\Dlf\Hooks\ItemsProcFunc::class] = [
     'className' =>  \Kitodo\PresentationPackage\Hooks\ItemsProcFunc::class,
 ];
+
+// Image proxy with access restrictions, formerly an eID script inside dlf.
+// The eID key must not change: it is part of the file URLs in every published
+// METS file.
+$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['tx_dlf_pageview_restriction_proxy']
+    = \Kitodo\PresentationPackage\Eid\PageViewRestrictionProxy::class . '::main';
