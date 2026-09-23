@@ -1,0 +1,112 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<f:if condition="{debugActive}">
+    <f:debug title="all">{_all}</f:debug>
+</f:if>
+
+<div class="tx-dlf-calendar">
+    <div class="tx-dlf-calendar-meta-header">
+        <div class="tx-dlf-calendar-year-anchor">
+            <f:link.page additionalParams="{'tx_dlf[id]': parentDocumentId}">
+                <f:translate key="calendar.allYears" /> {allYearDocTitle}
+            </f:link.page>
+        </div>
+        <div class="tx-dlf-calendar-year">
+            <f:link.page additionalParams="{'tx_dlf[id]': documentId}">
+                {yearLinkTitle}
+            </f:link.page>
+        </div>
+        <f:comment>
+            Unlike upstream, the calendar view is the default no matter how many
+            months there are, so the active class is set statically here and kept
+            in sync by calendarSwitchViews() in main.js.
+        </f:comment>
+        <div class="tx-dlf-calendar-list-selection">
+            <a class="tx-dlf-calendar-select-calendar-view active">
+                <f:translate key="calendar.view.calendar" />
+            </a>
+            <a class="tx-dlf-calendar-select-list-view">
+                <f:translate key="calendar.view.list" />
+            </a>
+        </div>
+    </div>
+    <div class="tx-dlf-calendar-calendar-view is-active">
+
+        <div class="calendar-grid">
+            <f:for each="{calendarData}" as="month">
+                <f:if condition="{month.CALYEAR}">
+                    <div class="tx-dlf-calendar-year calendar-grid-year">{month.CALYEAR}</div>
+                </f:if>
+                <div class="tx-dlf-calendar-month">
+                    <table>
+                        <caption>{month.MONTHNAME}</caption>
+                        <tr>
+                            <th class="">{month.DAYMON_NAME}</th>
+                            <th class="">{month.DAYTUE_NAME}</th>
+                            <th class="">{month.DAYWED_NAME}</th>
+                            <th class="">{month.DAYTHU_NAME}</th>
+                            <th class="">{month.DAYFRI_NAME}</th>
+                            <th class="">{month.DAYSAT_NAME}</th>
+                            <th class="">{month.DAYSUN_NAME}</th>
+                        </tr>
+
+                        <f:for each="{month.week}" as="week">
+                            <tr>
+                                <td class="">
+                                    <f:render partial="Calendar/Day" arguments="{'day': '{week.DAYMON}'}"></f:render>
+                                </td>
+                                <td class="">
+                                    <f:render partial="Calendar/Day" arguments="{'day': '{week.DAYTUE}'}"></f:render>
+                                </td>
+                                <td class="">
+                                    <f:render partial="Calendar/Day" arguments="{'day': '{week.DAYWED}'}"></f:render>
+                                </td>
+                                <td class="">
+                                    <f:render partial="Calendar/Day" arguments="{'day': '{week.DAYTHU}'}"></f:render>
+                                </td>
+                                <td class="">
+                                    <f:render partial="Calendar/Day" arguments="{'day': '{week.DAYFRI}'}"></f:render>
+                                </td>
+                                <td class="">
+                                    <f:render partial="Calendar/Day" arguments="{'day': '{week.DAYSAT}'}"></f:render>
+                                </td>
+                                <td class="">
+                                    <f:render partial="Calendar/Day" arguments="{'day': '{week.DAYSUN}'}"></f:render>
+                                </td>
+                            </tr>
+                        </f:for>
+                    </table>
+                </div>
+            </f:for>
+        </div>
+    </div>
+
+    <div class="tx-dlf-calendar-list-view">
+        <ul>
+            <f:for each="{issueData}" as="issueDay">
+                <li>
+                    <span class="tx-dlf-calendar-list-view-date">{issueDay.dateString}</span>
+                    <f:for each="{issueDay.items}" as="item">
+                        <f:link.page pageUid="{settings.targetPid}" additionalParams="{'tx_dlf[id]': item.documentId}">
+                            {item.text}
+                        </f:link.page>
+                    </f:for>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+
+</div>
+
+</html>

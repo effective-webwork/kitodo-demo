@@ -20,12 +20,12 @@ function showVolumeList() {
     // Volume list
     $('.metadata-title-only .secondpart').remove();
     
-    var structtype = $('dd.doc-type').text();
+    var structtype = $($('dd.doc-type')[0]).text();
     if( structtype === 'Zeitschrift' ||
         structtype === 'Mehrbändiges Werk'
     ) {
         $('.detail-view-main').append('<div class="volume-info-wrapper"><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
-        $('.tx-dlf-toc ul ul li').each(function(index) {
+        $('.tx-dlf-tableofcontents ul ul li').each(function(index) {
             $('.volume-list').append('<li>'+$(this).html() +'</li>');
         });
         $('a.chapter_download, a#pdfdownloadbutton').hide();
@@ -42,25 +42,31 @@ function showVolumeList() {
 }
 
 function calendarSwitchViews() {
-    // ,calendar-items // .list-view
-    // .select-calendar-view // .select-list-view active
-    // .calendar-list-selection
-    $('.list-view').hide();
-    $('.calendar-list-selection .select-calendar-view').addClass('selection-active');
-    $('.calendar-list-selection .select-calendar-view').on('click', function (evt) {
-        $('.calendar-items').show();
-        $('.list-view').hide()
-        $('.calendar-list-selection .select-calendar-view').addClass('selection-active');
-        $('.calendar-list-selection .select-list-view').removeClass('selection-active');
+    var selection = $('.tx-dlf-calendar-list-selection');
+
+    if (!selection.length) {
+        return;
+    }
+
+    var calendarButton = selection.find('.tx-dlf-calendar-select-calendar-view');
+    var listButton = selection.find('.tx-dlf-calendar-select-list-view');
+    var calendarView = $('.tx-dlf-calendar-calendar-view');
+    var listView = $('.tx-dlf-calendar-list-view');
+
+    function activate(button, view, otherButton, otherView) {
+        view.addClass('is-active');
+        otherView.removeClass('is-active');
+        button.addClass('active');
+        otherButton.removeClass('active');
+    }
+
+    calendarButton.on('click', function () {
+        activate(calendarButton, calendarView, listButton, listView);
     });
 
-    $('.calendar-list-selection .select-list-view').on('click', function (evt) {
-        $('.list-view').show();
-        $('.calendar-items').hide();
-        $('.calendar-list-selection .select-list-view').addClass('selection-active');
-        $('.calendar-list-selection .select-calendar-view').removeClass('selection-active');
+    listButton.on('click', function () {
+        activate(listButton, listView, calendarButton, calendarView);
     });
-
 }
 
 function calendarSelectBox() {
@@ -395,6 +401,42 @@ $('div.tx-dlf-navigation-magnifier').hide();
 $('.transformlink').each(function () {
     $(this).html('<a href="' + $(this).text() + '">Link</a>');
 });
+
+// Metadata fields come in pairs: label-<name> holds the readable text,
+// link-<name> holds the bare URL (see the wrap configuration of the metadata
+// records). Wrap the label text in the link and mark the now redundant link
+// row, which styles.css hides.
+mergeMetadataLinks();
+
+function mergeMetadataLinks() {
+    $('.tx-dlf-metadata-titledata').each(function () {
+        var metadata = $(this);
+
+        metadata.find('dd[class*="link-"]').each(function () {
+            var linkRow = $(this);
+            var name = (linkRow.attr('class').match(/(?:^|\s)link-([A-Za-z0-9_-]+)/) || [])[1];
+
+            if (!name) {
+                return;
+            }
+
+            var labelRow = metadata.find('dd.label-' + name).first();
+            var anchor = linkRow.find('a').first();
+
+            // Leave the link row alone if there is nothing to merge it into,
+            // otherwise the URL would be hidden without a replacement.
+            if (!labelRow.length || !anchor.length || !labelRow.text().trim()) {
+                return;
+            }
+
+            // Clone keeps href plus any target/rel/title from the original.
+            labelRow.wrapInner(anchor.clone().empty());
+
+            linkRow.addClass('is-merged-link');
+            linkRow.prev('dt').addClass('is-merged-link');
+        });
+    });
+}
 
 // license
 

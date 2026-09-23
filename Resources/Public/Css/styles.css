@@ -1475,37 +1475,71 @@ section#main-content .tx-dlf-pagegrid .tx-dlf-pagegrid-thumbnail a:hover {
     margin: 0 30px 40px 0;
     padding: 20px;
 }
-table.month {
+.tx-dlf-calendar-meta-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+.tx-dlf-calendar-year-anchor,
+.tx-dlf-calendar-year {
+    flex: 0 0 auto;
+}
+.tx-dlf-calendar-list-selection {
+    display: flex;
+    gap: 15px;
+    margin-left: auto;
+}
+.tx-dlf-calendar-list-selection a {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid #0c5998;
+    border-radius: 5px;
+    background: #fff;
+    color: #0c5998;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+.tx-dlf-calendar-list-selection a:hover {
+    background: #eee;
+}
+.tx-dlf-calendar-list-selection a.active {
+    background: #0c5998;
+    color: #fff;
+}
+/*
+ * Only one of the two views is shown at a time. The calendar view carries
+ * is-active from the template, so it stays the default even without JavaScript;
+ * calendarSwitchViews() in main.js moves the class on click.
+ */
+.tx-dlf-calendar-calendar-view,
+.tx-dlf-calendar-list-view {
+    display: none;
+}
+.tx-dlf-calendar-calendar-view.is-active,
+.tx-dlf-calendar-list-view.is-active {
+    display: block;
+}
+.tx-dlf-calendar-month table {
     width: 100%;
     border-spacing: 0;
 }
-table.month caption {
+.tx-dlf-calendar-month table caption {
     padding-bottom: 15px;
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
 }
-table.month tr:first-child {
+.tx-dlf-calendar-month table tr:first-child {
     width: 100%;
 }
-table.month th {
+.tx-dlf-calendar-month table th {
     padding: 5px 0;
 }
-table.month td {
+.tx-dlf-calendar-month table td {
     color: #999;
     padding: 2px;
-}
-table.month h4 {
-    border-radius: 2px;
-    font-size: 16px;
-    font-weight: 700;
-    color: #0c5998;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-table.month h4:hover {
-    color: #fff;
-    background: #242424;
 }
 .year-anchor {
     display: table-cell;
@@ -1529,16 +1563,20 @@ table.month h4:hover {
     background: #fff;
     padding: 60px 30px;
 }
-.tx-dlf-newspaper-calendar .list-view li {
-    border-top: 1px solid #505050;
+.tx-dlf-calendar-list-view ul {
+    margin: 30px 0 0 0;
+    padding: 0;
+}
+.tx-dlf-newspaper-calendar .list-view li,
+.tx-dlf-calendar-list-view li {
+    border-top: 1px solid #eee;
     list-style-type: none;
     padding: 10px 0;
 }
-.tx-dlf-newspaper-years .year-view li a,
-.tx-dlf-newspaper-calendar .list-view a {
+.tx-dlf-newspaper-calendar .list-view a,
+.tx-dlf-calendar-list-view a {
     font-weight: 700;
     text-decoration: none;
-    padding: 10px 15px;
 }
 .tx-dlf-basket {
     background-color: #fff;
@@ -1832,6 +1870,23 @@ dt.tx-dlf-metadata-title,
 calendar + listview
 ----------------------------------------------------------------------*/
 
+dl.tx-dlf-metadata-titledata > :not(.tx-dlf-metadata-title) {
+    display: none !important;
+}
+
+.tx-dlf-toc-act dl.tx-dlf-metadata-titledata > * {
+    display: block !important;
+}
+
+/*
+ * mergeMetadataLinks() in main.js folds each link-<name> row into its
+ * label-<name> counterpart and marks the leftover dt/dd pair. Needs the same
+ * weight as the rule above, which would otherwise show it again.
+ */
+.tx-dlf-toc-act dl.tx-dlf-metadata-titledata > .is-merged-link {
+    display: none !important;
+}
+
 .tx-dlf-calendar .meta-header,
 .tx-dlf-calendar-years .meta-header {
     background-color: #6e6e6e;
@@ -1860,38 +1915,64 @@ calendar + listview
     background: #242424;
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
 }
-table.month {
+.tx-dlf-calendar-month table {
     width: 100%;
     border-spacing: 0;
 }
-table.month caption {
+.tx-dlf-calendar-month table caption {
     padding-bottom: 15px;
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
 }
-table.month tr:first-child {
+.tx-dlf-calendar-month table tr:first-child {
     width: 100%;
 }
-table.month th {
+.tx-dlf-calendar-month table th {
     padding: 5px 0;
 }
-table.month td {
+.tx-dlf-calendar-month table td {
     padding: 2px;
     color: #999;
 }
-table.month h4 {
+.tx-dlf-calendar-month table h4 {
     border: 1px solid transparent;
+    background: #0c5998;
+    color: #ffffff;
     border-radius: 5px;
     font-size: 16px;
     font-weight: 700;
-    color: #c83141;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-table.month h4:hover {
-    color: #fff;
-    border: 1px solid #f2fbff;
+.tx-dlf-calendar-month table h4:hover {
+    background: #eee;
+    color: #0c5998;
+}
+.tx-dlf-calendar-month p {
+    margin: 0;
+}
+.tx-dlf-calendar-month details {
+    position: relative;
+}
+.tx-dlf-calendar-issues summary {
+    cursor: pointer;
+    list-style: none;
+}
+.tx-dlf-calendar-day-link-list ul {
+    position: absolute;
+    display: block;
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-radius: 10px;
+}
+.tx-dlf-calendar-day-link-list ul a {
+    display: block;
+    margin: 5px;
 }
 .year-anchor {
     display: table-cell;
@@ -1927,7 +2008,7 @@ table.month h4:hover {
 .tx-dlf-calendar,
 .tx-dlf-calendar-years {
     background: #ffffff;
-    padding: 60px 30px;
+    border-radius: 10px 0 0 10px;
 }
 .tx-dlf-calendar .list-view {
     background-color: #242424;
@@ -1953,38 +2034,48 @@ table.month h4:hover {
 .tx-dlf-calendar .list-view li:first-child {
     border-top: 0;
 }
-.tx-dlf-calendar-years .year-view ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 30px;
-    list-style-type: none;
+.tx-dlf-calendar-year-view ul,
+.calendar-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    margin: 30px 0 0 0;
 }
-.year-view {
-    padding: 15px;
+/*
+ * The year heading is emitted inside the grid because getCalendarYear() may set
+ * CALYEAR more than once for multi-year documents. Give it a full-width row so
+ * it does not take a month slot.
+ */
+.calendar-grid > .calendar-grid-year {
+    flex: 0 0 100%;
 }
-.tx-dlf-calendar-years .year-anchor a,
-.tx-dlf-calendar-years .meta-hint-year {
-    color: #fff;
-}
-.tx-dlf-calendar-years .year-view li a,
-.tx-dlf-calendar .list-view a {
+.tx-dlf-calendar-year-view li {
+    flex: 0 0 calc((100% - 3rem) / 4);
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
-    color: #fff;
-    padding: 5px;
-    margin: -5px;
-    text-decoration: none;
+}
+.tx-dlf-calendar-year-view li p {
+    margin: 0;
+}
+.tx-dlf-calendar-month {
+    flex: 0 0 calc((100% - 3rem) / 4);
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
 }
 .tx-dlf-calendar .list-view a {
     display: inline-block;
     margin-left: 5px;
-}
-.tx-dlf-calendar-years .year-view li a:hover,
-.tx-dlf-calendar .list-view a:hover {
-    color: #242424;
-    background: #fff;
-    border-radius: 5px;
 }
 .calendar-description h2 a,
 .calendar-description p a {
@@ -2126,6 +2217,10 @@ max 1530px
     .calendar-items,
     .tx-dlf-newspaper-years .year-view ul {
         margin: 0 0 0 0;
+    }
+    .tx-dlf-calendar-year-view li,
+    .tx-dlf-calendar-month {
+        flex: 0 0 calc((100% - 1rem) / 2);
     }
     .tx-dlf-collection-list {
         margin: 0 30px 0 30px;
@@ -2346,6 +2441,22 @@ max 1000px
     .tx-dlf-newspaper-years {
         padding: 30px 15px;
     }
+    .tx-dlf-calendar-meta-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .tx-dlf-calendar-list-selection {
+        margin-left: 0;
+        width: 100%;
+    }
+    .tx-dlf-calendar-list-selection a {
+        flex: 1;
+        text-align: center;
+    }
+    .tx-dlf-calendar-year-view li,
+    .tx-dlf-calendar-month {
+        flex: 0 0 100%;
+    }
     .tx-dlf-collection-list {
         margin: 0 15px;
     }
@@ -2545,10 +2656,6 @@ max 1000px
     .tx-dlf-newspaper-calendar .meta-header,
     .tx-dlf-newspaper-years .meta-header {
         display: block;
-    }
-    .tx-dlf-calendar,
-    .tx-dlf-calendar-years {
-        padding: 30px 15px;
     }
     .tx-dlf-calendar .meta-header,
     .tx-dlf-calendar-years .meta-header {
