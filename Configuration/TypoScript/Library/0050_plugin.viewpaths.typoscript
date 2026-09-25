@@ -11,6 +11,12 @@ plugin.tx_dlf.view {
     }
 }
 
+## Target element the toolbox renders the ALTO fulltext into.
+## dlf ships no default for this: FulltextTool.html always writes the data-dic
+## attribute, so the fallback inside FulltextControl.js never applies and
+## showFulltext() silently does nothing on an empty value.
+plugin.tx_dlf_toolbox.settings.fullTextScrollElement = #tx-dlf-toolbox-fulltext-selection
+
 ## Variants of search forms
 plugin.tx_dlf_search.settings.searchFormVariant = follow
 [page["is_siteroot"] == 1]
