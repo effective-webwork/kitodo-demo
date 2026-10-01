@@ -70,6 +70,8 @@ function showVolumeList() {
 }
 
 
+
+
 // Detailview
 
 // OpenLayers
@@ -244,8 +246,9 @@ $(document).ready(function() {
     shortenDescription();
     addLicenseIcon();
     metdataLinkReplacement();
-    linkButtonToPdfGeneration();
-    linkButtonToZipGeneration();
+    // linkButtonToPdfGeneration();
+    // linkButtonToZipGeneration();
+    dfgViewerPlaceDownloads();
     pageGridToggle();
     // AVI 20230803 for copy PURL (directlink) into User-buffer
     copyDirectlink2Buffer();
@@ -456,11 +459,17 @@ function metdataLinkReplacement() {
     });
 }
 
-function linkButtonToZipGeneration() {
-    $('#zipDownload').attr('href', $('#zip-generate-link a').attr('href'));
-}
-function linkButtonToPdfGeneration() {
-    $('#fullPdfDownload').attr('href', $('#pdf-generate-link a').attr('href'));
+// function linkButtonToZipGeneration() {
+//     $('#zipDownload').attr('href', $('#zip-generate-link a').attr('href'));
+// }
+// function linkButtonToPdfGeneration() {
+//     $('#fullPdfDownload').attr('href', $('#pdf-generate-link a').attr('href'));
+// }
+
+function dfgViewerPlaceDownloads() {
+    $('.document-functions li.downloads ul')
+    .append('<li class="zip"><span class="tx-dlf-tools-imagedownload"><a href=' + $('#zip-generate-link a').attr('href') + '>ZIP</a></span></li>')
+    .append('<li class="pdf"><span class="tx-dlf-tools-imagedownload"><a href=' + $('#pdf-generate-link a').attr('href') + '>PDF</a></span></li>');
 }
 
 function pageGridToggle() {
