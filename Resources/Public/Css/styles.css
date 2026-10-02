@@ -517,10 +517,11 @@ collection-list
     padding: 30px 0 15px 0;
     font-weight: 600;
     font-family: 'Roboto Slab';
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     # AVI:;
     margin-left: 1em;
+    min-height: 3em;
 }
 
 .tx-dlf-collection-thumbnail img {
@@ -529,7 +530,7 @@ collection-list
 }
 
 .collection-headline {
-    font-size: 24px;
+    font-size: 20;
     line-height: 28px;
     font-family: 'Roboto Slab';
     font-weight: 600;
@@ -544,7 +545,7 @@ collection-list
     # AVI:;
     width: -moz-available;
     width: -webkit-fill-available;
-    height: 2em;
+    height: 3em;
 
 }
 
