@@ -7,15 +7,11 @@ $EM_CONF[$_EXTKEY] = array(
 	'author' => 'Christopher Timm',
 	'author_email' => 'timm@effective-webwork.de',
 	'state' => 'stable',
-	'internal' => '',
-	'uploadfolder' => '0',
-	'createDirs' => '',
-	'clearCacheOnLoad' => 0,
-	'version' => '8.7',
+	'version' => '2.0.0',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '8.7-9.9.99',
-			'flux' => '8-9.9',
+			'typo3' => '13.4.0-13.4.99',
+			'flux' => '12.0.0-12.99.99',
 		),
 		'suggests' => array(
 		),
