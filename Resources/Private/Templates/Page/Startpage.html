@@ -1,8 +1,7 @@
 <div xmlns="http://www.w3.org/1999/xhtml" lang="en"
      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
-     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
-     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
 
     <f:layout name="Default" />
 
@@ -44,7 +43,7 @@
         <main class="one_column">
             <section>
                 <div class="tx-dlf-collection" id="super-coll">
-                    <v:page.menu pageUid="{settings.categoryStartUid}" expandAll="0" levels="0" showHiddenInMenu="1">
+                    <v:menu pageUid="{settings.categoryStartUid}" expandAll="0" levels="0" showHiddenInMenu="1">
                         <ul class="tx-dlf-collection-list">
                             <f:for each="{menu}" as="item">
                                 <li class="tx-dlf-collection-item">
@@ -68,7 +67,7 @@
                                 </li>
                             </f:for>
                         </ul>
-                    </v:page.menu>
+                    </v:menu>
                 </div>
 
                 <v:content.render column="1" />

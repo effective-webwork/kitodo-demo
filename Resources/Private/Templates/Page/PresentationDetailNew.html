@@ -1,14 +1,12 @@
 <div xmlns="http://www.w3.org/1999/xhtml" lang="en"
      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
-     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
-     xmlns:pp="http://typo3.org/ns/Kitodo/PresentationPackage/ViewHelpers">
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
 
     <f:layout name="Default" />
 
     <f:section name="Configuration">
         <flux:form id="digitalisateDetail" label="Digitalisate Detail">
-	llllllllllllllllllllllllllllllllllllllllllll
             <!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:form tag -->
         </flux:form>
 
@@ -38,18 +36,18 @@
                 <section class="header-logo-area">
                     <article id="portal-logo">
                         <a href="/">
-                            <img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/logo-tudigit.png" alt="Universitäts- und Landesbibliothek Darmstadt">
+                            <img src="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/logo-tudigit.png')}" alt="Universitäts- und Landesbibliothek Darmstadt">
                         </a>
                     </article>
                     <article id="ulb-logo">
                         <a href="https://www.ulb.tu-darmstadt.de/">
-                            <img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/ulb-logo.svg" alt="Universitäts- und Landesbibliothek Darmstadt">
+                            <img src="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/ulb-logo.svg')}" alt="Universitäts- und Landesbibliothek Darmstadt">
                             <span>Universitäts- und<br>Landesbibliothek<br>Darmstadt</span>
                         </a>
                     </article>
                     <article id="tud-logo">
                         <a href="https://www.tu-darmstadt.de">
-                            <img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/tud-logo.svg" alt="Technische Universität Darmstadt">
+                            <img src="{f:uri.resource(path: 'EXT:presentation_package/Resources/Public/Images/tud-logo.svg')}" alt="Technische Universität Darmstadt">
                         </a>
                     </article>
                 </section>

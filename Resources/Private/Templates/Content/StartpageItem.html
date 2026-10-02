@@ -36,7 +36,7 @@
         <article class="home-newsarticle">
             <div class="home-newsarticle-inner">
                 <f:link.typolink parameter="{pagelink}" title="{headline}">
-                {v:content.resources.fal(field: 'image') -> v:iterator.first() -> v:variable.set(name: 'image')}
+                {v:content.resources.fal(field: 'image', record: record) -> v:iterator.first() -> v:variable.set(name: 'image')}
                 <f:image treatIdAsReference="1" src="{image.id}" title="{image.title}" alt="{image.alternative}"/>
                 <h2>{headline}</h2>
                 <p><f:format.nl2br>{teasertext}</f:format.nl2br></p>
