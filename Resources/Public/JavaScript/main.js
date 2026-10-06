@@ -335,10 +335,10 @@ function shortenDescription() {
     // $('p.long').each(function () {
     //     shortenText($(this));
     // });
-    $('.tx-dlf-collection-description').each(function() {
+    $('.listview-headline-sort .tx-dlf-collection-description').each(function() {
         shortenText($(this));
     });
-    $('.tx-dlf-collection-description-list').each(function() {
+    $('.tx-dlf-collection-list .tx-dlf-collection-description').each(function() {
         shortenListText($(this));
     });
     showMoreClickHandler();
