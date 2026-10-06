@@ -698,24 +698,24 @@ listview
     margin: 0 30px 0 0;
 }
 
-.tx-dlf-listview .pagination {
+.tx-dlf-listview .tx-dlf-pagination {
     border-top: 1px solid #d8d8d8;
     list-style: none;
     padding: 15px 0 0 0;
 }
 
-.tx-dlf-listview .pagination li {
+.tx-dlf-listview .tx-dlf-pagination li {
     display: inline-block;
 }
 
-.tx-dlf-listview .pagination li a {
+.tx-dlf-listview .tx-dlf-pagination li a {
     background: #00554A;
     color: #FFFFFF;
     padding: 8px 15px;
     display: block;
 }
 
-.tx-dlf-listview .pagination li.current {
+.tx-dlf-listview .tx-dlf-pagination li.tx-dlf-pagination-current {
     background: #d8d8d8;
     padding: 8px 15px;
 }
