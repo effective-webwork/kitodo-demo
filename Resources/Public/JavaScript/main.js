@@ -78,7 +78,7 @@ function showVolumeList() {
 
 function deactivateZoomMouseWheel() {
     setTimeout(function() {
-        if (typeof tx_dlf_viewer != 'undefined') {
+        if (typeof tx_dlf_viewer != 'undefined' && tx_dlf_viewer.map) {
             // Stop zooming via mouse wheel
             tx_dlf_viewer.map.getInteractions().forEach(function (interaction) {
                 if (interaction instanceof ol.interaction.MouseWheelZoom) {
@@ -261,18 +261,16 @@ function imageViewerSizeAdjustment() {
     const delay = 500; // 500ms delay
 
     function checkAndAdjust() {
-        if (typeof tx_dlf_viewer != 'undefined') {
-            tx_dlf_viewer.map
-                .getView()
-                .fit(
-                    tx_dlf_viewer.map
-                        .getLayers()
-                        .getArray()
-                        .find(layer => layer instanceof ol.layer.Image)
-                        .getSource()
-                        .getImageExtent()
-                    , {size: tx_dlf_viewer.map.getSize()}
-                );
+        if (typeof tx_dlf_viewer != 'undefined' && tx_dlf_viewer.map) {
+            const imageLayer = tx_dlf_viewer.map
+                .getLayers()
+                .getArray()
+                .find(layer => layer instanceof ol.layer.Image);
+            if (imageLayer) {
+                tx_dlf_viewer.map
+                    .getView()
+                    .fit(imageLayer.getSource().getImageExtent(), {size: tx_dlf_viewer.map.getSize()});
+            }
         } else {
             attempts++;
             if (attempts < maxAttempts) {
