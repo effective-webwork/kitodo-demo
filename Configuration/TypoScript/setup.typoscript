@@ -136,17 +136,3 @@ plugin.tx_dlf_collection {
         }
     }
 }
-
-plugin.tx_dlf_calendar {
-    view {
-        templateRootPaths {
-            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
-        }
-        partialRootPaths {
-            1 = EXT:presentation_package/Resources/Private/Plugins/Partials/
-        }
-        layoutRootPaths {
-            1 = EXT:presentation_package/Resources/Private/Plugins/Layouts/
-        }
-    }
-}
