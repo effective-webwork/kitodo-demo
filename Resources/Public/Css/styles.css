@@ -2375,7 +2375,7 @@ ul.tx-dlf-toolbox span a img {
     padding: 5px 5px;
 }
 
-.control-bar .section-hidden .tx-dlf-toc.tx-dlf-window.tx-dlf-leftwin.tx-dlf-open {
+.control-bar .section-hidden .tx-dlf-tableofcontents {
     height: 0px !important;
 }
 
