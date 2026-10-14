@@ -1607,13 +1607,13 @@ article.calendar-metadata ul li dl {
 }
 
 .dropdown-menu ul li .tx-dlf-icon-cur a {
-    background: url('../../../typo3conf/ext/presentation_package/typo3conf/ext/presentation_package/Resources/Public/img/icon-delete-dark.svg') 10px center no-repeat;
+    background: url('../Images/icon-delete-dark.svg') 10px center no-repeat;
     background-size: 16px 16px;
     padding: 8px 15px 8px 35px;
 }
 
 .dropdown-menu ul li .tx-dlf-icon-cur a:hover {
-    background: url('../../../typo3conf/ext/presentation_package/typo3conf/ext/presentation_package/Resources/Public/img/icon-delete.svg') 10px center no-repeat #242424;
+    background: url('../Images/icon-delete.svg') 10px center no-repeat #242424;
     background-size: 16px 16px;
     padding: 8px 15px 8px 35px;
 }
@@ -2640,7 +2640,7 @@ a#tx-dlf-tools-fulltext:after {
     width: 24px;
     height: 24px;
     display: inline-block;
-    background-image: url('/typo3conf/ext/presentation_package/Resources/Public/Images/icon-text-white.svg');
+    background-image: url('../Images/icon-text-white.svg');
 }
 
 span.fullPdfDownloadSpan,

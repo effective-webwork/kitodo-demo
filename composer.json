@@ -8,7 +8,9 @@
   "version": "2.0.0",
   "require": {
     "typo3/cms-core": "^13.4",
-    "fluidtypo3/flux": "^12.0"
+    "fluidtypo3/flux": "^12.0",
+    "fluidtypo3/vhs": "^8.0",
+    "kitodo/presentation": "*"
   },
   "autoload": {
     "psr-4": {

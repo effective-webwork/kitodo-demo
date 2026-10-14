@@ -1,3 +1,5 @@
+// Asset URLs are hashed in composer mode; derive them from this script's own URL
+var presentationPackageImagePath = document.currentScript.src.replace(/JavaScript\/main\.js.*$/, 'Images/');
 
 $('.tx-dlf-basket-button a').text("merken");
 $('.add-to-cart a').text("merken");
@@ -232,59 +234,59 @@ $(".tx-dlf-navigation-rotate-left a").click(function () {
 
 $('.tx-dlf-navigation-double a, .tx-dlf-navigation-double span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-doublepage.svg" alt="Show double pages">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-doublepage.svg" alt="Show double pages">');
 
 $('.tx-dlf-navigation-double-plus a, .tx-dlf-navigation-double-plus span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-verso.svg" alt="Adjust recto/verso">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-verso.svg" alt="Adjust recto/verso">');
 
 $('.tx-dlf-navigation-zoom-in a, .tx-dlf-navigation-zoom-in span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomin.svg" alt="Zoom In">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-zoomin.svg" alt="Zoom In">');
 
 $('.tx-dlf-navigation-zoom-out a, .tx-dlf-navigation-zoom-out span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-zoomout.svg" alt="Zoom Out">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-zoomout.svg" alt="Zoom Out">');
 
 $('.tx-dlf-navigation-rotate-left a, .tx-dlf-navigation-rotate-left span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateleft.svg" alt="Rotate Left">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-rotateleft.svg" alt="Rotate Left">');
 
 $('.tx-dlf-navigation-rotate-right a, .tx-dlf-navigation-rotate-right span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-rotateright.svg" alt="Rotate Right">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-rotateright.svg" alt="Rotate Right">');
 
 $('.tx-dlf-navigation-first a, .tx-dlf-navigation-first span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-skipleft.svg" alt="First Page">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-skipleft.svg" alt="First Page">');
 
 $('.tx-dlf-navigation-prev a, .tx-dlf-navigation-prev span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-doubleleft.svg" alt="Back 5 Pages">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-doubleleft.svg" alt="Back 5 Pages">');
 
 $('.tx-dlf-navigation-back a, .tx-dlf-navigation-back span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-singleleft.svg" alt="Previous Page">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-singleleft.svg" alt="Previous Page">');
 
 $('.tx-dlf-navigation-next a, .tx-dlf-navigation-next span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-singleright.svg" alt="Next Page">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-singleright.svg" alt="Next Page">');
 
 $('.tx-dlf-navigation-fwd a, .tx-dlf-navigation-fwd span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-doubleright.svg" alt="Forward 5 Pages">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-doubleright.svg" alt="Forward 5 Pages">');
 
 $('.tx-dlf-navigation-last a, .tx-dlf-navigation-last span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-skipright.svg" alt="Last Page">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-skipright.svg" alt="Last Page">');
 
 $('.tx-dlf-navigation-listview a, .tx-dlf-navigation-listview span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-skipright.svg" alt="Zurück zur Liste">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-skipright.svg" alt="Zurück zur Liste">');
 
 $('.tx-dlf-navigation-listview a, .tx-dlf-navigation-listview span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-skipright.svg" alt="Last Page">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-skipright.svg" alt="Last Page">');
 
 
 if ($('.tx-dlf-navigation-edit').length) {
@@ -310,15 +312,15 @@ if ($('.tx-dlf-navigation-magnifier').length) {
 
 $('.tx-dlf-navigation-edit a, .tx-dlf-navigation-edit span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-selection.svg" alt="Ausschnitt auswählen">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-selection.svg" alt="Ausschnitt auswählen">');
 
 $('.tx-dlf-navigation-editRemove a, .tx-dlf-navigation-editRemove span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-selection-x.svg" alt="Ausschnitt entfernen">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-selection-x.svg" alt="Ausschnitt entfernen">');
 
 $('.tx-dlf-navigation-magnifier a, .tx-dlf-navigation-magnifier span')
     .text("")
-    .append('<img src="../../typo3conf/ext/presentation_package/Resources/Public/Images/icon-magnifying.svg" alt="Lupe">');
+    .append('<img src="' + presentationPackageImagePath + 'icon-magnifying.svg" alt="Lupe">');
 
 
 $('div.tx-dlf-navigation-edit').hide();

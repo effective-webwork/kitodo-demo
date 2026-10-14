@@ -16,6 +16,8 @@ $EM_CONF[$_EXTKEY] = array(
 		'depends' => array(
 			'typo3' => '13.4.9-14.4.99',
 			'flux' => '12.0.0-12.99.99',
+			'vhs' => '8.0.0-8.99.99',
+			'dlf' => '7.0.0-7.99.99',
 		),
 		'suggests' => array(
 		),
