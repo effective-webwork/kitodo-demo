@@ -5,14 +5,19 @@
   "homepage": "https://www.effective-webwork.de/",
   "license": "GPL-3.0-or-later",
   "keywords": ["TYPO3 CMS"],
-  "version": "1.0.0",
+  "version": "2.0.0",
   "require": {
-    "typo3/cms-core": "^9.5 || ^10.4",
-    "fluidtypo3/flux": "^9"
+    "typo3/cms-core": "^13.4",
+    "fluidtypo3/flux": "^12.0"
   },
   "autoload": {
     "psr-4": {
       "Kitodo\\PresentationPackage\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "presentation_package"
     }
   }
 }
