@@ -435,7 +435,7 @@
             </trans-unit>
             <trans-unit id="structure.poetry_album">
                 <source><![CDATA[PoetryAlbum]]></source>
-                <target><![CDATA[Poesiealbumbox]]></target>
+                <target><![CDATA[Poesiealbum]]></target>
             </trans-unit>
             <trans-unit id="structure.acknowledgement">
                 <source><![CDATA[Acknowledgement]]></source>

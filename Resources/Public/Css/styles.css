@@ -526,26 +526,30 @@ listview
     margin: 0 30px 0 0;
 }
 
-.tx-dlf-listview .f3-widget-paginator {
+.tx-dlf-listview .tx-dlf-pagination {
     border-top: 1px solid #d8d8d8;
     list-style: none;
     padding: 15px 0 0 0;
 }
 
-.tx-dlf-listview .f3-widget-paginator li {
+.tx-dlf-listview .tx-dlf-pagination li {
     display: inline-block;
 }
 
-.tx-dlf-listview .f3-widget-paginator li a {
+.tx-dlf-listview .tx-dlf-pagination li a {
     background: #003064;
     color: #fff;
     padding: 8px 15px;
     display: block;
 }
 
-.tx-dlf-listview .f3-widget-paginator li.current {
+.tx-dlf-listview .tx-dlf-pagination li.tx-dlf-pagination-current span {
     background: #d8d8d8;
+}
+
+.tx-dlf-listview .tx-dlf-pagination li span {
     padding: 8px 15px;
+    display: block;
 }
 
 .listview-headline-sort {

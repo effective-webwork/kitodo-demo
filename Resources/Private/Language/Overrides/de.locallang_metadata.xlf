@@ -47,7 +47,7 @@
 			</trans-unit>
 			<trans-unit id="metadata.place" approved="yes">
 				<source><![CDATA[Place of Publication]]></source>
-				<target><![CDATA[Erscheinungsort]]></target>
+				<target><![CDATA[Ort]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.place_general" approved="yes">
 				<source><![CDATA[Place]]></source>
@@ -99,7 +99,7 @@
 			</trans-unit>
 			<trans-unit id="metadata.type" approved="yes">
 				<source><![CDATA[Type]]></source>
-				<target><![CDATA[Strukturtyp]]></target>
+				<target><![CDATA[Materialart]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.union_id" approved="yes">
 				<source><![CDATA[Union Catalog ID]]></source>
