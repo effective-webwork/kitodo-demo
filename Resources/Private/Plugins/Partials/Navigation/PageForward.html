@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<f:variable name="navigationPage" value="{viewData.requestData.page + 1 + viewData.requestData.double}" />
+
+<f:render partial="Navigation/Page" arguments="{class: 'tx-dlf-navigation-next', condition: pageForwardActive, navigationPage: navigationPage, value: 'navigation.page.nextPage', icon: 'icon-shlb-arrow-right-w.svg', viewData: viewData}" />
+
+</html>

@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:kitodo="http://typo3.org/ns/Kitodo/Dlf/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<li class="{class}">
+    <f:if condition="{condition}">
+        <f:then>
+            <kitodo:link viewData="{viewData}" additionalParams="{'page':'{navigationPage}'}" excludedParams="{0: 'measure'}">
+                <f:if condition="{icon}">
+                    <f:then><img src="{f:uri.resource(path:'EXT:presentation_package/Resources/Public/Images/{icon}')}" alt="{f:translate(key: '{value}')}"></f:then>
+                    <f:else><f:translate key="{value}"/></f:else>
+                </f:if>
+            </kitodo:link>
+        </f:then>
+        <f:else>
+            <span title="{f:translate(key: '{value}')}">
+                <f:if condition="{icon}">
+                    <f:then><img src="{f:uri.resource(path:'EXT:presentation_package/Resources/Public/Images/{icon}')}" alt="{f:translate(key: '{value}')}"></f:then>
+                    <f:else><f:translate key="{value}"/></f:else>
+                </f:if>
+            </span>
+        </f:else>
+    </f:if>
+</li>
+
+</html>

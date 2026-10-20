@@ -2216,10 +2216,6 @@ max 700px
 
 }
 
-.ol-viewport {
-    position:initial !important;
-}
-
 ul.tx-dlf-toolbox span a img {
     width: 30px;
     height: auto;
