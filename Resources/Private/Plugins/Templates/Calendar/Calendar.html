@@ -1,61 +1,62 @@
-<f:comment>
-<!--
- * (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
- *
- * This file is part of the Kitodo and TYPO3 projects.
- *
- * @license GNU General Public License version 3 or later.
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
--->
-</f:comment>
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<f:if condition="{debugActive}">
+    <f:debug title="all">{_all}</f:debug>
+</f:if>
+
 <div class="tx-dlf-calendar">
-    <div class="meta-header">
-        <div class="year-anchor">
-            <div class="year-anchor">
+    <div class="tx-dlf-calendar-meta-header">
+        <div class="tx-dlf-calendar-year-anchor">
+            <div class="tx-dlf-calendar-year-anchor">
                 <f:link.page additionalParams="{'tx_dlf[id]': parentDocumentId}">
                     <f:translate key="calendar.allYears" /> {allYearDocTitle}
                 </f:link.page>
             </div>
         </div>
-        <div class="year">
+        <div class="tx-dlf-calendar-year">
             <f:link.page additionalParams="{'tx_dlf[id]': documentId}">
                 {yearLinkTitle}
             </f:link.page>
         </div>
-        <div class="calendar-list-selection">
-            <a class="select-calendar-view {f:if(condition:'calendarData->f:count() > 5', then : 'active')}">
-                <f:translate key="calendar.view_calendar" />
+        <div class="tx-dlf-calendar-list-selection">
+            <a class="tx-dlf-calendar-select-calendar-view {f:if(condition:'calendarData->f:count() > 5', then : 'active')}">
+                <f:translate key="calendar.view.calendar" />
             </a>
-            <a class="select-list-view {f:if(condition:'calendarData->f:count() < 6', then : 'active')}">
-                <f:translate key="calendar.view_list" />
+            <a class="tx-dlf-calendar-select-list-view {f:if(condition:'calendarData->f:count() < 6', then : 'active')}">
+                <f:translate key="calendar.view.list" />
             </a>
         </div>
     </div>
-    <div class="calendar-items">
+    <div class="tx-dlf-calendar-calendar-view">
 
-        <f:for each="{calendarData}" as="month">
+        <f:comment>SHLB: dlf 7 renders month, weekday and date names in English</f:comment>
+        <f:for each="{calendarData}" as="month" key="monthKey">
             <f:if condition="{month.CALYEAR}">
-                <f:then>
-                    <div class="year">
-                        {month.CALYEAR}
-                    </div>
-                </f:then>
+                <div class="tx-dlf-calendar-year">{month.CALYEAR}</div>
             </f:if>
-            <div class="calendar-view">
-                <table class="month">
-                    <caption>{month.MONTHNAME}</caption>
+            <div class="tx-dlf-calendar-month">
+                <table>
+                    <caption><f:format.date date="{monthKey}-01" pattern="MMMM yyyy" /></caption>
                     <tr>
-                        <th class="">{month.DAYMON_NAME}</th>
-                        <th class="">{month.DAYTUE_NAME}</th>
-                        <th class="">{month.DAYWED_NAME}</th>
-                        <th class="">{month.DAYTHU_NAME}</th>
-                        <th class="">{month.DAYFRI_NAME}</th>
-                        <th class="">{month.DAYSAT_NAME}</th>
-                        <th class="">{month.DAYSUN_NAME}</th>
+                        <th class="">{f:format.date(date: '2024-01-01', pattern: 'EEEEEE') -> v:format.trim(characters: '.')}</th>
+                        <th class="">{f:format.date(date: '2024-01-02', pattern: 'EEEEEE') -> v:format.trim(characters: '.')}</th>
+                        <th class="">{f:format.date(date: '2024-01-03', pattern: 'EEEEEE') -> v:format.trim(characters: '.')}</th>
+                        <th class="">{f:format.date(date: '2024-01-04', pattern: 'EEEEEE') -> v:format.trim(characters: '.')}</th>
+                        <th class="">{f:format.date(date: '2024-01-05', pattern: 'EEEEEE') -> v:format.trim(characters: '.')}</th>
+                        <th class="">{f:format.date(date: '2024-01-06', pattern: 'EEEEEE') -> v:format.trim(characters: '.')}</th>
+                        <th class="">{f:format.date(date: '2024-01-07', pattern: 'EEEEEE') -> v:format.trim(characters: '.')}</th>
                     </tr>
 
                     <f:for each="{month.week}" as="week">
@@ -88,14 +89,14 @@
         </f:for>
     </div>
 
-    <div class="list-view">
+    <div class="tx-dlf-calendar-list-view">
         <ul>
-            <f:for each="{issueData}" as="issueDay">
+            <f:for each="{issueData}" as="issueDay" key="dayTimestamp">
                 <li>
-                    <span class="listview-date">{issueDay.dateString}</span>
+                    <span class="tx-dlf-calendar-list-view-date"><f:format.date date="{dayTimestamp}" pattern="EEEE, dd.MM.yyyy" /></span>
                     <f:for each="{issueDay.items}" as="item">
                         <f:link.page pageUid="{settings.targetPid}" additionalParams="{'tx_dlf[id]': item.documentId}">
-                            {item.text}
+                            {item.text -> v:format.pregReplace(pattern: '/^([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])$/', replacement: '$3.$2.$1')}
                         </f:link.page>
                     </f:for>
                 </li>

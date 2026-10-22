@@ -50,20 +50,20 @@ function calendarSwitchViews() {
     // ,calendar-items // .list-view
     // .select-calendar-view // .select-list-view active
     // .calendar-list-selection
-    $('.list-view').hide();
-    $('.calendar-list-selection .select-calendar-view').addClass('selection-active');
-    $('.calendar-list-selection .select-calendar-view').on('click', function (evt) {
-        $('.calendar-items').show();
-        $('.list-view').hide()
-        $('.calendar-list-selection .select-calendar-view').addClass('selection-active');
-        $('.calendar-list-selection .select-list-view').removeClass('selection-active');
+    $('.tx-dlf-calendar-list-view').hide();
+    $('.tx-dlf-calendar-list-selection .tx-dlf-calendar-select-calendar-view').addClass('selection-active');
+    $('.tx-dlf-calendar-list-selection .tx-dlf-calendar-select-calendar-view').on('click', function (evt) {
+        $('.tx-dlf-calendar-calendar-view').show();
+        $('.tx-dlf-calendar-list-view').hide()
+        $('.tx-dlf-calendar-list-selection .tx-dlf-calendar-select-calendar-view').addClass('selection-active');
+        $('.tx-dlf-calendar-list-selection .tx-dlf-calendar-select-list-view').removeClass('selection-active');
     });
 
-    $('.calendar-list-selection .select-list-view').on('click', function (evt) {
-        $('.list-view').show();
-        $('.calendar-items').hide();
-        $('.calendar-list-selection .select-list-view').addClass('selection-active');
-        $('.calendar-list-selection .select-calendar-view').removeClass('selection-active');
+    $('.tx-dlf-calendar-list-selection .tx-dlf-calendar-select-list-view').on('click', function (evt) {
+        $('.tx-dlf-calendar-list-view').show();
+        $('.tx-dlf-calendar-calendar-view').hide();
+        $('.tx-dlf-calendar-list-selection .tx-dlf-calendar-select-list-view').addClass('selection-active');
+        $('.tx-dlf-calendar-list-selection .tx-dlf-calendar-select-calendar-view').removeClass('selection-active');
     });
 
 }
@@ -73,7 +73,7 @@ function calendarSelectBox() {
     if (isTouchDevice()) {
         $(document).mouseup(function(e)
         {
-            var container = $("div.issues div.openSelectBox");
+            var container = $("div.tx-dlf-calendar-issues div.openSelectBox");
 
             // if the target of the click isn't the container nor a descendant of the container
             if (!container.is(e.target) && container.has(e.target).length === 0)
@@ -103,8 +103,8 @@ function calendarSelectBox() {
 
     } else {
 
-        $("div.issues div.dayLinkList").each(function () {
-            var interactiveElement = $(this).closest('div.issues');
+        $("div.tx-dlf-calendar-issues div.tx-dlf-calendar-day-link-list").each(function () {
+            var interactiveElement = $(this).closest('div.tx-dlf-calendar-issues');
             if ($(this).children('a').length > 1) {
                 // show select box
                 interactiveElement.on('mouseenter', function (event) {
@@ -114,8 +114,8 @@ function calendarSelectBox() {
                     $(this).children("div").show();
 
                     setTimeout(function hoverTimeoutCheck() {
-                        if ($('div.issues div.openSelectBox:hover').length == 0 && $('div.issues:hover').length == 0) {
-                            $("div.issues div.openSelectBox").hide();
+                        if ($('div.tx-dlf-calendar-issues div.openSelectBox:hover').length == 0 && $('div.tx-dlf-calendar-issues:hover').length == 0) {
+                            $("div.tx-dlf-calendar-issues div.openSelectBox").hide();
                         } else {
                             setTimeout(hoverTimeoutCheck, 1000);
                         }
