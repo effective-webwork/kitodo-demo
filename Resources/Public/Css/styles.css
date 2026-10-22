@@ -1605,6 +1605,10 @@ calendar + listview
     /*border-radius: 3px;*/
 }
 
+.tx-dlf-calendar-years .tx-dlf-calendar-year-view li a {
+    display: inline-block;
+}
+
 .calendar-description h2 a,.calendar-description p a {
     color: #FFF;
 }
