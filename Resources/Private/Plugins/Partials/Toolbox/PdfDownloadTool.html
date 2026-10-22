@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<li class="tx-button">
+    <span class="tx-dlf-tools-pdf-page">
+        <f:if condition="{double} === 0">
+            <f:then>
+                <f:if condition="{pageLinks.0}">
+                    <f:then><f:link.external uri="{pageLinks.0}" class="fa fa-lg fa-file-pdf" aria="{label: '{f:translate(key: \'toolbox.general.downloadSinglePage\')} (PDF)'}"></f:link.external></f:then>
+                    <f:else><span class="fa fa-lg fa-file-pdf" aria-hidden="true"></span></f:else>
+                </f:if>
+            </f:then>
+            <f:else>
+                <f:if condition="{pageLinks.0}">
+                    <f:then><f:link.external uri="{pageLinks.0}" class="fa fa-lg fa-file-pdf" aria="{label: '{f:translate(key: \'toolbox.general.downloadLeftPage\')} (PDF)'}"></f:link.external></f:then>
+                    <f:else><span class="fa fa-lg fa-file-pdf" aria-hidden="true"></span></f:else>
+                </f:if>
+                <f:if condition="{pageLinks.1}">
+                    <f:link.external uri="{pageLinks.1}" class="fa fa-lg fa-file-pdf" aria="{label: '{f:translate(key: \'toolbox.general.downloadRightPage\')} (PDF)'}"></f:link.external>
+                </f:if>
+            </f:else>
+        </f:if>
+    </span>
+    <span class="tx-dlf-tools-pdf-work">
+        <f:if condition="{workLink}">
+            <f:link.external uri="{workLink}" class="fa fa-lg fa-file-pdf" aria="{label: '{f:translate(key: \'toolbox.pdfDownload.downloadWork\')} (PDF)'}"></f:link.external>
+        </f:if>
+    </span>
+</li>
+<li class="tx-button" style="display:none;">
+    <a id="fullPdfDownload" href="#" class="fa fa-lg fa-file-pdf"></a>
+</li>
+
+</html>

@@ -854,7 +854,8 @@ detail-view
     margin-top: 20px;
 }
 
-.tx-button a {
+.tx-button a,
+.tx-button span.fa {
     text-align: center;
     width: 30px;
     height: 22px;
@@ -871,6 +872,12 @@ detail-view
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
+}
+
+.tx-button span.fa {
+    cursor: default;
+    /* .tx-dlf-toolbox li span would override .fa-lg */
+    font-size: 1.33333em;
 }
 
 .tx-dlf-navigation li a,
@@ -2424,7 +2431,7 @@ ul.tx-dlf-toolbox span a img {
     display: block;
 }
 
-span.no-fulltext {
+span.tx-dlf-tools-fulltext-not-available {
     display: inline-block;
 }
 
@@ -2643,8 +2650,7 @@ a#tx-dlf-tools-fulltext:after {
     background-image: url('../Images/icon-text-white.svg');
 }
 
-span.fullPdfDownloadSpan,
-span.tx-dlf-tools-fulltext {
+span.fullPdfDownloadSpan {
     padding: 0 !important;
 }
 

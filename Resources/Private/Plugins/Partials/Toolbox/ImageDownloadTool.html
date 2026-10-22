@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+    (c) Kitodo. Key to digital objects e.V. <contact@kitodo.org>
+
+    This file is part of the Kitodo and TYPO3 projects.
+
+    @license GNU General Public License version 3 or later.
+    For the full copyright and license information, please read the
+    LICENSE.txt file that was distributed with this source code.
+</f:comment>
+
+<li class="tx-button">
+    <f:if condition="{double} === 0">
+        <f:then>
+            <f:link.external uri="{imageDownload.0.url}" class="fa fa-lg fa-file-image" aria="{label: '{f:translate(key: \'toolbox.general.downloadSinglePage\')}{imageDownload.0.mimetypeLabel}'}"></f:link.external>
+        </f:then>
+        <f:else>
+            <f:link.external uri="{imageDownload.0.url}" class="fa fa-lg fa-file-image" aria="{label: '{f:translate(key: \'toolbox.general.downloadLeftPage\')}{imageDownload.0.mimetypeLabel}'}"></f:link.external>
+            <f:if condition="{imageDownload.1}">
+                <f:link.external uri="{imageDownload.1.url}" class="fa fa-lg fa-file-image" aria="{label: '{f:translate(key: \'toolbox.general.downloadRightPage\')}{imageDownload.1.mimetypeLabel}'}"></f:link.external>
+            </f:if>
+        </f:else>
+    </f:if>
+</li>
+
+</html>
