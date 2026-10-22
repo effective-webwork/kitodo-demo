@@ -1441,7 +1441,9 @@ calendar + listview
 }
 
 .tx-dlf-calendar-years .tx-dlf-calendar-year-view li {
-    width: calc(33.33%);
+    min-width: calc(33.33%);
+    width: fit-content;
+    max-width: 100%;
 }
 
 .tx-dlf-calendar-month:hover {
