@@ -114,6 +114,14 @@ plugin.tx_dlf_toolbox {
     }
 }
 
+plugin.tx_dlf_pagegrid {
+    view {
+        templateRootPaths {
+            1 = EXT:presentation_package/Resources/Private/Plugins/Templates/
+        }
+    }
+}
+
 plugin.tx_dlf_collection {
     view {
         templateRootPaths {
