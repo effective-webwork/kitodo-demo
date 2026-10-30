@@ -1075,4 +1075,4 @@ function setHamburgJournalsDefaultDateRange() {
         //$("#tx-dlf-search-dateTo").val(new Date().toISOString().split('T')[0]);
         $("#tx-dlf-search-dateTo").val("2000-12-31");
     }
-
+}
