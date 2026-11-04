@@ -2565,6 +2565,19 @@ aside .tx-dlf-pagegrid-pagebrowser {
     background: #cc0a4b;
 }
 
+ul.volume-list {
+    max-height: calc(-150px + 100vh);
+    overflow-y: auto;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 20px;
+    display: grid;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
 .termsOfUse {
     position: absolute;
     z-index: 100;
