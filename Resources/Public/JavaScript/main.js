@@ -54,7 +54,7 @@ function showVolumeList() {
     var documentType = $("article.doc-type li").text();
     if (documentType == "Mehrbändiges Werk" || documentType == "Zeitung" || documentType == "Zeitschrift") {
         $('.document-view').append('<div style="margin-top: 69px;"><div class="volume-info">Bitte wählen Sie einen Band aus</div><ul class="volume-list"></ul></div>');
-        $('.tx-dlf-toc ul ul li').each(function(index) {
+        $('.tx-dlf-tableofcontents-list ul li').each(function(index) {
             $('.volume-list').append('<li>'+$(this).html() +'</li>');
         });
         $('a.chapter_download, a#pdfdownloadbutton').hide();
