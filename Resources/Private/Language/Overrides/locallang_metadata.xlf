@@ -75,7 +75,7 @@
 				<source><![CDATA[Links]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.shelflocator">
-				<source><![CDATA[Shelfmark]]></source>
+				<source><![CDATA[Shelflocator]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.subjectnamepersons">
 				<source><![CDATA[Persons]]></source>
