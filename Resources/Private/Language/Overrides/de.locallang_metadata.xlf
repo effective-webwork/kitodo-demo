@@ -7,7 +7,7 @@
 		<body>
 			<trans-unit id="metadata.viewer" approved="yes">
 				<source><![CDATA[viewer]]></source>
-				<target><![CDATA[Viewer-DE]]></target>
+				<target><![CDATA[Viewer]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.record_id" approved="yes">
 				<source><![CDATA[record_id]]></source>
@@ -19,7 +19,7 @@
 			</trans-unit>
 			<trans-unit id="metadata.ppn_hebis" approved="yes">
 				<source><![CDATA[ppn_hebis]]></source>
-				<target><![CDATA[TUfind Anzeige-DE]]></target>
+				<target><![CDATA[TUfind Anzeige]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.ppns" approved="yes">
 				<source><![CDATA[ppns]]></source>
@@ -27,15 +27,15 @@
 			</trans-unit>
 			<trans-unit id="metadata.links" approved="yes">
 				<source><![CDATA[links]]></source>
-				<target><![CDATA[Links-DE]]></target>
+				<target><![CDATA[Links]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.doi" approved="yes">
 				<source><![CDATA[doi]]></source>
-				<target><![CDATA[DOI-DE]]></target>
+				<target><![CDATA[DOI]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.author" approved="yes">
 				<source><![CDATA[author]]></source>
-				<target><![CDATA[Urheber:in-DE]]></target>
+				<target><![CDATA[Urheber:in]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.name_author" approved="yes">
 				<source><![CDATA[Author]]></source>
@@ -43,7 +43,7 @@
 			</trans-unit>
 			<trans-unit id="metadata.collection" approved="yes">
 				<source><![CDATA[Collection(s)]]></source>
-				<target><![CDATA[Sammlung(en)-DE]]></target>
+				<target><![CDATA[Sammlung(en)]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.coordinates" approved="yes">
 				<source><![CDATA[Coordinates]]></source>
@@ -55,15 +55,15 @@
 			</trans-unit>
 			<trans-unit id="metadata.language" approved="yes">
 				<source><![CDATA[Language]]></source>
-				<target><![CDATA[Sprache-DE]]></target>
+				<target><![CDATA[Sprache]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.license_label" approved="yes">
 				<source><![CDATA[license_label]]></source>
-				<target><![CDATA[Lizenz-/Rechtehinweis-DE]]></target>
+				<target><![CDATA[Lizenz-/Rechtehinweis]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.license" approved="yes">
 				<source><![CDATA[License]]></source>
-				<target><![CDATA[Lizenz-/Rechtehinweis-DE]]></target>
+				<target><![CDATA[Lizenz-/Rechtehinweis]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.opac_id" approved="yes">
 				<source><![CDATA[OPAC Identifier]]></source>
@@ -75,11 +75,11 @@
 			</trans-unit>
 			<trans-unit id="metadata.owner" approved="yes">
 				<source><![CDATA[Owner]]></source>
-				<target><![CDATA[Eigentümer-DE]]></target>
+				<target><![CDATA[Eigentümer]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.place" approved="yes">
 				<source><![CDATA[Place of Publication]]></source>
-				<target><![CDATA[Erscheinungsort-DE]]></target>
+				<target><![CDATA[Erscheinungsort]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.place_general" approved="yes">
 				<source><![CDATA[Place]]></source>
@@ -91,7 +91,7 @@
 			</trans-unit>
 			<trans-unit id="metadata.purl" approved="yes">
 				<source><![CDATA[PURL]]></source>
-				<target><![CDATA[PURL-DE]]></target>
+				<target><![CDATA[PURL]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.record_id" approved="yes">
 				<source><![CDATA[OAI Identifier]]></source>
@@ -107,7 +107,7 @@
 			</trans-unit>
 			<trans-unit id="metadata.shelflocator" approved="yes">
 				<source><![CDATA[Shelflocator]]></source>
-				<target><![CDATA[Signatur-DE]]></target>
+				<target><![CDATA[Signatur]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.subjectnamepersons" approved="yes">
 				<source><![CDATA[Persons]]></source>
@@ -127,23 +127,23 @@
 			</trans-unit>
 			<trans-unit id="metadata.title" approved="yes">
 				<source><![CDATA[Title]]></source>
-				<target><![CDATA[Titel-DE]]></target>
+				<target><![CDATA[Titel]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.subtitle" approved="yes">
 				<source><![CDATA[subTitle]]></source>
-				<target><![CDATA[Untertitel-DE]]></target>
+				<target><![CDATA[Untertitel]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.publisher" approved="yes">
 				<source><![CDATA[Publisher]]></source>
-				<target><![CDATA[Verlag-DE]]></target>
+				<target><![CDATA[Verlag]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.extent" approved="yes">
 				<source><![CDATA[extent]]></source>
-				<target><![CDATA[Umfang-DE]]></target>
+				<target><![CDATA[Umfang]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.type" approved="yes">
 				<source><![CDATA[Type]]></source>
-				<target><![CDATA[Medientyp-DE]]></target>
+				<target><![CDATA[Medientyp]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.union_id" approved="yes">
 				<source><![CDATA[Union Catalog ID]]></source>
@@ -151,35 +151,35 @@
 			</trans-unit>
 			<trans-unit id="metadata.urn" approved="yes">
 				<source><![CDATA[URN]]></source>
-				<target><![CDATA[URN-DE]]></target>
+				<target><![CDATA[URN]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.volume" approved="yes">
 				<source><![CDATA[Volume]]></source>
-				<target><![CDATA[Band-DE]]></target>
+				<target><![CDATA[Band]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.year" approved="yes">
 				<source><![CDATA[Year of Publication]]></source>
-				<target><![CDATA[Erscheinungsjahr-DE]]></target>
+				<target><![CDATA[Erscheinungsjahr]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.abstract" approved="yes">
 				<source><![CDATA[abstract]]></source>
-				<target><![CDATA[Anmerkung-DE]]></target>
+				<target><![CDATA[Anmerkung]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.page-purl" approved="yes">
 				<source><![CDATA[page-purl]]></source>
-				<target><![CDATA[PURL Einzelseite-DE]]></target>
+				<target><![CDATA[PURL Einzelseite]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.DFGviewer" approved="yes">
 				<source><![CDATA[DFGviewer]]></source>
-				<target><![CDATA[- DFG Viewer-DE]]></target>
+				<target><![CDATA[- DFG Viewer]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.tifyviewer" approved="yes">
 				<source><![CDATA[Tifyviewer]]></source>
-				<target><![CDATA[- Tify Viewer-DE]]></target>
+				<target><![CDATA[- Tify Viewer]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.miradorviewer" approved="yes">
 				<source><![CDATA[Miradorviewer]]></source>
-				<target><![CDATA[- Mirador Viewer-DE]]></target>
+				<target><![CDATA[- Mirador Viewer]]></target>
 			</trans-unit>
 		</body>
 	</file>
