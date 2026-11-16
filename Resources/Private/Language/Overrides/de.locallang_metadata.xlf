@@ -11,11 +11,11 @@
 			</trans-unit>
 			<trans-unit id="metadata.record_id" approved="yes">
 				<source><![CDATA[record_id]]></source>
-				<target><![CDATA[Identifier -]]></target>
+				<target><![CDATA[Identifier]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.collection" approved="yes">
 				<source><![CDATA[collection]]></source>
-				<target><![CDATA[Sammlung(en) -]]></target>
+				<target><![CDATA[Sammlung(en)]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.ppn_hebis" approved="yes">
 				<source><![CDATA[ppn_hebis]]></source>
@@ -171,15 +171,15 @@
 			</trans-unit>
 			<trans-unit id="metadata.DFGviewer" approved="yes">
 				<source><![CDATA[DFGviewer]]></source>
-				<target><![CDATA[- DFG Viewer]]></target>
+				<target><![CDATA[DFG Viewer]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.tifyviewer" approved="yes">
 				<source><![CDATA[Tifyviewer]]></source>
-				<target><![CDATA[- Tify Viewer]]></target>
+				<target><![CDATA[Tify Viewer]]></target>
 			</trans-unit>
 			<trans-unit id="metadata.miradorviewer" approved="yes">
 				<source><![CDATA[Miradorviewer]]></source>
-				<target><![CDATA[- Mirador Viewer]]></target>
+				<target><![CDATA[Mirador Viewer]]></target>
 			</trans-unit>
 		</body>
 	</file>

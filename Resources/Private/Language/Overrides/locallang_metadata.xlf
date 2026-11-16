@@ -123,13 +123,13 @@
 				<source><![CDATA[PURL single page]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.DFGviewer" approved="yes">
-				<source><![CDATA[- DFG Viewer]]></source>
+				<source><![CDATA[DFG Viewer]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.tifyviewer" approved="yes">
-				<source><![CDATA[- Tify Viewer]]></source>
+				<source><![CDATA[Tify Viewer]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.miradorviewer" approved="yes">
-				<source><![CDATA[- Mirador Viewer]]></source>
+				<source><![CDATA[Mirador Viewer]]></source>
 			</trans-unit>
 			<trans-unit id="metadata.ppn_hebis" approved="yes">
 				<source><![CDATA[TUfind display]]></source>
