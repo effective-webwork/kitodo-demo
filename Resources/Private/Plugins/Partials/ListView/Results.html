@@ -48,7 +48,7 @@
                                 <f:if condition="{document.metadata.{metadata.indexName}.0} && {metadata.indexName} != 'type' && {metadata.indexName} != 'title'">
                                     <div class="shlb-listview-text-item tx-dlf-metadata-{metadata.indexName} tx-dlf-metadata">
                                         <label>
-                                            {metadata.label}
+                                            <f:translate key="LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.{metadata.indexName}" default="{metadata.label}" />
                                         </label>
                                         <span>
                                             <f:for each="{document.metadata.{metadata.indexName}}" as="metadataEntry" iteration="iterator">
